@@ -1,4 +1,4 @@
-from EO_PointTest import EO_Test
+from EO_Aberdeen.EO_PointTest import EO_Test
 
 # Define alias
 EO = EO_Test.EO
