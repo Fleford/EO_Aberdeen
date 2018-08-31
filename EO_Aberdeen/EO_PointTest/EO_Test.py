@@ -133,6 +133,7 @@ class EO(object):
         :return:
         """
         # Check if it's too close to other points
+        # TODO: Rewrite to use check_dist_constraint function
         if nearest_dist(self.parameters(), checked_parameter) < 0.03:
             return False
         else:
@@ -214,5 +215,5 @@ def nearest_dist(d, x):
     # return the distance to the nearest neighbor
     return sqd[idx[0]]
 
-# def generate_valid_point
-# def check_constraint
+# def generate_possible_point
+# def check_dist_constraint
