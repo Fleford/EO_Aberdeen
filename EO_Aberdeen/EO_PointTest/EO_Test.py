@@ -213,12 +213,16 @@ def nearest_dist(d, x):
     return sqd[idx[0]]
 
 
-# def generate_possible_point():
-
 def check_dist_constraint(given_point, array_of_points, min_dist):
     # Returns true if the given point is greater than or equal to the minimum distance away from the closest point
     # Each row is a point
-    if nearest_dist(array_of_points, given_point) >= min_dist:
-        return True
-    else:
-        return False
+    return nearest_dist(array_of_points, given_point) >= min_dist
+
+
+def generate_possible_point():
+    # Generates a random point within broadest model bounds
+    # New point is of whole numbers, no decimals
+
+    # Generate random point
+
+    return True
