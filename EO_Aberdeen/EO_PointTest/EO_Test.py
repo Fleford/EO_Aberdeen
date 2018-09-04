@@ -11,12 +11,13 @@ class EO(object):
         eval_count: Total number of times the fitness functions ran
         :return:
     """
+
     def __init__(self, n_rows=4, maximize=True):
         """
         Returns a EO_Solution object
         :return:
         """
-        self.solution = np.random.rand(n_rows, 3)   # (row,col)
+        self.solution = np.random.rand(n_rows, 3)  # (row,col)
         self.fitness_ready = False
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
@@ -43,7 +44,7 @@ class EO(object):
         :return:
         """
         # Parse out fitness vector
-        fitness = self.solution[:, (self.solution.shape[1]-1)]
+        fitness = self.solution[:, (self.solution.shape[1] - 1)]
         return fitness
 
     def update_fitness(self):
@@ -56,7 +57,7 @@ class EO(object):
 
         # Generate new fitness vector
         center_point = np.array([0.5, 0.5])
-        fitness = np.linalg.norm(parameters - center_point, axis=1)*self.maximize
+        fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
 
         # Build new solution matrix, set fitness ready flag, and increment counter
         self.solution = np.c_[parameters, fitness]
@@ -127,17 +128,13 @@ class EO(object):
         # Return new parameter
         return new_point
 
-    def check_constraint(self, checked_parameter):
+    def check_constraints(self, checked_parameter):
         """
         Returns true if the checked_parameter respects all constraints
         :return:
         """
         # Check if it's too close to other points
-        # TODO: Rewrite to use check_dist_constraint function
-        if nearest_dist(self.parameters(), checked_parameter) < 0.03:
-            return False
-        else:
-            return True
+        return check_dist_constraint(checked_parameter, self.parameters(), 0.03)
 
     def generate_row(self):
         """
@@ -146,7 +143,7 @@ class EO(object):
         """
         # Keep making new parameters until you find something valid
         new_parameter = self.generate_parameter()
-        while not self.check_constraint(new_parameter):
+        while not self.check_constraints(new_parameter):
             new_parameter = self.generate_parameter()
 
         # Return a new row with right dimensions for the solution matrix
@@ -211,9 +208,17 @@ def nearest_dist(d, x):
     # Each row is a point
     # euclidean distances from the other points
     sqd = np.linalg.norm(d - x, axis=1)
-    idx = np.argsort(sqd)   # sorting
+    idx = np.argsort(sqd)  # sorting
     # return the distance to the nearest neighbor
     return sqd[idx[0]]
 
-# def generate_possible_point
-# def check_dist_constraint
+
+# def generate_possible_point():
+
+def check_dist_constraint(given_point, array_of_points, min_dist):
+    # Returns true if the given point is greater than or equal to the minimum distance away from the closest point
+    # Each row is a point
+    if nearest_dist(array_of_points, given_point) >= min_dist:
+        return True
+    else:
+        return False
