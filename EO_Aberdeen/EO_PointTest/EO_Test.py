@@ -12,7 +12,7 @@ class EO(object):
         :return:
     """
 
-    def __init__(self, n_rows=4, maximize=True):
+    def __init__(self, n_rows=4, maximize=True, x_min=0, x_max=100, y_min=0, y_max=100, min_dist=2):
         """
         Returns a EO_Solution object
         :return:
@@ -22,11 +22,18 @@ class EO(object):
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
         self.maximize = 1
+        self.x_min = x_min
+        self.x_max = x_max
+        self.y_min = y_min
+        self.y_max = y_max
 
         if not maximize:
             self.maximize = -1
 
-        # Write a function that builds a valid initial state
+        # Initialize the solution matrix with valid parameters
+        parameter_matrix = generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist)
+        zero_vector = np.zeros(n_rows).reshape(-1,1)
+        self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
     def parameters(self):
         """
@@ -123,7 +130,7 @@ class EO(object):
         new_point = parameters[0] + np.random.rand() * u
 
         # Clip new point to boundary
-        new_point = new_point.clip(0, 1)
+        new_point = new_point.clip(0, 100)
 
         # Return new parameter
         return new_point

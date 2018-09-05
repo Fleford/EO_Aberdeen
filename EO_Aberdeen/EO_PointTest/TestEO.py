@@ -1,6 +1,5 @@
 from EO_Aberdeen.EO_PointTest import EO_Test
 
-
 # Testing the EO_Solution class
 sol1 = EO_Test.EO(5, False)
 print(sol1.solution)
