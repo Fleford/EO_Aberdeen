@@ -129,6 +129,7 @@ class EO(object):
         # Return a new point using lowest fit row
         new_point = parameters[0] + np.random.rand() * u
 
+        # TODO: Rewrite clip function
         # Clip new point to boundary
         new_point = new_point.clip(0, 100)
 
