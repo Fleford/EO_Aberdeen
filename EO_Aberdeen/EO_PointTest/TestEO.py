@@ -6,6 +6,7 @@ print(sol1.solution)
 print(sol1.fitness_ready)
 print()
 
+print("Update fitness")
 sol1.update_fitness()
 print(sol1.solution)
 print(sol1.total_fitness())

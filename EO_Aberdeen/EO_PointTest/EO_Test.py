@@ -130,9 +130,8 @@ class EO(object):
         # Return a new point using lowest fit row
         new_point = parameters[0] + np.random.rand() * u
 
-        # TODO: Rewrite clip function
-        # Clip new point to boundary
-        new_point = new_point.clip(0, 100)
+        # Clip new point to boundary and round components
+        new_point = condition_vector(new_point, self.x_min, self.x_max, self.y_min, self.y_max)
 
         # Return new parameter
         return new_point
@@ -259,3 +258,16 @@ def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist):
 
     # Give me what I want
     return initial_array
+
+
+def condition_vector(given_point, x_min, x_max, y_min, y_max):
+    # Clips given point to provided bounds then rounds all components
+
+    # Clip point to bounds
+    given_point[0] = given_point[0].clip(x_min, x_max)
+    given_point[1] = given_point[1].clip(y_min, y_max)
+
+    # Round components to whole numbers
+    given_point.round()
+
+    return given_point
