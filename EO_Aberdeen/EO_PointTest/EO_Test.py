@@ -33,7 +33,7 @@ class EO(object):
 
         # Initialize the solution matrix with valid parameters
         parameter_matrix = generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist)
-        zero_vector = np.zeros(n_rows).reshape(-1,1)
+        zero_vector = np.zeros(n_rows).reshape(-1, 1)
         self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
     def parameters(self):
