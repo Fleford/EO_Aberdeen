@@ -56,3 +56,8 @@ print()
 
 print("Testing generate_possible_point")
 print(EO_Test.generate_possible_point(10, 100, 20, 100))
+print()
+
+print("Testing generate_initial_array")
+print(EO_Test.generate_initial_array(0, 100, 0, 100, 5, 1))
+print()

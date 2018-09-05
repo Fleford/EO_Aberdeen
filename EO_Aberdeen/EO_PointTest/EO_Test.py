@@ -98,7 +98,7 @@ class EO(object):
 
     def generate_parameter(self):
         """
-        Uses the least fit row of the parameter matrix to return a new random parameter
+        Uses the parameter matrix to return a new random parameter
         :return:
         """
         # Parse out parameter matrix and dimensions
@@ -229,3 +229,28 @@ def generate_possible_point(x_min, x_max, y_min, y_max):
 
     # Stitch into a row vector and return array
     return np.array([x_new_point, y_new_point])
+
+
+def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist):
+    # Generates the first parameter array with n_rows = number of rows
+    # All points are within bounds
+    # All points are a minimum distance from each other
+
+    # Generates an initial array and initial test point
+    initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
+    new_point = generate_possible_point(x_min, x_max, y_min, y_max)
+
+    for i in range(0, n_rows - 1):
+        # Generate valid point
+        while not check_dist_constraint(new_point, initial_array, min_dist):
+            new_point = generate_possible_point(x_min, x_max, y_min, y_max)
+
+        # Append new point to array
+        initial_array = np.append([new_point], initial_array, axis=0)
+
+    # Give me what I want
+    return initial_array
+
+# print("Testing generate_initial_array")
+# print(generate_initial_array(0, 100, 0, 100, 5, 1))
+# print()
