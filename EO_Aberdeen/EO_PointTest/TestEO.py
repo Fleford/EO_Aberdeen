@@ -1,10 +1,8 @@
 from EO_Aberdeen.EO_PointTest import EO_Test
 
-# Define alias
-EO = EO_Test.EO
 
 # Testing the EO_Solution class
-sol1 = EO(5, False)
+sol1 = EO_Test.EO(5, False)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()
@@ -54,3 +52,7 @@ print()
 sol1.iterate()
 print(sol1.solution)
 print(sol1.total_fitness())
+print()
+
+print("Testing generate_possible_point")
+print(EO_Test.generate_possible_point(10, 100, 20, 100))

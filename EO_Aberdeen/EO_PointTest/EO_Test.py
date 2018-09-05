@@ -219,10 +219,13 @@ def check_dist_constraint(given_point, array_of_points, min_dist):
     return nearest_dist(array_of_points, given_point) >= min_dist
 
 
-def generate_possible_point():
-    # Generates a random point within broadest model bounds
+def generate_possible_point(x_min, x_max, y_min, y_max):
+    # Generates a random point within broadest model bounds, inclusive
     # New point is of whole numbers, no decimals
 
-    # Generate random point
+    # Generate random x and y point that are within bounds
+    x_new_point = np.random.randint(low=x_min, high=x_max + 1)
+    y_new_point = np.random.randint(low=y_min, high=y_max + 1)
 
-    return True
+    # Stitch into a row vector and return array
+    return np.array([x_new_point, y_new_point])
