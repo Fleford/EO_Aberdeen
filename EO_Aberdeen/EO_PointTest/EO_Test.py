@@ -12,12 +12,13 @@ class EO(object):
         :return:
     """
 
-    def __init__(self, n_rows=4, maximize=True, x_min=0, x_max=100, y_min=0, y_max=100, min_dist=2):
+    def __init__(self, n_rows=4, maximize=True, x_min=0, x_max=100, y_min=0, y_max=100, min_dist=2,
+                 avoid_list=np.array([[]])):
         """
         Returns a EO_Solution object
         :return:
         """
-        self.solution = np.random.rand(n_rows, 3)  # (row,col)
+        self.solution = np.random.rand(n_rows, 3)  # np.random.rand(row,col)
         self.fitness_ready = False
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
@@ -27,12 +28,18 @@ class EO(object):
         self.y_min = y_min
         self.y_max = y_max
         self.min_dist = min_dist
+        self.avoid_list = avoid_list
 
+        # TODO: Implement an avoid list
+        if self.avoid_list.shape[1] == 0:
+            print("No avoid list provided")
+
+        # Set to maximizing or minimizing
         if not maximize:
             self.maximize = -1
 
         # Initialize the solution matrix with valid parameters
-        parameter_matrix = generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist)
+        parameter_matrix = generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist, avoid_list)
         zero_vector = np.zeros(n_rows).reshape(-1, 1)
         self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
@@ -142,7 +149,7 @@ class EO(object):
         :return:
         """
         # Check if it's too close to other points
-        return check_dist_constraint(checked_parameter, self.parameters(), self.min_dist)
+        return check_dist_constraint(checked_parameter, self.parameters(), self.min_dist, self.avoid_list)
 
     def generate_row(self):
         """
@@ -221,9 +228,17 @@ def nearest_dist(d, x):
     return sqd[idx[0]]
 
 
-def check_dist_constraint(given_point, array_of_points, min_dist):
+def check_dist_constraint(given_point, array_of_points, min_dist, avoid_list=np.array([[]])):
     # Returns true if the given point is greater than or equal to the minimum distance away from the closest point
-    # Each row is a point
+    # Each row is an x,y  point
+
+    # Check for an avoid list
+    if avoid_list.shape[1] == 0:
+        print("No avoid list provided for check_dist_constraint")
+    else:
+        # Include avoid list into array of checked points
+        array_of_points = np.append(array_of_points, avoid_list, axis=0)
+
     return nearest_dist(array_of_points, given_point) >= min_dist
 
 
@@ -239,10 +254,14 @@ def generate_possible_point(x_min, x_max, y_min, y_max):
     return np.array([x_new_point, y_new_point])
 
 
-def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist):
+def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist, avoid_list=np.array([[]])):
     # Generates the first parameter array with n_rows = number of rows
     # All points are within bounds
     # All points are a minimum distance from each other
+
+    # Check for an avoid list
+    if avoid_list.shape[1] == 0:
+        print("No avoid list provided for generate_initial_array ")
 
     # Generates an initial array and initial test point
     initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
@@ -250,7 +269,7 @@ def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist):
 
     for i in range(0, n_rows - 1):
         # Generate valid point
-        while not check_dist_constraint(new_point, initial_array, min_dist):
+        while not check_dist_constraint(new_point, initial_array, min_dist, avoid_list):
             new_point = generate_possible_point(x_min, x_max, y_min, y_max)
 
         # Append new point to array

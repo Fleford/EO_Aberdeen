@@ -1,7 +1,12 @@
 from EO_Aberdeen.EO_PointTest import EO_Test
+import numpy as np
+
+avoided_points = np.array([[20, 20],
+                           [80, 80],
+                           [20, 80]])
 
 # Testing the EO_Solution class
-sol1 = EO_Test.EO(5, False)
+sol1 = EO_Test.EO(5, False, avoid_list=avoided_points)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()
@@ -59,5 +64,5 @@ print(EO_Test.generate_possible_point(10, 100, 20, 100))
 print()
 
 print("Testing generate_initial_array")
-print(EO_Test.generate_initial_array(0, 100, 0, 100, 5, 1))
+print(EO_Test.generate_initial_array(0, 100, 0, 100, 5, 1, avoid_list=avoided_points))
 print()
