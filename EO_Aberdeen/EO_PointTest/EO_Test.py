@@ -250,7 +250,3 @@ def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist):
 
     # Give me what I want
     return initial_array
-
-# print("Testing generate_initial_array")
-# print(generate_initial_array(0, 100, 0, 100, 5, 1))
-# print()
