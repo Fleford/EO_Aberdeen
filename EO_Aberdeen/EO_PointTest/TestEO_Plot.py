@@ -4,7 +4,7 @@ import matplotlib.animation as animation
 
 
 # Prepare EO instance
-sol1 = EO_Test.EO(10, False)
+sol1 = EO_Test.EO(10, False, min_dist=5)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
@@ -19,7 +19,7 @@ def update(i):
     ax.clear()
     ax.plot(sol1.solution[:, 0], sol1.solution[:, 1], 'ro')
     ax.set_title("Gen = {}, BestSum = {}".format(i, sol1.total_fitness()))
-    plt.axis([0, 1, 0, 1])
+    plt.axis([0, 100, 0, 100])
 
 
 # Animation

@@ -26,6 +26,7 @@ class EO(object):
         self.x_max = x_max
         self.y_min = y_min
         self.y_max = y_max
+        self.min_dist = min_dist
 
         if not maximize:
             self.maximize = -1
@@ -63,7 +64,7 @@ class EO(object):
         parameters = self.parameters()
 
         # Generate new fitness vector
-        center_point = np.array([0.5, 0.5])
+        center_point = np.array([50, 50])
         fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
 
         # Build new solution matrix, set fitness ready flag, and increment counter
@@ -142,7 +143,7 @@ class EO(object):
         :return:
         """
         # Check if it's too close to other points
-        return check_dist_constraint(checked_parameter, self.parameters(), 0.03)
+        return check_dist_constraint(checked_parameter, self.parameters(), self.min_dist)
 
     def generate_row(self):
         """
