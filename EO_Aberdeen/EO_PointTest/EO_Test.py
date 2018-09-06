@@ -2,8 +2,6 @@ import numpy as np
 import copy
 
 
-# blueberry pie
-
 class EO(object):
     """
     Attributes:
