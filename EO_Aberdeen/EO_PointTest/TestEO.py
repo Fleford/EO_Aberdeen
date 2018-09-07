@@ -6,7 +6,7 @@ avoided_points = np.array([[20, 20],
                            [20, 80]])
 
 # Testing the EO_Solution class
-sol1 = EO_Test.EO(5, False, avoid_list=avoided_points)
+sol1 = EO_Test.EO(10, False, avoid_list=avoided_points)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()
