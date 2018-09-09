@@ -10,7 +10,7 @@ avoided_points = np.array([[50, 55],
                            [50, 50]])
 
 # Prepare EO instance
-sol1 = EO_Test.EO(5, False, min_dist=5, avoid_list=avoided_points)
+sol1 = EO_Test.EO(10, False, min_dist=3, avoid_list=avoided_points)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
