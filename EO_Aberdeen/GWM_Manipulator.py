@@ -57,11 +57,26 @@ def search_string_in_array(searched_string, string_array):
     return found_array
 
 
+def well_name(well_number, stress_period):
+    # Outputs a formatted string given a well number and a stress period
+    return "Q"+str(well_number)+"S"+str(stress_period)+"P"
+
+
+def well_name_xy(well_x, well_y, stress_period):
+    # Outputs a formatted string given well coordinates and a stress period
+    return "X"+str(well_x)+"Y"+str(well_y)+"S"+str(stress_period)+"P"
+
+
+# Remove comments to test the functions above
 well_names, well_contributions = extract_contributions()
 print(well_names)
-print(well_contributions.reshape(-1,1))
+print(well_contributions.reshape(-1, 1))
 found = search_string_in_array("a", well_names)
 print(found)
 print(well_contributions.dot(found))
+print(well_name(2, 39))
+print(well_name_xy(25, 30, 45))
+
+
 
 
