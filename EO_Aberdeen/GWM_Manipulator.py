@@ -44,7 +44,7 @@ def extract_contributions():
 
 
 def search_string_in_array(searched_string, string_array):
-    # Checks an array of strings if a certain string is found
+    # Checks a list of strings if a certain string is found
     # Returns an array of ones and zeros
 
     found_array = np.array([])
