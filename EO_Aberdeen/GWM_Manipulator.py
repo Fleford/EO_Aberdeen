@@ -43,10 +43,22 @@ def extract_contributions():
     return well_array_names, well_array_contributions
 
 
+def search_string_in_array(searched_string, string_array):
+    # Checks an array of strings if a certain string is found
+    # Returns an array of ones and zeros
+
+    found_array = np.array([])
+    for name in string_array:
+        if searched_string in name:
+            found_array = np.append(found_array, np.array([1]))
+        else:
+            found_array = np.append(found_array, np.array([0]))
+
+    return found_array
+
+
 well_names, well_contributions = extract_contributions()
 print(well_names)
-print()
-print(well_contributions)
-
-
-# Combine well names with contribution values ?
+print(well_contributions.reshape(-1,1))
+found = search_string_in_array("Q2", well_names)
+print(found)
