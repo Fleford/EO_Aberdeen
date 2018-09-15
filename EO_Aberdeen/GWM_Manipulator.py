@@ -68,7 +68,7 @@ def well_name_xy(well_x, well_y, stress_period):
 
 
 # # Remove comments to test the functions above
-# well_names, well_contributions = extract_contributions()
+well_names, well_contributions = extract_contributions()
 # print(well_names)
 # print(well_contributions.reshape(-1, 1))
 # found = search_string_in_array("Q2", well_names)
@@ -77,11 +77,24 @@ def well_name_xy(well_x, well_y, stress_period):
 # print(well_name(2, 39))
 # print(well_name_xy(25, 30, 45))
 
+test_parameters = np.array([[0, 12, 15],
+                            [1, 26, 23],
+                            [2, 13, 13]])
 
 # Write a function (or functions) that can output a decvar file using a template
 with open("supply2.decvartp", "r") as f:
     for line in f:
-        if "Q" in line:
-            print(line.split()[0])
+        if "Q1" in line:
+            xx = str(test_parameters[0, 1])
+            yy = str(test_parameters[0, 2])
+            print(line.replace("xx", xx).replace("yy", yy), end="")
+        elif "Q2" in line:
+            xx = str(test_parameters[1, 1])
+            yy = str(test_parameters[1, 2])
+            print(line.replace("xx", xx).replace("yy", yy), end="")
+        elif "Q4" in line:
+            xx = str(test_parameters[2, 1])
+            yy = str(test_parameters[2, 2])
+            print(line.replace("xx", xx).replace("yy", yy), end="")
+        else:
             print(line, end="")
-            print(line.replace("xx", "23"))

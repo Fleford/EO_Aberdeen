@@ -204,23 +204,6 @@ class EO(object):
         if self.total_fitness() >= self.best_solution.total_fitness():
             self.best_solution = copy.deepcopy(self)
 
-    # def iterate(self):
-    #     """
-    #     Runs through an iteration of the EO process. Assumes a preexisting valid solution matrix
-    #     :return:
-    #     """
-    #     # Check if it's the first time
-    #     if self.eval_count == 0:
-    #         self.update_fitness()
-    #         self.update_best()
-    #
-    #     # Otherwise, run through an iteration
-    #     else:
-    #         self.remove_weakest()
-    #         self.append_row(self.generate_row())
-    #         self.update_fitness()
-    #         self.update_best()
-
 
 def nearest_dist(d, x):
     # Determines shortest distance to point of interest
