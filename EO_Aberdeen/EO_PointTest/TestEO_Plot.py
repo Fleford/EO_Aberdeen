@@ -23,7 +23,7 @@ def update(i):
 
     # Plot result
     ax.clear()
-    ax.plot(sol1.solution[:, 0], sol1.solution[:, 1], 'bo')
+    ax.plot(sol1.solution[:, 1], sol1.solution[:, 2], 'bo')
     ax.plot(sol1.avoid_list[:, 0], sol1.avoid_list[:, 1], 'ro')
     ax.set_title("Gen = {}, BestSum = {}".format(i, sol1.total_fitness()))
     plt.axis([0, 100, 0, 100])

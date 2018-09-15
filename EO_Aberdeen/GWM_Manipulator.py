@@ -82,5 +82,6 @@ def well_name_xy(well_x, well_y, stress_period):
 with open("supply2.decvartp", "r") as f:
     for line in f:
         if "Q" in line:
+            print(line.split()[0])
             print(line, end="")
             print(line.replace("xx", "23"))
