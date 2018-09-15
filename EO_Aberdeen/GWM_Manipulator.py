@@ -67,17 +67,21 @@ def well_name_xy(well_x, well_y, stress_period):
     return "X"+str(well_x)+"Y"+str(well_y)+"S"+str(stress_period)+"P"
 
 
-# Remove comments to test the functions above
-well_names, well_contributions = extract_contributions()
-print(well_names)
-print(well_contributions.reshape(-1, 1))
-found = search_string_in_array("a", well_names)
-print(found)
-print(well_contributions.dot(found))
-print(well_name(2, 39))
-print(well_name_xy(25, 30, 45))
+# # Remove comments to test the functions above
+# well_names, well_contributions = extract_contributions()
+# print(well_names)
+# print(well_contributions.reshape(-1, 1))
+# found = search_string_in_array("Q2", well_names)
+# print(found)
+# print(well_contributions.dot(found))
+# print(well_name(2, 39))
+# print(well_name_xy(25, 30, 45))
 
 
 # Write a function (or functions) that can output a decvar file using a template
-
-
+with open("supply2.decvartemp", "r") as f:
+    for line in f:
+        if "Q" in line:
+            pass
+            # print(line, end="")
+            # print(line.replace("xx", "23"))
