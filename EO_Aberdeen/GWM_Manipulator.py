@@ -79,9 +79,8 @@ def well_name_xy(well_x, well_y, stress_period):
 
 
 # Write a function (or functions) that can output a decvar file using a template
-with open("supply2.decvartemp", "r") as f:
+with open("supply2.decvartp", "r") as f:
     for line in f:
         if "Q" in line:
-            pass
-            # print(line, end="")
-            # print(line.replace("xx", "23"))
+            print(line, end="")
+            print(line.replace("xx", "23"))
