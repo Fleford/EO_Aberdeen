@@ -44,7 +44,7 @@ class EO(object):
         self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
         # Append index matrix to left of solution matrix
-        index_array = np.arange(n_rows).reshape(-1,1)
+        index_array = np.arange(n_rows).reshape(-1, 1)
         self.solution = np.append(index_array, self.solution, axis=1)
 
     def parameters(self):
@@ -78,7 +78,7 @@ class EO(object):
         # Generate new fitness vector
         center_point = np.array([50, 50])
         fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
-        fitness = fitness.reshape(-1,1)
+        fitness = fitness.reshape(-1, 1)
 
         # Build new solution matrix, set fitness ready flag, and increment counter
         self.solution = np.delete(self.solution, -1, 1)
@@ -298,6 +298,4 @@ def condition_vector(given_point, x_min, x_max, y_min, y_max):
     given_point[1] = given_point[1].clip(y_min, y_max)
 
     # Round components to whole numbers
-    given_point.round()
-
-    return given_point
+    return given_point.round()

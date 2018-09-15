@@ -64,6 +64,10 @@ print(sol1.solution)
 print(sol1.total_fitness())
 print()
 
+print("Testing generate_parameter")
+print(sol1.generate_parameter())
+print()
+
 print("Testing generate_possible_point")
 print(EO_Test.generate_possible_point(10, 100, 20, 100))
 print()
