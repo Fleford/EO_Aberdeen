@@ -67,20 +67,14 @@ class EO(object):
         fitness = self.solution[:, (self.solution.shape[1] - 1)]
         return fitness
 
-    def update_fitness(self):
+    def update_fitness(self, fitness):
         """
         Modifies the solution matrix with the updated fitness
         :return:
         """
-        # Parse out parameter matrix
-        parameters = self.parameters()
-
-        # Generate new fitness vector
-        center_point = np.array([50, 50])
-        fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
-        fitness = fitness.reshape(-1, 1)
 
         # Build new solution matrix, set fitness ready flag, and increment counter
+        fitness = fitness.reshape(-1, 1)
         self.solution = np.delete(self.solution, -1, 1)
         self.solution = np.append(self.solution, fitness, axis=1)
         self.fitness_ready = True
@@ -210,22 +204,22 @@ class EO(object):
         if self.total_fitness() >= self.best_solution.total_fitness():
             self.best_solution = copy.deepcopy(self)
 
-    def iterate(self):
-        """
-        Runs through an iteration of the EO process. Assumes a preexisting valid solution matrix
-        :return:
-        """
-        # Check if it's the first time
-        if self.eval_count == 0:
-            self.update_fitness()
-            self.update_best()
-
-        # Otherwise, run through an iteration
-        else:
-            self.remove_weakest()
-            self.append_row(self.generate_row())
-            self.update_fitness()
-            self.update_best()
+    # def iterate(self):
+    #     """
+    #     Runs through an iteration of the EO process. Assumes a preexisting valid solution matrix
+    #     :return:
+    #     """
+    #     # Check if it's the first time
+    #     if self.eval_count == 0:
+    #         self.update_fitness()
+    #         self.update_best()
+    #
+    #     # Otherwise, run through an iteration
+    #     else:
+    #         self.remove_weakest()
+    #         self.append_row(self.generate_row())
+    #         self.update_fitness()
+    #         self.update_best()
 
 
 def nearest_dist(d, x):

@@ -16,10 +16,28 @@ sol1 = EO_Test.EO(10, False, min_dist=3, avoid_list=avoided_points)
 fig, ax = plt.subplots()
 
 
+def calculate_fitness(self):
+    # Parse out parameter matrix
+    parameters = self.parameters()
+
+    # Generate new fitness vector
+    center_point = np.array([50, 50])
+    fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
+
+    return fitness
+
+
+def iterate(self):
+    self.remove_weakest()
+    self.append_row(self.generate_row())
+    self.update_fitness(calculate_fitness(self))
+    self.update_best()
+
+
 # Iterates and plots EO
 def update(i):
     # Iterate through EO
-    sol1.iterate()
+    iterate(sol1)
 
     # Plot result
     ax.clear()
