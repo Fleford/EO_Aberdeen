@@ -80,7 +80,7 @@ def well_name_xy(well_x, well_y, stress_period):
 
 
 def read_fitness_array(list_of_well_names):
-    # Given an list of well names, the corresponding fitness array is produced
+    # Given a list of well names, the corresponding fitness array is produced
     well_names_with_sp, well_contributions = extract_contributions()
     fitness = np.array([])
 
