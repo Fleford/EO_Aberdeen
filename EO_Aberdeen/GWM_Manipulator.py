@@ -1,5 +1,5 @@
 import numpy as np
-
+import subprocess
 
 def extract_contributions():
     # Looks at the GWM out file and extracts well names and contributions
@@ -135,4 +135,20 @@ def write_supply2decvar(index_and_parameters_matrix):
 # write_supply2decvar(test_parameters)
 
 
-# TODO: Write a function that runs GWM (and returns true once process is complete?)
+# Write a function that runs GWM and updates local files to be ready for use
+print("Running GWM...")
+# proc = subprocess.run(r".\Batch_Files\run_supply2", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
+# for line in proc.stdout.split('\n'):
+#     print(line)
+subprocess.run(r".\Batch_Files\run_supply2", stdout=subprocess.PIPE, shell=True)
+
+print("Copying over new files from GWM directory...")
+# proc = subprocess.run(r".\Batch_Files\run_Copy", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
+# for line in proc.stdout.split('\n'):
+#     print(line)
+subprocess.run(r".\Batch_Files\run_Copy", shell=True)
+
+print("Done with GWM")
+
+wells = ["Q1", "Q2", "Q4"]
+print(read_fitness_array(wells))
