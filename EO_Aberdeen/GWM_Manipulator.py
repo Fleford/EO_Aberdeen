@@ -36,7 +36,7 @@ def extract_contributions():
             if print_flag:
                 well_array_contributions = np.append(well_array_contributions, np.array([float(line_array[2])]), axis=0)
 
-            # Extract names of well parameters
+            # Extract names of well index_and_parameters_matrix
             if print_flag:
                 well_array_names.append(line_array[0])
 
@@ -95,12 +95,12 @@ def read_fitness_array(list_of_well_names):
 # print(read_fitness_array(wells))
 
 
-def write_supply2decvar(parameters):
+def write_supply2decvar(index_and_parameters_matrix):
     # A function (or functions) that can output a decvar file using a template, provided a parameter array
-    # The index array is in included with the parameters
+    # The index array is in included with the index_and_parameters_matrix
 
     # Sort parameter rows by the index matrix
-    parameters = parameters[parameters[:, 0].argsort()]
+    index_and_parameters_matrix = index_and_parameters_matrix[index_and_parameters_matrix[:, 0].argsort()]
 
     with open("supply2.decvartp", "r") as read_f:
         with open("supply2.decvar", "w") as write_f:
@@ -108,18 +108,18 @@ def write_supply2decvar(parameters):
 
                 # Insert new data
                 if "Q1" in line:
-                    xx = str(parameters[0, 1])
-                    yy = str(parameters[0, 2])
+                    xx = str(index_and_parameters_matrix[0, 1])
+                    yy = str(index_and_parameters_matrix[0, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
                 elif "Q2" in line:
-                    xx = str(parameters[1, 1])
-                    yy = str(parameters[1, 2])
+                    xx = str(index_and_parameters_matrix[1, 1])
+                    yy = str(index_and_parameters_matrix[1, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
                 elif "Q4" in line:
-                    xx = str(parameters[2, 1])
-                    yy = str(parameters[2, 2])
+                    xx = str(index_and_parameters_matrix[2, 1])
+                    yy = str(index_and_parameters_matrix[2, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
                 else:
@@ -133,3 +133,6 @@ def write_supply2decvar(parameters):
 #                             [2, 26, 23],
 #                             [4, 13, 13]])
 # write_supply2decvar(test_parameters)
+
+
+# TODO: Write a function that runs GWM (and returns true once process is complete?)
