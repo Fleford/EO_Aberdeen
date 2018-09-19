@@ -81,11 +81,11 @@ def well_name_xy(well_x, well_y, stress_period):
 
 def read_fitness_array(list_of_well_names):
     # Given an list of well names, the corresponding fitness array is produced
-    well_names_with_SP, well_contributions = extract_contributions()
+    well_names_with_sp, well_contributions = extract_contributions()
     fitness = np.array([])
 
     for well in list_of_well_names:
-        found = search_string_in_array(well, well_names_with_SP)
+        found = search_string_in_array(well, well_names_with_sp)
         fitness = np.append(fitness, np.array([well_contributions.dot(found)]), axis=0)
 
     return fitness
@@ -133,4 +133,3 @@ def write_supply2decvar(parameters):
 #                             [2, 26, 23],
 #                             [4, 13, 13]])
 # write_supply2decvar(test_parameters)
-
