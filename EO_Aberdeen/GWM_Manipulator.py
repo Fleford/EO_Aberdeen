@@ -66,9 +66,8 @@ def well_name_xy(well_x, well_y, stress_period):
     # Outputs a formatted string given well coordinates and a stress period
     return "X"+str(well_x)+"Y"+str(well_y)+"S"+str(stress_period)+"P"
 
-
 # # Remove comments to test the functions above
-well_names, well_contributions = extract_contributions()
+# well_names, well_contributions = extract_contributions()
 # print(well_names)
 # print(well_contributions.reshape(-1, 1))
 # found = search_string_in_array("Q2", well_names)
@@ -77,24 +76,40 @@ well_names, well_contributions = extract_contributions()
 # print(well_name(2, 39))
 # print(well_name_xy(25, 30, 45))
 
-test_parameters = np.array([[0, 12, 15],
-                            [1, 26, 23],
-                            [2, 13, 13]])
 
-# Write a function (or functions) that can output a decvar file using a template
-with open("supply2.decvartp", "r") as f:
-    for line in f:
-        if "Q1" in line:
-            xx = str(test_parameters[0, 1])
-            yy = str(test_parameters[0, 2])
-            print(line.replace("xx", xx).replace("yy", yy), end="")
-        elif "Q2" in line:
-            xx = str(test_parameters[1, 1])
-            yy = str(test_parameters[1, 2])
-            print(line.replace("xx", xx).replace("yy", yy), end="")
-        elif "Q4" in line:
-            xx = str(test_parameters[2, 1])
-            yy = str(test_parameters[2, 2])
-            print(line.replace("xx", xx).replace("yy", yy), end="")
-        else:
-            print(line, end="")
+def write_supply2decvar(parameters):
+    # Write a function (or functions) that can output a decvar file using a template, provided a parameter array
+    parameters = parameters[parameters[:, 0].argsort()]
+
+    with open("supply2.decvartp", "r") as read_f:
+        with open("supply2.decvar", "w") as write_f:
+            for line in read_f:
+
+                # Insert new data
+                if "Q1" in line:
+                    xx = str(parameters[0, 1])
+                    yy = str(parameters[0, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q2" in line:
+                    xx = str(parameters[1, 1])
+                    yy = str(parameters[1, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q4" in line:
+                    xx = str(parameters[2, 1])
+                    yy = str(parameters[2, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                else:
+                    new_line = line
+
+                # Write new line to file
+                write_f.write(new_line)
+
+# # Tests the write_supply2decvar
+# test_parameters = np.array([[1, 12, 15],
+#                             [2, 26, 23],
+#                             [4, 13, 13]])
+# write_supply2decvar(test_parameters)
+
