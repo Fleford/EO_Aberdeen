@@ -18,7 +18,8 @@ class EO(object):
         Returns a EO_Solution object
         :return:
         """
-        self.solution = np.random.rand(n_rows, 3)  # np.random.rand(row,col)
+        self.solution = np.random.rand(n_rows, 4)  # np.random.rand(row,col)
+        self.replaced_row = 0
         self.fitness_ready = False
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
@@ -30,7 +31,6 @@ class EO(object):
         self.min_dist = min_dist
         self.avoid_list = avoid_list
 
-        # TODO: Implement an avoid list
         if self.avoid_list.shape[1] == 0:
             print("No avoid list provided")
 
@@ -43,6 +43,10 @@ class EO(object):
         zero_vector = np.zeros(n_rows).reshape(-1, 1)
         self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
+        # Append index matrix to left of solution matrix
+        index_array = np.arange(n_rows).reshape(-1, 1)
+        self.solution = np.append(index_array, self.solution, axis=1)
+
     def parameters(self):
         """
         Returns the parameter matrix of the object
@@ -50,7 +54,8 @@ class EO(object):
         """
         # Parse out parameter matrix
         solution_rows, solution_cols = self.solution.shape
-        parameters = np.delete(self.solution, (solution_cols - 1), 1)
+        parameters = np.delete(self.solution, (solution_cols - 1), 1)   # Remove fitness matrix
+        parameters = np.delete(parameters, 0, 1)    # Remove index matrix
         return parameters
 
     def fitness(self):
@@ -62,20 +67,16 @@ class EO(object):
         fitness = self.solution[:, (self.solution.shape[1] - 1)]
         return fitness
 
-    def update_fitness(self):
+    def update_fitness(self, fitness):
         """
         Modifies the solution matrix with the updated fitness
         :return:
         """
-        # Parse out parameter matrix
-        parameters = self.parameters()
-
-        # Generate new fitness vector
-        center_point = np.array([50, 50])
-        fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
 
         # Build new solution matrix, set fitness ready flag, and increment counter
-        self.solution = np.c_[parameters, fitness]
+        fitness = fitness.reshape(-1, 1)
+        self.solution = np.delete(self.solution, -1, 1)
+        self.solution = np.append(self.solution, fitness, axis=1)
         self.fitness_ready = True
         self.eval_count += 1
 
@@ -109,6 +110,7 @@ class EO(object):
         At least the lowest fitness row is removed.
         :return:
         """
+        self.replaced_row = self.solution[0, 0]
         self.solution = np.delete(self.solution, 0, 0)
 
     def generate_parameter(self):
@@ -161,6 +163,9 @@ class EO(object):
         while not self.check_constraints(new_parameter):
             new_parameter = self.generate_parameter()
 
+        # Attach the index of the replaced parameter
+        new_parameter = np.append(np.array(self.replaced_row), new_parameter)
+
         # Return a new row with right dimensions for the solution matrix
         return np.append(new_parameter, np.zeros(1))
 
@@ -198,23 +203,6 @@ class EO(object):
         # Update best solution
         if self.total_fitness() >= self.best_solution.total_fitness():
             self.best_solution = copy.deepcopy(self)
-
-    def iterate(self):
-        """
-        Runs through an iteration of the EO process. Assumes a preexisting valid solution matrix
-        :return:
-        """
-        # Check if it's the first time
-        if self.eval_count == 0:
-            self.update_fitness()
-            self.update_best()
-
-        # Otherwise, run through an iteration
-        else:
-            self.remove_weakest()
-            self.append_row(self.generate_row())
-            self.update_fitness()
-            self.update_best()
 
 
 def nearest_dist(d, x):
@@ -287,6 +275,4 @@ def condition_vector(given_point, x_min, x_max, y_min, y_max):
     given_point[1] = given_point[1].clip(y_min, y_max)
 
     # Round components to whole numbers
-    given_point.round()
-
-    return given_point
+    return given_point.round()
