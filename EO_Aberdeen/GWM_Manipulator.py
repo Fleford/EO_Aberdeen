@@ -56,6 +56,14 @@ def search_string_in_array(searched_string, string_array):
 
     return found_array
 
+# # Tests extract_contributions, search_string_in_array and dot product method
+# well_names, well_contributions = extract_contributions()
+# print(well_names)
+# print(well_contributions.reshape(-1, 1))
+# found = search_string_in_array("Q2", well_names)
+# print(found)
+# print(well_contributions.dot(found))
+
 
 def well_name(well_number, stress_period):
     # Outputs a formatted string given a well number and a stress period
@@ -66,19 +74,32 @@ def well_name_xy(well_x, well_y, stress_period):
     # Outputs a formatted string given well coordinates and a stress period
     return "X"+str(well_x)+"Y"+str(well_y)+"S"+str(stress_period)+"P"
 
-# # Remove comments to test the functions above
-# well_names, well_contributions = extract_contributions()
-# print(well_names)
-# print(well_contributions.reshape(-1, 1))
-# found = search_string_in_array("Q2", well_names)
-# print(found)
-# print(well_contributions.dot(found))
+# # Tests well_name, well_name_xy
 # print(well_name(2, 39))
 # print(well_name_xy(25, 30, 45))
 
 
+def read_fitness_array(list_of_well_names):
+    # Given an list of well names, the corresponding fitness array is produced
+    well_names_with_SP, well_contributions = extract_contributions()
+    fitness = np.array([])
+
+    for well in list_of_well_names:
+        found = search_string_in_array(well, well_names_with_SP)
+        fitness = np.append(fitness, np.array([well_contributions.dot(found)]), axis=0)
+
+    return fitness
+
+# # Tests read_fitness_array
+# wells = ["Q1", "Q2", "Q4"]
+# print(read_fitness_array(wells))
+
+
 def write_supply2decvar(parameters):
-    # Write a function (or functions) that can output a decvar file using a template, provided a parameter array
+    # A function (or functions) that can output a decvar file using a template, provided a parameter array
+    # The index array is in included with the parameters
+
+    # Sort parameter rows by the index matrix
     parameters = parameters[parameters[:, 0].argsort()]
 
     with open("supply2.decvartp", "r") as read_f:
