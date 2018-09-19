@@ -1,6 +1,7 @@
 import numpy as np
 import subprocess
 
+
 def extract_contributions():
     # Looks at the GWM out file and extracts well names and contributions
 
