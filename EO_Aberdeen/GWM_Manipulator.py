@@ -129,27 +129,38 @@ def write_supply2decvar(index_and_parameters_matrix):
                 # Write new line to file
                 write_f.write(new_line)
 
-# # Tests the write_supply2decvar
-# test_parameters = np.array([[1, 12, 15],
-#                             [2, 26, 23],
-#                             [4, 13, 13]])
+# Tests the write_supply2decvar
+# test_parameters = np.array([[1, 12, 11],
+#                             [2, 16, 17],
+#                             [4, 14, 25]])
 # write_supply2decvar(test_parameters)
 
 
-# Write a function that runs GWM and updates local files to be ready for use
-print("Running GWM...")
-# proc = subprocess.run(r".\Batch_Files\run_supply2", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
-# for line in proc.stdout.split('\n'):
-#     print(line)
-subprocess.run(r".\Batch_Files\run_supply2", stdout=subprocess.PIPE, shell=True)
+def run_gwm():
+    # Write a function that runs GWM with new local files and updates local files to be ready for use
 
-print("Copying over new files from GWM directory...")
-# proc = subprocess.run(r".\Batch_Files\run_Copy", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
-# for line in proc.stdout.split('\n'):
-#     print(line)
-subprocess.run(r".\Batch_Files\run_Copy", shell=True)
+    print()
+    print("Copying over new files to GWM directory...")
+    subprocess.run(r".\Batch_Files\copy_to_gwm", shell=True)
 
-print("Done with GWM")
+    print()
+    print("Running GWM...")
+    # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
+    # for line in proc.stdout.split('\n'):
+    #     print(line)
+    subprocess.run(r".\Batch_Files\start_gwm", shell=True)
 
+    print()
+    print("Copying over resulting files from GWM directory...")
+    subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
+
+# Tests run_gwm
+test_parameters = np.array([[1, 12, 11],
+                            [2, 16, 17],
+                            [4, 14, 25]])
+write_supply2decvar(test_parameters)
+run_gwm()
+print()
+print("Resulting fitness:")
 wells = ["Q1", "Q2", "Q4"]
 print(read_fitness_array(wells))

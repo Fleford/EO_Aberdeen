@@ -1,0 +1,4 @@
+jif %                 MARKER-DELIMITER
+StandardFile 0 3 2    NSKIP READCOLUMN NREAD
+modflow_stat
+dewater_stat
