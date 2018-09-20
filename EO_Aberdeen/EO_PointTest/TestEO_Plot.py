@@ -1,4 +1,4 @@
-from EO_Aberdeen.EO_PointTest import EO_Test
+from EO_Aberdeen.EO_PointTest import EO
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
@@ -10,7 +10,7 @@ avoided_points = np.array([[50, 55],
                            [50, 50]])
 
 # Prepare EO instance
-sol1 = EO_Test.EO(10, False, min_dist=3, avoid_list=avoided_points)
+sol1 = EO.EO(10, False, min_dist=3, avoid_list=avoided_points)
 
 # Prepare plot instance
 fig, ax = plt.subplots()

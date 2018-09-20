@@ -1,4 +1,4 @@
-from EO_Aberdeen.EO_PointTest import EO_Test
+from EO_Aberdeen.EO_PointTest import EO
 import numpy as np
 
 avoided_points = np.array([[20, 20],
@@ -25,7 +25,7 @@ def iterate(self):
 
 
 # Testing the EO_Solution class
-sol1 = EO_Test.EO(10, False, avoid_list=avoided_points)
+sol1 = EO.EO(10, False, avoid_list=avoided_points)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()
@@ -88,9 +88,9 @@ print(sol1.generate_parameter())
 print()
 
 print("Testing generate_possible_point")
-print(EO_Test.generate_possible_point(10, 100, 20, 100))
+print(EO.generate_possible_point(10, 100, 20, 100))
 print()
 
 print("Testing generate_initial_array")
-print(EO_Test.generate_initial_array(0, 100, 0, 100, 5, 1, avoid_list=avoided_points))
+print(EO.generate_initial_array(0, 100, 0, 100, 5, 1, avoid_list=avoided_points))
 print()

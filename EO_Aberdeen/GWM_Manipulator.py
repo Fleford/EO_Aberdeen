@@ -155,7 +155,7 @@ def run_gwm():
     subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
 
 # Tests run_gwm
-test_parameters = np.array([[1, 12, 11],
+test_parameters = np.array([[1, 12, 11], # Index, Row, Column
                             [2, 16, 17],
                             [4, 14, 25]])
 write_supply2decvar(test_parameters)
@@ -164,3 +164,7 @@ print()
 print("Resulting fitness:")
 wells = ["Q1", "Q2", "Q4"]
 print(read_fitness_array(wells))
+
+# Write a function that loads the river cells into an array
+# Input is the directory of the river cell file
+# Output is an array, where each row is a point
