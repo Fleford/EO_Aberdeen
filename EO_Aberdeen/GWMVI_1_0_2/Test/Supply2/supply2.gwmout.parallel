@@ -610,6 +610,6 @@ Maximum Flow Rate      Q2a      Binding    Not Available
     values of the binding constraints computed directly by the flow process 
     to differ from those computed using the linear program.  
 
- Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/09/20 13:02:50
- Elapsed run time: 14.719 Seconds
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/09/20 21:32:15
+ Elapsed run time: 10.879 Seconds
 
