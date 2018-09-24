@@ -154,17 +154,36 @@ def run_gwm():
     print("Copying over resulting files from GWM directory...")
     subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
 
-# Tests run_gwm
-test_parameters = np.array([[1, 12, 11], # Index, Row, Column
-                            [2, 16, 17],
-                            [4, 14, 25]])
-write_supply2decvar(test_parameters)
-run_gwm()
-print()
-print("Resulting fitness:")
-wells = ["Q1", "Q2", "Q4"]
-print(read_fitness_array(wells))
+# # Tests run_gwm
+# test_parameters = np.array([[1, 12, 11], # Index, Row, Column
+#                             [2, 16, 17],
+#                             [4, 14, 25]])
+# write_supply2decvar(test_parameters)
+# run_gwm()
+# print()
+# print("Resulting fitness:")
+# wells = ["Q1", "Q2", "Q4"]
+# print(read_fitness_array(wells))
 
-# Write a function that loads the river cells into an array
-# Input is the directory of the river cell file
-# Output is an array, where each row is a point
+
+def extract_rivercells():
+    # Write a function that loads the river cells into an array
+    # Input is the directory of the river cell file
+    # Output is an array, where each row is a point
+
+    line_cnt = 0
+    with open("supply2.sfr", "r") as f:
+        for line in f:
+            line_cnt = line_cnt + 1
+            line_array = line.split()
+            print(line_array[0])
+
+            if line_array[0] == "#":
+                continue
+
+            print("Ready!")
+
+
+extract_rivercells()
+
+
