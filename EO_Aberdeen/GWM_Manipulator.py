@@ -167,23 +167,42 @@ def run_gwm():
 
 
 def extract_rivercells():
-    # Write a function that loads the river cells into an array
+    # Write a function that loads the river cells from *.sfr file into an array
     # Input is the directory of the river cell file
     # Output is an array, where each row is a point
+    # Note: Duplicate cells are NOT removed
 
     line_cnt = 0
+    n_cells = 0
+    river_cells = []
     with open("supply2.sfr", "r") as f:
         for line in f:
-            line_cnt = line_cnt + 1
             line_array = line.split()
-            print(line_array[0])
 
+            # Ignore start of file comments marked by "#"
             if line_array[0] == "#":
                 continue
 
-            print("Ready!")
+            # Start counting lines of data
+            line_cnt = line_cnt + 1
+
+            # Grab number of lines of data of from the first line
+            if line_cnt == 1:
+                n_cells = int(line_array[0])
+
+            # Grab data from lines in range of n_cells
+            if 1 < line_cnt <= n_cells + 1:
+                row = int(line_array[1])
+                col = int(line_array[2])
+                river_cells.append([row, col])
+
+    # Convert to numpy array
+    river_cells = np.asanyarray(river_cells)
+
+    # Gimme da good stuff
+    return river_cells
 
 
-extract_rivercells()
+print(extract_rivercells())
 
 
