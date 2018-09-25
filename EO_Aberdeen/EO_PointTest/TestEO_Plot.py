@@ -5,9 +5,9 @@ import numpy as np
 
 
 # Prepare avoided points
-avoided_points = np.array([[50, 55],
-                           [50, 56],
-                           [50, 57]])
+avoided_points = np.array([[50, 60],
+                           [50, 55],
+                           [50, 50]])
 
 # Prepare EO instance
 sol1 = EO.EO(10, False, min_dist=3, avoid_list=avoided_points)
