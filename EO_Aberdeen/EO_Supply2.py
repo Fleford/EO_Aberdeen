@@ -1,4 +1,4 @@
-from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
 from EO_PointTest.EO import EO
 import numpy as np
 
@@ -12,12 +12,17 @@ print()
 print("Resulting fitness:")
 wells = ["Q1", "Q2", "Q4"]
 print(read_fitness_array(wells))
+print()
+print("extract_rivercells")
+avoided_points = extract_rivercells()
+print(avoided_points)
 
 # Test EO functions
-avoided_points = np.array([[20, 20],
-                           [80, 80],
-                           [20, 80]])
-sol1 = EO(10, False, avoid_list=avoided_points)
+print()
+# avoided_points = np.array([[20, 20],
+#                            [80, 80],
+#                            [20, 80]])
+sol1 = EO(n_rows=3, x_min=1, x_max=30, y_min=2, y_max=24, avoid_list=avoided_points)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()

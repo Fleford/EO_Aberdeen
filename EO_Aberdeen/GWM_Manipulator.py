@@ -138,17 +138,20 @@ def write_supply2decvar(index_and_parameters_matrix):
 
 def run_gwm():
     # Write a function that runs GWM with new local files and updates local files to be ready for use
+    # Use stdout=subprocess.PIPE to keep subprocess.run quiet
 
     print()
     print("Copying over new files to GWM directory...")
     subprocess.run(r".\Batch_Files\copy_to_gwm", shell=True)
+    # subprocess.run(r".\Batch_Files\copy_to_gwm", stdout=subprocess.PIPE, shell=True)
 
     print()
     print("Running GWM...")
     # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
     # for line in proc.stdout.split('\n'):
     #     print(line)
-    subprocess.run(r".\Batch_Files\start_gwm", shell=True)
+    subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    # subprocess.run(r".\Batch_Files\start_gwm", shell=True)
 
     print()
     print("Copying over resulting files from GWM directory...")
