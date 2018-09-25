@@ -6,8 +6,8 @@ import numpy as np
 
 # Prepare avoided points
 avoided_points = np.array([[50, 55],
-                           [50, 60],
-                           [50, 50]])
+                           [50, 56],
+                           [50, 57]])
 
 # Prepare EO instance
 sol1 = EO.EO(10, False, min_dist=3, avoid_list=avoided_points)
@@ -41,8 +41,8 @@ def update(i):
 
     # Plot result
     ax.clear()
-    ax.plot(sol1.solution[:, 1], sol1.solution[:, 2], 'bs')
-    ax.plot(sol1.avoid_list[:, 0], sol1.avoid_list[:, 1], 'rs')
+    ax.plot(sol1.solution[:, 1], sol1.solution[:, 2], 'bo')
+    ax.plot(sol1.avoid_list[:, 0], sol1.avoid_list[:, 1], 'ro')
     ax.set_title("Gen = {}, BestSum = {}".format(i, sol1.total_fitness()))
     plt.axis([0, 100, 0, 100])
 
