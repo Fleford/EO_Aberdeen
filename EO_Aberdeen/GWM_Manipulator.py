@@ -172,7 +172,7 @@ def run_gwm():
 def extract_rivercells():
     # Write a function that loads the river cells from *.sfr file into an array
     # Input is the directory of the river cell file
-    # Output is an array, where each row is a point
+    # Output is an array, where each row is a point, [row, col]
     # Note: Duplicate cells are NOT removed
 
     line_cnt = 0
