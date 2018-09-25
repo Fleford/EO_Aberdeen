@@ -48,5 +48,5 @@ def update(i):
 
 
 # Animation
-ani = animation.FuncAnimation(fig, update, interval=1)
+ani = animation.FuncAnimation(fig, update, interval=500)
 plt.show()
