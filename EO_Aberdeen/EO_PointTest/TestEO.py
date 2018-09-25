@@ -1,4 +1,4 @@
-from EO_Aberdeen.EO_SupplyTest import EO
+from EO_Aberdeen.EO_PointTest import EO
 import numpy as np
 
 avoided_points = np.array([[20, 20],

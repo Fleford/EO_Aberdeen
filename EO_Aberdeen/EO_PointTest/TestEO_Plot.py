@@ -1,4 +1,4 @@
-from EO_Aberdeen.EO_SupplyTest import EO
+from EO_Aberdeen.EO_PointTest import EO
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
