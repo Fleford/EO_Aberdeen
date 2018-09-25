@@ -205,4 +205,10 @@ def extract_rivercells():
 # Tests extract_rivercells
 print(extract_rivercells())
 
+import matplotlib.pyplot as plt
+# Prepare plot instance
+fig, ax = plt.subplots()
 
+ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs")
+plt.axis([0, 30, 20, 0])
+plt.show()
