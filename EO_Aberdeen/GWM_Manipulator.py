@@ -202,13 +202,14 @@ def extract_rivercells():
     # Gimme da good stuff
     return river_cells
 
-# Tests extract_rivercells
-print(extract_rivercells())
+# # Tests extract_rivercells
+# print(extract_rivercells())
+#
+# # Prepare plot instance for extract_rivercells
+# import matplotlib.pyplot as plt
+# fig, ax = plt.subplots()
+# ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs", markersize=12)
+# plt.axis([1, 30, 25, 1])
+# plt.show()
 
-import matplotlib.pyplot as plt
-# Prepare plot instance
-fig, ax = plt.subplots()
 
-ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs", markersize=12)
-plt.axis([0, 30, 20, 0])
-plt.show()
