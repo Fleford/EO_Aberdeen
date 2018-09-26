@@ -97,11 +97,14 @@ def read_fitness_array(list_of_well_names):
 
 
 def write_supply2decvar(index_and_parameters_matrix):
-    # A function (or functions) that can output a decvar file using a template, provided a parameter array
+    # A function (or functions) that can output a decvar file using a template, provided an index-parameter array
     # The index array is in included with the index_and_parameters_matrix
 
     # Sort parameter rows by the index matrix
     index_and_parameters_matrix = index_and_parameters_matrix[index_and_parameters_matrix[:, 0].argsort()]
+
+    # Recast matrix as dtype = int
+    index_and_parameters_matrix = index_and_parameters_matrix.astype(int)
 
     with open("supply2.decvartp", "r") as read_f:
         with open("supply2.decvar", "w") as write_f:
@@ -156,6 +159,8 @@ def run_gwm():
     print()
     print("Copying over resulting files from GWM directory...")
     subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
+
+    print()
 
 # # Tests run_gwm
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column

@@ -69,7 +69,8 @@ class EO(object):
 
     def update_fitness(self, fitness):
         """
-        Modifies the solution matrix with the updated fitness
+        Modifies the solution matrix with the updated fitness.
+        Adds a given fitness vector the solution matrix
         :return:
         """
 
@@ -104,6 +105,15 @@ class EO(object):
         # Sort the solution matrix by fitness
         self.solution = self.solution[np.argsort(self.solution[:, self.solution.shape[1] - 1])]
 
+    def sort_index(self):
+        """
+        Modifies the solution matrix with rows sorted by index matrix value,
+        with the first row having the smallest index value
+        :return:
+        """
+        # Sort the solution matrix by fitness
+        self.solution = self.solution[np.argsort(self.solution[:, 0])]
+
     def remove_weakest(self):
         """
         Modifies the solution matrix with the rows of lowest fitness removed.
@@ -118,6 +128,9 @@ class EO(object):
         Uses the parameter matrix to return a new random parameter
         :return:
         """
+        # Sort solution matrix by fitness (first row = weakest fitness)
+        self.sort_fitness()
+
         # Parse out parameter matrix and dimensions
         parameters = self.parameters()
         parameters_rows, parameters_cols = parameters.shape
