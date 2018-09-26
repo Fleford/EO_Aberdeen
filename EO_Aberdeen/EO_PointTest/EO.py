@@ -120,7 +120,13 @@ class EO(object):
         At least the lowest fitness row is removed.
         :return:
         """
+        # Sort solution matrix by fitness first
+        self.sort_fitness()
+
+        # Save the index of the row to be removed
         self.replaced_row = self.solution[0, 0]
+
+        # Remove row
         self.solution = np.delete(self.solution, 0, 0)
 
     def generate_parameter(self):

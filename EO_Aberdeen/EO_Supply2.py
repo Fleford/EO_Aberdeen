@@ -60,7 +60,7 @@ def update_fitness_matrix(self):
     write_supply2decvar(index_parameter_matrix)
 
     # Run GWM
-    run_gwm()
+    # run_gwm()
 
     # Define ordered list of wells
     wells = ["Q1", "Q2", "Q4"]
@@ -94,7 +94,9 @@ print("sol1.fitness_ready? " + str(sol1.fitness_ready))
 print("Update Best")
 sol1.update_best()
 print(sol1.best_solution.solution)
-
 print()
 
 # Based on results, generate a new parameter matrix
+print("Remove weakest")
+sol1.remove_weakest()
+print(sol1.solution)
