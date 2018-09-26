@@ -50,10 +50,11 @@ sol1.solution[0, 0] = 1
 sol1.solution[1, 0] = 2
 sol1.solution[2, 0] = 4
 
-# # Calculate fitness matrix
-def calculate_fitness(self):
+
+# # updates the solution matrix with new fitness values
+def update_fitness_matrix(self):
     # Parse out index-parameter matrix
-    index_parameter_matrix = np.delete(sol1.solution, 3, 1)
+    index_parameter_matrix = np.delete(self.solution, 3, 1)
 
     # Prepare new GWM files using the index-parameter matrix
     write_supply2decvar(index_parameter_matrix)
@@ -67,18 +68,24 @@ def calculate_fitness(self):
     # Sort solution matrix by index (same as ordered list of wells)
     self.sort_index()
 
-    # Read in data and return a new fitness vector
-    return read_fitness_array(wells)
+    # Read in the new fitness vector and apply it to the solution matrix
+    self.update_fitness(read_fitness_array(wells))
 
-# Update the solution matrix
-print(sol1.solution)
-print(sol1.fitness_ready)
-sol1.update_fitness(calculate_fitness(sol1))
-print(sol1.solution)
-print(sol1.fitness_ready)
-sol1.sort_index()
-print(sol1.solution)
+    # Convert the index-parameter part of the solution matrix into ints
+    # (USELESS since np array must be in one datatype)
+    # print(self.solution)
+    # index_parameter_matrix = np.delete(self.solution, 3, 1).astype(int)
+    # fitness_matrix = self.fitness().reshape(-1, 1)
+    # print(index_parameter_matrix)
+    # print(fitness_matrix)
+    # self.solution = np.append(index_parameter_matrix, fitness_matrix, axis=1)
+    # print(self.solution)
 
+
+# Update the fitness matrix
+print(sol1.solution)
+update_fitness_matrix(sol1)
+print(sol1.solution)
 # Generate new fitness vector
 # center_point = np.array([50, 50])
 # fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize

@@ -82,7 +82,7 @@ class EO(object):
         self.eval_count += 1
 
         # Sort solution matrix by fitness
-        self.sort_fitness()
+        # self.sort_fitness()
 
     def check_fitness(self):
         """
