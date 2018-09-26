@@ -51,7 +51,7 @@ sol1.solution[1, 0] = 2
 sol1.solution[2, 0] = 4
 
 
-# # updates the solution matrix with new fitness values
+# Updates the solution matrix with new fitness values
 def update_fitness_matrix(self):
     # Parse out index-parameter matrix
     index_parameter_matrix = np.delete(self.solution, 3, 1)
@@ -82,10 +82,19 @@ def update_fitness_matrix(self):
     # print(self.solution)
 
 
-# Update the fitness matrix
+# Update the fitness matrix (first run)
+print("sol1.solution")
 print(sol1.solution)
+print("sol1.fitness_ready? " + str(sol1.fitness_ready))
 update_fitness_matrix(sol1)
+print("After update_fitness_matrix(sol1):")
+print("sol1.solution")
 print(sol1.solution)
-# Generate new fitness vector
-# center_point = np.array([50, 50])
-# fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
+print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+print("Update Best")
+sol1.update_best()
+print(sol1.best_solution.solution)
+
+print()
+
+# Based on results, generate a new parameter matrix

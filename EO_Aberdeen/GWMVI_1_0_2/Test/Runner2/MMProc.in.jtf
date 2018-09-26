@@ -25,7 +25,7 @@ none     # ITEM 8: BINARY FILE FOR FLOW
 SFR-FLOW  supply2sf.bin     # ITEM 10: BINARY FILE FOR SFR-FLOW
            7      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1         5        18  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
+Q1         1         8        16  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -38,7 +38,7 @@ Q1         1         5        18  %Q1                    %  # Item 13A: Name Lay
     1
     1
     1
-Q2a         1         5         2  %Q2a                   %  # Item 13A: Name Lay Row Col dummyQ
+Q2a         1        21        24  %Q2a                   %  # Item 13A: Name Lay Row Col dummyQ
     1
     0
     0
@@ -51,7 +51,7 @@ Q2a         1         5         2  %Q2a                   %  # Item 13A: Name La
     0
     0
     0
-Q2b         1         5         2  %Q2b                   %  # Item 13A: Name Lay Row Col dummyQ
+Q2b         1        21        24  %Q2b                   %  # Item 13A: Name Lay Row Col dummyQ
     0
     1
     0
@@ -64,7 +64,7 @@ Q2b         1         5         2  %Q2b                   %  # Item 13A: Name La
     1
     0
     0
-Q2c         1         5         2  %Q2c                   %  # Item 13A: Name Lay Row Col dummyQ
+Q2c         1        21        24  %Q2c                   %  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     1
@@ -77,7 +77,7 @@ Q2c         1         5         2  %Q2c                   %  # Item 13A: Name La
     0
     1
     0
-Q2d         1         5         2  %Q2d                   %  # Item 13A: Name Lay Row Col dummyQ
+Q2d         1        21        24  %Q2d                   %  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
@@ -90,7 +90,7 @@ Q2d         1         5         2  %Q2d                   %  # Item 13A: Name La
     0
     0
     1
-Q4a         1        23         5  %Q4a                   %  # Item 13A: Name Lay Row Col dummyQ
+Q4a         1        23        11  %Q4a                   %  # Item 13A: Name Lay Row Col dummyQ
     0
     1
     0
@@ -103,7 +103,7 @@ Q4a         1        23         5  %Q4a                   %  # Item 13A: Name La
     1
     0
     0
-Q4b         1        23         5  %Q4b                   %  # Item 13A: Name Lay Row Col dummyQ
+Q4b         1        23        11  %Q4b                   %  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
