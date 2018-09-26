@@ -226,9 +226,9 @@ def check_dist_constraint(given_point, array_of_points, min_dist, avoid_list=np.
         print("No avoid list provided for check_dist_constraint")
     else:
         # Include avoid list into array of checked points
-        array_of_points = np.append(array_of_points, avoid_list, axis=0)
+        array_of_points_all = np.append(array_of_points, avoid_list, axis=0)
 
-    return nearest_dist(array_of_points, given_point) >= min_dist
+    return nearest_dist(array_of_points_all, given_point) >= min_dist
 
 
 def generate_possible_point(x_min, x_max, y_min, y_max):
@@ -252,10 +252,15 @@ def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist, avoid_l
     if avoid_list.shape[1] == 0:
         print("No avoid list provided for generate_initial_array ")
 
-    # Generates an initial array and initial test point
+    # Generates an initial, valid array
     initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
+    while not nearest_dist(avoid_list, initial_array[0]) >= min_dist:
+        initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
+
+    # Generate an initial test point
     new_point = generate_possible_point(x_min, x_max, y_min, y_max)
 
+    # Generate the rest of the points
     for i in range(0, n_rows - 1):
         # Generate valid point
         while not check_dist_constraint(new_point, initial_array, min_dist, avoid_list):

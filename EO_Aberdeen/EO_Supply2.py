@@ -1,5 +1,5 @@
 from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
-from EO_PointTest.EO import EO
+from EO_PointTest.EO import EO, generate_initial_array, nearest_dist
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,11 +20,13 @@ print(avoided_points)
 
 # Test EO functions
 # NOTICE: for EO, x is model row and y is model column
-sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=1, y_max=30, avoid_list=avoided_points)
+sol1 = EO(n_rows=3, x_min=8, x_max=19, y_min=1, y_max=30, avoid_list=avoided_points)
 print()
 print(sol1.solution)
 print(sol1.fitness_ready)
+print(sol1.min_dist)
 print()
+
 
 # Testing Plots
 # Prepare plot instance for extract_rivercells
