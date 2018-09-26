@@ -20,7 +20,7 @@ print(avoided_points)
 
 # Test EO functions
 # NOTICE: for EO, x is model row and y is model column
-sol1 = EO(n_rows=3, x_min=8, x_max=19, y_min=1, y_max=30, avoid_list=avoided_points)
+sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=1, y_max=30, avoid_list=avoided_points)
 print()
 print(sol1.solution)
 print(sol1.fitness_ready)
