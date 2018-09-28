@@ -1,0 +1,145 @@
+"..\..\bin\mf2005dbl ..\data\supply2.nam"             # Item 1: Command
+..\data\supply2.nam     # ITEM 2: NAMEFILE NAME
+supply2.lst     # ITEM 2A: LISTFILE NAME
+           1          25          30          12
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+   0.000000000000000                                  # ITEM 3: HNOFLO
+                   1                                  # ITEM 4: IFREFM
+   0.000000000000000                                  # ITEM 5:  HDRY
+  0.1000000000000000E-05                              # ITEM 6: HCLOSE
+supply2hd.bin     # ITEM 7: BINARY FILE FOR HEADS
+none     # ITEM 8: BINARY FILE FOR FLOW
+                   1                                  # ITEM 9: NABF - Number of other binary files
+SFR-FLOW  supply2sf.bin     # ITEM 10: BINARY FILE FOR SFR-FLOW
+           7      # ITEM 11: NMQWEL -- Number of managed WEL cells
+supply2.wel     # ITEM 12: WELL FILE NAME
+Q1         1        23        18   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+Q2a         1        18        17   -3.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+Q2b         1        18        17    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+Q2c         1        18        17   -2.969286005654636E+004  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+Q2d         1        18        17    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+Q4a         1        23        16   -3.250075000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+Q4b         1        23        16   -3.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+    0
+    0
+    0
+    1
+           0      # ITEM 14: NMQMNW -- Number of managed MNW wells
+                  12                                # ITEM 17: NSV - number of simulated values
+S01_9       SFR-FLOW
+         1        14         9
+S01_10      SFR-FLOW
+         1        14        10
+S01_11      SFR-FLOW
+         1        14        11
+S01_12      SFR-FLOW
+         1        14        12
+S02_11      SFR-FLOW
+         1        21        11
+S02_12      SFR-FLOW
+         1        21        12
+S03_9       SFR-FLOW
+         2         8         9
+S03_10      SFR-FLOW
+         2         8        10
+S03_11      SFR-FLOW
+         2         8        11
+S03_12      SFR-FLOW
+         2         8        12
+S04_11      SFR-FLOW
+         3         5        11
+S04_12      SFR-FLOW
+         3         5        12
+..\data\supply2.sfr     # ITEM 19: SFR INPUT FILE
+ 0.1000E-04             # ITEM 21: EPSQNET

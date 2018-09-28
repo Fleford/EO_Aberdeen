@@ -1,4 +1,5 @@
 import numpy as np
+import subprocess
 
 
 def extract_contributions():
@@ -96,11 +97,14 @@ def read_fitness_array(list_of_well_names):
 
 
 def write_supply2decvar(index_and_parameters_matrix):
-    # A function (or functions) that can output a decvar file using a template, provided a parameter array
+    # A function (or functions) that can output a decvar file using a template, provided an index-parameter array
     # The index array is in included with the index_and_parameters_matrix
 
     # Sort parameter rows by the index matrix
     index_and_parameters_matrix = index_and_parameters_matrix[index_and_parameters_matrix[:, 0].argsort()]
+
+    # Recast matrix as dtype = int
+    index_and_parameters_matrix = index_and_parameters_matrix.astype(int)
 
     with open("supply2.decvartp", "r") as read_f:
         with open("supply2.decvar", "w") as write_f:
@@ -128,11 +132,92 @@ def write_supply2decvar(index_and_parameters_matrix):
                 # Write new line to file
                 write_f.write(new_line)
 
-# # Tests the write_supply2decvar
-# test_parameters = np.array([[1, 12, 15],
-#                             [2, 26, 23],
-#                             [4, 13, 13]])
+# Tests the write_supply2decvar
+# test_parameters = np.array([[1, 12, 11],
+#                             [2, 16, 17],
+#                             [4, 14, 25]])
 # write_supply2decvar(test_parameters)
 
 
-# TODO: Write a function that runs GWM (and returns true once process is complete?)
+def run_gwm():
+    # Write a function that runs GWM with new local files and updates local files to be ready for use
+    # Use stdout=subprocess.PIPE to keep subprocess.run quiet
+
+    print()
+    print("Copying over new files to GWM directory...")
+    subprocess.run(r".\Batch_Files\copy_to_gwm", shell=True)
+    # subprocess.run(r".\Batch_Files\copy_to_gwm", stdout=subprocess.PIPE, shell=True)
+
+    print()
+    print("Running GWM...")
+    # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
+    # for line in proc.stdout.split('\n'):
+    #     print(line)
+    subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    # subprocess.run(r".\Batch_Files\start_gwm", shell=True)
+
+    print()
+    print("Copying over resulting files from GWM directory...")
+    subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
+
+    print()
+
+# # Tests run_gwm
+# test_parameters = np.array([[1, 12, 11], # Index, Row, Column
+#                             [2, 16, 17],
+#                             [4, 14, 25]])
+# write_supply2decvar(test_parameters)
+# run_gwm()
+# print()
+# print("Resulting fitness:")
+# wells = ["Q1", "Q2", "Q4"]
+# print(read_fitness_array(wells))
+
+
+def extract_rivercells():
+    # Write a function that loads the river cells from *.sfr file into an array
+    # Input is the directory of the river cell file
+    # Output is an array, where each row is a point, [row, col]
+    # Note: Duplicate cells are NOT removed
+
+    line_cnt = 0
+    n_cells = 0
+    river_cells = []
+    with open("supply2.sfr", "r") as f:
+        for line in f:
+            line_array = line.split()
+
+            # Ignore start of file comments marked by "#"
+            if line_array[0] == "#":
+                continue
+
+            # Start counting lines of data
+            line_cnt = line_cnt + 1
+
+            # Grab number of lines of data of from the first line
+            if line_cnt == 1:
+                n_cells = int(line_array[0])
+
+            # Grab data from lines in range of n_cells
+            if 1 < line_cnt <= n_cells + 1:
+                row = int(line_array[1])
+                col = int(line_array[2])
+                river_cells.append([row, col])
+
+    # Convert to numpy array
+    river_cells = np.asanyarray(river_cells)
+
+    # Gimme da good stuff
+    return river_cells
+
+# # Tests extract_rivercells
+# print(extract_rivercells())
+#
+# # Prepare plot instance for extract_rivercells
+# import matplotlib.pyplot as plt
+# fig, ax = plt.subplots()
+# ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs", markersize=12)
+# plt.axis([1, 30, 25, 1])
+# plt.show()
+
+
