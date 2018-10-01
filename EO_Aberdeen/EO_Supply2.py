@@ -106,7 +106,7 @@ print()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 10):
+for x in range(0, 20):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
@@ -135,7 +135,8 @@ for x in range(0, 10):
     ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
     ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
     ax.set_title("Iteration = {}".format(x + 1))
-    plt.axis([2, 29, 24, 2])
+    plt.axis([1, 30, 25, 1])
     plt.pause(0.1)
 plt.show()
 
+# Implement a write-to-textfile option
