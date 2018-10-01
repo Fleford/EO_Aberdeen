@@ -43,7 +43,7 @@ import matplotlib.pyplot as plt
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
+sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
 
 # Rename index values
 sol1.solution[0, 0] = 1

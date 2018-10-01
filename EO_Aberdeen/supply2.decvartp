@@ -7,8 +7,8 @@
  Q2b 1  1  xx  yy  W  Y  2:6:10
  Q2c 1  1  xx  yy  W  Y  3:7:11
  Q2d 1  1  xx  yy  W  Y  4:8:12
- Q4a 1  1  xx  yy  W  Y  2:6:10:1:5:9
- Q4b 1  1  xx  yy  W  Y  4:8:12:3:7:11
+ Q4a 1  1  xx  yy  W  Y  1-6
+ Q4b 1  1  xx  yy  W  Y  7-12
  Im9         IM     9             #4-EVNAME ETYPE ESP 
  Im10        IM    10
  Im11        IM    11
