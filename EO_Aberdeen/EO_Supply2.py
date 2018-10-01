@@ -82,6 +82,9 @@ def update_fitness_matrix(self):
     # print(self.solution)
 
 
+# Prepare plot instances
+fig, ax = plt.subplots()
+
 # Update the fitness matrix (first run)
 print("Initial Parameters")
 print("sol1.solution")
@@ -101,26 +104,38 @@ print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
 print()
 
+# Start of loop
 # Based on results, generate a new parameter matrix
-print("Remove weakest")
-sol1.remove_weakest()
-print(sol1.solution)
-print()
+for x in range(0, 10):
+    print("Remove weakest")
+    sol1.remove_weakest()
+    print(sol1.solution)
+    print()
 
-print("Generate and Append a new row")
-sol1.append_row(sol1.generate_row())
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print()
+    print("Generate and Append a new row")
+    sol1.append_row(sol1.generate_row())
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print()
 
-print("update_fitness_matrix(sol1) with new parameter data")
-update_fitness_matrix(sol1)
-print("sol1.solution")
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print("Update Best")
-sol1.update_best()
-print(sol1.best_solution.solution)
-print("sol1.best_solution.total_fitness()")
-print(sol1.best_solution.total_fitness())
-print()
+    print("update_fitness_matrix(sol1) with new parameter data")
+    update_fitness_matrix(sol1)
+    print("sol1.solution")
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print("Update Best")
+    sol1.update_best()
+    print(sol1.best_solution.solution)
+    print("sol1.best_solution.total_fitness()")
+    print(sol1.best_solution.total_fitness())
+    print()
+
+    print("Plotting the result")
+    ax.clear()
+    ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+    ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
+    ax.set_title("Iteration = {}".format(x + 1))
+    plt.axis([2, 29, 24, 2])
+    plt.pause(0.1)
+plt.show()
+

@@ -157,7 +157,7 @@ class EO(object):
         u = rand_dist * u
 
         # Return a new point using lowest fit row
-        new_point = parameters[-1] + np.random.rand() * u
+        new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u
 
         # Clip new point to boundary and round components
