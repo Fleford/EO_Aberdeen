@@ -1,4 +1,13 @@
 #SUPPLY2 Sample Problem, SUMCON file
+#Add constraints for:
+#Q1, Q4a, Q2a
+#Q1, Q4a, Q2b
+#Q1, Q4a, Q2c
+#Q1, Q4a, Q2d
+#Q1, Q4b, Q2a
+#Q1, Q4b, Q2b
+#Q1, Q4b, Q2c
+#Q1, Q4b, Q2d
  1                     #1-IPRN
  16                    #2-SMCNUM
  p01u 3 le 80000.      #3a-SMCNAME NTERMS TYPE RHS
