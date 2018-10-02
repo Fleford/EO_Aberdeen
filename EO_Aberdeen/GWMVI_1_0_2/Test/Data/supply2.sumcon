@@ -1,9 +1,5 @@
 #SUPPLY2 Sample Problem, SUMCON file
-#Add constraints for:
-#Q1, Q4a, Q2a
-#Q1, Q4a, Q2b
-#Q1, Q4b, Q2a
-#Q1, Q4b, Q2b
+#Notice that SMCNUM is set to zero, for no constraints
  1                     #1-IPRN
  0                    #2-SMCNUM
  paau 3 le 80000.      #3a-SMCNAME NTERMS TYPE RHS

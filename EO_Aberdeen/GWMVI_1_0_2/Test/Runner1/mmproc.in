@@ -24,7 +24,7 @@ none     # ITEM 8: BINARY FILE FOR FLOW
 SFR-FLOW  supply2sf.bin     # ITEM 10: BINARY FILE FOR SFR-FLOW
            5      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1        19        16   -2.813607747134574E+004  # Item 13A: Name Lay Row Col dummyQ
+Q1         1         4         5   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -37,33 +37,7 @@ Q1         1        19        16   -2.813607747134574E+004  # Item 13A: Name Lay
     1
     1
     1
-Q2a         1         7        26   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
-    1
-    1
-    1
-    1
-    1
-    1
-    0
-    0
-    0
-    0
-    0
-    0
-Q2b         1         7        26   -5.189849491079483E+003  # Item 13A: Name Lay Row Col dummyQ
-    0
-    0
-    0
-    0
-    0
-    0
-    1
-    1
-    1
-    1
-    1
-    1
-Q4a         1        22        20   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q2a         1         2        11   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -76,7 +50,33 @@ Q4a         1        22        20   -5.000000000000000E+004  # Item 13A: Name La
     0
     0
     0
-Q4b         1        22        20   -5.250075000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q2b         1         2        11   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
+    0
+    0
+    0
+    1
+    1
+    1
+    1
+    1
+    1
+Q4a         1         6        11   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    0
+    0
+    0
+    0
+    0
+    0
+Q4b         1         6        11   -1.913542063372674E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
