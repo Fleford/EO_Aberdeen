@@ -1,7 +1,8 @@
-from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
-from EO_PointTest.EO import EO
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
+from EO_PointTest.EO import EO
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -158,3 +159,4 @@ plt.show()
 # Implement a write-to-textfile option
 # Implement annotated wells
 # Balance the weight of the wells
+# Implement drawdown constraints and K heterogeneity
