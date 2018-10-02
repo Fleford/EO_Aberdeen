@@ -16,7 +16,7 @@ HEADFILE: supply2hd.bin
 FLOWBUDFILE: none
 NABF: 1
 Binary budget file containing data of type SFR-FLOW:  supply2sf.bin
-NMQWEL:     7
+NMQWEL:     5
 WELFILE: supply2.wel
  #  WEL file specifying no wells.
  #

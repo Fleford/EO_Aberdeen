@@ -43,12 +43,15 @@ import matplotlib.pyplot as plt
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
+sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
 
 # Rename index values
 sol1.solution[0, 0] = 1
 sol1.solution[1, 0] = 2
 sol1.solution[2, 0] = 4
+
+# Load in initial parameters
+
 
 
 # Updates the solution matrix with new fitness values
@@ -104,9 +107,17 @@ print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
 print()
 
+print("Plotting the result")
+ax.clear()
+ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
+ax.set_title("Iteration = {}, Fitness = {}".format(0, sol1.total_fitness()))
+plt.axis([1, 30, 25, 1])
+plt.pause(0.1)
+
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 10):
+for x in range(0, 2):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
@@ -123,6 +134,7 @@ for x in range(0, 10):
     print("sol1.solution")
     print(sol1.solution)
     print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print("sol1.fitness = " + str(sol1.total_fitness()))
     print("Update Best")
     sol1.update_best()
     print(sol1.best_solution.solution)
