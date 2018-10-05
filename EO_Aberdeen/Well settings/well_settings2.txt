@@ -1,0 +1,73 @@
+#SUPPLY2 Sample Problem, DECVAR file
+#August 14, 2006
+ 1 0                              #1-IPRN  GWMWFILE
+ 5 0 0                            #2-NFVAR NEVAR NBVAR
+ Q1  1  1  xx  yy  W  Y  1-12     #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q2a 1  1  xx  yy  W  Y  1-6
+ Q2b 1  1  xx  yy  W  Y  7-12
+ Q4a 1  1  xx  yy  W  Y  1-6
+ Q4b 1  1  xx  yy  W  Y  7-12
+
+
+
+#SUPPLY2 Sample Problem, OBJFNC file
+#August 14, 2006
+#Best score was 164250
+ 1             #1-IPRN
+ MAX  WSDV     #2-OBJTYP FNTYP
+ 5  0  0       #3-NFVOBJ NEVOBJ  NBVOBJ
+ Q1  0.001     #4-FVNAME  FVOBJC
+ Q2a 0.001
+ Q2b 0.001
+ Q4a 0.001
+ Q4b 0.001
+
+
+
+#SUPPLY2 Sample Problem, VARCON file
+#August 14, 2006
+ 1                        #1-IPRN
+ Q1  0.0  5.0d4  0.0D2    #2-FVNAME FVMIN FVMAX FVREF
+ Q2a 0.0  5.0d4  0.0D2
+ Q2b 0.0  5.0d4  0.0D2
+ Q4a 0.0  5.0d4  0.0D2
+ Q4b 0.0  5.0d4  0.0D2
+
+
+
+#SUPPLY2 Sample Problem, SUMCON file
+#Notice that SMCNUM is set to zero, for no constraints
+ 1                     #1-IPRN
+ 0                    #2-SMCNUM
+ paau 3 le 80000.      #3a-SMCNAME NTERMS TYPE RHS
+  Q1  1.0              #3b-GVNAME GVCOEFF
+  Q2a 1.0
+  Q4a 1.0
+ paal 3 ge 30000.
+  Q1  1.0
+  Q2a 1.0
+  Q4a 1.0
+ pbau 3 le 80000.
+  Q1  1.0
+  Q2b 1.0
+  Q4a 1.0
+ pbal 3 ge 30000.
+  Q1  1.0
+  Q2b 1.0
+  Q4a 1.0
+ pabu 3 le 80000.      #3a-SMCNAME NTERMS TYPE RHS
+  Q1  1.0              #3b-GVNAME GVCOEFF
+  Q2a 1.0
+  Q4b 1.0
+ pabl 3 ge 30000.
+  Q1  1.0
+  Q2a 1.0
+  Q4b 1.0
+ pbbu 3 le 80000.
+  Q1  1.0
+  Q2b 1.0
+  Q4b 1.0
+ pbbl 3 ge 30000.
+  Q1  1.0
+  Q2b 1.0
+  Q4b 1.0

@@ -16,10 +16,8 @@
  Q1              0.00000        0.00000        50000.0           1
  Q2a             0.00000        0.00000        50000.0           2
  Q2b             0.00000        0.00000        50000.0           3
- Q2c             0.00000        0.00000        50000.0           4
- Q2d             0.00000        0.00000        50000.0           5
- Q4a             0.00000        0.00000        50000.0           6
- Q4b             0.00000        0.00000        50000.0           7
+ Q4a             0.00000        0.00000        50000.0           4
+ Q4b             0.00000        0.00000        50000.0           5
 
  PREDICTIONS
   Total number of predictions read----------    14
@@ -98,12 +96,6 @@
  Q2b             0.0000         -10000.         -10000.          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2c             0.0000         -10000.         -10000.          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2d             0.0000         -10000.         -10000.          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q4a             0.0000         -10000.         -10000.          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
@@ -121,51 +113,16 @@
  Q1             -50000.         -55000.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2a            -30000.         -35000.         -5000.5          FORWARD 
+ Q2a            -50000.         -55000.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2b             0.0000         -5000.5         -5000.5          FORWARD 
+ Q2b            -50000.         -55000.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2c            -29692.         -34693.         -5000.5          FORWARD 
+ Q4a            -50000.         -55000.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2d             0.0000         -5000.5         -5000.5          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4a            -30000.         -35000.         -5000.5          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4b            -30000.         -35000.         -5000.5          FORWARD 
-
- Job of current iteration of Control Loop is: SOLVE_GWM
-
- Job of current iteration of Control Loop is: REPEAT
-
- Job of current iteration of Control Loop is: FORWARD
-
- Job of current iteration of Control Loop is: SENSITIVITY
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -50000.         -52501.         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2a            -30000.         -32501.         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2b             0.0000         -2500.8         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2c            -29693.         -32194.         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2d             0.0000         -2500.8         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4a            -30000.         -32501.         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4b            -30000.         -32501.         -2500.8          FORWARD 
+ Q4b            -50000.         -55000.         -5000.5          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 

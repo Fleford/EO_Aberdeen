@@ -1,5 +1,6 @@
-import numpy as np
 import copy
+
+import numpy as np
 
 
 class EO(object):
@@ -142,8 +143,8 @@ class EO(object):
         parameters_rows, parameters_cols = parameters.shape
 
         # Get a random distance between two unique and random points
-        # n1 = np.random.randint(parameters_rows)
-        n1 = -1  # Pivot from the best point
+        n1 = np.random.randint(parameters_rows)
+        # n1 = -1  # Pivot from the best point
         n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
         r1 = parameters[n1]
         r2 = parameters[n2]
@@ -156,8 +157,8 @@ class EO(object):
         # Scale random unit vector by the rand_dist
         u = rand_dist * u
 
-        # Return a new point using lowest fit row
-        new_point = parameters[-1] + np.random.rand() * u
+        # Return a new point using lowest fit row, [0]
+        new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u
 
         # Clip new point to boundary and round components

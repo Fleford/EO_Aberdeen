@@ -23,9 +23,9 @@ supply2hd.bin     # ITEM 7: BINARY FILE FOR HEADS
 none     # ITEM 8: BINARY FILE FOR FLOW
                    1                                  # ITEM 9: NABF - Number of other binary files
 SFR-FLOW  supply2sf.bin     # ITEM 10: BINARY FILE FOR SFR-FLOW
-           7      # ITEM 11: NMQWEL -- Number of managed WEL cells
+           5      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1        23        18  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
+Q1         1         4         8  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -38,83 +38,57 @@ Q1         1        23        18  %Q1                    %  # Item 13A: Name Lay
     1
     1
     1
-Q2a         1        18        17  %Q2a                   %  # Item 13A: Name Lay Row Col dummyQ
+Q2a         1         2         9  %Q2a                   %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
     1
     0
     0
     0
-    1
+    0
+    0
+    0
+Q2b         1         2         9  %Q2b                   %  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
     0
     0
     0
     1
-    0
-    0
-    0
-Q2b         1        18        17  %Q2b                   %  # Item 13A: Name Lay Row Col dummyQ
-    0
+    1
+    1
+    1
+    1
+    1
+Q4a         1         2         7  %Q4a                   %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
     1
     0
     0
     0
-    1
+    0
+    0
+    0
+Q4b         1         2         7  %Q4b                   %  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
     0
     0
     0
     1
-    0
-    0
-Q2c         1        18        17  %Q2c                   %  # Item 13A: Name Lay Row Col dummyQ
-    0
-    0
     1
-    0
-    0
-    0
     1
-    0
-    0
-    0
     1
-    0
-Q2d         1        18        17  %Q2d                   %  # Item 13A: Name Lay Row Col dummyQ
-    0
-    0
-    0
     1
-    0
-    0
-    0
-    1
-    0
-    0
-    0
-    1
-Q4a         1        23        16  %Q4a                   %  # Item 13A: Name Lay Row Col dummyQ
-    0
-    1
-    0
-    0
-    0
-    1
-    0
-    0
-    0
-    1
-    0
-    0
-Q4b         1        23        16  %Q4b                   %  # Item 13A: Name Lay Row Col dummyQ
-    0
-    0
-    0
-    1
-    0
-    0
-    0
-    1
-    0
-    0
-    0
     1
            0      # ITEM 14: NMQMNW -- Number of managed MNW wells
                   12                                # ITEM 17: NSV - number of simulated values

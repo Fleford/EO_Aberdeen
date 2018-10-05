@@ -1,7 +1,8 @@
-from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
-from EO_PointTest.EO import EO
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
+
+from EO_PointTest.EO import EO
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -43,14 +44,21 @@ import matplotlib.pyplot as plt
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells)
+sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
 
 # Rename index values
 sol1.solution[0, 0] = 1
 sol1.solution[1, 0] = 2
 sol1.solution[2, 0] = 4
 
+# Load in initial parameters
+initial_solution = np.array([[1, 12, 11, 0], # Index, Row, Column
+                             [2, 16, 17, 0],
+                             [4, 14, 25, 0]])
+sol1.solution = initial_solution
 
+
+# Run through first iteration
 # Updates the solution matrix with new fitness values
 def update_fitness_matrix(self):
     # Parse out index-parameter matrix
@@ -82,6 +90,9 @@ def update_fitness_matrix(self):
     # print(self.solution)
 
 
+# Prepare plot instances
+fig, ax = plt.subplots()
+
 # Update the fitness matrix (first run)
 print("Initial Parameters")
 print("sol1.solution")
@@ -101,26 +112,51 @@ print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
 print()
 
+print("Plotting the result")
+ax.clear()
+ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
+ax.set_title("Iteration = {}, Fitness = {}".format(0, sol1.total_fitness()))
+plt.axis([1, 30, 25, 1])
+plt.pause(0.1)
+
+# Start of loop
 # Based on results, generate a new parameter matrix
-print("Remove weakest")
-sol1.remove_weakest()
-print(sol1.solution)
-print()
+for x in range(0, 10):
+    print("Remove weakest")
+    sol1.remove_weakest()
+    print(sol1.solution)
+    print()
 
-print("Generate and Append a new row")
-sol1.append_row(sol1.generate_row())
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print()
+    print("Generate and Append a new row")
+    sol1.append_row(sol1.generate_row())
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print()
 
-print("update_fitness_matrix(sol1) with new parameter data")
-update_fitness_matrix(sol1)
-print("sol1.solution")
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print("Update Best")
-sol1.update_best()
-print(sol1.best_solution.solution)
-print("sol1.best_solution.total_fitness()")
-print(sol1.best_solution.total_fitness())
-print()
+    print("update_fitness_matrix(sol1) with new parameter data")
+    update_fitness_matrix(sol1)
+    print("sol1.solution")
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print("sol1.fitness = " + str(sol1.total_fitness()))
+    print("Update Best")
+    sol1.update_best()
+    print(sol1.best_solution.solution)
+    print("sol1.best_solution.total_fitness()")
+    print(sol1.best_solution.total_fitness())
+    print()
+
+    print("Plotting the result")
+    ax.clear()
+    ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+    ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
+    ax.set_title("Iteration = {}, Fitness = {}".format(x + 1, sol1.total_fitness()))
+    plt.axis([1, 30, 25, 1])
+    plt.pause(0.1)
+plt.show()
+
+# Implement a write-to-textfile option
+# Implement annotated wells
+# Balance the weight of the wells
+# Implement drawdown constraints and K heterogeneity
