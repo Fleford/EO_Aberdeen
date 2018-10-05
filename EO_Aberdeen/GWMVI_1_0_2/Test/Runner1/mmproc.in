@@ -18,26 +18,13 @@ supply2.lst     # ITEM 2A: LISTFILE NAME
                    1                                  # ITEM 4: IFREFM
    0.000000000000000                                  # ITEM 5:  HDRY
   0.1000000000000000E-05                              # ITEM 6: HCLOSE
-supply2hd.bin     # ITEM 7: BINARY FILE FOR HEADS
+supply2hd.bhd     # ITEM 7: BINARY FILE FOR HEADS
 none     # ITEM 8: BINARY FILE FOR FLOW
                    1                                  # ITEM 9: NABF - Number of other binary files
-SFR-FLOW  supply2sf.bin     # ITEM 10: BINARY FILE FOR SFR-FLOW
-           5      # ITEM 11: NMQWEL -- Number of managed WEL cells
+SFR-FLOW  supply2sf.cbc     # ITEM 10: BINARY FILE FOR SFR-FLOW
+           6      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1         4         8   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-    1
-Q2a         1         2         9   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q1a         1        18        24   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -50,7 +37,7 @@ Q2a         1         2         9   -5.000000000000000E+004  # Item 13A: Name La
     0
     0
     0
-Q2b         1         2         9   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q1b         1        18        24   -1.889520912552245E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
@@ -63,7 +50,7 @@ Q2b         1         2         9   -5.000000000000000E+004  # Item 13A: Name La
     1
     1
     1
-Q4a         1         2         7   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q2a         1        19        27   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -76,7 +63,33 @@ Q4a         1         2         7   -5.000000000000000E+004  # Item 13A: Name La
     0
     0
     0
-Q4b         1         2         7   -5.500050000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+Q2b         1        19        27   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    0
+    0
+    0
+    0
+    0
+    0
+    1
+    1
+    1
+    1
+    1
+    1
+Q4a         1        21        24   -5.250075000000000E+004  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    0
+    0
+    0
+    0
+    0
+    0
+Q4b         1        21        24   -5.000000000000000E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0

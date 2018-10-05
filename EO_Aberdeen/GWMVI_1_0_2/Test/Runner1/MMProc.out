@@ -12,11 +12,11 @@ HNOFLO:   0.000000
 IFREFM: 1
 HDRY:   0.000000    
 HCLOSE:  0.1000000E-05
-HEADFILE: supply2hd.bin
+HEADFILE: supply2hd.bhd
 FLOWBUDFILE: none
 NABF: 1
-Binary budget file containing data of type SFR-FLOW:  supply2sf.bin
-NMQWEL:     5
+Binary budget file containing data of type SFR-FLOW:  supply2sf.cbc
+NMQWEL:     6
 WELFILE: supply2.wel
  #  WEL file specifying no wells.
  #

@@ -13,11 +13,12 @@
 
  Name              Value       Lower bound    Upper bound   Par. no.
  ------------  -------------  -------------  -------------  --------
- Q1              0.00000        0.00000        50000.0           1
- Q2a             0.00000        0.00000        50000.0           2
- Q2b             0.00000        0.00000        50000.0           3
- Q4a             0.00000        0.00000        50000.0           4
- Q4b             0.00000        0.00000        50000.0           5
+ Q1a             0.00000        0.00000        50000.0           1
+ Q1b             0.00000        0.00000        50000.0           2
+ Q2a             0.00000        0.00000        50000.0           3
+ Q2b             0.00000        0.00000        50000.0           4
+ Q4a             0.00000        0.00000        50000.0           5
+ Q4b             0.00000        0.00000        50000.0           6
 
  PREDICTIONS
   Total number of predictions read----------    14
@@ -87,7 +88,10 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1              0.0000         -10000.         -10000.          FORWARD 
+ Q1a             0.0000         -10000.         -10000.          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1b             0.0000         -10000.         -10000.          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q2a             0.0000         -10000.         -10000.          FORWARD 
@@ -110,7 +114,10 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -50000.         -55000.         -5000.5          FORWARD 
+ Q1a            -50000.         -55000.         -5000.5          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1b            -18896.         -23897.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q2a            -50000.         -55000.         -5000.5          FORWARD 
@@ -123,6 +130,32 @@
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q4b            -50000.         -55000.         -5000.5          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: REPEAT
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1a            -50000.         -52501.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1b            -18895.         -21396.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2a            -50000.         -52501.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2b            -50000.         -52501.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4a            -50000.         -52501.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4b            -50000.         -52501.         -2500.8          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 
