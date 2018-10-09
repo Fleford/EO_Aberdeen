@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from EO_PointTest.EO import EO
-from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, extract_rivercells
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -66,6 +66,7 @@ def update_fitness_matrix(self):
 
     # Prepare new GWM files using the index-parameter matrix
     write_supply2decvar(index_parameter_matrix)
+    write_supply2hedcon(index_parameter_matrix)
 
     # Run GWM
     run_gwm()
