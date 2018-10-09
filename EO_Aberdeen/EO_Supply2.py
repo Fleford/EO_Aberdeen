@@ -55,7 +55,7 @@ sol1.solution[2, 0] = 4
 initial_solution = np.array([[1, 12, 11, 0], # Index, Row, Column
                              [2, 16, 17, 0],
                              [4, 14, 25, 0]])
-sol1.solution = initial_solution
+# sol1.solution = initial_solution
 
 
 # Run through first iteration
@@ -123,7 +123,7 @@ plt.pause(0.1)
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 3):
+for x in range(0, 10):
     print("Remove weakest")
     sol1.remove_weakest()
     # print(sol1.solution)

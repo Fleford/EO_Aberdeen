@@ -3,10 +3,7 @@
 #Best score was 164250
  1             #1-IPRN
  MAX  WSDV     #2-OBJTYP FNTYP
- 6  0  0       #3-NFVOBJ NEVOBJ  NBVOBJ
- Q1a 0.001     #4-FVNAME  FVOBJC
- Q1b 0.001
- Q2a 0.001    
- Q2b 0.001
- Q4a 0.001
- Q4b 0.001
+ 3  0  0       #3-NFVOBJ NEVOBJ  NBVOBJ
+ Q1 0.001      #4-FVNAME  FVOBJC
+ Q2 0.001
+ Q4 0.001
