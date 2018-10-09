@@ -24,7 +24,7 @@ none     # ITEM 8: BINARY FILE FOR FLOW
 SFR-FLOW  supply2sf.cbc     # ITEM 10: BINARY FILE FOR SFR-FLOW
            6      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1a         1        23        10   -1.133945315219088E+004  # Item 13A: Name Lay Row Col dummyQ
+Q1a         1        23        29   -3.033416670965680E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -37,7 +37,7 @@ Q1a         1        23        10   -1.133945315219088E+004  # Item 13A: Name La
     0
     0
     0
-Q1b         1        23        10   -1.038662559606176E+004  # Item 13A: Name Lay Row Col dummyQ
+Q1b         1        23        29   -2.744023787405364E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
@@ -50,7 +50,7 @@ Q1b         1        23        10   -1.038662559606176E+004  # Item 13A: Name La
     1
     1
     1
-Q2a         1        17         3   -1.035952404539312E+004  # Item 13A: Name Lay Row Col dummyQ
+Q2a         1        23         8   -3.444003395248429E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -63,7 +63,7 @@ Q2a         1        17         3   -1.035952404539312E+004  # Item 13A: Name La
     0
     0
     0
-Q2b         1        17         3   -9.136271955593395E+003  # Item 13A: Name Lay Row Col dummyQ
+Q2b         1        23         8   -3.195461468344805E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
@@ -76,7 +76,7 @@ Q2b         1        17         3   -9.136271955593395E+003  # Item 13A: Name La
     1
     1
     1
-Q4a         1        23        22   -1.144565844035768E+004  # Item 13A: Name Lay Row Col dummyQ
+Q4a         1        23        22   -3.374158269390032E+004  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -89,7 +89,7 @@ Q4a         1        23        22   -1.144565844035768E+004  # Item 13A: Name La
     0
     0
     0
-Q4b         1        23        22   -1.057115342094828E+004  # Item 13A: Name Lay Row Col dummyQ
+Q4b         1        23        22   -3.082803201192174E+004  # Item 13A: Name Lay Row Col dummyQ
     0
     0
     0
@@ -105,15 +105,15 @@ Q4b         1        23        22   -1.057115342094828E+004  # Item 13A: Name La
            0      # ITEM 14: NMQMNW -- Number of managed MNW wells
                   18                                # ITEM 17: NSV - number of simulated values
 Q1c         HEAD
-         1        23        10         1         # Item 18B: LAY,ROW,COL,SP
+         1        23        29         1         # Item 18B: LAY,ROW,COL,SP
 Q2c         HEAD
-         1        17         3         1         # Item 18B: LAY,ROW,COL,SP
+         1        23         8         1         # Item 18B: LAY,ROW,COL,SP
 Q4c         HEAD
          1        23        22         1         # Item 18B: LAY,ROW,COL,SP
 Q1d         HEAD
-         1        23        10         7         # Item 18B: LAY,ROW,COL,SP
+         1        23        29         7         # Item 18B: LAY,ROW,COL,SP
 Q2d         HEAD
-         1        17         3         7         # Item 18B: LAY,ROW,COL,SP
+         1        23         8         7         # Item 18B: LAY,ROW,COL,SP
 Q4d         HEAD
          1        23        22         7         # Item 18B: LAY,ROW,COL,SP
 S01_9       SFR-FLOW
