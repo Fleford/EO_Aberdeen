@@ -44,7 +44,7 @@ from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_suppl
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
+sol1 = EO(n_rows=3, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
 
 # Rename index values
 sol1.solution[0, 0] = 1
@@ -123,11 +123,11 @@ plt.pause(0.1)
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 10):
+for x in range(0, 3):
     print("Remove weakest")
     sol1.remove_weakest()
-    print(sol1.solution)
-    print()
+    # print(sol1.solution)
+    # print()
 
     print("Generate and Append a new row")
     sol1.append_row(sol1.generate_row())
@@ -149,12 +149,28 @@ for x in range(0, 10):
     print()
 
     print("Plotting the result")
+    print()
     ax.clear()
     ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
     ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
     ax.set_title("Iteration = {}, Fitness = {}".format(x + 1, sol1.total_fitness()))
     plt.axis([1, 30, 25, 1])
     plt.pause(0.1)
+
+# Run GWM with best parameters
+print("Running gwm with best solution found")
+sol1.solution = sol1.best_solution.solution
+update_fitness_matrix(sol1)
+print("Plotting best solution found")
+print()
+ax.clear()
+ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "ro")
+ax.set_title("Iteration = {}, Fitness = {}".format("Best", sol1.total_fitness()))
+plt.axis([1, 30, 25, 1])
+plt.pause(0.1)
+
+# Show your hard work
 plt.show()
 
 # Implement a write-to-textfile option

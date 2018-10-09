@@ -120,22 +120,48 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1a            -31793.         -36794.         -5000.5          FORWARD 
+ Q1a            -34670.         -39670.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1b            -28473.         -33474.         -5000.5          FORWARD 
+ Q1b            -32499.         -37499.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2a            -32782.         -37782.         -5000.5          FORWARD 
+ Q2a            -30971.         -35972.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2b            -29646.         -34647.         -5000.5          FORWARD 
+ Q2b            -16428.         -21429.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4a            -30418.         -35419.         -5000.5          FORWARD 
+ Q4a            -44340.         -49341.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4b            -26715.         -31715.         -5000.5          FORWARD 
+ Q4b             0.0000         -5000.5         -5000.5          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: REPEAT
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1a            -34669.         -37170.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1b            -32498.         -34999.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2a            -30971.         -33472.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2b            -16428.         -18929.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4a            -44340.         -46840.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4b             0.0000         -2500.8         -2500.8          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 
