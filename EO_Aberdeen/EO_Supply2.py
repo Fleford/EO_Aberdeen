@@ -44,16 +44,18 @@ from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_suppl
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
+sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
 
 # Rename index values
 sol1.solution[0, 0] = 1
 sol1.solution[1, 0] = 2
-sol1.solution[2, 0] = 4
+sol1.solution[2, 0] = 3
+sol1.solution[3, 0] = 4
 
 # Load in initial parameters
 initial_solution = np.array([[1, 12, 11, 0], # Index, Row, Column
                              [2, 16, 17, 0],
+                             [3, 11, 22, 0],
                              [4, 14, 25, 0]])
 # sol1.solution = initial_solution
 
@@ -72,7 +74,7 @@ def update_fitness_matrix(self):
     run_gwm()
 
     # Define ordered list of wells
-    wells = ["Q1", "Q2", "Q4"]
+    wells = ["Q1", "Q2", "Q3", "Q4"]
 
     # Sort solution matrix by index (same as ordered list of wells)
     self.sort_index()
@@ -126,8 +128,8 @@ plt.pause(0.1)
 for x in range(0, 10):
     print("Remove weakest")
     sol1.remove_weakest()
-    # print(sol1.solution)
-    # print()
+    print(sol1.solution)
+    print()
 
     print("Generate and Append a new row")
     sol1.append_row(sol1.generate_row())

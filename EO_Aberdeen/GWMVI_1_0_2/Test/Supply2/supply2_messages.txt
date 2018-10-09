@@ -15,13 +15,14 @@
  ------------  -------------  -------------  -------------  --------
  Q1              0.00000        0.00000        50000.0           1
  Q2              0.00000        0.00000        50000.0           2
- Q4              0.00000        0.00000        50000.0           3
+ Q3              0.00000        0.00000        50000.0           3
+ Q4              0.00000        0.00000        50000.0           4
 
  PREDICTIONS
-  Total number of predictions read----------    17
-  Number of directly extracted predictions--    17
+  Total number of predictions read----------    18
+  Number of directly extracted predictions--    18
   Number of predictions to be derived-------     0
-  Number of predictions to be used----------    17
+  Number of predictions to be used----------    18
 
   
 
@@ -31,6 +32,7 @@
  --------------------  ------------  ------------  ------------
  Q1c                   DefaultPred     0.0000        1.0000    
  Q2c                   DefaultPred     0.0000        1.0000    
+ Q3c                   DefaultPred     0.0000        1.0000    
  Q4c                   DefaultPred     0.0000        1.0000    
  S01_9                 DefaultPred     0.0000        1.0000    
  S01_10                DefaultPred     0.0000        1.0000    
@@ -53,7 +55,7 @@
                NUM. OF         PLOT     WEIGHT    COV. MATRIX     DEP.
  GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED   TYPE
  ------------  -------  ----  ------  ----------  -------------  ------
- DefaultPred        17   T         1    1.00                     PRED  
+ DefaultPred        18   T         1    1.00                     PRED  
 
 
  MODEL-INPUT AND CORRESPONDING TEMPLATE FILES:
@@ -94,6 +96,9 @@
  Q2              0.0000         -10000.         -10000.          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q3              0.0000         -10000.         -10000.          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q4              0.0000         -10000.         -10000.          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
@@ -105,13 +110,16 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -34495.         -39496.         -5000.5          FORWARD 
+ Q1             -33613.         -38614.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2             -32744.         -37744.         -5000.5          FORWARD 
+ Q2             -33808.         -38809.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4             -32783.         -37783.         -5000.5          FORWARD 
+ Q3             -30824.         -35825.         -5000.5          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4             -30064.         -35065.         -5000.5          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 

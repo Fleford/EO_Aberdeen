@@ -1,5 +1,6 @@
-import numpy as np
 import subprocess
+
+import numpy as np
 
 
 def extract_contributions():
@@ -111,6 +112,7 @@ def write_supply2decvar(index_and_parameters_matrix):
             for line in read_f:
 
                 # Insert new data
+                # When adding new wells, PAY ATTENTION TO WHAT INDEXES ARE USED!!!
                 if "Q1" in line:
                     xx = str(index_and_parameters_matrix[0, 1])
                     yy = str(index_and_parameters_matrix[0, 2])
@@ -121,9 +123,14 @@ def write_supply2decvar(index_and_parameters_matrix):
                     yy = str(index_and_parameters_matrix[1, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
-                elif "Q4" in line:
+                elif "Q3" in line:
                     xx = str(index_and_parameters_matrix[2, 1])
                     yy = str(index_and_parameters_matrix[2, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q4" in line:
+                    xx = str(index_and_parameters_matrix[3, 1])
+                    yy = str(index_and_parameters_matrix[3, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
                 else:
@@ -148,6 +155,7 @@ def write_supply2hedcon(index_and_parameters_matrix):
             for line in read_f:
 
                 # Insert new data
+                # When adding new wells, PAY ATTENTION TO WHAT INDEXES ARE USED!!!
                 if "Q1" in line:
                     xx = str(index_and_parameters_matrix[0, 1])
                     yy = str(index_and_parameters_matrix[0, 2])
@@ -158,9 +166,14 @@ def write_supply2hedcon(index_and_parameters_matrix):
                     yy = str(index_and_parameters_matrix[1, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
-                elif "Q4" in line:
+                elif "Q3" in line:
                     xx = str(index_and_parameters_matrix[2, 1])
                     yy = str(index_and_parameters_matrix[2, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q4" in line:
+                    xx = str(index_and_parameters_matrix[3, 1])
+                    yy = str(index_and_parameters_matrix[3, 2])
                     # print(line.replace("xx", xx).replace("yy", yy), end="")
                     new_line = line.replace("xx", xx).replace("yy", yy)
                 else:

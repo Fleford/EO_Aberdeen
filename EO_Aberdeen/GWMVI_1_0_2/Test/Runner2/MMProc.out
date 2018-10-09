@@ -16,7 +16,7 @@ HEADFILE: supply2hd.bhd
 FLOWBUDFILE: none
 NABF: 1
 Binary budget file containing data of type SFR-FLOW:  supply2sf.cbc
-NMQWEL:     3
+NMQWEL:     4
 WELFILE: supply2.wel
  #  WEL file specifying no wells.
  #
@@ -41,7 +41,7 @@ NMQMNW:     0
  TOP ELEVATION OF LAYER 1 =   100.000    
 
    MODEL LAYER BOTTOM EL. =   0.00000     FOR LAYER   1
-NSV:     15
+NSV:     16
  #  Supply2 test problem for GWM-VI
  #  The eighth entry in the first data line is ISTCB2 -
  #    Setting this to a negative number indicates that
