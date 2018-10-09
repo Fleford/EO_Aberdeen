@@ -1,0 +1,10 @@
+#SUPPLY2 Sample Problem, HEDCON file
+#October 08, 2018
+ 1                              #1-IPRN
+ 0  6  0  0                     #2-NHB NDD NDF NGD
+ Q1c  1  xx  yy le 10.0 1   #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q2c  1  xx  yy le 10.0 1
+ Q4c  1  xx  yy le 10.0 1
+ Q1d  1  xx  yy le 10.0 7   #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q2d  1  xx  yy le 10.0 7
+ Q4d  1  xx  yy le 10.0 7

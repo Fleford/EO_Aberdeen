@@ -132,11 +132,49 @@ def write_supply2decvar(index_and_parameters_matrix):
                 # Write new line to file
                 write_f.write(new_line)
 
-# Tests the write_supply2decvar
+
+def write_supply2hedcon(index_and_parameters_matrix):
+    # A function (or functions) that can output a hedcon file using a template, provided an index-parameter array
+    # The index array is in included with the index_and_parameters_matrix
+
+    # Sort parameter rows by the index matrix
+    index_and_parameters_matrix = index_and_parameters_matrix[index_and_parameters_matrix[:, 0].argsort()]
+
+    # Recast matrix as dtype = int
+    index_and_parameters_matrix = index_and_parameters_matrix.astype(int)
+
+    with open("supply2.hedcontp", "r") as read_f:
+        with open("supply2.hedcon", "w") as write_f:
+            for line in read_f:
+
+                # Insert new data
+                if "Q1" in line:
+                    xx = str(index_and_parameters_matrix[0, 1])
+                    yy = str(index_and_parameters_matrix[0, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q2" in line:
+                    xx = str(index_and_parameters_matrix[1, 1])
+                    yy = str(index_and_parameters_matrix[1, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                elif "Q4" in line:
+                    xx = str(index_and_parameters_matrix[2, 1])
+                    yy = str(index_and_parameters_matrix[2, 2])
+                    # print(line.replace("xx", xx).replace("yy", yy), end="")
+                    new_line = line.replace("xx", xx).replace("yy", yy)
+                else:
+                    new_line = line
+
+                # Write new line to file
+                write_f.write(new_line)
+
+# # Tests the write_supply2decvar and write_supply2hedcon
 # test_parameters = np.array([[1, 12, 11],
 #                             [2, 16, 17],
 #                             [4, 14, 25]])
 # write_supply2decvar(test_parameters)
+# write_supply2hedcon(test_parameters)
 
 
 def run_gwm():
