@@ -4,6 +4,7 @@ DECVAR  ..\data\supply2.decvar
 OBJFNC  ..\data\supply2.objfnc
 VARCON  ..\data\supply2.varcon
 #SUMCON  ..\data\supply2.sumcon
+HEDCON ..\data\supply2.hedcon
 STRMCON ..\data\supply2.strmcon
 SOLN    ..\data\supply2.soln
 CONTROL ..\data\supply2_pll.ctrl

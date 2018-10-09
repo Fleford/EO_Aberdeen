@@ -25,22 +25,22 @@
                                                    FRACTION
   NUMBER     NAME       TYPE      LAY   ROW   COL   OF FLOW
  ----------------------------------------------------------
-    1      Q1a        WITHDRAWAL     1   18   24    1.0000
+    1      Q1a        WITHDRAWAL     1    5   22    1.0000
    AVAILABLE IN STRESS PERIODS: 1-6
 
-    2      Q1b        WITHDRAWAL     1   18   24    1.0000
+    2      Q1b        WITHDRAWAL     1    5   22    1.0000
    AVAILABLE IN STRESS PERIODS: 7-12
 
-    3      Q2a        WITHDRAWAL     1   19   27    1.0000
+    3      Q2a        WITHDRAWAL     1    3   18    1.0000
    AVAILABLE IN STRESS PERIODS: 1-6
 
-    4      Q2b        WITHDRAWAL     1   19   27    1.0000
+    4      Q2b        WITHDRAWAL     1    3   18    1.0000
    AVAILABLE IN STRESS PERIODS: 7-12
 
-    5      Q4a        WITHDRAWAL     1   21   24    1.0000
+    5      Q4a        WITHDRAWAL     1    3   21    1.0000
    AVAILABLE IN STRESS PERIODS: 1-6
 
-    6      Q4b        WITHDRAWAL     1   21   24    1.0000
+    6      Q4b        WITHDRAWAL     1    3   21    1.0000
    AVAILABLE IN STRESS PERIODS: 7-12
 
 
@@ -89,6 +89,27 @@
     6      Q4b          0.000E+00      5.000E+04      0.000E+00
 
  CLOSING DECISION-VARIABLE CONSTRAINTS FILE
+
+
+ OPENING HEAD CONSTRAINTS FILE ON UNIT   10:
+ ..\data\supply2.hedcon                                                                                                                                                                                  
+ #SUPPLY2 Sample Problem, HEDCON file
+ #October 08, 2018
+
+ DRAWDOWN CONSTRAINTS:
+                                           RIGHT-HAND    STRESS
+ NUMBER  NAME        LAY  ROW  COL  TYPE      SIDE       PERIOD
+ ---------------------------------------------------------------
+     1   b_01          1   20   29   <    1.0000E+01         1
+     2   b_02          1    5   26   <    1.0000E+01         1
+     3   b_03          1   21    6   <    1.0000E+01         1
+     4   b_04          1   20   29   <    1.0000E+01         7
+     5   b_05          1    5   26   <    1.0000E+01         7
+     6   b_06          1   21    6   <    1.0000E+01         7
+
+      420 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR HEAD CONSTRAINTS
+
+ CLOSING HEAD CONSTRAINTS FILE
 
 
  OPENING STREAMFLOW CONSTRAINTS FILE
@@ -160,11 +181,11 @@
  
      PROBLEM SIZE
  
-  NUMBER OF VARIABLES (INCLUDING SLACKS)          18
-  NUMBER OF CONSTRAINT EQUATIONS                  12
+  NUMBER OF VARIABLES (INCLUDING SLACKS)          24
+  NUMBER OF CONSTRAINT EQUATIONS                  18
  
 
-     7612 BYTES OF MEMORY ALLOCATED FOR RESPONSE MATRIX ALGORITHM
+    12748 BYTES OF MEMORY ALLOCATED FOR RESPONSE MATRIX ALGORITHM
 
  CLOSING SOLUTION AND OUTPUT FILE
 
@@ -181,6 +202,12 @@
       Status of Simulation-Based Constraints 
       Constraint Type        Name       Status   Distance To RHS
       ---------------        ----       ------   ---------------
+      Head Drawdown          b_01       Satisfied     1.0000E+01
+      Head Drawdown          b_02       Satisfied     1.0000E+01
+      Head Drawdown          b_03       Satisfied     1.0000E+01
+      Head Drawdown          b_04       Satisfied     1.0000E+01
+      Head Drawdown          b_05       Satisfied     1.0000E+01
+      Head Drawdown          b_06       Satisfied     1.0000E+01
       Stream Depletion       S01_9      Satisfied     1.5000E+04
       Stream Depletion       S01_10     Satisfied     1.5000E+04
       Stream Depletion       S01_11     Satisfied     1.5000E+04
@@ -212,12 +239,12 @@
       Perturb Flow Variable    6
        By Perturbation Value: -1.000000E+04
  
-      Average Number of Significant Digits in Matrix  7.819444E+00
+      Average Number of Significant Digits in Matrix  7.242424E+00
     
     Solving Linear Program
     Feasible Solution Found
     Optimal Solution Found
-    Objective Value  1.472362E+05
+    Objective Value  1.433571E+05
   SLP Algorithm: End Iteration    1
   No SLP convergence at this iteration
  
@@ -226,18 +253,24 @@
       Status of Simulation-Based Constraints 
       Constraint Type        Name       Status   Distance To RHS
       ---------------        ----       ------   ---------------
-      Stream Depletion       S01_9      Satisfied     1.2252E+04
-      Stream Depletion       S01_10     Satisfied     1.2316E+04
-      Stream Depletion       S01_11     Satisfied     1.2340E+04
-      Stream Depletion       S01_12     Satisfied     1.2348E+04
-      Stream Depletion       S02_11     Satisfied     1.1564E+04
-      Stream Depletion       S02_12     Satisfied     1.1580E+04
-      Stream Depletion       S03_9      Satisfied     1.4669E+04
-      Stream Depletion       S03_10     Satisfied     1.4672E+04
-      Stream Depletion       S03_11     Satisfied     1.4672E+04
-      Stream Depletion       S03_12     Satisfied     1.4672E+04
-      Stream Depletion       S04_11     Not Met       4.6156E-01
-      Stream Depletion       S04_12     Satisfied     2.2284E+01
+      Head Drawdown          b_01       Satisfied     9.9954E+00
+      Head Drawdown          b_02       Satisfied     8.9130E-01
+      Head Drawdown          b_03       Satisfied     9.9993E+00
+      Head Drawdown          b_04       Satisfied     9.9890E+00
+      Head Drawdown          b_05       Not Met       7.0133E-05
+      Head Drawdown          b_06       Satisfied     9.9959E+00
+      Stream Depletion       S01_9      Satisfied     1.2426E+04
+      Stream Depletion       S01_10     Satisfied     1.2511E+04
+      Stream Depletion       S01_11     Satisfied     1.2554E+04
+      Stream Depletion       S01_12     Satisfied     1.2575E+04
+      Stream Depletion       S02_11     Satisfied     7.8408E+03
+      Stream Depletion       S02_12     Satisfied     7.8859E+03
+      Stream Depletion       S03_9      Satisfied     4.0667E+03
+      Stream Depletion       S03_10     Satisfied     4.3114E+03
+      Stream Depletion       S03_11     Satisfied     4.3849E+03
+      Stream Depletion       S03_12     Satisfied     4.4071E+03
+      Stream Depletion       S04_11     Satisfied     6.8118E+03
+      Stream Depletion       S04_12     Satisfied     6.8797E+03
 
   Distance to RHS is the absolute value of the difference between the
     the right hand side of the constraint and the left side of the
@@ -257,18 +290,18 @@
       Perturb Flow Variable    6
        By Perturbation Value: -5.000500E+03
  
-      Average Number of Significant Digits in Matrix  7.541667E+00
+      Average Number of Significant Digits in Matrix  6.888889E+00
     
     Solving Linear Program
     Feasible Solution Found
     Optimal Solution Found
-    Objective Value  1.472357E+05
+    Objective Value  1.433568E+05
     Relative Change in Objective Value
       Needs to be less than SLPZCRIT =  1.000000E-04
-      Value at this iteration        =  3.514044E-06
+      Value at this iteration        =  2.310576E-06
     Maximum Relative Change in Variables
       Needs to be less than SLPVCRIT =  1.000000E-05
-      For Flow Variable Max Change   =  1.891721E-05
+      For Flow Variable Max Change   =  1.211088E-05
   SLP Algorithm: End Iteration    2
   No SLP convergence at this iteration
  
@@ -277,18 +310,24 @@
       Status of Simulation-Based Constraints 
       Constraint Type        Name       Status   Distance To RHS
       ---------------        ----       ------   ---------------
-      Stream Depletion       S01_9      Satisfied     1.2253E+04
-      Stream Depletion       S01_10     Satisfied     1.2316E+04
-      Stream Depletion       S01_11     Satisfied     1.2340E+04
-      Stream Depletion       S01_12     Satisfied     1.2348E+04
-      Stream Depletion       S02_11     Satisfied     1.1564E+04
-      Stream Depletion       S02_12     Satisfied     1.1580E+04
-      Stream Depletion       S03_9      Satisfied     1.4669E+04
-      Stream Depletion       S03_10     Satisfied     1.4672E+04
-      Stream Depletion       S03_11     Satisfied     1.4672E+04
-      Stream Depletion       S03_12     Satisfied     1.4672E+04
-      Stream Depletion       S04_11     Not Met       4.1910E-07
-      Stream Depletion       S04_12     Satisfied     2.2747E+01
+      Head Drawdown          b_01       Satisfied     9.9954E+00
+      Head Drawdown          b_02       Satisfied     8.9130E-01
+      Head Drawdown          b_03       Satisfied     9.9993E+00
+      Head Drawdown          b_04       Satisfied     9.9890E+00
+      Head Drawdown          b_05       Not Met       1.0843E-11
+      Head Drawdown          b_06       Satisfied     9.9959E+00
+      Stream Depletion       S01_9      Satisfied     1.2426E+04
+      Stream Depletion       S01_10     Satisfied     1.2511E+04
+      Stream Depletion       S01_11     Satisfied     1.2554E+04
+      Stream Depletion       S01_12     Satisfied     1.2575E+04
+      Stream Depletion       S02_11     Satisfied     7.8409E+03
+      Stream Depletion       S02_12     Satisfied     7.8860E+03
+      Stream Depletion       S03_9      Satisfied     4.0669E+03
+      Stream Depletion       S03_10     Satisfied     4.3115E+03
+      Stream Depletion       S03_11     Satisfied     4.3851E+03
+      Stream Depletion       S03_12     Satisfied     4.4072E+03
+      Stream Depletion       S04_11     Satisfied     6.8120E+03
+      Stream Depletion       S04_12     Satisfied     6.8799E+03
 
   Distance to RHS is the absolute value of the difference between the
     the right hand side of the constraint and the left side of the
@@ -308,18 +347,18 @@
       Perturb Flow Variable    6
        By Perturbation Value: -2.500750E+03
  
-      Average Number of Significant Digits in Matrix  7.083333E+00
+      Average Number of Significant Digits in Matrix  6.606061E+00
     
     Solving Linear Program
     Feasible Solution Found
     Optimal Solution Found
-    Objective Value  1.472357E+05
+    Objective Value  1.433568E+05
     Relative Change in Objective Value
       Needs to be less than SLPZCRIT =  1.000000E-04
-      Value at this iteration        =  3.190740E-12
+      Value at this iteration        =  3.573071E-13
     Maximum Relative Change in Variables
       Needs to be less than SLPVCRIT =  1.000000E-05
-      For Flow Variable Max Change   =  1.717674E-11
+      For Flow Variable Max Change   =  1.872212E-12
   SLP Algorithm: End Iteration    3
   SLP Iterations have converged
 
@@ -335,21 +374,21 @@ Variable           Withdrawal          Injection           Contribution
 Name               Rate                Rate                To Objective
 ----------         --------------      ------------        ------------
  Q1a               5.000000E+04                            2.740000E+04
- Q1b               1.889521E+04                            1.033568E+04
+ Q1b               1.180397E+04                            6.456769E+03
  Q2a               5.000000E+04                            2.740000E+04
  Q2b               5.000000E+04                            2.735000E+04
  Q4a               5.000000E+04                            2.740000E+04
  Q4b               5.000000E+04                            2.735000E+04
                    ------------        ------------        ------------
-TOTALS             2.688952E+05        0.000000E+00        1.472357E+05
+TOTALS             2.618040E+05        0.000000E+00        1.433568E+05
 
 
-       OBJECTIVE FUNCTION VALUE                            1.472357E+05
+       OBJECTIVE FUNCTION VALUE                            1.433568E+05
 
        BINDING CONSTRAINTS 
 Constraint Type        Name     Status      Shadow Price
 ---------------        ----     ------      ------------
-Stream Depletion       S04_11   Binding     -1.1210E+00
+Head Drawdown          b_05     Binding     -4.7230E+03
 Maximum Flow Rate      Q1a      Binding    Not Available
 Maximum Flow Rate      Q2a      Binding    Not Available
 Maximum Flow Rate      Q2b      Binding    Not Available
@@ -373,18 +412,24 @@ Maximum Flow Rate      Q4b      Binding    Not Available
                                             By Flow        in
       Constraint Type        Name           Process    Constraints   Difference
       ---------------        ----          ----------   ----------   ----------
-      Stream Depletion       S01_9         1.4763E+05 > 1.3537E+05   1.2253E+04
-      Stream Depletion       S01_10        1.5448E+05 > 1.4216E+05   1.2316E+04
-      Stream Depletion       S01_11        1.4664E+05 > 1.3430E+05   1.2340E+04
-      Stream Depletion       S01_12        1.4952E+05 > 1.3718E+05   1.2348E+04
-      Stream Depletion       S02_11        1.6688E+05 > 1.5531E+05   1.1564E+04
-      Stream Depletion       S02_12        1.7121E+05 > 1.5963E+05   1.1580E+04
-      Stream Depletion       S03_9         7.4191E+04 > 5.9522E+04   1.4669E+04
-      Stream Depletion       S03_10        7.7464E+04 > 6.2793E+04   1.4672E+04
-      Stream Depletion       S03_11        7.3494E+04 > 5.8822E+04   1.4672E+04
-      Stream Depletion       S03_12        7.5096E+04 > 6.0423E+04   1.4672E+04
-      Stream Depletion       S04_11        2.2990E+05 > 2.2990E+05  -7.8580E-10
-      Stream Depletion       S04_12        2.3667E+05 > 2.3664E+05   2.2747E+01
+      Head Drawdown          b_01          4.8083E+01 > 3.8088E+01   9.9954E+00
+      Head Drawdown          b_02          6.2054E+01 > 6.1163E+01   8.9130E-01
+      Head Drawdown          b_03          6.8485E+01 > 5.8485E+01   9.9993E+00
+      Head Drawdown          b_04          4.4612E+01 > 3.4623E+01   9.9890E+00
+      Head Drawdown          b_05          5.7225E+01 > 5.7225E+01  -7.1054E-15
+      Head Drawdown          b_06          6.4584E+01 > 5.4588E+01   9.9959E+00
+      Stream Depletion       S01_9         1.4780E+05 > 1.3537E+05   1.2426E+04
+      Stream Depletion       S01_10        1.5467E+05 > 1.4216E+05   1.2511E+04
+      Stream Depletion       S01_11        1.4685E+05 > 1.3430E+05   1.2554E+04
+      Stream Depletion       S01_12        1.4975E+05 > 1.3718E+05   1.2575E+04
+      Stream Depletion       S02_11        1.6316E+05 > 1.5531E+05   7.8409E+03
+      Stream Depletion       S02_12        1.6751E+05 > 1.5963E+05   7.8860E+03
+      Stream Depletion       S03_9         6.3589E+04 > 5.9522E+04   4.0669E+03
+      Stream Depletion       S03_10        6.7104E+04 > 6.2793E+04   4.3115E+03
+      Stream Depletion       S03_11        6.3207E+04 > 5.8822E+04   4.3851E+03
+      Stream Depletion       S03_12        6.4831E+04 > 6.0423E+04   4.4072E+03
+      Stream Depletion       S04_11        2.3671E+05 > 2.2990E+05   6.8120E+03
+      Stream Depletion       S04_12        2.4352E+05 > 2.3664E+05   6.8799E+03
 
   Difference is computed by subtracting right hand side of the constraint 
     from the left side of the constraint.
@@ -392,6 +437,6 @@ Maximum Flow Rate      Q4b      Binding    Not Available
     values of the binding constraints computed directly by the flow process 
     to differ from those computed using the linear program.  
 
- Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/10/05 16:10:47
- Elapsed run time: 11.526 Seconds
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/10/08 20:32:29
+ Elapsed run time: 11.298 Seconds
 

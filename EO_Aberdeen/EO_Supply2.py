@@ -44,7 +44,7 @@ from GWM_Manipulator import read_fitness_array, write_supply2decvar, run_gwm, ex
 rivercells = extract_rivercells()
 
 # Prepare EO instance
-sol1 = EO(n_rows=3, x_min=2, x_max=24, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
+sol1 = EO(n_rows=3, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=2)
 
 # Rename index values
 sol1.solution[0, 0] = 1

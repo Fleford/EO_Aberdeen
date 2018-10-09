@@ -21,10 +21,10 @@
  Q4b             0.00000        0.00000        50000.0           6
 
  PREDICTIONS
-  Total number of predictions read----------    14
-  Number of directly extracted predictions--    14
+  Total number of predictions read----------    20
+  Number of directly extracted predictions--    20
   Number of predictions to be derived-------     0
-  Number of predictions to be used----------    14
+  Number of predictions to be used----------    20
 
   
 
@@ -32,6 +32,12 @@
 
  PREDICTION NAME          GROUP       REF. VALUE     VARIANCE
  --------------------  ------------  ------------  ------------
+ b_01                  DefaultPred     0.0000        1.0000    
+ b_02                  DefaultPred     0.0000        1.0000    
+ b_03                  DefaultPred     0.0000        1.0000    
+ b_04                  DefaultPred     0.0000        1.0000    
+ b_05                  DefaultPred     0.0000        1.0000    
+ b_06                  DefaultPred     0.0000        1.0000    
  S01_9                 DefaultPred     0.0000        1.0000    
  S01_10                DefaultPred     0.0000        1.0000    
  S01_11                DefaultPred     0.0000        1.0000    
@@ -53,7 +59,7 @@
                NUM. OF         PLOT     WEIGHT    COV. MATRIX     DEP.
  GROUP NAME    MEMBERS  USE?  SYMBOL  MULTIPLIER  IF CORRELATED   TYPE
  ------------  -------  ----  ------  ----------  -------------  ------
- DefaultPred        14   T         1    1.00                     PRED  
+ DefaultPred        20   T         1    1.00                     PRED  
 
 
  MODEL-INPUT AND CORRESPONDING TEMPLATE FILES:
@@ -117,7 +123,7 @@
  Q1a            -50000.         -55000.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1b            -18896.         -23897.         -5000.5          FORWARD 
+ Q1b            -11805.         -16805.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q2a            -50000.         -55000.         -5000.5          FORWARD 
@@ -143,7 +149,7 @@
  Q1a            -50000.         -52501.         -2500.8          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1b            -18895.         -21396.         -2500.8          FORWARD 
+ Q1b            -11804.         -14305.         -2500.8          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q2a            -50000.         -52501.         -2500.8          FORWARD 

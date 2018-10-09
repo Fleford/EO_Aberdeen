@@ -41,7 +41,7 @@ NMQMNW:     0
  TOP ELEVATION OF LAYER 1 =   100.000    
 
    MODEL LAYER BOTTOM EL. =   0.00000     FOR LAYER   1
-NSV:     12
+NSV:     18
  #  Supply2 test problem for GWM-VI
  #  The eighth entry in the first data line is ISTCB2 -
  #    Setting this to a negative number indicates that
