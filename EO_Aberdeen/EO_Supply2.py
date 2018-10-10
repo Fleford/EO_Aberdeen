@@ -125,7 +125,7 @@ plt.pause(0.1)
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 5):
+for x in range(0, 1):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
