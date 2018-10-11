@@ -53,7 +53,7 @@ sol1.solution[2, 0] = 3
 sol1.solution[3, 0] = 4
 
 # Load in initial parameters
-initial_solution = np.array([[1, 12, 11, 0], # Index, Row, Column
+initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
                              [2, 16, 17, 0],
                              [3, 11, 22, 0],
                              [4, 14, 25, 0]])
@@ -138,7 +138,7 @@ plot_result()
 # Start of loop
 # Based on results, generate a new parameter matrix
 num_of_loops = 10
-for iteration in range(num_of_loops, num_of_loops + 1):
+for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
@@ -171,13 +171,8 @@ print("Running gwm with best solution found")
 sol1.solution = sol1.best_solution.solution
 update_fitness_matrix(sol1)
 print("Plotting best solution found")
-print()
-ax.clear()
-ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
-ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
-# Annotate well names
-for i, txt in enumerate(sol1.solution[:, 0]):
-    ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
+
+plot_result()
 
 ax.set_title("Iteration = {}, Fitness = {}".format("Best", sol1.total_fitness()))
 plt.axis([1, 30, 25, 1])
