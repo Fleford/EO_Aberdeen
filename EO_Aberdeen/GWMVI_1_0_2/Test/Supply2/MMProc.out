@@ -18,19 +18,95 @@ NABF: 1
 Binary budget file containing data of type SFR-FLOW:  supply2sf.cbc
 NMQWEL:     4
 WELFILE: supply2.wel
- #  WEL file specifying no wells.
- #
- #  A file like this is required by GWM-VI
- #  when the original model does not use
- #  the Well Package but the GWM management
- #  model includes flow-rate decision
- #  variables to be simulated with the
- #  Well Package.
+ # Well package input file written by MMProc
  No named parameters
- In Well Package MXACTW=0
 
 
      0 Well parameters
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         
+ --------------------------------------------------
+      1      1     14      6       0.000    
+      2      1      3      9       0.000    
+      3      1     20     10       0.000    
+      4      1     14     20       0.000    
 NMQMNW:     0
 
 

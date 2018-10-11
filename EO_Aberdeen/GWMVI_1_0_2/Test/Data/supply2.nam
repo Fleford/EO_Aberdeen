@@ -1,7 +1,7 @@
 LIST    10   supply2.lst
 DIS     11   ..\data\supply.dis
 BAS6    12   ..\data\supply.ba6
-BCF6    13   ..\data\supply.bc6
+BCF6    13   ..\data\supply_het.bc6
 RCH     15   ..\data\supply.rch
 SFR     16   ..\data\supply2.sfr
 OC      17   ..\data\supply.oc

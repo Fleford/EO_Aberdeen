@@ -57,7 +57,7 @@ initial_solution = np.array([[1, 12, 11, 0], # Index, Row, Column
                              [2, 16, 17, 0],
                              [3, 11, 22, 0],
                              [4, 14, 25, 0]])
-sol1.solution = initial_solution
+# sol1.solution = initial_solution
 
 
 # Run through first iteration
@@ -116,16 +116,24 @@ print(sol1.best_solution.total_fitness())
 print()
 
 print("Plotting the result")
+print()
 ax.clear()
 ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
 ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
+# Label weakest and pivot well
+sol1.sort_fitness()
+ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
+ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
+# Annotate well names
+for i, txt in enumerate(sol1.solution[:, 0]):
+    ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
 ax.set_title("Iteration = {}, Fitness = {}".format(0, sol1.total_fitness()))
 plt.axis([1, 30, 25, 1])
 plt.pause(0.1)
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 1):
+for x in range(0, 5):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
@@ -155,9 +163,13 @@ for x in range(0, 1):
     ax.clear()
     ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
     ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
+    # Label weakest and pivot well
     sol1.sort_fitness()
     ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
     ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
+    # Annotate well names
+    for i, txt in enumerate(sol1.solution[:, 0]):
+        ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
     ax.set_title("Iteration = {}, Fitness = {}".format(x + 1, sol1.total_fitness()))
     plt.axis([1, 30, 25, 1])
     plt.pause(0.1)
@@ -171,6 +183,10 @@ print()
 ax.clear()
 ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
 ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
+# Annotate well names
+for i, txt in enumerate(sol1.solution[:, 0]):
+    ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
+
 ax.set_title("Iteration = {}, Fitness = {}".format("Best", sol1.total_fitness()))
 plt.axis([1, 30, 25, 1])
 plt.pause(0.1)
