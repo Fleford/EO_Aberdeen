@@ -157,7 +157,7 @@ class EO(object):
         # Scale random unit vector by the rand_dist
         u = rand_dist * u
 
-        # Return a new point using lowest fit row, [0]
+        # Return a new point using lowest fit row, [0], most fit = [-1]
         new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u
 
@@ -245,6 +245,7 @@ def check_dist_constraint(given_point, array_of_points, min_dist, avoid_list=np.
     # Check for an avoid list
     if avoid_list.shape[1] == 0:
         print("No avoid list provided for check_dist_constraint")
+        array_of_points_all = array_of_points
     else:
         # Include avoid list into array of checked points
         array_of_points_all = np.append(array_of_points, avoid_list, axis=0)
