@@ -93,6 +93,24 @@ def update_fitness_matrix(self):
     # print(self.solution)
 
 
+def plot_result(x=0):
+    print("Plotting the result")
+    print()
+    ax.clear()
+    ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+    ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
+    # Label weakest and pivot well
+    sol1.sort_fitness()
+    ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
+    ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
+    # Annotate well names
+    for i, txt in enumerate(sol1.solution[:, 0]):
+        ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
+    ax.set_title("Iteration = {}, Fitness = {}".format(x, sol1.total_fitness()))
+    plt.axis([1, 30, 25, 1])
+    plt.pause(0.1)
+
+
 # Prepare plot instances
 fig, ax = plt.subplots()
 
@@ -115,25 +133,12 @@ print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
 print()
 
-print("Plotting the result")
-print()
-ax.clear()
-ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
-ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
-# Label weakest and pivot well
-sol1.sort_fitness()
-ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
-ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
-# Annotate well names
-for i, txt in enumerate(sol1.solution[:, 0]):
-    ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
-ax.set_title("Iteration = {}, Fitness = {}".format(0, sol1.total_fitness()))
-plt.axis([1, 30, 25, 1])
-plt.pause(0.1)
+plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-for x in range(0, 5):
+num_of_loops = 10
+for iteration in range(num_of_loops, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
     print(sol1.solution)
@@ -158,21 +163,8 @@ for x in range(0, 5):
     print(sol1.best_solution.total_fitness())
     print()
 
-    print("Plotting the result")
-    print()
-    ax.clear()
-    ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
-    ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "go")
-    # Label weakest and pivot well
-    sol1.sort_fitness()
-    ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
-    ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
-    # Annotate well names
-    for i, txt in enumerate(sol1.solution[:, 0]):
-        ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    ax.set_title("Iteration = {}, Fitness = {}".format(x + 1, sol1.total_fitness()))
-    plt.axis([1, 30, 25, 1])
-    plt.pause(0.1)
+    plot_result(iteration)
+
 
 # Run GWM with best parameters
 print("Running gwm with best solution found")
