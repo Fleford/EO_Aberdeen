@@ -178,7 +178,12 @@ class EO(object):
         :return:
         """
         # Check if it's too close to other points
-        return check_dist_constraint(checked_parameter, self.parameters(), self.min_dist, self.avoid_list)
+        dist_flag = check_dist_constraint(checked_parameter, self.parameters(), self.min_dist, self.avoid_list)
+
+        # Check if it's the same as the removed row parameter
+        repeat_flag = not np.array_equal(self.replaced_row_parameter, checked_parameter)
+
+        return dist_flag and repeat_flag
 
     def generate_row(self):
         """
