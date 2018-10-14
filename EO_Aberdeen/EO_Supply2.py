@@ -137,7 +137,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 10
+num_of_loops = 5
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
@@ -185,3 +185,4 @@ plt.show()
 # Implement annotated wells
 # Balance the weight of the wells
 # Implement drawdown constraints and K heterogeneity
+# Fix bug with repeating parameters

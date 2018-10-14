@@ -20,7 +20,8 @@ class EO(object):
         :return:
         """
         self.solution = np.random.rand(n_rows, 4)  # np.random.rand(row,col)
-        self.replaced_row = 0
+        self.replaced_row_index = 0
+        self.replaced_row_parameter = np.array([])
         self.fitness_ready = False
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
@@ -124,8 +125,9 @@ class EO(object):
         # Sort solution matrix by fitness first
         self.sort_fitness()
 
-        # Save the index of the row to be removed
-        self.replaced_row = self.solution[0, 0]
+        # Save the index and parameter of the row to be removed
+        self.replaced_row_index = self.solution[0, 0]   # [row, col]
+        self.replaced_row_parameter = self.solution[0, 1:3]
 
         # Remove row
         self.solution = np.delete(self.solution, 0, 0)
@@ -189,7 +191,7 @@ class EO(object):
             new_parameter = self.generate_parameter()
 
         # Attach the index of the replaced parameter
-        new_parameter = np.append(np.array(self.replaced_row), new_parameter)
+        new_parameter = np.append(np.array(self.replaced_row_index), new_parameter)
 
         # Return a new row with right dimensions for the solution matrix
         return np.append(new_parameter, np.zeros(1))
