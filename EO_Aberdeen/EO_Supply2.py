@@ -57,7 +57,7 @@ initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
                              [2, 16, 17, 0],
                              [3, 11, 22, 0],
                              [4, 14, 25, 0]])
-sol1.solution = initial_solution
+# sol1.solution = initial_solution
 
 
 # Run through first iteration

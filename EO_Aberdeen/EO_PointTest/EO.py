@@ -238,6 +238,30 @@ def nearest_dist(d, x):
     return sqd[idx[0]]
 
 
+def farthest_dist(d, x):
+    # Determines farthest distance to point of interest
+    # D = set of points, x = point of interest
+    # Each row is a point
+    # euclidean distances from the other points
+    sqd = np.linalg.norm(d - x, axis=1)
+    idx = np.argsort(sqd)  # sorting
+    # return the distance to the nearest neighbor
+    return sqd[idx[-1]]
+
+
+def maximal_dist(d):
+    # Determines the largest distance possible between two points of a set of points
+    # D = set of points
+    # Each row is a point
+    # euclidean distances from the other points
+    maximum_distance = 0.0
+    for point in d:
+        test_distance = farthest_dist(d, point)
+        if test_distance >= maximum_distance:
+            maximum_distance = test_distance
+    return maximum_distance
+
+
 def check_dist_constraint(given_point, array_of_points, min_dist, avoid_list=np.array([[]])):
     # Returns true if the given point is greater than or equal to the minimum distance away from the closest point
     # Each row is an x,y  point
