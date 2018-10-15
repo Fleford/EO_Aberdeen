@@ -7,21 +7,14 @@ from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_suppl
 # Prepare avoided points (River Cells)
 rivercells = extract_rivercells()
 
-# Prepare EO instance
-sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
-
-# Rename index values
-sol1.solution[0, 0] = 1
-sol1.solution[1, 0] = 2
-sol1.solution[2, 0] = 3
-sol1.solution[3, 0] = 4
-
-# Load in initial parameters
-initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
-                             [2, 16, 17, 0],
-                             [3, 11, 22, 0],
-                             [4, 14, 25, 0]])
-# sol1.solution = initial_solution
+# # Prepare EO instance
+# sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
+#
+# # Rename index values
+# sol1.solution[0, 0] = 1
+# sol1.solution[1, 0] = 2
+# sol1.solution[2, 0] = 3
+# sol1.solution[3, 0] = 4
 
 
 def update_fitness_matrix(self):
@@ -66,8 +59,18 @@ def plot_result(x, run_num):
 # Prepare plot instances
 fig, ax = plt.subplots()
 
+# 62198
 # Run iterations through the whole EO process
-for runs in range(2):
+for runs in range(128):
+    # Prepare EO instance
+    sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
+
+    # Rename index values
+    sol1.solution[0, 0] = 1
+    sol1.solution[1, 0] = 2
+    sol1.solution[2, 0] = 3
+    sol1.solution[3, 0] = 4
+
     # Run through an iteration
     # Updates the solution matrix with new fitness values
 
@@ -75,65 +78,69 @@ for runs in range(2):
     list_of_best_fitness = []
 
     # Update the fitness matrix (first run)
-    print("Initial Parameters")
-    print("sol1.solution")
-    print(sol1.solution)
-    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-    print()
+    # print("Initial Parameters")
+    # print("sol1.solution")
+    # print(sol1.solution)
+    # print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    # print()
 
-    print("After update_fitness_matrix(sol1):")
+    # print("After update_fitness_matrix(sol1):")
     update_fitness_matrix(sol1)
-    print("sol1.solution")
-    print(sol1.solution)
-    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-    print("Update Best")
+    # print("sol1.solution")
+    # print(sol1.solution)
+    # print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    # print("Update Best")
     sol1.update_best()
-    print(sol1.best_solution.solution)
-    print("sol1.best_solution.total_fitness()")
-    print(sol1.best_solution.total_fitness())
+    # print(sol1.best_solution.solution)
+    # print("sol1.best_solution.total_fitness()")
+    # print(sol1.best_solution.total_fitness())
     list_of_best_fitness.append(sol1.best_solution.total_fitness())
-    print()
+    # print()
 
-    plot_result(x=0, run_num=runs)
+    # plot_result(x=0, run_num=runs)
 
     # Start of loop
     # Based on results, generate a new parameter matrix
-    num_of_loops = 2
+    num_of_loops = 128
     for iteration in range(1, num_of_loops + 1):
-        print("Remove weakest")
+
+        print("Run: {}, Iteration: {}".format(runs, iteration))
+
+        # print("Remove weakest")
         sol1.remove_weakest()
-        print(sol1.solution)
-        print()
+        # print(sol1.solution)
+        # print()
 
-        print("Generate and Append a new row")
+        # print("Generate and Append a new row")
         sol1.append_row(sol1.generate_row())
-        print(sol1.solution)
-        print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-        print()
+        # print(sol1.solution)
+        # print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+        # print()
 
-        print("update_fitness_matrix(sol1) with new parameter data")
+        # print("update_fitness_matrix(sol1) with new parameter data")
         update_fitness_matrix(sol1)
-        print("sol1.solution")
-        print(sol1.solution)
-        print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-        print("sol1.fitness = " + str(sol1.total_fitness()))
-        print("Update Best")
+        # print("sol1.solution")
+        # print(sol1.solution)
+        # print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+        # print("sol1.fitness = " + str(sol1.total_fitness()))
+        # print("Update Best")
         sol1.update_best()
-        print(sol1.best_solution.solution)
-        print("sol1.best_solution.total_fitness()")
-        print(sol1.best_solution.total_fitness())
+        # print(sol1.best_solution.solution)
+        # print("sol1.best_solution.total_fitness()")
+        # print(sol1.best_solution.total_fitness())
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
-        print()
+        # print()
 
-        plot_result(x=iteration, run_num=runs)
+        # plot_result(x=iteration, run_num=runs)
 
     # Show your hard work
     # plt.show()
+
     print("List of Best Fitness:")
     print(str(list_of_best_fitness))
 
     # Save the best fitness to a text file
-    with open("list_of_bests", "a+") as write_f:
+    with open("list_of_bests.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             write_f.write(s[:s.index('.')] + "\t")
