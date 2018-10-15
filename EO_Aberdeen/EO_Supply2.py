@@ -60,7 +60,6 @@ initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
 # sol1.solution = initial_solution
 
 
-
 def update_fitness_matrix(self):
     # Parse out index-parameter matrix
     index_parameter_matrix = np.delete(self.solution, 3, 1)
@@ -70,7 +69,6 @@ def update_fitness_matrix(self):
     write_supply2hedcon(index_parameter_matrix)
 
     # Run GWM
-
     run_gwm()
 
     # Define ordered list of wells
@@ -144,7 +142,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 10
+num_of_loops = 2
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
@@ -187,9 +185,16 @@ plt.axis([1, 30, 25, 1])
 plt.pause(0.1)
 
 # Show your hard work
-plt.show()
+# plt.show()
 print("List of Best Fitness:")
-print(list_of_best_fitness)
+print(str(list_of_best_fitness))
+
+# Save the best fitness to a text file
+with open("list_of_bests", "a+") as write_f:
+    for value in list_of_best_fitness:
+        s = str(value)
+        write_f.write(s[:s.index('.')] + "\t")
+    write_f.write("\n")
 
 # Implement a write-to-textfile option
 # Implement annotated wells
