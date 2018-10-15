@@ -20,7 +20,8 @@ class EO(object):
         :return:
         """
         self.solution = np.random.rand(n_rows, 4)  # np.random.rand(row,col)
-        self.replaced_row = 0
+        self.replaced_row_index = 0
+        self.replaced_row_parameter = np.array([])
         self.fitness_ready = False
         self.best_solution = copy.deepcopy(self)
         self.eval_count = 0
@@ -124,8 +125,9 @@ class EO(object):
         # Sort solution matrix by fitness first
         self.sort_fitness()
 
-        # Save the index of the row to be removed
-        self.replaced_row = self.solution[0, 0]
+        # Save the index and parameter of the row to be removed
+        self.replaced_row_index = self.solution[0, 0]   # [row, col]
+        self.replaced_row_parameter = self.solution[0, 1:3]
 
         # Remove row
         self.solution = np.delete(self.solution, 0, 0)
@@ -148,14 +150,17 @@ class EO(object):
         n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
         r1 = parameters[n1]
         r2 = parameters[n2]
-        rand_dist = np.linalg.norm(r2 - r1)
+        placement_radius = np.linalg.norm(r2 - r1)
+
+        # Use the maximal distance as the placement radius
+        placement_radius = maximal_dist(parameters)
 
         # Get a random unit vector
         u = np.random.rand(2) - np.array([0.5, 0.5])
         u = u / np.linalg.norm(u)
 
-        # Scale random unit vector by the rand_dist
-        u = rand_dist * u
+        # Scale random unit vector by the placement_radius
+        u = placement_radius * u
 
         # Return a new point using lowest fit row, [0], most fit = [-1]
         new_point = parameters[-1] + np.random.rand() * u * 1
@@ -173,7 +178,12 @@ class EO(object):
         :return:
         """
         # Check if it's too close to other points
-        return check_dist_constraint(checked_parameter, self.parameters(), self.min_dist, self.avoid_list)
+        dist_flag = check_dist_constraint(checked_parameter, self.parameters(), self.min_dist, self.avoid_list)
+
+        # Check if it's the same as the removed row parameter
+        repeat_flag = not np.array_equal(self.replaced_row_parameter, checked_parameter)
+
+        return dist_flag and repeat_flag
 
     def generate_row(self):
         """
@@ -186,7 +196,7 @@ class EO(object):
             new_parameter = self.generate_parameter()
 
         # Attach the index of the replaced parameter
-        new_parameter = np.append(np.array(self.replaced_row), new_parameter)
+        new_parameter = np.append(np.array(self.replaced_row_index), new_parameter)
 
         # Return a new row with right dimensions for the solution matrix
         return np.append(new_parameter, np.zeros(1))
@@ -236,6 +246,30 @@ def nearest_dist(d, x):
     idx = np.argsort(sqd)  # sorting
     # return the distance to the nearest neighbor
     return sqd[idx[0]]
+
+
+def farthest_dist(d, x):
+    # Determines farthest distance to point of interest
+    # D = set of points, x = point of interest
+    # Each row is a point
+    # euclidean distances from the other points
+    sqd = np.linalg.norm(d - x, axis=1)
+    idx = np.argsort(sqd)  # sorting
+    # return the distance to the nearest neighbor
+    return sqd[idx[-1]]
+
+
+def maximal_dist(d):
+    # Determines the largest distance possible between two points of a set of points
+    # D = set of points
+    # Each row is a point
+    # euclidean distances from the other points
+    maximum_distance = 0.0
+    for point in d:
+        test_distance = farthest_dist(d, point)
+        if test_distance >= maximum_distance:
+            maximum_distance = test_distance
+    return maximum_distance
 
 
 def check_dist_constraint(given_point, array_of_points, min_dist, avoid_list=np.array([[]])):

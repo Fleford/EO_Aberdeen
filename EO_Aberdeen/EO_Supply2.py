@@ -57,11 +57,9 @@ initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
                              [2, 16, 17, 0],
                              [3, 11, 22, 0],
                              [4, 14, 25, 0]])
-sol1.solution = initial_solution
+# sol1.solution = initial_solution
 
 
-# Run through first iteration
-# Updates the solution matrix with new fitness values
 def update_fitness_matrix(self):
     # Parse out index-parameter matrix
     index_parameter_matrix = np.delete(self.solution, 3, 1)
@@ -111,8 +109,14 @@ def plot_result(x=0):
     plt.pause(0.1)
 
 
+# Run through first iteration
+# Updates the solution matrix with new fitness values
+
 # Prepare plot instances
 fig, ax = plt.subplots()
+
+# Prepare empty list for best fitness
+list_of_best_fitness = []
 
 # Update the fitness matrix (first run)
 print("Initial Parameters")
@@ -131,13 +135,14 @@ sol1.update_best()
 print(sol1.best_solution.solution)
 print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
+list_of_best_fitness.append(sol1.best_solution.total_fitness())
 print()
 
 plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 10
+num_of_loops = 2
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
@@ -161,6 +166,7 @@ for iteration in range(1, num_of_loops + 1):
     print(sol1.best_solution.solution)
     print("sol1.best_solution.total_fitness()")
     print(sol1.best_solution.total_fitness())
+    list_of_best_fitness.append(sol1.best_solution.total_fitness())
     print()
 
     plot_result(iteration)
@@ -179,9 +185,20 @@ plt.axis([1, 30, 25, 1])
 plt.pause(0.1)
 
 # Show your hard work
-plt.show()
+# plt.show()
+print("List of Best Fitness:")
+print(str(list_of_best_fitness))
+
+# Save the best fitness to a text file
+with open("list_of_bests", "a+") as write_f:
+    for value in list_of_best_fitness:
+        s = str(value)
+        write_f.write(s[:s.index('.')] + "\t")
+    write_f.write("\n")
 
 # Implement a write-to-textfile option
 # Implement annotated wells
 # Balance the weight of the wells
 # Implement drawdown constraints and K heterogeneity
+# Fix bug with repeating parameters
+# Compare EO with Best-outta-N-tries algorithm
