@@ -71,6 +71,7 @@ def update_fitness_matrix(self):
     write_supply2hedcon(index_parameter_matrix)
 
     # Run GWM
+
     run_gwm()
 
     # Define ordered list of wells
@@ -137,7 +138,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 5
+num_of_loops = 10
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
@@ -186,3 +187,4 @@ plt.show()
 # Balance the weight of the wells
 # Implement drawdown constraints and K heterogeneity
 # Fix bug with repeating parameters
+# Compare EO with Best-outta-N-tries algorithm

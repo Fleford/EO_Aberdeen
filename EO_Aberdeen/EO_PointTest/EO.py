@@ -142,15 +142,15 @@ class EO(object):
 
         # Parse out parameter matrix and dimensions
         parameters = self.parameters()
-        # parameters_rows, parameters_cols = parameters.shape
+        parameters_rows, parameters_cols = parameters.shape
 
-        # # Get a random distance between two unique and random points
-        # n1 = np.random.randint(parameters_rows)
-        # # n1 = -1  # Pivot from the best point
-        # n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
-        # r1 = parameters[n1]
-        # r2 = parameters[n2]
-        # placement_radius = np.linalg.norm(r2 - r1)
+        # Get a random distance between two unique and random points
+        n1 = np.random.randint(parameters_rows)
+        # n1 = -1  # Pivot from the best point
+        n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
+        r1 = parameters[n1]
+        r2 = parameters[n2]
+        placement_radius = np.linalg.norm(r2 - r1)
 
         # Use the maximal distance as the placement radius
         placement_radius = maximal_dist(parameters)
