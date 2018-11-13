@@ -32,6 +32,7 @@ class EO(object):
         self.y_max = y_max
         self.min_dist = min_dist
         self.avoid_list = avoid_list
+        self.n_rows = n_rows
 
         if self.avoid_list.shape[1] == 0:
             print("No avoid list provided")
