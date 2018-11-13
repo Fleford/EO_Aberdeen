@@ -25,7 +25,8 @@ def iterate(self):
 
 
 # Testing the EO_Solution class
-sol1 = EO.EO(10, False, avoid_list=avoided_points)
+# sol1 = EO.EO(10, False, avoid_list=avoided_points)
+sol1 = EO.EO(10, False)
 print(sol1.solution)
 print(sol1.fitness_ready)
 print()

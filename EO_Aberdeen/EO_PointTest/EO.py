@@ -144,13 +144,13 @@ class EO(object):
         parameters = self.parameters()
         parameters_rows, parameters_cols = parameters.shape
 
-        # Get a random distance between two unique and random points
-        n1 = np.random.randint(parameters_rows)
-        # n1 = -1  # Pivot from the best point
-        n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
-        r1 = parameters[n1]
-        r2 = parameters[n2]
-        placement_radius = np.linalg.norm(r2 - r1)
+        # # Get a random distance between two unique and random points
+        # n1 = np.random.randint(parameters_rows)
+        # # n1 = -1  # Pivot from the best point
+        # n2 = (n1 + np.random.randint(low=1, high=parameters_rows)) % parameters_rows
+        # r1 = parameters[n1]
+        # r2 = parameters[n2]
+        # placement_radius = np.linalg.norm(r2 - r1)
 
         # Use the maximal distance as the placement radius
         placement_radius = maximal_dist(parameters)
@@ -307,11 +307,12 @@ def generate_initial_array(x_min, x_max, y_min, y_max, n_rows, min_dist, avoid_l
     # Check for an avoid list
     if avoid_list.shape[1] == 0:
         print("No avoid list provided for generate_initial_array ")
-
-    # Generates an initial, valid array
-    initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
-    while not nearest_dist(avoid_list, initial_array[0]) >= min_dist:
         initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
+    else:
+        # Generates an initial, valid array
+        initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
+        while not nearest_dist(avoid_list, initial_array[0]) >= min_dist:
+            initial_array = np.array([generate_possible_point(x_min, x_max, y_min, y_max)])
 
     # Generate an initial test point
     new_point = generate_possible_point(x_min, x_max, y_min, y_max)
