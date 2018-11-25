@@ -1,3 +1,5 @@
 @echo off
-COPY .\supply2.decvar .\GWMVI_1_0_2\Test\Data
-COPY .\supply2.hedcon .\GWMVI_1_0_2\Test\Data
+REM This batch file copies files from the python script to the GWM folder
+REM Note that this program assumes the root is where this batch file was called from
+COPY .\abr.decvar .\AberdeenModel\model\tr
+COPY .\abr.hedcon .\AberdeenModel\model\tr
