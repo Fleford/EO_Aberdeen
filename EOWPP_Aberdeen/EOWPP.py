@@ -143,7 +143,7 @@ class EO(object):
 
         # Parse out parameter matrix and dimensions
         parameters = self.parameters()
-        parameters_rows, parameters_cols = parameters.shape
+        # parameters_rows, parameters_cols = parameters.shape
 
         # # Get a random distance between two unique and random points
         # n1 = np.random.randint(parameters_rows)
