@@ -19,7 +19,7 @@ def extract_contributions():
     well_array_contributions = np.array([])
     well_array_names = []
 
-    with open("abr_LP_6.gwmout", 'r') as f:
+    with open("abr.parallel.gwmout", 'r') as f:
 
         for line in f:
             line_cnt = line_cnt + 1
@@ -239,7 +239,7 @@ def run_gwm():
     # print()
     # print("Copying over resulting files from GWM directory...")
     # vvvvvv
-    # subprocess.run(r".\Batch_Files\copy_from_gwm", stdout=subprocess.PIPE, shell=True)
+    subprocess.run(r".\Batch_Files\copy_from_gwm", stdout=subprocess.PIPE, shell=True)
 
     # print()
 
