@@ -14,6 +14,7 @@ def extract_contributions():
     start_string1_flag = False
     print_flag = False
 
+    # Declare return value data types
     well_array_contributions = np.array([])
     well_array_names = []
 
