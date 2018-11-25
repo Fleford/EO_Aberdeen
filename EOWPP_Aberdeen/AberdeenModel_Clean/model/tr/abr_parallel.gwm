@@ -1,9 +1,0 @@
-#Aberdeen Model, GWM file, parallel
-OUT     abr.parallel.gwmout
-DECVAR  abr.decvar
-OBJFNC  abr.objfnc
-VARCON  abr.varcon
-HEDCON  abr.hedcon
-SOLN    abr_LP.soln
-CONTROL abr_parallel.ctrl
-NAM     abr.nam
