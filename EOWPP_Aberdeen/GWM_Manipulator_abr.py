@@ -5,6 +5,7 @@ import numpy as np
 
 def extract_contributions():
     # Looks at the GWM out file and extracts well names and contributions
+    # Assumes only one instance of "OPTIMAL RATES FOR EACH FLOW VARIABLE"
 
     start_string1 = "OPTIMAL RATES FOR EACH FLOW VARIABLE"
     start_string2 = "Q1"
@@ -215,7 +216,7 @@ def write_abr_hedcon(index_and_parameters_matrix):
 # write_abr_decvar(test_parameters)
 # write_abr_hedcon(test_parameters)
 
-
+# UNTESTED
 def run_gwm():
     # Write a function that runs GWM with new local files and updates local files to be ready for use
     # Use stdout=subprocess.PIPE to keep subprocess.run quiet
@@ -251,7 +252,7 @@ def run_gwm():
 # wells = ["Q1", "Q2", "Q4"]
 # print(read_fitness_array(wells))
 
-
+#UNTESTED
 def extract_rivercells():
     # Write a function that loads the river cells from *.sfr file into an array
     # Input is the directory of the river cell file
