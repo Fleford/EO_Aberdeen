@@ -271,5 +271,3 @@ def extract_rivercells():
 # ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs", markersize=12)
 # plt.axis([1, 30, 25, 1])
 # plt.show()
-
-
