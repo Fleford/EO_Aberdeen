@@ -1,0 +1,8 @@
+#Aberdeen Model, OBJFNC file
+#NFVOBJ - Number of flow variables in the OBJFNC
+#FVOBJC - The amount the variable is scaled (1.0 is a good start)
+ 1             #1-IPRN
+ MAX  WSDV     #2-OBJTYP FNTYP
+ 2  0  0       #3-NFVOBJ NEVOBJ  NBVOBJ
+ Q1 1          #4-FVNAME  FVOBJC
+ Q2 1          #4-FVNAME  FVOBJC

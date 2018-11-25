@@ -1,0 +1,399 @@
+# MODFLOW2000 Evapotranspiration Package
+PARAMETER  0
+ 3 50
+1 1 1 1 						SP1	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp1.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp2	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp2.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp3	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp3.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp4	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp4.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp5	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp5.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp6	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp6.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp7	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp7.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp8	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp8.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp9	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp9.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp10	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp10.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp11	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp11.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp12	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp12.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp13	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp13.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp14	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp14.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp15	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp15.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp16	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp16.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp17	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp17.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp18	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp18.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp19	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp19.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp20	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp20.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp21	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp21.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp22	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp22.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp23	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp23.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp24	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp24.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp25	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp25.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp26	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp26.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp27	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp27.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp28	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp28.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp29	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp29.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp30	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp30.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp31	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp31.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp32	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp32.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp33	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp33.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp34	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp34.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp35	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp35.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp36	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp36.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp37	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp37.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp38	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp38.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp39	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp39.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp40	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp40.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp41	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp41.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp42	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp42.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp43	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp43.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp44	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp44.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp45	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp45.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp46	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp46.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp47	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp47.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp48	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp48.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp49	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp49.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp50	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp50.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp51	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp51.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp52	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp52.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp53	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp53.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp54	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp54.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp55	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp55.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp56	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp56.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp57	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp57.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp58	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp58.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp59	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp59.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp60	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp60.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp61	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp61.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp62	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp62.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp63	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp63.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp64	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp64.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp65	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp65.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp66	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp66.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp67	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp67.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp68	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp68.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp69	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp69.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp70	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp70.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp71	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp71.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp72	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp72.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp73	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp73.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp74	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp74.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp75	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp75.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp76	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp76.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp77	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp77.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp78	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp78.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp79	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp79.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp80	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp80.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp81	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp81.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp82	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp82.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp83	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp83.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp84	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp84.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp85	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp85.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp86	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp86.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp87	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp87.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp88	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp88.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp89	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp89.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp90	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp90.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp91	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp91.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp92	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp92.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp93	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp93.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp94	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp94.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp95	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp95.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp96	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp96.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp97	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp97.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp98	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp98.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp
+1 1 1 1 						sp99	INSURF INEVTR INEXDP INIEVT
+OPEN/CLOSE	..\external_files\evt\et_surf.dat	1.0	        (FREE)	-1			ET Surf
+OPEN/CLOSE	..\external_files\evt\et_sp99.dat	.100000000	(FREE)	-1			ET Rate (ft per day)
+CONSTANT	9.00000000						ET Exdp

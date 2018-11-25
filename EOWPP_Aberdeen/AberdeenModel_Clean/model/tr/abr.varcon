@@ -1,0 +1,5 @@
+#Aberdeen Model, VARCON file
+#Flow Values are in cubic feet per day
+ 1                       #1-IPRN
+ Q1 0.0  8.0d5  0.0D2    #2-FVNAME FVMIN FVMAX FVREF
+ Q2 0.0  8.0d5  0.0D2    #2-FVNAME FVMIN FVMAX FVREF
