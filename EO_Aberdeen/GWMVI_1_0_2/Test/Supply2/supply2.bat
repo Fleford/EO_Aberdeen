@@ -18,5 +18,4 @@ echo Running GWM-VI.exe with supply2_serial.gwm
 goto end
 
 
-
 :end
