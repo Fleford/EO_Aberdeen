@@ -1,0 +1,9 @@
+#Aberdeen Model, GWM file, serial
+OUT     abr.serial.gwmout
+DECVAR  abr.decvar
+OBJFNC  abr.objfnc
+VARCON  abr.varcon
+HEDCON  abr.hedcon
+SOLN    abr_SLP.soln
+CONTROL abr_serial.ctrl
+NAM     abr.nam
