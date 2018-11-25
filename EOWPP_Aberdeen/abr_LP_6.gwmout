@@ -1,0 +1,322 @@
+
+                                  GWM-VI
+    U.S. GEOLOGICAL SURVEY GROUNDWATER MANAGEMENT VERSION INDEPENDENT PROGRAM
+                 Version  1.0.2                                  
+
+
+
+
+ OPENING GWM FILE FOR GWM1 -- GROUNDWATER MANAGEMENT PROCESS
+ INPUT READ FROM UNIT 980
+
+ #Aberdeen Model, GWM file, parallel                                                                                                                                                                     
+
+ OPENING DECISION-VARIABLE FILE ON UNIT   10:
+ abr.decvar                                                                                                                                                                                              
+ #Aberdeen Model, DECVAR file
+ #NFVAR - Number of flow variables
+
+ NO. OF FLOW-RATE DECISION VARIABLES (NFVAR)       6
+ NO. OF EXTERNAL DECISION VARIABLES (NEVAR):       0
+ BINARY VARIABLES ARE NOT ACTIVE.
+
+ FLOW-RATE VARIABLES: WEL-TYPE
+                                                   FRACTION
+  NUMBER     NAME       TYPE      LAY   ROW   COL   OF FLOW
+ ----------------------------------------------------------
+    1      Q1         WITHDRAWAL     2  150  200    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+    2      Q2         WITHDRAWAL     2  140  210    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+    3      Q3         WITHDRAWAL     2  130  220    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+    4      Q4         WITHDRAWAL     2  120  230    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+    5      Q5         WITHDRAWAL     2  110  240    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+    6      Q6         WITHDRAWAL     2  100  250    1.0000
+   AVAILABLE IN STRESS PERIODS: 1-2
+
+
+      521 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR DECISION VARIABLES
+
+ CLOSING DECISION-VARIABLE FILE
+
+
+ OPENING OBJECTIVE-FUNCTION FILE ON UNIT   10:
+ abr.objfnc                                                                                                                                                                                              
+ #Aberdeen Model, OBJFNC file
+ #NFVOBJ - Number of flow variables in the OBJFNC
+ #FVOBJC - The amount the variable is scaled (1.0 is a good start)
+
+ OBJECTIVE TYPE: MAX   FUNCTION TYPE: WSDV
+
+ NO. OF FLOW-RATE DECISION VARIABLES IN OBJECTIVE FUNCTION (NFVOBJ):    6
+ NO. OF EXTERNAL DECISION VARIABLES IN OBJECTIVE FUNCTION (NEVOBJ):     0
+ NO. OF BINARY DECISION VARIABLES IN OBJECTIVE FUNCTION (NBVOBJ):       0
+ NO. OF STATE VARIABLES IN OBJECTIVE FUNCTION (NSVOBJ):                 0
+
+ OBJECTIVE FUNCTION: (excluding flow duration terms)
+
+ MAX    +  1.00E+00 Q1         +  1.00E+00 Q2         +  1.00E+00 Q3        
+        +  1.00E+00 Q4         +  1.00E+00 Q5         +  1.00E+00 Q6        
+
+       24 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR OBJECTIVE-FUNCTION
+
+ CLOSING OBJECTIVE-FUNCTION FILE
+
+
+ OPENING DECISION-VARIABLE CONSTRAINTS FILE ON UNIT   10:
+ abr.varcon                                                                                                                                                                                              
+ #Aberdeen Model, VARCON file
+ #Flow Values are in cubic feet per day
+
+ FLOW RATE VARIABLES:
+                        MINIMUM        MAXIMUM        REFERENCE
+  NUMBER   NAME         FLOW RATE      FLOW RATE      FLOW RATE
+----------------------------------------------------------------
+    1      Q1           0.000E+00      8.000E+05      0.000E+00
+    2      Q2           0.000E+00      8.000E+05      0.000E+00
+    3      Q3           0.000E+00      8.000E+05      0.000E+00
+    4      Q4           0.000E+00      8.000E+05      0.000E+00
+    5      Q5           0.000E+00      8.000E+05      0.000E+00
+    6      Q6           0.000E+00      8.000E+05      0.000E+00
+
+ CLOSING DECISION-VARIABLE CONSTRAINTS FILE
+
+
+ OPENING HEAD CONSTRAINTS FILE ON UNIT   10:
+ abr.hedcon                                                                                                                                                                                              
+ #Aberdeen Model, HEDCON file
+ #A separate entry must be made for each stress period ("-" is not allowed)
+ #NDD - Number of drawdown constraints
+
+ DRAWDOWN CONSTRAINTS:
+                                           RIGHT-HAND    STRESS
+ NUMBER  NAME        LAY  ROW  COL  TYPE      SIDE       PERIOD
+ ---------------------------------------------------------------
+     1   Q1c           2  150  200   <    1.0000E+01         2
+     2   Q2c           2  140  210   <    1.0000E+01         2
+     3   Q3c           2  130  220   <    1.0000E+01         2
+     4   Q4c           2  120  230   <    1.0000E+01         2
+     5   Q5c           2  110  240   <    1.0000E+01         2
+     6   Q6c           2  100  250   <    1.0000E+01         2
+
+      420 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR HEAD CONSTRAINTS
+
+ CLOSING HEAD CONSTRAINTS FILE
+
+
+ OPENING SOLUTION FILE ON UNIT   10:
+ abr_LP.soln                                                                                                                                                                                             
+ #Aberdeen Model, SOLN file
+
+ SOLNTYP IS LP: GWM WILL COMPLETE A SINGLE ITERATION OF THE LINEAR PROBLEM.
+
+ IRM EQUALS 2: RESPONSE MATRIX WILL BE CALCULATED BY GWM
+ BUT NOT WRITTEN TO FILE
+
+ MAXIMUM NUMBER OF LP ITERATIONS:               1000
+ MAXIMUM NUMBER OF BRANCH AND BOUND ITER:       2000
+
+ PERTURBATION VALUE:                          0.10D+00
+
+ MAXIMUM NUMBER OF PERTURBATION ATTEMPTS:         10
+ PERTURBATION ADJUSTMENT FACTOR (PGFACT):    0.50000
+
+ OUTPUT FROM BRANCH-AND-BOUND ALGORITHM WILL NOT BE PRINTED.
+
+ CRITMFC SET TO                               0.000D+00
+ GWM WILL ACCEPT FLOW PROCESS RESULTS THAT MEET GWF
+ CONVERGENCE CRITERIA
+
+ BASE PUMPING RATES TAKEN FROM FVREF SPECIFIED IN VARCON INPUT FILE
+ 
+     PROBLEM SIZE
+ 
+  NUMBER OF VARIABLES (INCLUDING SLACKS)          12
+  NUMBER OF CONSTRAINT EQUATIONS                   6
+ 
+
+     3628 BYTES OF MEMORY ALLOCATED FOR RESPONSE MATRIX ALGORITHM
+
+ CLOSING SOLUTION AND OUTPUT FILE
+
+ 
+ Reading input from file: abr_parallel.gwm
+ CONTROL file: abr_parallel.ctrl
+ NAM file: abr.nam
+---------------------------------------------------------------
+               Solution Algorithm
+---------------------------------------------------------------
+  Begin Solution Algorithm
+    Running Flow Process Simulation
+      for both Reference and Base 
+      Status of Simulation-Based Constraints 
+      Constraint Type        Name       Status   Distance To RHS
+      ---------------        ----       ------   ---------------
+      Head Drawdown          Q1c        Satisfied     1.0000E+01
+      Head Drawdown          Q2c        Satisfied     1.0000E+01
+      Head Drawdown          Q3c        Satisfied     1.0000E+01
+      Head Drawdown          Q4c        Satisfied     1.0000E+01
+      Head Drawdown          Q5c        Satisfied     1.0000E+01
+      Head Drawdown          Q6c        Satisfied     1.0000E+01
+
+  Distance to RHS is the absolute value of the difference between the
+    the right hand side of the constraint and the left side of the
+    constraint evaluated using the current set of decision variable values.
+    
+    Calculating Response Matrix
+      Perturb Flow Variable    1
+       By Perturbation Value: -8.000000E+04
+      Perturb Flow Variable    2
+       By Perturbation Value: -8.000000E+04
+      Perturb Flow Variable    3
+       By Perturbation Value: -8.000000E+04
+      Perturb Flow Variable    4
+       By Perturbation Value: -8.000000E+04
+      Perturb Flow Variable    5
+       By Perturbation Value: -8.000000E+04
+      Perturb Flow Variable    6
+       By Perturbation Value: -8.000000E+04
+ 
+      Average Number of Significant Digits in Matrix  3.277778E+00
+    
+    Solving Linear Program
+    Feasible Solution Found
+  Optimal Solution Found
+
+----------------------------------------------------------------------
+               Groundwater Management Solution
+----------------------------------------------------------------------
+
+       OPTIMAL SOLUTION FOUND 
+
+       OPTIMAL RATES FOR EACH FLOW VARIABLE 
+       ---------------------------------------
+Variable           Withdrawal          Injection           Contribution
+Name               Rate                Rate                To Objective
+----------         --------------      ------------        ------------
+ Q1                1.262478E+04                            4.620669E+06
+ Q2                5.320559E+04                            1.947325E+07
+ Q3                4.525012E+04                            1.656154E+07
+ Q4                3.820342E+04                            1.398245E+07
+ Q5                5.097956E+04                            1.865852E+07
+ Q6                2.871637E+04                            1.051019E+07
+                   ------------        ------------        ------------
+TOTALS             2.289798E+05        0.000000E+00        8.380662E+07
+
+
+       OBJECTIVE FUNCTION VALUE                            8.380662E+07
+
+       BINDING CONSTRAINTS 
+Constraint Type        Name     Status      Shadow Price
+---------------        ----     ------      ------------
+Head Drawdown          Q1c      Binding     -4.5924E+05
+Head Drawdown          Q2c      Binding     -1.9384E+06
+Head Drawdown          Q3c      Binding     -1.6535E+06
+Head Drawdown          Q4c      Binding     -1.4030E+06
+Head Drawdown          Q5c      Binding     -1.8723E+06
+Head Drawdown          Q6c      Binding     -1.0541E+06
+
+  Binding constraint and range analysis values are determined from the linear
+    program and based on the response matrix approximation of the flow-process.
+ 
+       RANGE ANALYSIS 
+
+
+       Constraint Ranges
+
+  Lower/Upper Bound are the values of the RHS beyond which basis will change.
+    Leaving is the variable which will leave the basis. 
+    Entering is the variable which will enter the basis.
+    If the entering or leaving variable is a constraint name,
+      then the constraint slack variable is active
+
+Constraint                Original      Lower/Upper
+Name        Slack         RHS           Bound            Entering    Leaving
+----------  ----------    ----------    ----------       ----------  ----------
+Q1c         0.0000E+00    1.0000E+01    1.0000E+01       Q2c         Q1        
+                                        1.0000E+01       Q1c         Q2        
+
+Q2c         0.0000E+00    1.0000E+01    1.0000E+01       Q1c         Q2        
+                                        1.0000E+01       Q2c         Q1        
+
+Q3c         0.0000E+00    1.0000E+01    1.0000E+01       Q2c         Q3        
+                                        1.0000E+01       Q1c         Q2        
+
+Q4c         0.0000E+00    1.0000E+01    1.0000E+01       Q3c         Q4        
+                                        1.0000E+01       Q2c         Q3        
+
+Q5c         0.0000E+00    1.0000E+01    1.0000E+01       Q4c         Q5        
+                                        1.0000E+01       Q3c         Q4        
+
+Q6c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q6        
+                                        1.0000E+01       Q4c         Q5        
+
+
+
+       Objective-Function Coefficient Ranges 
+
+  Lower/Upper Bound are the values of the coefficients beyond which basis will change.
+    Leaving is the variable which will leave the basis. 
+    Entering is the variable which will enter the basis.
+    If the entering or leaving variable is a constraint name,
+      then the constraint slack variable is active
+    Basic variables are shown with zero reduced cost
+
+Variable    Reduced       Original      Lower/Upper
+Name        Cost          Coefficient   Bound            Entering    Leaving
+----------  ----------    ----------    ----------       ----------  ----------
+Q1          0.0000E+00    3.6600E+02    2.2118E+02       Q1c         Q1        
+                                        2.0378E+03       Q2c         Q2        
+
+Q2          0.0000E+00    3.6600E+02    2.0544E+02       Q2c         Q2        
+                                        7.6160E+02       Q1c         Q1        
+
+Q3          0.0000E+00    3.6600E+02    2.1902E+02       Q3c         Q3        
+                                        9.3387E+02       Q2c         Q2        
+
+Q4          0.0000E+00    3.6600E+02    2.0306E+02       Q4c         Q4        
+                                        1.4487E+03       Q3c         Q3        
+
+Q5          0.0000E+00    3.6600E+02    1.7243E+02       Q5c         Q5        
+                                        1.2591E+03       Q4c         Q4        
+
+Q6          0.0000E+00    3.6600E+02    1.5902E+02       Q6c         Q6        
+                                        2.2062E+03       Q5c         Q5        
+
+---------------------------------------------------------------
+         Final Flow Process Simulation
+---------------------------------------------------------------
+  Running Final Flow Process Simulation
+    using Optimal Flow Variable Rates 
+    
+      Status of Simulation-Based Constraints 
+        Using Optimal Flow Rate Variable Values
+
+                                           Simulated    Specified
+                                            By Flow        in
+      Constraint Type        Name           Process    Constraints   Difference
+      ---------------        ----          ----------   ----------   ----------
+      Head Drawdown          Q1c           1.2993E+03 > 1.2993E+03  -3.3691E-02
+      Head Drawdown          Q2c           1.3002E+03 > 1.3005E+03  -2.1423E-01
+      Head Drawdown          Q3c           1.3002E+03 > 1.3005E+03  -2.1777E-01
+      Head Drawdown          Q4c           1.2994E+03 > 1.2996E+03  -2.2546E-01
+      Head Drawdown          Q5c           1.2988E+03 > 1.2991E+03  -2.4683E-01
+      Head Drawdown          Q6c           1.2983E+03 > 1.2985E+03  -1.8323E-01
+
+  Difference is computed by subtracting right hand side of the constraint 
+    from the left side of the constraint.
+  Precision limitations and nonlinear response may cause the 
+    values of the binding constraints computed directly by the flow process 
+    to differ from those computed using the linear program.  
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/11/25 14:20:14
+ Elapsed run time: 36 Minutes,  6.720 Seconds
+
