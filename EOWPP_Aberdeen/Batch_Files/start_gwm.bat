@@ -1,3 +1,5 @@
 @echo off
-cd .\GWMVI_1_0_2\Test\Supply2
-Supply2.bat
+REM This batch file starts the GWM program
+REM Note that this program assumes the root is where this batch file was called from
+cd .\AberdeenModel\model\tr
+abr_gwm_parallel.bat

@@ -207,7 +207,7 @@ def write_abr_hedcon(index_and_parameters_matrix):
                 write_f.write(new_line)
 
 # # Tests the write_supply2decvar and write_supply2hedcon
-# test_parameters = np.array([[1, 150, 200],
+# test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
 #                             [2, 140, 210],
 #                             [3, 130, 220],
 #                             [4, 120, 230],
@@ -231,22 +231,23 @@ def run_gwm():
     # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
     # for line in proc.stdout.split('\n'):
     #     print(line)
-    # vvvvvv
-    # subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
     # subprocess.run(r".\Batch_Files\start_gwm", shell=True)
     # remove " stdout=subprocess.PIPE," to print output of subprocess
 
     # print()
     # print("Copying over resulting files from GWM directory...")
-    # vvvvvv
     subprocess.run(r".\Batch_Files\copy_from_gwm", stdout=subprocess.PIPE, shell=True)
 
     # print()
 
 # # Tests run_gwm
-# test_parameters = np.array([[1, 12, 11], # Index, Row, Column
-#                             [2, 16, 17],
-#                             [4, 14, 25]])
+# test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
+#                             [2, 140, 210],
+#                             [3, 130, 220],
+#                             [4, 120, 230],
+#                             [5, 110, 240],
+#                             [6, 100, 250]])
 # write_supply2decvar(test_parameters)
 # run_gwm()
 # print()
