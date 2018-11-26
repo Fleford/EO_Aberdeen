@@ -274,7 +274,7 @@ def extract_rivercells():
     line_cnt = 0
     n_cells = 0
     river_cells = []
-    with open("abr_temp.sfr", "r") as f:
+    with open("abr_ref.sfr", "r") as f:
         for line in f:
             line_array = line.split()
 
@@ -314,3 +314,42 @@ def extract_rivercells():
 # ax.plot(extract_rivercells()[:, 1], extract_rivercells()[:, 0], "bs", markersize=12)
 # plt.axis([1, 30, 25, 1])
 # plt.show()
+
+
+# Extract well cells
+def extract_wellcells():
+    # A function that loads the wells cells from *.wel file into an array
+    # Input is the directory of the river cell file
+    # Output is an array, where each row is a point, [row, col]
+    # Note: Duplicate cells are NOT removed
+
+    line_cnt = 0
+    n_cells = 0
+    well_cells = []
+    with open("abr_ref.sfr", "r") as f:
+        for line in f:
+            line_array = line.split()
+
+            # Ignore if the string is empty
+            if len(line_array) == 0:
+                continue
+
+            # Ignore start of file comments marked by "#"
+            if line_array[0] == '#':
+                continue
+
+            # Start counting lines of data
+            line_cnt = line_cnt + 1
+
+            # Grab number of lines of data of from the first line
+            if line_cnt == 1:
+                n_cells = abs(int(line_array[0]))
+
+            # Grab data from lines in range of n_cells
+            if 1 < line_cnt <= n_cells + 1:
+                row = int(line_array[1])
+                col = int(line_array[2])
+                well_cells.append([row, col])
+
+    # Convert to numpy array
+    river_cells = np.asanyarray(well_cells)

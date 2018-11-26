@@ -350,5 +350,5 @@ def check_ib(cell_row_col):
     # Returns true if the cell is active, else false
     # Input is a two-element np.array, [0] is row, [1] is col
 
-    ib = np.loadtxt("ib2_temp.dat", dtype=bool)
+    ib = np.loadtxt("ib2_ref.dat", dtype=bool)
     return ib[cell_row_col[0], cell_row_col[1]]

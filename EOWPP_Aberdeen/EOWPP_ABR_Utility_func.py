@@ -5,7 +5,7 @@ def check_ib(cell_row_col):
     # Returns true if the cell is active, else false
     # Input is a two-element np.array, [0] is row, [1] is col
 
-    ib = np.loadtxt("ib2_temp.dat", dtype=bool)
+    ib = np.loadtxt("ib2_ref.dat", dtype=bool)
     return ib[cell_row_col[0], cell_row_col[1]]
 
 # # Test check_ib
@@ -23,7 +23,7 @@ def extract_rivercells():
     line_cnt = 0
     n_cells = 0
     river_cells = []
-    with open("abr_temp.sfr", "r") as f:
+    with open("abr_ref.sfr", "r") as f:
         for line in f:
             line_array = line.split()
 
