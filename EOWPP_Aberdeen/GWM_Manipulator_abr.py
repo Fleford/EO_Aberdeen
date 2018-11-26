@@ -221,25 +221,26 @@ def run_gwm():
     # Write a function that runs GWM with new local files and updates local files to be ready for use
     # Use stdout=subprocess.PIPE to keep subprocess.run quiet
 
-    # print()
-    # print("Copying over new files to GWM directory...")
-    subprocess.run(r".\Batch_Files\copy_to_gwm", stdout=subprocess.PIPE, shell=True)
+    print()
+    print("Copying over new files to GWM directory...")
     # subprocess.run(r".\Batch_Files\copy_to_gwm", stdout=subprocess.PIPE, shell=True)
+    subprocess.run(r".\Batch_Files\copy_to_gwm", shell=True)
 
-    # print()
-    # print("Running GWM...")
+    print()
+    print("Running GWM...")
     # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
     # for line in proc.stdout.split('\n'):
     #     print(line)
-    subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
-    # subprocess.run(r".\Batch_Files\start_gwm", shell=True)
+    # subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    subprocess.run(r".\Batch_Files\start_gwm", shell=True)
     # remove " stdout=subprocess.PIPE," to print output of subprocess
 
-    # print()
-    # print("Copying over resulting files from GWM directory...")
-    subprocess.run(r".\Batch_Files\copy_from_gwm", stdout=subprocess.PIPE, shell=True)
+    print()
+    print("Copying over resulting files from GWM directory...")
+    # subprocess.run(r".\Batch_Files\copy_from_gwm", stdout=subprocess.PIPE, shell=True)
+    subprocess.run(r".\Batch_Files\copy_from_gwm", shell=True)
 
-    # print()
+    print()
 
 # # Tests run_gwm
 # test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
@@ -248,11 +249,12 @@ def run_gwm():
 #                             [4, 120, 230],
 #                             [5, 110, 240],
 #                             [6, 100, 250]])
-# write_supply2decvar(test_parameters)
+# write_abr_decvar(test_parameters)
+# write_abr_hedcon(test_parameters)
 # run_gwm()
 # print()
 # print("Resulting fitness:")
-# wells = ["Q1", "Q2", "Q4"]
+# wells = ["Q1", "Q4", "Q6"]
 # print(read_fitness_array(wells))
 
 #UNTESTED
