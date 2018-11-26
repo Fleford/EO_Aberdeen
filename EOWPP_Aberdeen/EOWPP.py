@@ -184,7 +184,10 @@ class EO(object):
         # Check if it's the same as the removed row parameter
         repeat_flag = not np.array_equal(self.replaced_row_parameter, checked_parameter)
 
-        return dist_flag and repeat_flag
+        # Check if it's on an active cell
+        ib_flag = check_ib(checked_parameter)
+
+        return dist_flag and repeat_flag and ib_flag
 
     def generate_row(self):
         """
