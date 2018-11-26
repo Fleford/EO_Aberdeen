@@ -340,3 +340,12 @@ def condition_vector(given_point, x_min, x_max, y_min, y_max):
 
     # Round components to whole numbers
     return given_point.round()
+
+
+# Function specifically for Aberdeen Model
+def check_ib(cell_row_col):
+    # Returns true if the cell is active, else false
+    # Input is a two-element np.array, [0] is row, [1] is col
+
+    ib = np.loadtxt("ib2_temp.dat", dtype=bool)
+    return ib[cell_row_col[0], cell_row_col[1]]
