@@ -2,7 +2,7 @@ import subprocess
 
 import numpy as np
 
-
+# Revise to handle multiple start_string1
 def extract_contributions():
     # Looks at the GWM out file and extracts well names and contributions
     # Assumes only one instance of "OPTIMAL RATES FOR EACH FLOW VARIABLE"
@@ -12,6 +12,7 @@ def extract_contributions():
     end_string = "------------        ------------        ------------"
     # starter_string = "Q1    "
     line_cnt = 0
+    start_string0_flag = True
     start_string1_flag = False
     print_flag = False
 
@@ -243,7 +244,7 @@ def run_gwm():
     print()
 
 # # Tests run_gwm
-# test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
+# test_parameters = np.array([[1, 151, 200],    # Index, Row, Column
 #                             [2, 140, 210],
 #                             [3, 130, 220],
 #                             [4, 120, 230],
@@ -257,9 +258,10 @@ def run_gwm():
 # wells = ["Q1", "Q4", "Q6"]
 # print(read_fitness_array(wells))
 
-#UNTESTED
+
+# Extract river cells
 def extract_rivercells():
-    # Write a function that loads the river cells from *.sfr file into an array
+    # A function that loads the river cells from *.sfr file into an array
     # Input is the directory of the river cell file
     # Output is an array, where each row is a point, [row, col]
     # Note: Duplicate cells are NOT removed
@@ -267,12 +269,16 @@ def extract_rivercells():
     line_cnt = 0
     n_cells = 0
     river_cells = []
-    with open("supply2.sfr", "r") as f:
+    with open("abr_temp.sfr", "r") as f:
         for line in f:
             line_array = line.split()
 
+            # Ignore if the string is empty
+            if len(line_array) == 0:
+                continue
+
             # Ignore start of file comments marked by "#"
-            if line_array[0] == "#":
+            if line_array[0] == '#':
                 continue
 
             # Start counting lines of data
@@ -280,7 +286,7 @@ def extract_rivercells():
 
             # Grab number of lines of data of from the first line
             if line_cnt == 1:
-                n_cells = int(line_array[0])
+                n_cells = abs(int(line_array[0]))
 
             # Grab data from lines in range of n_cells
             if 1 < line_cnt <= n_cells + 1:
