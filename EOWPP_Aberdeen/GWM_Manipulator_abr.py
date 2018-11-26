@@ -1,18 +1,18 @@
 import subprocess
-
 import numpy as np
 
-# Revise to handle multiple start_string1
+
 def extract_contributions():
     # Looks at the GWM out file and extracts well names and contributions
     # Assumes only one instance of "OPTIMAL RATES FOR EACH FLOW VARIABLE"
 
+    start_string0 = "Groundwater Management Solution"
     start_string1 = "OPTIMAL RATES FOR EACH FLOW VARIABLE"
     start_string2 = "Q1"
     end_string = "------------        ------------        ------------"
     # starter_string = "Q1    "
     line_cnt = 0
-    start_string0_flag = True
+    start_string0_flag = False      # Set to True if start_string0 does not exist
     start_string1_flag = False
     print_flag = False
 
@@ -26,9 +26,11 @@ def extract_contributions():
             line_cnt = line_cnt + 1
 
             # Look for when the optimal solution table starts and stops
+            if start_string0 in line:
+                start_string0_flag = True
             if start_string1 in line:
                 start_string1_flag = True
-            if start_string1_flag and start_string2 in line:
+            if start_string1_flag and start_string0_flag and (start_string2 in line):
                 print_flag = True
             elif end_string in line:
                 print_flag = False
@@ -44,6 +46,9 @@ def extract_contributions():
             # Extract names of well index_and_parameters_matrix
             if print_flag:
                 well_array_names.append(line_array[0])
+
+    if not start_string0_flag:
+        print("start_string0 not found")
 
     return well_array_names, well_array_contributions
 
