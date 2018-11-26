@@ -1,0 +1,17 @@
+BEGIN Options
+  Verbose = 3
+  MessageFile = abr_messages.txt
+END Options
+
+BEGIN Simulation
+  SimCommand = "..\..\bin\MODFLOW-NWT_64 abr.nam"
+END Simulation
+
+BEGIN Model_Command_Lines
+  command = abr_cmr.bat
+  commandID = abr_cmr
+END Model_Command_Lines
+
+BEGIN Parallel_Control
+  parallel=false
+END Parallel_Control

@@ -1,0 +1,10 @@
+#Aberdeen Model, DECVAR file
+#NFVAR - Number of flow variables
+ 1 0                              #1-IPRN  GWMWFILE
+ 6 0 0                            #2-NFVAR NEVAR NBVAR
+ Q1  1  2  151  200  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q2  1  2  140  210  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q3  1  2  130  220  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q4  1  2  120  230  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q5  1  2  110  240  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q6  1  2  100  250  W  Y  1-2    #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP

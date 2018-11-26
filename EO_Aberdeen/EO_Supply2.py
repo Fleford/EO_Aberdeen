@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from EO_PointTest.EO import EO
-from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+from GWM_Manipulator_abr import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -142,7 +142,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 2
+num_of_loops = 128
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
@@ -182,19 +182,19 @@ plot_result()
 
 ax.set_title("Iteration = {}, Fitness = {}".format("Best", sol1.total_fitness()))
 plt.axis([1, 30, 25, 1])
-plt.pause(0.1)
+plt.pause(1000)
 
 # Show your hard work
 # plt.show()
 print("List of Best Fitness:")
 print(str(list_of_best_fitness))
 
-# Save the best fitness to a text file
-with open("list_of_bests", "a+") as write_f:
-    for value in list_of_best_fitness:
-        s = str(value)
-        write_f.write(s[:s.index('.')] + "\t")
-    write_f.write("\n")
+# # Save the best fitness to a text file
+# with open("list_of_bests", "a+") as write_f:
+#     for value in list_of_best_fitness:
+#         s = str(value)
+#         write_f.write(s[:s.index('.')] + "\t")
+#     write_f.write("\n")
 
 # Implement a write-to-textfile option
 # Implement annotated wells

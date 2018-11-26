@@ -1,0 +1,11 @@
+#Aberdeen Model, HEDCON file
+#A separate entry must be made for each stress period ("-" is not allowed)
+#NDD - Number of drawdown constraints
+ 1                              #1-IPRN
+ 0  6  0  0                     #2-NHB NDD NDF NGD
+ Q1c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q2c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q3c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q4c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q5c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q6c  2  xx  yy le 10.0 2     #3-DDNAME LAYH ROWH COLH TYPH BND NSP
