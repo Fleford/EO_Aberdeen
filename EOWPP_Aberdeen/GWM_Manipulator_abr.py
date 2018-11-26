@@ -323,12 +323,20 @@ def extract_wellcells():
     # Output is an array, where each row is a point, [row, col]
     # Note: Duplicate cells are NOT removed
 
+    first_line = 7    # First line that contains the number of entries for the first period. One-Indexed
     line_cnt = 0
     n_cells = 0
     well_cells = []
-    with open("abr_ref.sfr", "r") as f:
+    with open("abr.wel", "r") as f:
         for line in f:
+            # Start counting lines of data
+            line_cnt = line_cnt + 1
+
             line_array = line.split()
+
+            # Ignore if its not at the starting point
+            if line_cnt < first_line:
+                continue
 
             # Ignore if the string is empty
             if len(line_array) == 0:
@@ -338,18 +346,15 @@ def extract_wellcells():
             if line_array[0] == '#':
                 continue
 
-            # Start counting lines of data
-            line_cnt = line_cnt + 1
-
-            # Grab number of lines of data of from the first line
+            # (Assuming this is header line) Grab number of lines of data off from the header line
             if line_cnt == 1:
                 n_cells = abs(int(line_array[0]))
 
-            # Grab data from lines in range of n_cells
-            if 1 < line_cnt <= n_cells + 1:
-                row = int(line_array[1])
-                col = int(line_array[2])
-                well_cells.append([row, col])
+            # # Grab data from lines in range of n_cells
+            # if 1 < line_cnt <= n_cells + 1:
+            #     row = int(line_array[1])
+            #     col = int(line_array[2])
+            #     well_cells.append([row, col])
 
-    # Convert to numpy array
-    river_cells = np.asanyarray(well_cells)
+    # # Convert to numpy array
+    # river_cells = np.asanyarray(well_cells)
