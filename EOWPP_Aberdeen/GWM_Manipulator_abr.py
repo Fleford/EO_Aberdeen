@@ -307,9 +307,9 @@ def extract_rivercells():
     # Gimme da good stuff
     return river_cells
 
-# Tests extract_rivercells
-rivercells = extract_rivercells()
-print(rivercells.shape)
+# # Tests extract_rivercells
+# rivercells = extract_rivercells()
+# print(rivercells.shape)
 #
 # # Prepare plot instance for extract_rivercells
 # import matplotlib.pyplot as plt
@@ -328,7 +328,7 @@ def extract_wellcells():
     first_line = 7    # First line that contains the number of entries for the first period. One-Indexed
     line_cnt = 0
     well_cells = []
-    with open("abr.wel", "r") as f:
+    with open("abr_ref.wel", "r") as f:
         for line in f:
             # Start counting lines of data
             line_cnt = line_cnt + 1

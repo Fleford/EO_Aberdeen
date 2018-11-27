@@ -1,12 +1,12 @@
-# This program goes through the abr.wel file
+# This program goes through the abr_ref.wel file
 # and generates a new file with the Stress Periods annotated
 
 AnnotatedLine = 6   # Variable initialized with the first line to be annotated. Zero-Indexed
 Line = 0			# Current line within the read file
 SP = 1				# Current Stress Period
 
-# Open abr.wel file
-with open('abr.wel', 'r') as read_f:
+# Open abr_ref.wel file
+with open('abr_ref.wel', 'r') as read_f:
     # Prepare a new file to write to
     with open('Revised_abr.wel', 'w') as write_f:
 
