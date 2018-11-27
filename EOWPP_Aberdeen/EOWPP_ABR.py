@@ -106,7 +106,7 @@ def plot_result(x=0):
     for i, txt in enumerate(sol1.solution[:, 0]):
         ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
     ax.set_title("Iteration = {}, Fitness = {}".format(x, sol1.total_fitness()))
-    plt.axis([1, 30, 25, 1])
+    plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
     plt.pause(0.1)
 
 
@@ -143,7 +143,8 @@ print("sol1.best_solution.total_fitness()")
 print(sol1.best_solution.total_fitness())
 list_of_best_fitness.append(sol1.best_solution.total_fitness())
 print()
-
+print("Plotting new solution:")
+print()
 plot_result()
 
 # # Start of loop
