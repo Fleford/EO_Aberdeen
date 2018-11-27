@@ -15,27 +15,30 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 # write_abr_decvar(test_parameters)
 # run_gwm()
 # print()
-# print("Resulting fitness:")
-# wells = ["Q1", "Q2", "Q4"]
-# print(read_fitness_array(wells))
-# print()
-# print("extract_rivercells")
-avoid_river = extract_rivercells()
-# print(avoid_river)
-# print()
-# print("extract_wellcells")
-# avoid_wells = extract_wellcells()
-# print(avoid_wells)
-# print()
+print("Resulting fitness:")
+wells = ["Q1", "Q2", "Q4"]
+print(read_fitness_array(wells))
+print()
+print("extract_wellcells")
+well_cells = extract_wellcells()
+print(well_cells)
+print()
+print("extract_rivercells")
+river_cells = extract_rivercells()
+print(river_cells)
+print()
+print("Combining river and well cell lists")
+wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
+print(wells_and_river_cells)
 #
-# Test EO functions
-# NOTICE: for EO, x is model row and y is model column
-sol1 = EO(n_rows=6, x_min=1, x_max=368, y_min=1, y_max=410, avoid_list=avoid_river, min_dist=3)
-print()
-print(sol1.solution)
-print(sol1.fitness_ready)
-print(sol1.min_dist)
-print()
+# # Test EO functions
+# # NOTICE: for EO, x is model row and y is model column
+# sol1 = EO(n_rows=6, x_min=1, x_max=368, y_min=1, y_max=410, avoid_list=avoid_river, min_dist=3)
+# print()
+# print(sol1.solution)
+# print(sol1.fitness_ready)
+# print(sol1.min_dist)
+# print()
 #
 # # Testing Plots
 # # Prepare plot instance for extract_rivercells
