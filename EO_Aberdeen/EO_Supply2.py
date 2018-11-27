@@ -36,7 +36,7 @@ from GWM_Manipulator_abr import read_fitness_array, write_supply2decvar, write_s
 # ax.plot(avoided_points[:, 1], avoided_points[:, 0], "bs", markersize=12)
 # # Plot wells
 # ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], 'ro')
-# plt.axis([1, 30, 25, 1])
+# plt.axis([1, 30, 25, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
 # plt.show()
 
 
