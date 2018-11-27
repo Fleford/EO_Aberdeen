@@ -1,5 +1,4 @@
 import copy
-
 import numpy as np
 
 
@@ -298,6 +297,11 @@ def generate_possible_point(x_min, x_max, y_min, y_max):
     # Generate random x and y point that are within bounds
     x_new_point = np.random.randint(low=x_min, high=x_max + 1)
     y_new_point = np.random.randint(low=y_min, high=y_max + 1)
+
+    # Keep generating points until you get one that's active
+    while not check_ib(np.array([x_new_point, y_new_point])):
+        x_new_point = np.random.randint(low=x_min, high=x_max + 1)
+        y_new_point = np.random.randint(low=y_min, high=y_max + 1)
 
     # Stitch into a row vector and return array
     return np.array([x_new_point, y_new_point])
