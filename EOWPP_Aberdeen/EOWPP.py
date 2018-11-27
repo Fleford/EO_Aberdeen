@@ -46,7 +46,7 @@ class EO(object):
         self.solution = np.append(parameter_matrix, zero_vector, axis=1)
 
         # Append index matrix to left of solution matrix
-        index_array = np.arange(n_rows).reshape(-1, 1)
+        index_array = np.arange(1, n_rows + 1).reshape(-1, 1)
         self.solution = np.append(index_array, self.solution, axis=1)
 
     def parameters(self):

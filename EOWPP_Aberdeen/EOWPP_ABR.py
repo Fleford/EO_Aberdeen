@@ -15,10 +15,11 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 # write_abr_decvar(test_parameters)
 # run_gwm()
 # print()
-print("Resulting fitness:")
-wells = ["Q1", "Q2", "Q4"]
-print(read_fitness_array(wells))
-print()
+# print("Resulting fitness:")
+# wells = ["Q1", "Q2", "Q4"]
+# print(read_fitness_array(wells))
+# print()
+
 print("extract_wellcells")
 well_cells = extract_wellcells()
 print(well_cells)
@@ -30,46 +31,44 @@ print()
 print("Combining river and well cell lists")
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 print(wells_and_river_cells)
-#
-# # Test EO functions
-# # NOTICE: for EO, x is model row and y is model column
-# sol1 = EO(n_rows=6, x_min=1, x_max=368, y_min=1, y_max=410, avoid_list=avoid_river, min_dist=3)
-# print()
-# print(sol1.solution)
-# print(sol1.fitness_ready)
-# print(sol1.min_dist)
-# print()
-#
-# # Testing Plots
-# # Prepare plot instance for extract_rivercells
-# # NOTICE: for plotting, x is columns, y is rows
-# fig, ax = plt.subplots()
-# # Plot river
-# ax.plot(avoided_points[:, 1], avoided_points[:, 0], "bs", markersize=12)
-# # Plot wells
-# ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], 'ro')
-# plt.axis([1, 30, 25, 1])
-# plt.show()
+
+# Test EO functions
+# NOTICE: for EO, x is model row and y is model column
+sol1 = EO(n_rows=6, x_min=2, x_max=367, y_min=2, y_max=409, avoid_list=wells_and_river_cells, min_dist=3)
+print()
+print(sol1.solution)
+print(sol1.fitness_ready)
+print(sol1.min_dist)
+print()
+
+# Testing Plots
+# Prepare plot instance for extract_rivercells
+# NOTICE: for plotting, x is columns, y is rows
+fig, ax = plt.subplots()
+# Plot river
+ax.plot(river_cells[:, 1], river_cells[:, 0], "b,")
+# Plot wells
+ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], 'r.')
+plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
+plt.show()
 
 
-# # Prepare avoided points (River Cells)
-# rivercells = extract_rivercells()
+# # Prepare avoided points
+# well_cells = extract_wellcells()
+# river_cells = extract_rivercells()
+# wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 #
 # # Prepare EO instance
-# sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
-#
-# # Rename index values
-# sol1.solution[0, 0] = 1
-# sol1.solution[1, 0] = 2
-# sol1.solution[2, 0] = 3
-# sol1.solution[3, 0] = 4
+# sol1 = EO(n_rows=6, x_min=1, x_max=368, y_min=1, y_max=410, avoid_list=wells_and_river_cells, min_dist=3)
 #
 # # Load in initial parameters
-# initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
-#                              [2, 16, 17, 0],
-#                              [3, 11, 22, 0],
-#                              [4, 14, 25, 0]])
-# # sol1.solution = initial_solution
+# initial_solution = np.array([[1, 149, 202, 0],  # Index, Row, Column
+#                              [2,  87, 179, 0],
+#                              [3,  81,  20, 0],
+#                              [4, 145, 181, 0],
+#                              [5,  72,  55, 0],
+#                              [6,  12, 255, 0]])
+# sol1.solution = initial_solution
 #
 #
 # def update_fitness_matrix(self):
@@ -77,30 +76,22 @@ print(wells_and_river_cells)
 #     index_parameter_matrix = np.delete(self.solution, 3, 1)
 #
 #     # Prepare new GWM files using the index-parameter matrix
-#     write_supply2decvar(index_parameter_matrix)
-#     write_supply2hedcon(index_parameter_matrix)
+#     write_abr_decvar(index_parameter_matrix)
+#     write_abr_hedcon(index_parameter_matrix)
 #
 #     # Run GWM
 #     run_gwm()
 #
 #     # Define ordered list of wells
-#     wells = ["Q1", "Q2", "Q3", "Q4"]
+#     wells = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]
 #
 #     # Sort solution matrix by index (same as ordered list of wells)
 #     self.sort_index()
 #
 #     # Read in the new fitness vector and apply it to the solution matrix
 #     self.update_fitness(read_fitness_array(wells))
-#
-#     # Convert the index-parameter part of the solution matrix into ints
-#     # (USELESS since np array must be in one datatype)
-#     # print(self.solution)
-#     # index_parameter_matrix = np.delete(self.solution, 3, 1).astype(int)
-#     # fitness_matrix = self.fitness().reshape(-1, 1)
-#     # print(index_parameter_matrix)
-#     # print(fitness_matrix)
-#     # self.solution = np.append(index_parameter_matrix, fitness_matrix, axis=1)
-#     # print(self.solution)
+
+
 #
 #
 # def plot_result(x=0):
