@@ -249,7 +249,7 @@ def run_gwm():
     print()
 
 # # Tests run_gwm
-# test_parameters = np.array([[1, 151, 200],    # Index, Row, Column
+# test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
 #                             [2, 140, 210],
 #                             [3, 130, 220],
 #                             [4, 120, 230],
@@ -269,7 +269,6 @@ def extract_rivercells():
     # A function that loads the river cells from *.sfr file into an array
     # Input is the directory of the river cell file
     # Output is an array, where each row is a point, [row, col]
-    # Note: Duplicate cells are NOT removed
 
     line_cnt = 0
     n_cells = 0
@@ -302,11 +301,15 @@ def extract_rivercells():
     # Convert to numpy array
     river_cells = np.asanyarray(river_cells)
 
+    # Remove Duplicates
+    river_cells = np.unique(river_cells, axis=0)
+
     # Gimme da good stuff
     return river_cells
 
-# # Tests extract_rivercells
-# print(extract_rivercells())
+# Tests extract_rivercells
+rivercells = extract_rivercells()
+print(rivercells.shape)
 #
 # # Prepare plot instance for extract_rivercells
 # import matplotlib.pyplot as plt
@@ -321,11 +324,9 @@ def extract_wellcells():
     # A function that loads the wells cells from *.wel file into an array
     # Input is the directory of the river cell file
     # Output is an array, where each row is a point, [row, col]
-    # Note: Duplicate cells are NOT removed
 
     first_line = 7    # First line that contains the number of entries for the first period. One-Indexed
     line_cnt = 0
-    n_cells = 0
     well_cells = []
     with open("abr.wel", "r") as f:
         for line in f:
@@ -346,15 +347,21 @@ def extract_wellcells():
             if line_array[0] == '#':
                 continue
 
-            # (Assuming this is header line) Grab number of lines of data off from the header line
-            if line_cnt == 1:
-                n_cells = abs(int(line_array[0]))
+            # If there is four elements, it's probably a well entry
+            if len(line_array) == 4:
+                row = int(line_array[1])
+                col = int(line_array[2])
+                well_cells.append([row, col])
 
-            # # Grab data from lines in range of n_cells
-            # if 1 < line_cnt <= n_cells + 1:
-            #     row = int(line_array[1])
-            #     col = int(line_array[2])
-            #     well_cells.append([row, col])
+    # Convert to numpy array
+    well_cells = np.asanyarray(well_cells)
 
-    # # Convert to numpy array
-    # river_cells = np.asanyarray(well_cells)
+    # Remove Duplicates
+    well_cells = np.unique(well_cells, axis=0)
+
+    # Gimme da good stuff
+    return well_cells
+
+# # Tests extract_wellcells
+# wellcells = extract_wellcells()
+# print(wellcells)
