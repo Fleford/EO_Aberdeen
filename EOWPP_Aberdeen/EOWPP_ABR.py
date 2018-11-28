@@ -19,7 +19,7 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 # wells = ["Q1", "Q2", "Q4"]
 # print(read_fitness_array(wells))
 # print()
-#
+
 # print("extract_wellcells")
 # well_cells = extract_wellcells()
 # print(well_cells)
@@ -34,7 +34,8 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 #
 # # Test EO functions
 # # NOTICE: for EO, x is model row and y is model column
-# sol1 = EO(n_rows=6, x_min=2, x_max=367, y_min=2, y_max=409, avoid_list=wells_and_river_cells, min_dist=3)
+# # sol1 = EO(n_rows=6, x_min=2, x_max=367, y_min=2, y_max=409, avoid_list=wells_and_river_cells, min_dist=3)
+# sol1 = EO(n_rows=6, x_min=30, x_max=300, y_min=30, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
 # print()
 # print(sol1.solution)
 # print(sol1.fitness_ready)
@@ -59,15 +60,15 @@ river_cells = extract_rivercells()
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 
 # Prepare EO instance
-sol1 = EO(n_rows=6, x_min=2, x_max=367, y_min=2, y_max=409, avoid_list=wells_and_river_cells, min_dist=3)
+sol1 = EO(n_rows=6, x_min=30, x_max=300, y_min=30, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
 
 # Load in initial parameters
-initial_solution = np.array([[1, 149, 202, 0],  # Index, Row, Column
-                             [2,  87, 179, 0],
-                             [3,  81,  20, 0],
-                             [4, 145, 181, 0],
-                             [5,  72,  55, 0],
-                             [6,  12, 255, 0]])
+initial_solution = np.array([[1, 251, 290, 0],
+                             [2, 126, 121, 0],
+                             [3, 229, 199, 0],
+                             [4, 231, 218, 0],
+                             [5, 186, 247, 0],
+                             [6, 107, 178, 0]])
 sol1.solution = initial_solution
 
 
