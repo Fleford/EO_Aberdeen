@@ -385,6 +385,7 @@ def save_new_solution(solution_matrix, iteration_number):
     # Save new solution matrix to text file
     with open("EOWPP_FILES\EOWPP.solutions", "a+") as write_f:
         # Print Solution matrix
+        now = datetime.datetime.now()
         write_f.write(now.isoformat()+"\n")
         write_f.write("Iteration: {}\n".format(int(iteration_number)))
         write_f.write("New Solution Matrix: \n")
@@ -405,6 +406,7 @@ def save_best_solution(solution_matrix, iteration_number):
     # Save new solution matrix to text file
     with open("EOWPP_FILES\EOWPP_best.solutions", "a+") as write_f:
         # Print Solution matrix
+        now = datetime.datetime.now()
         write_f.write(now.isoformat()+"\n")
         write_f.write("Iteration: {}\n".format(int(iteration_number)))
         write_f.write("Best Solution Matrix: \n")
