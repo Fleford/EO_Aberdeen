@@ -1,5 +1,7 @@
 import subprocess
 import numpy as np
+import datetime
+now = datetime.datetime.now()
 
 
 def extract_contributions():
@@ -372,3 +374,82 @@ def extract_wellcells():
 # # Tests extract_wellcells
 # wellcells = extract_wellcells()
 # print(wellcells)
+
+
+def save_new_solution(solution_matrix, iteration_number):
+    # Save new solution matrix to text file
+    # Parse out index-parameter matrix
+    index_parameter_matrix = np.delete(solution_matrix, 3, 1)
+    # Recast matrix as dtype = int
+    index_and_parameters_matrix = index_parameter_matrix.astype(int)
+    # Save new solution matrix to text file
+    with open("EOWPP_FILES\EOWPP.solutions", "a+") as write_f:
+        # Print Solution matrix
+        write_f.write(now.isoformat()+"\n")
+        write_f.write("Iteration: {}\n".format(int(iteration_number)))
+        write_f.write("New Solution Matrix: \n")
+        write_f.write("Index\tRow\t\tColumn\tCumulative Output\t\t\n")
+        for i, row in enumerate(index_and_parameters_matrix):
+            for element in row:
+                write_f.write(np.array2string(element) + "\t\t")
+            write_f.write(str(solution_matrix[i, 3]) + "\t\t")
+            write_f.write("\n")
+
+
+def save_best_solution(solution_matrix, iteration_number):
+    # Save given best solution matrix to text file
+    # Parse out index-parameter matrix
+    index_parameter_matrix = np.delete(solution_matrix, 3, 1)
+    # Recast matrix as dtype = int
+    index_and_parameters_matrix = index_parameter_matrix.astype(int)
+    # Save new solution matrix to text file
+    with open("EOWPP_FILES\EOWPP_best.solutions", "a+") as write_f:
+        # Print Solution matrix
+        write_f.write(now.isoformat()+"\n")
+        write_f.write("Iteration: {}\n".format(int(iteration_number)))
+        write_f.write("Best Solution Matrix: \n")
+        write_f.write("Index\tRow\t\tColumn\tCumulative Output\t\t\n")
+        for i, row in enumerate(index_and_parameters_matrix):
+            for element in row:
+                write_f.write(np.array2string(element) + "\t\t")
+            write_f.write(str(solution_matrix[i, 3]) + "\t\t")
+            write_f.write("\n")
+
+
+def load_recent_solution():
+    iteration = 0
+    line_start = 0
+    filepath = "EOWPP_FILES\EOWPP.solutions"
+    extracted_solution_matrix = []
+
+    # Find the latest entry
+    with open(filepath, "r") as f:
+        for i, line in enumerate(f):
+            line_array = line.split()
+            if (len(line_array) == 2) and (int(line_array[1]) >= iteration):
+                iteration = int(line_array[1])
+                line_start = i
+
+    # Load in solution matrix
+    with open(filepath, "r") as f:
+        for i, line in enumerate(f):
+            if i >= (line_start + 3) and i <= (line_start + 3 + 6):
+                line_array = line.split()
+                new = list(map(float, line_array))
+                extracted_solution_matrix.append(new)
+    extracted_solution_matrix = np.array(extracted_solution_matrix)
+
+    return extracted_solution_matrix, iteration
+
+
+# # test save and load funtions
+# test_solution = np.array([[1, 251, 290, 0],
+#                           [2, 126, 121, 1.0e7],
+#                           [3, 229, 199, 0],
+#                           [4, 231, 218, 0],
+#                           [5, 186, 247, 0],
+#                           [6, 107, 178, 0]])
+# save_new_solution(test_solution, 3)
+# save_best_solution(test_solution, 4)
+# print(load_recent_solution())
+
