@@ -82,6 +82,7 @@ num_of_loops = 100
 for run in range(1, num_of_loops + 1):
     print("Load in previously saved solution")
     sol1.solution, sol1.eval_count = load_recent_solution()
+    sol1.fitness_ready = True
     print("sol1.solution")
     print(sol1.solution)
     print("sol1.eval_count")
