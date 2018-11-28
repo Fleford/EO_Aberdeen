@@ -249,26 +249,26 @@ def run_gwm():
 
     print()
 
-# Tests run_gwm
-test_parameters = np.array([[1, 149, 202],  # Index, Row, Column
-                            [2,  87, 179],
-                            [3,  81,  20],
-                            [4, 145, 181],
-                            [5,  72,  55],
-                            [6,  12, 255]])
+# # Tests run_gwm
+# test_parameters = np.array([[1, 149, 202],  # Index, Row, Column
+#                             [2,  87, 179],
+#                             [3,  81,  20],
+#                             [4, 145, 181],
+#                             [5,  72,  55],
+#                             [6,  12, 255]])
 # test_parameters = np.array([[1, 150, 200],    # Index, Row, Column
 #                             [2, 140, 210],
 #                             [3, 130, 220],
 #                             [4, 120, 230],
 #                             [5, 110, 240],
 #                             [6, 100, 250]])
-write_abr_decvar(test_parameters)
-write_abr_hedcon(test_parameters)
-run_gwm()
-print()
-print("Resulting fitness:")
-wells = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]
-print(read_fitness_array(wells))
+# write_abr_decvar(test_parameters)
+# write_abr_hedcon(test_parameters)
+# run_gwm()
+# print()
+# print("Resulting fitness:")
+# wells = ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6"]
+# print(read_fitness_array(wells))
 
 
 # Extract river cells
