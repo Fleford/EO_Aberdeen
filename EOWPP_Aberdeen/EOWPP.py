@@ -355,4 +355,4 @@ def check_ib(cell_row_col):
     # Input is a two-element np.array, [0] is row, [1] is col
 
     ib = np.loadtxt("ib2_ref.dat", dtype=bool)
-    return ib[cell_row_col[0], cell_row_col[1]]
+    return ib[int(cell_row_col[0]), int(cell_row_col[1])]

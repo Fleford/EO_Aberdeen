@@ -452,4 +452,3 @@ def load_recent_solution():
 # save_new_solution(test_solution, 3)
 # save_best_solution(test_solution, 4)
 # print(load_recent_solution())
-

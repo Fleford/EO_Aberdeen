@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from EOWPP import EO
 from GWM_Manipulator_abr import read_fitness_array, write_abr_decvar, write_abr_hedcon, run_gwm
@@ -44,37 +45,36 @@ def update_fitness_matrix(self):
     self.update_fitness(read_fitness_array(wells))
 
 
-# Run through first iteration
-# Updates the solution matrix with new fitness values
+# Run through first iteration (if previous data doesn't exist)
+if not os.path.isfile("EOWPP_FILES\EOWPP.solutions"):
+    # Update the fitness matrix (first run)
+    print("Initial Parameters")
+    print("sol1.solution")
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print()
+    print("Plotting initial solution:")
+    print()
 
-# Update the fitness matrix (first run)
-print("Initial Parameters")
-print("sol1.solution")
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print()
-print("Plotting initial solution:")
-print()
-
-print("Running update_fitness_matrix(sol1):")
-update_fitness_matrix(sol1)
-print()
-print("After update_fitness_matrix(sol1):")
-print("sol1.solution")
-print(sol1.solution)
-print("sol1.fitness_ready? " + str(sol1.fitness_ready))
-print("Running sol1.update_best()")
-sol1.update_best()
-print(sol1.best_solution.solution)
-print("sol1.best_solution.total_fitness()")
-print(sol1.best_solution.total_fitness())
-print()
-print("Saving New Solution")
-save_new_solution(sol1.solution, sol1.eval_count)
-print()
-print("Saving Best Solution")
-save_best_solution(sol1.solution, sol1.eval_count)
-print()
+    print("Running update_fitness_matrix(sol1):")
+    update_fitness_matrix(sol1)
+    print()
+    print("After update_fitness_matrix(sol1):")
+    print("sol1.solution")
+    print(sol1.solution)
+    print("sol1.fitness_ready? " + str(sol1.fitness_ready))
+    print("Running sol1.update_best()")
+    sol1.update_best()
+    print(sol1.best_solution.solution)
+    print("sol1.best_solution.total_fitness()")
+    print(sol1.best_solution.total_fitness())
+    print()
+    print("Saving New Solution")
+    save_new_solution(sol1.solution, sol1.eval_count)
+    print()
+    print("Saving Best Solution")
+    save_best_solution(sol1.solution, sol1.eval_count)
+    print()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
