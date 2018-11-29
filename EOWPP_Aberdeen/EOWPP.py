@@ -166,8 +166,8 @@ class EO(object):
         new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u
 
-        # Clip new point to boundary and round components
-        new_point = condition_vector(new_point, self.x_min, self.x_max, self.y_min, self.y_max)
+        # # Clip new point to boundary and round components
+        # new_point = condition_vector(new_point, self.x_min, self.x_max, self.y_min, self.y_max)
 
         # Return new parameter
         return new_point
@@ -186,7 +186,10 @@ class EO(object):
         # Check if it's on an active cell
         ib_flag = check_ib(checked_parameter)
 
-        return dist_flag and repeat_flag and ib_flag
+        # Check if it's inside the bounding region
+        rect_flag = check_within_rect(checked_parameter, self.x_min, self.x_max, self.y_min, self.y_max)
+
+        return dist_flag and repeat_flag and ib_flag and rect_flag
 
     def generate_row(self):
         """
@@ -348,6 +351,15 @@ def condition_vector(given_point, x_min, x_max, y_min, y_max):
     # Round components to whole numbers
     return given_point.round()
 
+
+def check_within_rect(cell_row_col, x_min, x_max, y_min, y_max):
+    # Checks if the given point is within the bounding box
+    within_rect = False
+    if x_min <= cell_row_col[0] <= x_max:
+        within_rect = True
+    if y_min <= cell_row_col[1] <= y_max:
+        within_rect = True
+    return within_rect
 
 # Function specifically for Aberdeen Model
 def check_ib(cell_row_col):
