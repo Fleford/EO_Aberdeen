@@ -361,6 +361,7 @@ def check_within_rect(cell_row_col, x_min, x_max, y_min, y_max):
         within_rect = True
     return within_rect
 
+
 # Function specifically for Aberdeen Model
 def check_ib(cell_row_col):
     # Returns true if the cell is active, else false
