@@ -12,16 +12,16 @@ river_cells = extract_rivercells()
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 
 # Prepare EO instance
-sol1 = EO(n_rows=6, x_min=30, x_max=300, y_min=30, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
+sol1 = EO(n_rows=6, x_min=100, x_max=300, y_min=30, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
 
-# Load in initial parameters
-initial_solution = np.array([[1, 251, 290, 0],
-                             [2, 126, 121, 0],
-                             [3, 229, 199, 0],
-                             [4, 231, 218, 0],
-                             [5, 186, 247, 0],
-                             [6, 107, 178, 0]])
-sol1.solution = initial_solution
+# # Load in initial parameters
+# initial_solution = np.array([[1, 251, 290, 0],
+#                              [2, 126, 121, 0],
+#                              [3, 229, 199, 0],
+#                              [4, 231, 218, 0],
+#                              [5, 186, 247, 0],
+#                              [6, 107, 178, 0]])
+# sol1.solution = initial_solution
 
 
 def update_fitness_matrix(self):
