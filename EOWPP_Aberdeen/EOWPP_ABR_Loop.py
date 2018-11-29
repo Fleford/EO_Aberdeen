@@ -73,7 +73,7 @@ if not os.path.isfile("EOWPP_FILES\EOWPP.solutions"):
     save_new_solution(sol1.solution, sol1.eval_count)
     print()
     print("Saving Best Solution")
-    save_best_solution(sol1.solution, sol1.eval_count)
+    save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()
 
 # Start of loop
@@ -116,5 +116,5 @@ for run in range(1, num_of_loops + 1):
     save_new_solution(sol1.solution, sol1.eval_count)
     print()
     print("Saving Best Solution")
-    save_best_solution(sol1.solution, sol1.eval_count)
+    save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()

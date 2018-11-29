@@ -4,6 +4,6 @@ DECVAR  abr.decvar
 OBJFNC  abr.objfnc
 VARCON  abr.varcon
 HEDCON  abr.hedcon
-SOLN    abr_LP.soln
+SOLN    abr_SLP.soln
 CONTROL abr_parallel.ctrl
 NAM     abr.nam
