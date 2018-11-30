@@ -165,6 +165,12 @@ class EO(object):
         # Return a new point using lowest fit row, [0], most fit = [-1]
         new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u
+        new_point = new_point.round()
+
+        # Keep makin points until you get one that's inside the rectangle
+        while not check_within_rect(new_point, self.x_min, self.x_max, self.y_min, self.y_max):
+            new_point = parameters[-1] + np.random.rand() * u * 1
+            new_point = new_point.round()
 
         # # Clip new point to boundary and round components
         # new_point = condition_vector(new_point, self.x_min, self.x_max, self.y_min, self.y_max)

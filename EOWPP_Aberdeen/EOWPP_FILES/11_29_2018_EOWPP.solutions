@@ -1,0 +1,1010 @@
+2018-11-29T12:38:34.412774
+Iteration: 1
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		132		133		708382.6		
+2		130		197		33044450.0		
+3		171		221		14167540.0		
+4		111		270		9698875.0		
+5		249		175		4487977.0		
+6		281		262		5350690.0		
+2018-11-29T13:05:23.463708
+Iteration: 2
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		139		200		13110570.0		
+2		130		197		27251700.0		
+3		171		221		13117260.0		
+4		111		270		9459304.0		
+5		249		175		4482585.0		
+6		281		262		5343732.0		
+2018-11-29T13:29:32.954044
+Iteration: 3
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		139		200		13101920.0		
+2		130		197		27240840.0		
+3		171		221		13126940.0		
+4		111		270		9457122.0		
+5		116		74		1337680.0		
+6		281		262		5390704.0		
+2018-11-29T13:53:38.409011
+Iteration: 4
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		139		200		9135113.0		
+2		130		197		20054800.0		
+3		171		221		12424900.0		
+4		111		270		9236150.0		
+5		133		201		17468010.0		
+6		281		262		5391422.0		
+2018-11-29T14:17:43.060897
+Iteration: 5
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		139		200		7891826.0		
+2		130		197		16371800.0		
+3		171		221		11680070.0		
+4		111		270		9055322.0		
+5		133		201		15211090.0		
+6		138		163		21525300.0		
+2018-11-29T14:42:10.350017
+Iteration: 6
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		130		160		7999331.0		
+2		130		197		17513050.0		
+3		171		221		12017100.0		
+4		111		270		9109340.0		
+5		133		201		17950140.0		
+6		138		163		17266890.0		
+2018-11-29T15:06:39.289713
+Iteration: 7
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		27348380.0		
+2		130		197		14107340.0		
+3		171		221		11495630.0		
+4		111		270		8728491.0		
+5		133		201		15149300.0		
+6		138		163		18905600.0		
+2018-11-29T15:30:55.154362
+Iteration: 8
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		25162740.0		
+2		130		197		13792540.0		
+3		171		221		11652650.0		
+4		33		152		64310860.0		
+5		133		201		15029610.0		
+6		138		163		18439920.0		
+2018-11-29T15:54:55.584720
+Iteration: 9
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		25238790.0		
+2		130		197		14745180.0		
+3		17		137		82602450.0		
+4		33		152		58585100.0		
+5		133		201		16556800.0		
+6		138		163		19124180.0		
+2018-11-29T16:18:27.583538
+Iteration: 10
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		27124010.0		
+2		129		125		775363.0		
+3		17		137		82619370.0		
+4		33		152		58757460.0		
+5		133		201		23465150.0		
+6		138		163		20658420.0		
+2018-11-29T16:42:43.709621
+Iteration: 11
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		25958460.0		
+2		36		264		51142110.0		
+3		17		137		82505660.0		
+4		33		152		58323790.0		
+5		133		201		22587520.0		
+6		138		163		20392890.0		
+2018-11-29T16:42:44.496141
+Iteration: 12
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		192		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:42:46.371981
+Iteration: 13
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-26		124		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:42:50.375504
+Iteration: 14
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-28		197		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:42:57.076358
+Iteration: 15
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-86		209		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:43:07.591853
+Iteration: 16
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-61		164		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:43:30.873450
+Iteration: 17
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		85		247		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:43:45.656304
+Iteration: 18
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-21		178		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:44:01.702377
+Iteration: 19
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-18		161		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:44:17.878370
+Iteration: 20
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-48		270		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:44:34.521074
+Iteration: 21
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		16		221		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:44:57.156071
+Iteration: 22
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		68		220		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:45:15.844509
+Iteration: 23
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		7		130		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:45:36.068997
+Iteration: 24
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-17		170		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:45:54.668490
+Iteration: 25
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-85		276		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:46:23.347748
+Iteration: 26
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-18		181		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:46:51.698209
+Iteration: 27
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		14		196		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:47:22.507149
+Iteration: 28
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-62		166		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:47:47.663586
+Iteration: 29
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		64		246		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:48:17.319239
+Iteration: 30
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-26		293		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:48:45.630724
+Iteration: 31
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		105		123		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:49:13.156695
+Iteration: 32
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		30		127		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:49:40.189971
+Iteration: 33
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-8		136		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:50:07.438113
+Iteration: 34
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		3		133		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:50:37.992211
+Iteration: 35
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-137		118		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:51:11.453510
+Iteration: 36
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-15		172		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:51:46.032702
+Iteration: 37
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-1		101		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:52:14.920829
+Iteration: 38
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		23		184		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:52:53.392029
+Iteration: 39
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		95		204		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:53:40.146105
+Iteration: 40
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-57		180		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:54:09.149162
+Iteration: 41
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-97		142		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:54:49.169403
+Iteration: 42
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-31		172		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:55:27.429733
+Iteration: 43
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-28		129		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:56:02.906786
+Iteration: 44
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-45		148		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:56:30.876482
+Iteration: 45
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-70		276		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:57:05.461087
+Iteration: 46
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		23		178		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:57:47.128309
+Iteration: 47
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-86		109		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:58:22.556391
+Iteration: 48
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-35		225		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:58:58.747001
+Iteration: 49
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		39		102		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T16:59:38.302531
+Iteration: 50
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-112		200		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:00:09.823031
+Iteration: 51
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		112		180		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:00:47.082979
+Iteration: 52
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-25		140		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:01:24.191023
+Iteration: 53
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-23		146		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:02:01.772771
+Iteration: 54
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		37		100		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:03:13.570354
+Iteration: 55
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		60		128		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:03:54.361118
+Iteration: 56
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		66		223		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:04:34.349380
+Iteration: 57
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-87		138		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:05:15.498923
+Iteration: 58
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		43		228		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:05:59.913445
+Iteration: 59
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		17		119		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:06:34.646958
+Iteration: 60
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		0		183		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:07:33.512117
+Iteration: 61
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-4		155		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:08:22.768643
+Iteration: 62
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-24		161		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:09:17.527766
+Iteration: 63
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		43		189		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:10:01.311679
+Iteration: 64
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		97		203		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:10:40.565395
+Iteration: 65
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-59		126		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:11:16.172367
+Iteration: 66
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		10		293		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:11:50.811936
+Iteration: 67
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-69		124		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:12:28.157834
+Iteration: 68
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-15		165		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:13:21.791652
+Iteration: 69
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-126		126		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:14:04.543203
+Iteration: 70
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-26		154		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:15:04.265257
+Iteration: 71
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-25		192		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:15:45.698623
+Iteration: 72
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-49		210		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:16:24.671513
+Iteration: 73
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-65		144		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:16:58.872354
+Iteration: 74
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-19		136		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:18:05.292264
+Iteration: 75
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		127		144		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:18:49.083172
+Iteration: 76
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-13		154		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:19:34.197262
+Iteration: 77
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		85		248		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:20:16.330197
+Iteration: 78
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-144		175		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:21:10.343781
+Iteration: 79
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-116		179		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:21:46.196600
+Iteration: 80
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-26		208		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:22:29.917552
+Iteration: 81
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		0		152		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:23:20.960974
+Iteration: 82
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		43		276		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:24:12.290265
+Iteration: 83
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		38		192		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:25:03.665482
+Iteration: 84
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		6		131		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:25:41.652981
+Iteration: 85
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		6		229		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:26:33.357993
+Iteration: 86
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		100		63		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:27:11.921136
+Iteration: 87
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-12		261		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:28:03.624149
+Iteration: 88
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-19		156		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:28:55.551025
+Iteration: 89
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-60		156		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:29:40.195406
+Iteration: 90
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-94		218		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:30:25.522364
+Iteration: 91
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		57		215		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:31:08.872546
+Iteration: 92
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		6		127		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:31:44.037790
+Iteration: 93
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		106		221		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:32:21.129843
+Iteration: 94
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		23		182		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:33:04.293139
+Iteration: 95
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-46		247		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:34:08.255569
+Iteration: 96
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-50		298		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:34:53.027871
+Iteration: 97
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-90		149		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:35:34.211392
+Iteration: 98
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-21		244		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:36:10.885704
+Iteration: 99
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		-74		234		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:36:48.324542
+Iteration: 100
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		19		269		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
+2018-11-29T17:37:33.326701
+Iteration: 101
+New Solution Matrix: 
+Index	Row		Column	Cumulative Output		
+1		37		123		0.0		
+2		36		264		0.0		
+3		17		137		0.0		
+4		33		152		0.0		
+5		133		201		0.0		
+6		-8		159		0.0		
