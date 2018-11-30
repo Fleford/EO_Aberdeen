@@ -360,11 +360,11 @@ def condition_vector(given_point, x_min, x_max, y_min, y_max):
 
 def check_within_rect(cell_row_col, x_min, x_max, y_min, y_max):
     # Checks if the given point is within the bounding box
-    within_rect = False
-    if x_min <= cell_row_col[0] <= x_max:
-        within_rect = True
-    if y_min <= cell_row_col[1] <= y_max:
-        within_rect = True
+    within_rect = True
+    if not (x_min <= cell_row_col[0] <= x_max):
+        within_rect = False
+    if not (y_min <= cell_row_col[1] <= y_max):
+        within_rect = False
     return within_rect
 
 
