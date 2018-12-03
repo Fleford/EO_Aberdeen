@@ -36,12 +36,12 @@ print(wells_and_river_cells)
 # NOTICE: for EO, x is model row and y is model column
 # sol1 = EO(n_rows=6, x_min=2, x_max=367, y_min=2, y_max=409, avoid_list=wells_and_river_cells, min_dist=3)
 sol1 = EO(n_rows=6, x_min=30, x_max=300, y_min=30, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
-initial_solution = np.array([[1, 167, 286, 0],
-                             [2, 293, 229, 0],
-                             [3, 100, 161, 0],
-                             [4, 147,  79, 0],
-                             [5, 171, 300, 0],
-                             [6, 103, 227, 0]])
+initial_solution = np.array([[1, 106, 225, 0],
+                             [2, 117, 174, 0],
+                             [3, 101, 205, 0],
+                             [4, 153, 222, 0],
+                             [5, 114, 240, 0],
+                             [6, 109, 202, 0]])
 sol1.solution = initial_solution
 print()
 print(sol1.solution)
