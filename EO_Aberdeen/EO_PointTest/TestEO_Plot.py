@@ -51,6 +51,9 @@ def update(i):
     ax.set_ylabel("Y Axis")
     plt.axis([sol1.x_min, sol1.x_max, sol1.y_min, sol1.y_max])
 
+    # Uncomment to save figures
+    # fig.savefig(str(i) + ".pdf", bbox_inches='tight')
+
     print(round(-1*sol1.total_fitness()/sol1.n_rows, 2))
 
 
