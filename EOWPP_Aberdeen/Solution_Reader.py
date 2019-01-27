@@ -4,6 +4,23 @@ from EOWPP import EO
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 
 
+def txt_to_array(filepath):
+    # converts a txt file into a np array
+    # automatically considers weird columns
+    with open(filepath, "r") as read_f:
+        with open("col_fixed_" + filepath, "w") as write_f:
+            ncol = 0
+            for i, line in enumerate(read_f):
+                line_array = line.split()
+                if i == 0:
+                    ncol = len(line_array)
+                for val in line_array:
+                    write_f.write("\t" + val)
+                if len(line_array) != ncol:
+                    write_f.write("\n")
+    return np.loadtxt("col_fixed_" + filepath)
+
+
 def load_ith_solution(filepath, iter):
     # loads the solution matrix with given iteration number
 
@@ -27,6 +44,31 @@ def load_ith_solution(filepath, iter):
     extracted_solution_matrix = np.array(extracted_solution_matrix)
 
     return extracted_solution_matrix
+
+
+def plot_result_with_k(array):
+    print("Plotting the result")
+    print()
+    plt.imshow(array, cmap="jet", alpha=0.8)
+    plt.colorbar()
+    plt.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
+    plt.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
+    # Label weakest and pivot well
+    sol1.sort_fitness()
+    plt.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
+    plt.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
+    # Annotate well ranks (1 is the most fit
+    for i, txt in enumerate(sol1.solution[:, 0]):
+        rank = str(6 - i)
+        plt.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
+    # plt.set_title("Fitness = {}".format(sol1.total_fitness()))
+    plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
+    #  Label axes
+    # plt.set_xlabel("Model Columns")
+    # plt.set_ylabel("Model Rows")
+    # Save image
+    plt.savefig('Layer2_kx.pdf')
+    plt.show()
 
 
 def plot_result():
@@ -69,17 +111,20 @@ sol1 = EO(n_rows=6, x_min=100, x_max=300, y_min=100, y_max=300, avoid_list=wells
 sol1.solution = load_ith_solution(best_solution_file_path, 66)
 sol1.fitness_ready = True
 
-fig, ax = plt.subplots()
+# Uncomment when using plot_result()
+# fig, ax = plt.subplots()
 
-# print(sol1.solution)
-# print(sol1.total_fitness())
+print(sol1.solution)
+print(sol1.total_fitness())
+
 # plot_result()
+plot_result_with_k(txt_to_array("abr2_kx.txt"))
 
-# Save Pictures
+# # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
 
-# Loop through all solutions and print total fitness
-for i in range(1, 101):
-    sol1.solution = load_ith_solution(solution_file_path, i)
-    sol1.fitness_ready = True
-    print(sol1.total_fitness())
+# # Loop through all solutions and print total fitness
+# for i in range(1, 101):
+#     sol1.solution = load_ith_solution(solution_file_path, i)
+#     sol1.fitness_ready = True
+#     print(sol1.total_fitness())
