@@ -5,20 +5,21 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 
 
 def txt_to_array(filepath):
-    # converts a txt file into a np array
-    # automatically considers weird columns
-    with open(filepath, "r") as read_f:
-        with open("col_fixed_" + filepath, "w") as write_f:
-            ncol = 0
-            for i, line in enumerate(read_f):
-                line_array = line.split()
-                if i == 0:
-                    ncol = len(line_array)
-                for val in line_array:
-                    write_f.write("\t" + val)
-                if len(line_array) != ncol:
-                    write_f.write("\n")
-    return np.loadtxt("col_fixed_" + filepath)
+    try:
+        return np.loadtxt(filepath)
+    except ValueError:
+        with open(filepath, "r") as read_f:
+            with open("col_fixed_" + filepath, "w") as write_f:
+                ncol = 0
+                for i, line in enumerate(read_f):
+                    line_array = line.split()
+                    if i == 0:
+                        ncol = len(line_array)
+                    for val in line_array:
+                        write_f.write("\t" + val)
+                    if len(line_array) != ncol:
+                        write_f.write("\n")
+        return np.loadtxt("col_fixed_" + filepath)
 
 
 def load_ith_solution(filepath, iteration):
@@ -100,8 +101,8 @@ solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP.solutions"
 # solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
-# best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
+best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # Prepare avoided points
 well_cells = extract_wellcells()
@@ -119,7 +120,7 @@ print(sol1.solution)
 print(sol1.total_fitness())
 
 # plot_result()
-plot_result_with_k(txt_to_array("abr2_kx.txt"), "_12_2_2018_1023_EOWPP_best_kx.pdf")
+plot_result_with_k(txt_to_array("abr2_kx.txt"), "_12_2_2018_921_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")

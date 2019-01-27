@@ -3,22 +3,29 @@ import matplotlib.pyplot as plt
 
 
 def txt_to_array(filepath):
-    with open(filepath, "r") as read_f:
-        with open("col_fixed_" + filepath, "w") as write_f:
-            ncol = 0
-            for i, line in enumerate(read_f):
-                line_array = line.split()
-                if i == 0:
-                    ncol = len(line_array)
-                for val in line_array:
-                    write_f.write("\t" + val)
-                if len(line_array) != ncol:
-                    write_f.write("\n")
-    return np.loadtxt("col_fixed_" + filepath)
+    try:
+        return np.loadtxt(filepath)
+    except ValueError:
+        with open(filepath, "r") as read_f:
+            with open("col_fixed_" + filepath, "w") as write_f:
+                ncol = 0
+                for i, line in enumerate(read_f):
+                    line_array = line.split()
+                    if i == 0:
+                        ncol = len(line_array)
+                    for val in line_array:
+                        write_f.write("\t" + val)
+                    if len(line_array) != ncol:
+                        write_f.write("\n")
+        return np.loadtxt("col_fixed_" + filepath)
 
 
-array = txt_to_array("abr2_kx.txt")
-print(array.dtype)
+hkx = txt_to_array("abr2_kx.txt")
+mask = txt_to_array("ib2_ref.dat")
+print(mask.shape, hkx.shape)
+array = np.ma.masked_where(mask == 0, hkx)
+print(array)
+
 # plt.imshow(array, cmap="Purples", extent=[300, 100, 300, 100])
 plt.imshow(array, cmap="jet", alpha=0.8)
 plt.colorbar()
