@@ -99,9 +99,9 @@ def plot_result_with_k(array, new_filename):
 # solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP.solutions"
 solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP.solutions"
 # solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
-# best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
+best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # Prepare avoided points
@@ -120,7 +120,10 @@ print(sol1.solution)
 print(sol1.total_fitness())
 
 # plot_result()
-plot_result_with_k(txt_to_array("abr2_kx.txt"), "_12_2_2018_921_EOWPP_best_kx.pdf")
+hkx = txt_to_array("abr2_kx.txt")
+mask = txt_to_array("ib2_ref.dat")
+array = np.ma.masked_where(mask == 0, hkx)
+plot_result_with_k(array, "_12_1_2018_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
