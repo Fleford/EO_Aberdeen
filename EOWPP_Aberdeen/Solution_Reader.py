@@ -21,7 +21,7 @@ def txt_to_array(filepath):
     return np.loadtxt("col_fixed_" + filepath)
 
 
-def load_ith_solution(filepath, iter):
+def load_ith_solution(filepath, iteration):
     # loads the solution matrix with given iteration number
 
     line_start = 0
@@ -31,7 +31,7 @@ def load_ith_solution(filepath, iter):
     with open(filepath, "r") as f:
         for i, line in enumerate(f):
             line_array = line.split()
-            if (len(line_array) == 2) and (int(line_array[1]) == int(iter)):
+            if (len(line_array) == 2) and (int(line_array[1]) == int(iteration)):
                 line_start = i
 
     # Load in solution matrix
@@ -71,26 +71,26 @@ def plot_result_with_k(array):
     plt.show()
 
 
-def plot_result():
-    print("Plotting the result")
-    print()
-    ax.clear()
-    ax.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
-    ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
-    # Label weakest and pivot well
-    sol1.sort_fitness()
-    ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
-    ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
-    # Annotate well ranks (1 is the most fit
-    for i, txt in enumerate(sol1.solution[:, 0]):
-        rank = str(6 - i)
-        ax.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    ax.set_title("Fitness = {}".format(sol1.total_fitness()))
-    plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
-    #  Label axes
-    ax.set_xlabel("Model Columns")
-    ax.set_ylabel("Model Rows")
-    plt.show()
+# def plot_result():
+#     print("Plotting the result")
+#     print()
+#     ax.clear()
+#     ax.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
+#     ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
+#     # Label weakest and pivot well
+#     sol1.sort_fitness()
+#     ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
+#     ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
+#     # Annotate well ranks (1 is the most fit
+#     for i, txt in enumerate(sol1.solution[:, 0]):
+#         rank = str(6 - i)
+#         ax.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
+#     ax.set_title("Fitness = {}".format(sol1.total_fitness()))
+#     plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
+#     #  Label axes
+#     ax.set_xlabel("Model Columns")
+#     ax.set_ylabel("Model Rows")
+#     plt.show()
 
 
 # Main Program
