@@ -63,7 +63,7 @@ def plot_result_with_k(array, new_filename):
     for i, txt in enumerate(sol1.solution[:, 0]):
         rank = str(6 - i)
         plt.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    plt.title("Total Output [ft$^3$] = {}".format(sol1.total_fitness()))
+    plt.title("Total Output [ft$^3$/yr] = {}".format(sol1.total_fitness()))
     plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
     #  Label axes
     plt.xlabel("Model Columns (1 cell = 200 ft)")
@@ -122,8 +122,8 @@ print(sol1.total_fitness())
 # plot_result()
 hkx = txt_to_array("abr2_kx.txt")
 mask = txt_to_array("ib2_ref.dat")
-array = np.ma.masked_where(mask == 0, hkx)
-plot_result_with_k(array, "_12_1_2018_EOWPP_best_kx.pdf")
+hkx_masked = np.ma.masked_where(mask == 0, hkx)
+plot_result_with_k(hkx_masked, "_12_1_2018_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
