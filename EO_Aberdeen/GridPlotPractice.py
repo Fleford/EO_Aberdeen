@@ -9,6 +9,7 @@ data = np.ones((N, N)) * np.nan
 # fill in some fake data
 for j in range(3)[::-1]:
     data[N//2 - j : N//2 + j +1, N//2 - j : N//2 + j +1] = j
+print("data")
 print(data)
 # make a figure + axes
 fig, ax = plt.subplots(1, 1, tight_layout=True)
@@ -37,4 +38,4 @@ ax.set_yticks(np.arange(N) + 0.5)
 ax.set_yticklabels(np.arange(1, N+1)[::-1])
 
 plt.show()
-plt.savefig("Figure1")
+fig.savefig("Figure1.pdf")

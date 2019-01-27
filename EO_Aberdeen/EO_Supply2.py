@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from EO_PointTest.EO import EO
-from GWM_Manipulator_abr import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -101,6 +101,10 @@ def plot_result(x=0):
     sol1.sort_fitness()
     ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "ro")
     ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
+
+    # Uncomment to save figures
+    fig.savefig(str(x) + ".pdf", bbox_inches='tight')
+
     # Annotate well names
     for i, txt in enumerate(sol1.solution[:, 0]):
         ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
@@ -142,7 +146,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 128
+num_of_loops = 20
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()

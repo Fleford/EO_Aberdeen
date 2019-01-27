@@ -11,7 +11,7 @@ import numpy as np
 
 # Prepare EO instance
 # sol1 = EO.EO(4, False, min_dist=2, avoid_list=avoided_points)
-sol1 = EO.EO(n_rows=6, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
+sol1 = EO.EO(n_rows=3, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
@@ -52,7 +52,7 @@ def update(i):
     plt.axis([sol1.x_min, sol1.x_max, sol1.y_min, sol1.y_max])
 
     # Uncomment to save figures
-    # fig.savefig(str(i) + ".pdf", bbox_inches='tight')
+    fig.savefig(str(i) + ".pdf", bbox_inches='tight')
 
     print(round(-1*sol1.total_fitness()/sol1.n_rows, 2))
 

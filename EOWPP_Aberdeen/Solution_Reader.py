@@ -45,15 +45,19 @@ def plot_result():
         ax.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
     ax.set_title("Fitness = {}".format(sol1.total_fitness()))
     plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
+    #  Label axes
+    ax.set_xlabel("Model Columns")
+    ax.set_ylabel("Model Rows")
     plt.show()
 
 
 # Main Program
 solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP.solutions"
-solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
+# solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
 best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # Prepare avoided points
 well_cells = extract_wellcells()
@@ -70,3 +74,4 @@ print(sol1.solution)
 print(sol1.total_fitness())
 plot_result()
 
+# fig.savefig("Figure1.pdf")
