@@ -99,10 +99,10 @@ def plot_result_with_k(array, new_filename):
 # solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP.solutions"
 solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP.solutions"
 # solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
-# best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
+best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # Prepare avoided points
 well_cells = extract_wellcells()
@@ -123,7 +123,7 @@ print(sol1.total_fitness())
 hkx = txt_to_array("abr2_kx.txt")
 mask = txt_to_array("ib2_ref.dat")
 hkx_masked = np.ma.masked_where(mask == 0, hkx)
-plot_result_with_k(hkx_masked, "_12_1_2018_EOWPP_best_kx.pdf")
+plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
