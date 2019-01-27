@@ -46,11 +46,12 @@ def load_ith_solution(filepath, iteration):
     return extracted_solution_matrix
 
 
-def plot_result_with_k(array):
+def plot_result_with_k(array, new_filename):
     print("Plotting the result")
     print()
     plt.imshow(array, cmap="jet", alpha=0.8)
-    plt.colorbar()
+    cbar = plt.colorbar()
+    cbar.set_label('Horizontal Hydraulic Conductivity [ft/day]', rotation=270)
     plt.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
     plt.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
     # Label weakest and pivot well
@@ -61,13 +62,13 @@ def plot_result_with_k(array):
     for i, txt in enumerate(sol1.solution[:, 0]):
         rank = str(6 - i)
         plt.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    # plt.set_title("Fitness = {}".format(sol1.total_fitness()))
+    plt.title("Total Output [ft$^3$] = {}".format(sol1.total_fitness()))
     plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
     #  Label axes
-    # plt.set_xlabel("Model Columns")
-    # plt.set_ylabel("Model Rows")
+    plt.xlabel("Model Columns (1 cell = 200 ft)")
+    plt.ylabel("Model Rows (1 cell = 200 ft)")
     # Save image
-    plt.savefig('Layer2_kx.pdf')
+    plt.savefig(new_filename)
     plt.show()
 
 
@@ -118,7 +119,7 @@ print(sol1.solution)
 print(sol1.total_fitness())
 
 # plot_result()
-plot_result_with_k(txt_to_array("abr2_kx.txt"))
+plot_result_with_k(txt_to_array("abr2_kx.txt"), "_12_2_2018_1023_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
