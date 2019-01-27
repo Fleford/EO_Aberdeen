@@ -52,12 +52,13 @@ def plot_result():
 
 
 # Main Program
-solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP.solutions"
+# solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP.solutions"
+solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP.solutions"
 # solution_file_path = "EOWPP_FILES\EOWPP_best.solutions"
-best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
+# best_solution_file_path = "EOWPP_FILES\_12_1_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_11_29_2018_EOWPP_best.solutions"
 # best_solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP_best.solutions"
-# best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
+best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # Prepare avoided points
 well_cells = extract_wellcells()
@@ -65,13 +66,20 @@ river_cells = extract_rivercells()
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 
 sol1 = EO(n_rows=6, x_min=100, x_max=300, y_min=100, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
-sol1.solution = load_ith_solution(best_solution_file_path, 100)
+sol1.solution = load_ith_solution(best_solution_file_path, 66)
 sol1.fitness_ready = True
 
 fig, ax = plt.subplots()
 
-print(sol1.solution)
-print(sol1.total_fitness())
-plot_result()
+# print(sol1.solution)
+# print(sol1.total_fitness())
+# plot_result()
 
-# fig.savefig("Figure1.pdf")
+# Save Pictures
+# fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
+
+# Loop through all solutions and print total fitness
+for i in range(1, 101):
+    sol1.solution = load_ith_solution(solution_file_path, i)
+    sol1.fitness_ready = True
+    print(sol1.total_fitness())
