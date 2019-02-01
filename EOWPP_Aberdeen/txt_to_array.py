@@ -36,8 +36,8 @@ cbar = plt.colorbar()
 cbar.ax.get_yaxis().set_ticks([])
 for j, lab in enumerate(['$50$', '$500$']):
     cbar.ax.text(1.5, (j * 0.5) + 0.25, lab, ha='center', va='center', rotation=270)
-cbar.ax.get_yaxis().labelpad = 25
-cbar.ax.set_ylabel('Horizontal Hydraulic Conductivity', rotation=270)
+cbar.ax.get_yaxis().labelpad = 30
+cbar.ax.set_ylabel('Horizontal Hydraulic Conductivity [ft/day]', rotation=270)
 for row in range((SynthK.shape[0])):
     plt.axhline(row + 0.5, lw=1, color='k', zorder=5)
 plt.yticks([])
