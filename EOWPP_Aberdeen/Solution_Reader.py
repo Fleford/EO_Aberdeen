@@ -50,15 +50,16 @@ def load_ith_solution(filepath, iteration):
 def plot_result_with_k(array, new_filename):
     print("Plotting the result")
     print()
-    plt.imshow(array, cmap="jet", alpha=0.8)
+    plt.imshow(array, cmap="jet", alpha=0.6)
     cbar = plt.colorbar()
     cbar.set_label('Horizontal Hydraulic Conductivity [ft/day]', rotation=270)
     plt.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
-    plt.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
+    # plt.plot(sol1.solution[:, 2], sol1.solution[:, 1], "bo")
+    plt.plot(sol1.solution[:, 2], sol1.solution[:, 1], "b.")
     # Label weakest and pivot well
     sol1.sort_fitness()
-    plt.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
-    plt.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
+    # plt.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
+    # plt.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
     # Annotate well ranks (1 is the most fit
     for i, txt in enumerate(sol1.solution[:, 0]):
         rank = str(6 - i)
@@ -69,7 +70,7 @@ def plot_result_with_k(array, new_filename):
     plt.xlabel("Model Columns (1 cell = 200 ft)")
     plt.ylabel("Model Rows (1 cell = 200 ft)")
     # Save image
-    plt.savefig(new_filename)
+    # plt.savefig(new_filename)
     plt.show()
 
 
