@@ -70,7 +70,7 @@ def plot_result_with_k(array, new_filename):
     plt.xlabel("Model Columns (1 cell = 200 ft)")
     plt.ylabel("Model Rows (1 cell = 200 ft)")
     # Save image
-    # plt.savefig(new_filename)
+    plt.savefig(new_filename)
     plt.show()
 
 

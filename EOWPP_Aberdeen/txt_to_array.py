@@ -37,7 +37,7 @@ cbar.ax.get_yaxis().set_ticks([])
 for j, lab in enumerate(['$50$', '$500$']):
     cbar.ax.text(1.5, (j * 0.5) + 0.25, lab, ha='center', va='center', rotation=270)
 cbar.ax.get_yaxis().labelpad = 30
-cbar.ax.set_ylabel('Horizontal Hydraulic Conductivity [ft/day]', rotation=270)
+cbar.ax.set_ylabel('Transmissivity [ft$^2$/day]', rotation=270)
 for row in range((SynthK.shape[0])):
     plt.axhline(row + 0.5, lw=1, color='k', zorder=5)
 plt.yticks([])
@@ -53,5 +53,5 @@ plt.ylabel("Model Rows (1 cell = 200 ft)")
 # plt.plot(178, 117, "r.")
 # plt.xlim(100, 300)
 # plt.ylim(300, 100)
-# # plt.savefig('Layer2_kx.pdf')
+plt.savefig('SynthK.pdf')
 plt.show()
