@@ -103,7 +103,7 @@ def plot_result(x=0):
     ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "bo")
 
     # Uncomment to save figures
-    fig.savefig(str(x) + ".pdf", bbox_inches='tight')
+    # fig.savefig(str(x) + ".pdf", bbox_inches='tight')
 
     # Annotate well names
     for i, txt in enumerate(sol1.solution[:, 0]):
@@ -146,7 +146,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 20
+num_of_loops = 10
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
