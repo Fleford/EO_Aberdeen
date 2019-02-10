@@ -2,7 +2,7 @@
 #August 14, 2006
  1 0                              #1-IPRN  GWMWFILE
  4 0 0                            #2-NFVAR NEVAR NBVAR
- Q1 1  1  19  19  W  Y  1-12       #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
- Q2 1  1  7  23  W  Y  1-12
- Q3 1  1  3  17  W  Y  1-12
- Q4 1  1  7  28  W  Y  1-12
+ Q1 1  1  15  4  W  Y  1-12       #3a-FVNAME NC LAY ROW COL FTYPE FSTAT WSP
+ Q2 1  1  11  22  W  Y  1-12
+ Q3 1  1  18  29  W  Y  1-12
+ Q4 1  1  14  29  W  Y  1-12

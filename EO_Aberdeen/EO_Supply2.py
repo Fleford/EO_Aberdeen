@@ -53,11 +53,15 @@ sol1.solution[2, 0] = 3
 sol1.solution[3, 0] = 4
 
 # Load in initial parameters
-initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
-                             [2, 16, 17, 0],
-                             [3, 11, 22, 0],
-                             [4, 14, 25, 0]])
-# sol1.solution = initial_solution
+# initial_solution = np.array([[1, 12, 11, 0],  # Index, Row, Column
+#                              [2, 16, 17, 0],
+#                              [3, 11, 22, 0],
+#                              [4, 14, 25, 0]])
+initial_solution = np.array([[1, 15, 4, 0],  # Index, Row, Column
+                             [2, 11, 22, 0],
+                             [3, 18, 29, 0],
+                             [4, 5, 18, 0]])
+sol1.solution = initial_solution
 
 
 def update_fitness_matrix(self):
@@ -146,7 +150,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 10
+num_of_loops = 2
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()

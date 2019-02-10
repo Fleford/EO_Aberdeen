@@ -81,3 +81,68 @@
  Directory = ..\runner2\
  Estimated runtime =  0.5000     seconds
  
+
+ Job of current iteration of Control Loop is: FORWARD
+
+     FLOW PROCESS SIMULATION FOR GWM FOR BOTH REFERENCE AND BASE                                                                                                                                             
+
+
+ Job of current iteration of Control Loop is: SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1              0.0000         -10000.         -10000.          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2              0.0000         -10000.         -10000.          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q3              0.0000         -10000.         -10000.          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4              0.0000         -10000.         -10000.          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: REPEAT
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1             -14786.         -19787.         -5000.5          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2             -11265.         -16265.         -5000.5          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q3             -50000.         -55000.         -5000.5          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4             -7928.5         -12929.         -5000.5          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: REPEAT
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: SENSITIVITY
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q1             -14119.         -16620.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q2             -11265.         -13765.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q3             -45759.         -48260.         -2500.8          FORWARD 
+
+ PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
+ Q4             -7478.2         -9978.9         -2500.8          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: STOP
