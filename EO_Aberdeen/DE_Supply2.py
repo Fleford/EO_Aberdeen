@@ -18,7 +18,12 @@ def n_nearest_dist(d, x, n):
     return sqd[idx[n]]
 
 
+best_fitness = 0
+
+
 def objfnc(x):
+    global best_fitness
+
     # Convert input into index_parameter_matrix
     x = np.asarray(x).round()
     parameter_matrix = x.reshape(-1, 2)
@@ -50,23 +55,30 @@ def objfnc(x):
 
     # Read in the new fitness vector and return the negative sum
     totalfitness = -read_fitness_array(wells).sum()
-    print(totalfitness)
+    print("fitness: ", totalfitness, end="  ")
+
+    # Save best
+    if totalfitness < -best_fitness:
+        best_fitness = -totalfitness
+        print("New best fitness: ", best_fitness)
+
     return totalfitness
 
 
-test = np.array([[15, 4],
-                 [11, 22],
-                 [18, 29],
-                 [18, 29]])
+# test = np.array([[15, 4],
+#                  [11, 22],
+#                  [18, 29],
+#                  [18, 29]])
+# test1 = [12, 11, 16, 17, 11, 22, 14, 25]
+# test2 = [15, 4, 11, 22, 18, 29, 5, 18]
+# print(objfnc(test1))
+# print(objfnc(test2))
 
-test2 = [15, 4, 11, 22, 18, 29, 5, 18]
-print(objfnc(test2))
-
-# model_bounds = [(3, 23), (2, 29),
-#                 (3, 23), (2, 29),
-#                 (3, 23), (2, 29),
-#                 (3, 23), (2, 29)]
-# result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=10, polish=False, popsize=4)
-# print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
+model_bounds = [(3, 23), (2, 29),
+                (3, 23), (2, 29),
+                (3, 23), (2, 29),
+                (3, 23), (2, 29)]
+result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=10, polish=False, popsize=4)
+print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
 
