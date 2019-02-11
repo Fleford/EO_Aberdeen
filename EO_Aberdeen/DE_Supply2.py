@@ -47,7 +47,7 @@ def objfnc(x):
     write_supply2hedcon(index_parameter_matrix)
 
     # Run GWM
-    print("Running gwm on: ", x, end="  ")
+    # print("Running gwm on: ", x, end="  ")
     run_gwm()
 
     # Define ordered list of wells
@@ -55,12 +55,12 @@ def objfnc(x):
 
     # Read in the new fitness vector and return the negative sum
     totalfitness = -read_fitness_array(wells).sum()
-    print("fitness: ", totalfitness, end="  ")
+    # print("fitness: ", totalfitness, end="  ")
 
     # Save best
     if totalfitness < -best_fitness:
         best_fitness = -totalfitness
-        print("New best fitness: ", best_fitness)
+    print(best_fitness)
 
     return totalfitness
 
