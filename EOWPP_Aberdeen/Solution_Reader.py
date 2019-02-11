@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+
 from EOWPP import EO
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 
@@ -50,7 +51,7 @@ def load_ith_solution(filepath, iteration):
 def plot_result_with_k(array, new_filename):
     print("Plotting the result")
     print()
-    plt.imshow(array, cmap="jet", alpha=0.6)
+    plt.imshow(array, cmap="hsv", alpha=0.6)
     cbar = plt.colorbar()
     cbar.set_label('Horizontal Hydraulic Conductivity [ft/day]', rotation=270)
     plt.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row

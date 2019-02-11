@@ -1,10 +1,6 @@
-from scipy.optimize import rosen, differential_evolution
 import numpy as np
-import matplotlib.pyplot as plt
-import numpy as np
-
-from EO_PointTest.EO import EO
 from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+from scipy.optimize import differential_evolution
 
 
 def n_nearest_dist(d, x, n):
@@ -19,10 +15,12 @@ def n_nearest_dist(d, x, n):
 
 
 best_fitness = 0
+list_of_best_fitness = []
 
 
 def objfnc(x):
     global best_fitness
+    global list_of_best_fitness
 
     # Convert input into index_parameter_matrix
     x = np.asarray(x).round()
@@ -54,13 +52,14 @@ def objfnc(x):
     wells = ["Q1", "Q2", "Q3", "Q4"]
 
     # Read in the new fitness vector and return the negative sum
-    totalfitness = -read_fitness_array(wells).sum()
+    totalfitness = -read_fitness_array(wells).sum().round()
     # print("fitness: ", totalfitness, end="  ")
 
     # Save best
     if totalfitness < -best_fitness:
         best_fitness = -totalfitness
     print(best_fitness)
+    list_of_best_fitness.append(best_fitness)
 
     return totalfitness
 
@@ -78,7 +77,14 @@ model_bounds = [(3, 23), (2, 29),
                 (3, 23), (2, 29),
                 (3, 23), (2, 29),
                 (3, 23), (2, 29)]
-result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=10, polish=False, popsize=4)
+result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=1, polish=False, popsize=4)
 print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
+# Save the list of best fitness to a text file
+print(len(list_of_best_fitness))
+with open("list_of_bests_DE.tsv", "a+") as write_f:
+    for value in list_of_best_fitness:
+        s = str(value)
+        write_f.write(s[:s.index('.')] + "\t")
+    write_f.write("\n")
 
