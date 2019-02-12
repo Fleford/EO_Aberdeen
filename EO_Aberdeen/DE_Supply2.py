@@ -14,10 +14,6 @@ def n_nearest_dist(d, x, n):
     return sqd[idx[n]]
 
 
-best_fitness = 0
-list_of_best_fitness = []
-
-
 def objfnc(x):
     global best_fitness
     global list_of_best_fitness
@@ -77,14 +73,18 @@ model_bounds = [(3, 23), (2, 29),
                 (3, 23), (2, 29),
                 (3, 23), (2, 29),
                 (3, 23), (2, 29)]
-result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=1, polish=False, popsize=4)
-print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
-# Save the list of best fitness to a text file
-print(len(list_of_best_fitness))
-with open("list_of_bests_DE.tsv", "a+") as write_f:
-    for value in list_of_best_fitness:
-        s = str(value)
-        write_f.write(s[:s.index('.')] + "\t")
-    write_f.write("\n")
+for runs in range(2):
+    best_fitness = 0
+    list_of_best_fitness = []
+    result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=1, polish=False, popsize=4)
+    print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
+
+    # Save the list of best fitness to a text file
+    print(len(list_of_best_fitness))
+    with open("list_of_bests_DE.tsv", "a+") as write_f:
+        for value in list_of_best_fitness:
+            s = str(value)
+            write_f.write(s[:s.index('.')] + "\t")
+        write_f.write("\n")
 
