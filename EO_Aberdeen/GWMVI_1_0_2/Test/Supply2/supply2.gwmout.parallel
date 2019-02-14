@@ -406,6 +406,6 @@ Stream Depletion       S02_12   Binding     -1.0858E+00
     values of the binding constraints computed directly by the flow process 
     to differ from those computed using the linear program.  
 
- Run end date and time (yyyy/mm/dd hh:mm:ss): 2019/02/13 17:55:48
- Elapsed run time: 15.614 Seconds
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2019/02/14 14:09:11
+ Elapsed run time: 17.192 Seconds
 
