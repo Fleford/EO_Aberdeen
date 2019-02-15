@@ -3,7 +3,7 @@
 #A separate entry must be made for each stress period ("-" is not allowed)
  1                              #1-IPRN
  0  4  0  0                     #2-NHB NDD NDF NGD
- Q1c  1  15  4 le 10.0 1       #3-DDNAME LAYH ROWH COLH TYPH BND NSP
- Q2c  1  11  22 le 10.0 1
- Q3c  1  18  29 le 10.0 1
- Q4c  1  5  18 le 10.0 1
+ Q1c  1  21  19 le 10.0 1       #3-DDNAME LAYH ROWH COLH TYPH BND NSP
+ Q2c  1  13  14 le 10.0 1
+ Q3c  1  11  23 le 10.0 1
+ Q4c  1  12  29 le 10.0 1
