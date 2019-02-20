@@ -42,7 +42,11 @@ def objfnc(x):
 
     # Run GWM
     # print("Running gwm on: ", x, end="  ")
-    run_gwm()
+    try:
+        run_gwm()
+    except:
+        print("Error with run_gwm")
+        return 0
 
     # Define ordered list of wells
     wells = ["Q1", "Q2", "Q3", "Q4"]
@@ -76,10 +80,11 @@ ub = [23, 29,
       23, 29,
       23, 29]
 
-for runs in range(1):
+for runs in range(100):
     best_fitness = 0
     list_of_best_fitness = []
-    xopt, fopt = pso(objfnc, lb, ub, maxiter=1, swarmsize=4)
+    xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)
+    print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
 
     # Save the list of best fitness to a text file
     print(len(list_of_best_fitness))
