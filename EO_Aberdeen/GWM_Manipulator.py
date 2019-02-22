@@ -201,10 +201,15 @@ def run_gwm():
 
     # print()
     # print("Running GWM...")
-    # proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
-    # for line in proc.stdout.split('\n'):
-    #     print(line)
-    subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    proc = subprocess.run(r".\Batch_Files\start_gwm", encoding='utf-8', stdout=subprocess.PIPE, shell=True)
+    for line in proc.stdout.split('\n'):
+        print(line)
+
+    # try:
+    #     subprocess.run(r".\Batch_Files\start_gwm", stdout=subprocess.PIPE, shell=True)
+    # except:
+    #     print("Failed at running '.\Batch_Files\start_gwm' ")
+
     # subprocess.run(r".\Batch_Files\start_gwm", shell=True)
     # remove " stdout=subprocess.PIPE," to print output of subprocess
 
