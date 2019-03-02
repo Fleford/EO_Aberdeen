@@ -35,7 +35,7 @@ solution = np.zeros(n_points*2)
 for runs in range(10):
     best_fitness = 1000
     list_of_best_fitness = []
-    xopt, fopt = pso(rastrigin, lb, ub, maxiter=100, swarmsize=10)
+    xopt, fopt = pso(rastrigin, lb, ub, maxiter=200, swarmsize=10)
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
 
     # Save the list of best fitness to a text file
