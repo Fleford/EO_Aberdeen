@@ -27,7 +27,7 @@ def rastrigin(x, a=10):
     return totalfitness
 
 
-n_points = 10
+n_points = 4
 lb = -5.12*np.ones(n_points*2)
 ub = 5.12*np.ones(n_points*2)
 solution = np.zeros(n_points*2)
@@ -43,5 +43,6 @@ for runs in range(10):
     with open("list_of_bests_PSO_rastrigin.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
+            # Just write without the decimals
             write_f.write(s[:s.index('.')] + "\t")
         write_f.write("\n")
