@@ -2,7 +2,7 @@ import math
 import numpy as np
 
 
-def rastrigin(x, a):
+def rastrigin(x, a=10):
     x = np.asarray(x)
     x = np.clip(x, -5.12, 5.12)
     n = len(x)
@@ -14,4 +14,4 @@ def rastrigin(x, a):
 
 
 xl = [0, 0]
-print(rastrigin(xl, 10))
+print(rastrigin(xl))
