@@ -24,5 +24,10 @@ with open(filepath, "r") as f:
 runs_matrix = np.stack(runs)
 
 # Extract Statistics from runs
-result = np.percentile(runs_matrix, 0.5, axis=0)
-print(result)
+firstQ = np.percentile(runs_matrix, 0.25, axis=0)
+secondQ = np.percentile(runs_matrix, 0.5, axis=0)
+thirdQ = np.percentile(runs_matrix, 0.75, axis=0)
+allQ = np.stack([firstQ, secondQ, thirdQ])
+allQ = allQ.T
+print(allQ)
+np.savetxt("quantiles_PSO_rastrigin.csv", allQ, delimiter=",")

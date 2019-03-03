@@ -27,7 +27,7 @@ def rastrigin(x, a=10):
     return totalfitness
 
 
-n_points = 4
+n_points = 10
 lb = -5.12*np.ones(n_points*2)
 ub = 5.12*np.ones(n_points*2)
 solution = np.zeros(n_points*2)
