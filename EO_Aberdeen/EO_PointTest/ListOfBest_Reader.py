@@ -22,9 +22,7 @@ with open(filepath, "r") as f:
         run = np.array(new[0:min_len])
         runs.append(run)
 runs_matrix = np.stack(runs)
-# Transpose so that each coloumn is a run
-runs_matrix = runs_matrix.T
 
 # Extract Statistics from runs
-result = np.percentile(runs_matrix, 0.5, axis=1)
+result = np.percentile(runs_matrix, 0.5, axis=0)
 print(result)
