@@ -190,7 +190,8 @@ class EO(object):
         repeat_flag = not np.array_equal(self.replaced_row_parameter, checked_parameter)
 
         # Check if it's on an active cell (Model specific)
-        ib_flag = check_ib(checked_parameter)
+        # ib_flag = check_ib(checked_parameter)
+        ib_flag = True
 
         # Check if it's inside the bounding region
         rect_flag = check_within_rect(checked_parameter, self.x_min, self.x_max, self.y_min, self.y_max)
@@ -307,10 +308,10 @@ def generate_possible_point(x_min, x_max, y_min, y_max):
     x_new_point = np.random.randint(low=x_min, high=x_max + 1)
     y_new_point = np.random.randint(low=y_min, high=y_max + 1)
 
-    # Keep generating points until you get one that's active
-    while not check_ib(np.array([x_new_point, y_new_point])):
-        x_new_point = np.random.randint(low=x_min, high=x_max + 1)
-        y_new_point = np.random.randint(low=y_min, high=y_max + 1)
+    # # Keep generating points until you get one that's active
+    # while not check_ib(np.array([x_new_point, y_new_point])):
+    #     x_new_point = np.random.randint(low=x_min, high=x_max + 1)
+    #     y_new_point = np.random.randint(low=y_min, high=y_max + 1)
 
     # Stitch into a row vector and return array
     return np.array([x_new_point, y_new_point])

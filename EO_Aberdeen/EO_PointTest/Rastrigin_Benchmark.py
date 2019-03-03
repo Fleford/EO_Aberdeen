@@ -13,5 +13,5 @@ def rastrigin(x, a=10):
     return a*n + sum(rastrigin_sum_term(x))
 
 
-xl = [0, 0]
+xl = [4.03, -0.8]
 print(rastrigin(xl))
