@@ -52,6 +52,10 @@ print(sol1.solution)
 print(sol1.fitness_ready)
 print()
 
+# sol1.update_fitness(calculate_fitness(sol1, scale))
+# sol1.update_best()
+# print(sol1.best_solution.total_fitness())
+
 print("Update fitness")
 sol1.update_fitness(calculate_fitness(sol1, scale))
 print(sol1.solution)
@@ -100,3 +104,11 @@ print(sol1.best_solution.solution)
 print(sol1.best_solution.total_fitness())
 print(sol1.best_solution.fitness_ready)
 print()
+
+# for iteration in range(10):
+#     sol1.remove_weakest()
+#     sol1.append_row(sol1.generate_row())
+#     sol1.update_fitness(calculate_fitness(sol1, scale))
+#     sol1.update_best()
+#     list_of_best_fitness.append(sol1.best_solution.total_fitness())
+#     print(sol1.best_solution.total_fitness())

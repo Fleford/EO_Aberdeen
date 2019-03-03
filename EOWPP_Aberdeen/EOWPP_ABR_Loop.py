@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from EOWPP import EO
+from EOWPP_GWModel import EO
 from GWM_Manipulator_abr import read_fitness_array, write_abr_decvar, write_abr_hedcon, run_gwm
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 from GWM_Manipulator_abr import save_new_solution, save_best_solution, load_recent_solution

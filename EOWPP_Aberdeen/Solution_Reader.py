@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from EOWPP import EO
+from EOWPP_GWModel import EO
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 
 

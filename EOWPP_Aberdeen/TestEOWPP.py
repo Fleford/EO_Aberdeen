@@ -1,4 +1,4 @@
-from EOWPP_Aberdeen.EOWPP import EO, generate_possible_point, generate_initial_array
+from EOWPP_GWModel.EOWPP_GWModel import EO, generate_possible_point, generate_initial_array
 import numpy as np
 
 avoided_points = np.array([[20, 20],
