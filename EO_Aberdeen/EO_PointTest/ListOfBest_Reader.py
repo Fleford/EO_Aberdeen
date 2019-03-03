@@ -11,7 +11,6 @@ with open(filepath, "r") as f:
         line_len = len(new)
         if min_len == 0 or line_len < min_len:
             min_len = line_len
-print(min_len)
 
 # Import values into a matrix
 # Values that exceed the minimum length are truncated
@@ -21,7 +20,11 @@ with open(filepath, "r") as f:
         line_array = line.split()
         new = list(map(float, line_array))
         run = np.array(new[0:min_len])
-        # print(run.shape)
         runs.append(run)
 runs_matrix = np.stack(runs)
-print(runs_matrix)
+# Transpose so that each coloumn is a run
+runs_matrix = runs_matrix.T
+
+# Extract Statistics from runs
+result = np.percentile(runs_matrix, 0.5, axis=1)
+print(result)

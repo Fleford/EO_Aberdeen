@@ -32,7 +32,7 @@ lb = -5.12*np.ones(n_points*2)
 ub = 5.12*np.ones(n_points*2)
 solution = np.zeros(n_points*2)
 
-for runs in range(10):
+for runs in range(100):
     best_fitness = 1000
     list_of_best_fitness = []
     xopt, fopt = pso(rastrigin, lb, ub, maxiter=200, swarmsize=10)
