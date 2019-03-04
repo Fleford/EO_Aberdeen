@@ -12,5 +12,5 @@ def rosensbrock_multi_2d(x_array):
     return sum(rosenbrock_2d(x_array[:, 0], x_array[:, 1]))
 
 
-xl = [1, 1, 1, 1]
+xl = [1, 1, 1, 1, 1, 1]
 print(rosensbrock_multi_2d(xl))
