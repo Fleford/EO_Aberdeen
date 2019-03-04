@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from EO_PointTest.EO import EO
-from GWM_Manipulator_abr import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+from EO_PointTest.EOWPP import EO
+from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
 
 # Prepare avoided points (River Cells)
 rivercells = extract_rivercells()
