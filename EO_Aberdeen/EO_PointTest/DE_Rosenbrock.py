@@ -27,7 +27,7 @@ def rosenbrock_multi_2d(x_array):
 
 n_points = 10
 model_bounds = [(-2, 4) for x in range(n_points*2)]
-solution = np.zeros(n_points*2)
+solution = np.ones(n_points*2)
 
 for runs in range(100):
     print("Run: " + str(runs))
