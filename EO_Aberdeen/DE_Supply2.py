@@ -77,7 +77,7 @@ model_bounds = [(3, 23), (2, 29),
 for runs in range(100):
     best_fitness = 0
     list_of_best_fitness = []
-    result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=4, polish=False, popsize=4)
+    result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=200, polish=False, popsize=4)
     print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
     # Save the list of best fitness to a text file

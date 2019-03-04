@@ -1,21 +1,62 @@
-#  WEL file specifying no wells.
-#
-#  A file like this is required by GWM-VI
-#  when the original model does not use
-#  the Well Package but the GWM management
-#  model includes flow-rate decision
-#  variables to be simulated with the
-#  Well Package.
-0 0   # Item 1: MXACTW IWELCB
-0 0   # Item 5: ITMP NP, stress period 1
-0 0   # Item 5: ITMP NP, stress period 2
-0 0   # Item 5: ITMP NP, stress period 3
-0 0   # Item 5: ITMP NP, stress period 4
-0 0   # Item 5: ITMP NP, stress period 5
-0 0   # Item 5: ITMP NP, stress period 6
-0 0   # Item 5: ITMP NP, stress period 7
-0 0   # Item 5: ITMP NP, stress period 8
-0 0   # Item 5: ITMP NP, stress period 9
-0 0   # Item 5: ITMP NP, stress period 10
-0 0   # Item 5: ITMP NP, stress period 11
-0 0   # Item 5: ITMP NP, stress period 12
+# Well package input file written by MMProc
+         4         0  # Item 1: MXACTW IWELCB
+         4         0  Stress period:     1
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     2
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     3
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     4
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     5
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     6
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     7
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     8
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:     9
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:    10
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:    11
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    
+         4         0  Stress period:    12
+         1         4        17   -11818.67291215824    
+         1        12        28   -9651.830816804912    
+         1         7         8   -7590.471111170211    
+         1        12         7   -1462.584007774266    

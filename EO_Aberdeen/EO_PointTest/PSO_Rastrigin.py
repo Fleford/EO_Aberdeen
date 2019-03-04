@@ -37,6 +37,8 @@ for runs in range(100):
     list_of_best_fitness = []
     xopt, fopt = pso(rastrigin, lb, ub, maxiter=200, swarmsize=10)
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
+    print(list_of_best_fitness)
+    print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
     print(len(list_of_best_fitness))

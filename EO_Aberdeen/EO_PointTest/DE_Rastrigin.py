@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from pyswarm import pso
+from scipy.optimize import differential_evolution
 
 
 def rastrigin(x, a=10):
@@ -28,20 +28,25 @@ def rastrigin(x, a=10):
 
 
 n_points = 10
-lb = -5.12*np.ones(n_points*2)
-ub = 5.12*np.ones(n_points*2)
+model_bounds = [(-5.12, 5.12) for x in range(n_points*2)]
 solution = np.zeros(n_points*2)
 
-best_fitness = 1000
-list_of_best_fitness = []
-xopt, fopt = pso(rastrigin, lb, ub, maxiter=200, swarmsize=10)
-print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
+for runs in range(100):
+    print("Run: " + str(runs))
 
-# # Save the list of best fitness to a text file
-# print(len(list_of_best_fitness))
-# with open("list_of_bests_PSO_rastrigin.tsv", "a+") as write_f:
-#     for value in list_of_best_fitness:
-#         s = str(value)
-#         # Just write without the decimals
-#         write_f.write(s[:s.index('.')] + "\t")
-#     write_f.write("\n")
+    best_fitness = 1000
+    list_of_best_fitness = []
+
+    result = differential_evolution(rastrigin, model_bounds, disp=False, maxiter=10, polish=False, popsize=10)
+    print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
+    # print(list_of_best_fitness)
+    # print(len(list_of_best_fitness))
+
+    # Save the list of best fitness to a text file
+    print(len(list_of_best_fitness))
+    with open("list_of_bests_DE_rastrigin.tsv", "a+") as write_f:
+        for value in list_of_best_fitness:
+            s = str(value)
+            # Just write without the decimals
+            write_f.write(s[:s.index('.')] + "\t")
+        write_f.write("\n")
