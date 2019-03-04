@@ -26,17 +26,17 @@ def rosensbrock_multi_2d(x_array):
 
 
 n_points = 10
-lb = -10*np.ones(n_points*2)
-ub = 10*np.ones(n_points*2)
+lb = -2*np.ones(n_points*2)
+ub = 4*np.ones(n_points*2)
 solution = np.ones(n_points*2)
 
 for runs in range(1):
     best_fitness = 10000000.0
     list_of_best_fitness = []
-    xopt, fopt = pso(rosensbrock_multi_2d, lb, ub, maxiter=200, swarmsize=1000)
+    xopt, fopt = pso(rosensbrock_multi_2d, lb, ub, maxiter=200, swarmsize=10)
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
-    # print(list_of_best_fitness)
-    # print(len(list_of_best_fitness))
+    print(list_of_best_fitness)
+    print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
     with open("list_of_bests_PSO_rosenbrock.tsv", "a+") as write_f:
