@@ -34,7 +34,7 @@ for runs in range(100):
     list_of_best_fitness.append(sol1.best_solution.total_fitness())
     # print(sol1.best_solution.total_fitness())
 
-    for iteration in range(800):
+    for iteration in range(400):
         sol1.remove_weakest()
         sol1.append_row(sol1.generate_row())
         sol1.update_fitness(calculate_fitness(sol1, scale))
