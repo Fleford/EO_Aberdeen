@@ -1,6 +1,6 @@
 import numpy as np
 
-filepath = "list_of_bests_DE_rastrigin.tsv"
+filepath = "list_of_bests_PSO_rosenbrock.tsv"
 
 # Find minimum run length
 min_len = 0
@@ -30,4 +30,4 @@ thirdQ = np.percentile(runs_matrix, 0.75, axis=0)
 allQ = np.stack([firstQ, secondQ, thirdQ])
 allQ = allQ.T
 print(allQ)
-np.savetxt("quantiles_DE_rastrigin.csv", allQ, delimiter=",")
+np.savetxt("quantiles_PSO_rosenbrock.csv", allQ, delimiter=",")

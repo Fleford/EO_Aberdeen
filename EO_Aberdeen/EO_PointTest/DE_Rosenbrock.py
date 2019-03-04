@@ -1,5 +1,5 @@
 import numpy as np
-from pyswarm import pso
+from scipy.optimize import differential_evolution
 
 
 def rosenbrock_multi_2d(x_array):
@@ -26,20 +26,22 @@ def rosenbrock_multi_2d(x_array):
 
 
 n_points = 10
-lb = -2*np.ones(n_points*2)
-ub = 4*np.ones(n_points*2)
-solution = np.ones(n_points*2)
+model_bounds = [(-2, 4) for x in range(n_points*2)]
+solution = np.zeros(n_points*2)
 
 for runs in range(100):
+    print("Run: " + str(runs))
+
     best_fitness = 10000000.0
     list_of_best_fitness = []
-    xopt, fopt = pso(rosenbrock_multi_2d, lb, ub, maxiter=200, swarmsize=10)
-    print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
+
+    result = differential_evolution(rosenbrock_multi_2d, model_bounds, disp=False, maxiter=10, polish=False, popsize=10)
+    print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
     print(list_of_best_fitness)
     print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
-    with open("list_of_bests_PSO_rosenbrock.tsv", "a+") as write_f:
+    with open("list_of_bests_DE_rosenbrock.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             # Just write without the decimals
