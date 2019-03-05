@@ -1,6 +1,6 @@
 import numpy as np
 
-filepath = "list_of_bests_EOWPP_rosenbrock.tsv"
+filepath = "list_of_bests.tsv"
 
 # Find minimum run length
 min_len = 0
@@ -24,10 +24,10 @@ with open(filepath, "r") as f:
 runs_matrix = np.stack(runs)
 
 # Extract Statistics from runs
-firstQ = np.percentile(runs_matrix, 0.25, axis=0)
-secondQ = np.percentile(runs_matrix, 0.5, axis=0)
-thirdQ = np.percentile(runs_matrix, 0.75, axis=0)
+firstQ = np.percentile(runs_matrix, 25, axis=0)
+secondQ = np.percentile(runs_matrix, 50, axis=0)
+thirdQ = np.percentile(runs_matrix, 75, axis=0)
 allQ = np.stack([firstQ, secondQ, thirdQ])
 allQ = allQ.T
 print(allQ)
-np.savetxt("quantiles_EOWPP_rosenbrock.csv", allQ, delimiter=",")
+np.savetxt("quantiles.csv", allQ, delimiter=",")
