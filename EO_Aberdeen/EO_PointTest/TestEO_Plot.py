@@ -1,8 +1,8 @@
-from EO_Aberdeen.EO_PointTest import EO
-import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import matplotlib.pyplot as plt
 import numpy as np
 
+from EO_Aberdeen.EO_PointTest import EO
 
 # Prepare avoided points
 # avoided_points = np.array([[50, 60],
@@ -11,7 +11,7 @@ import numpy as np
 
 # Prepare EO instance
 # sol1 = EO.EO(4, False, min_dist=2, avoid_list=avoided_points)
-sol1 = EO.EO(n_rows=3, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
+sol1 = EO.EO(n_rows=5, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
@@ -59,4 +59,5 @@ def update(i):
 
 # Animation
 ani = animation.FuncAnimation(fig, update, interval=200)
+ani.save("mymovie.mp4")
 plt.show()

@@ -1,6 +1,6 @@
-from pyswarm import pso
 import numpy as np
 from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+from pyswarm import pso
 
 
 def n_nearest_dist(d, x, n):
@@ -64,13 +64,6 @@ def objfnc(x):
     return totalfitness
 
 
-def banana(x):
-    print("heck!")
-    x1 = x[0]
-    x2 = x[1]
-    return x1**4 - 2*x2*x1**2 + x2**2 + x1**2 - 2*x1 + 5
-
-
 lb = [3, 2,
       3, 2,
       3, 2,
@@ -80,7 +73,7 @@ ub = [23, 29,
       23, 29,
       23, 29]
 
-for runs in range(100):
+for runs in range(1):
     best_fitness = 0
     list_of_best_fitness = []
     xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)
