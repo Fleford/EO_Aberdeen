@@ -56,12 +56,30 @@ def plot_result(x, run_num):
     plt.pause(0.1)
 
 
+def plot_best_result():
+    print("Plotting the best result")
+    print()
+    ax.clear()
+    ax.plot(rivercells[:, 1], rivercells[:, 0], "bs", markersize=12)  # Col, row
+    ax.plot(sol1.best_solution.solution[:, 2], sol1.best_solution.solution[:, 1], "go")
+    # Label weakest and pivot well
+    sol1.best_solution.sort_fitness()
+    ax.plot(sol1.best_solution.solution[0, 2], sol1.best_solution.solution[0, 1], "ro")
+    ax.plot(sol1.best_solution.solution[-1, 2], sol1.best_solution.solution[-1, 1], "bo")
+    # Annotate well names
+    for i, txt in enumerate(sol1.best_solution.solution[:, 0]):
+        ax.annotate(txt, (sol1.best_solution.solution[i, 2], sol1.best_solution.solution[i, 1]))
+    ax.set_title("Best Run Fitness = {}".format(sol1.best_solution.total_fitness()))
+    plt.axis([1, 30, 25, 1])
+    plt.pause(0.1)
+
+
 # Prepare plot instances
 fig, ax = plt.subplots()
 
 # 62198
 # Run iterations through the whole EO process
-for runs in range(128):
+for runs in range(1):
     # Prepare EO instance
     sol1 = EO(n_rows=4, x_min=3, x_max=23, y_min=2, y_max=29, avoid_list=rivercells, min_dist=1)
 
@@ -101,7 +119,7 @@ for runs in range(128):
 
     # Start of loop
     # Based on results, generate a new parameter matrix
-    num_of_loops = 128
+    num_of_loops = 10
     for iteration in range(1, num_of_loops + 1):
 
         print("Run: {}, Iteration: {}".format(runs, iteration))
@@ -125,23 +143,25 @@ for runs in range(128):
         # print("sol1.fitness = " + str(sol1.total_fitness()))
         # print("Update Best")
         sol1.update_best()
-        # print(sol1.best_solution.solution)
-        # print("sol1.best_solution.total_fitness()")
-        # print(sol1.best_solution.total_fitness())
+        print(sol1.best_solution.solution)
+        print(sol1.best_solution.total_fitness())
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
         # print()
 
         # plot_result(x=iteration, run_num=runs)
 
     # Show your hard work
-    # plt.show()
+    plot_best_result()
+    print(sol1.best_solution.solution)
+    np.savetxt('EO_Supply2_Best.out', sol1.best_solution.solution, delimiter=',')
+    plt.show()
 
     print("List of Best Fitness:")
     print(str(list_of_best_fitness))
 
-    # Save the best fitness to a text file
-    with open("list_of_bests.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the best fitness to a text file
+    # with open("list_of_bests.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")

@@ -73,7 +73,7 @@ ub = [23, 29,
       23, 29,
       23, 29]
 
-for runs in range(1):
+for runs in range(100):
     best_fitness = 0
     list_of_best_fitness = []
     xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)

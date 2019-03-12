@@ -1,7 +1,6 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib
-
+import matplotlib.pyplot as plt
+import numpy as np
 
 N = 15
 # make an empty data set
@@ -23,7 +22,7 @@ for x in range(N + 1):
     ax.axvline(x, lw=2, color='k', zorder=5)
 # draw the boxes
 ax.imshow(data, interpolation='none', cmap=my_cmap, extent=[0, N, 0, N], zorder=0)
-# ax.plot(12, 6, "go")
+ax.plot(12.5, 6.5, "go")
 
 # Prepare x-axis ticks-n-labels
 ax.set_xlabel("Model Columns")
@@ -38,4 +37,4 @@ ax.set_yticks(np.arange(N) + 0.5)
 ax.set_yticklabels(np.arange(1, N+1)[::-1])
 
 plt.show()
-fig.savefig("Figure1.pdf")
+# fig.savefig("Figure1.pdf")
