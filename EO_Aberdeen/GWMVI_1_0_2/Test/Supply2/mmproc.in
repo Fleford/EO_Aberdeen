@@ -1,4 +1,3 @@
-jtf %
 "..\..\bin\mf2005dbl ..\data\supply2.nam"             # Item 1: Command
 ..\data\supply2.nam     # ITEM 2: NAMEFILE NAME
 supply2.lst     # ITEM 2A: LISTFILE NAME
@@ -25,7 +24,7 @@ none     # ITEM 8: BINARY FILE FOR FLOW
 SFR-FLOW  supply2sf.cbc     # ITEM 10: BINARY FILE FOR SFR-FLOW
            4      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1        19        16  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
+Q1         1        19        16   -9.509385656640319E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -38,7 +37,7 @@ Q1         1        19        16  %Q1                    %  # Item 13A: Name Lay
     1
     1
     1
-Q2         1         8        26  %Q2                    %  # Item 13A: Name Lay Row Col dummyQ
+Q2         1         8        26   -9.882249055072929E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -51,7 +50,7 @@ Q2         1         8        26  %Q2                    %  # Item 13A: Name Lay
     1
     1
     1
-Q3         1         9        16  %Q3                    %  # Item 13A: Name Lay Row Col dummyQ
+Q3         1         9        16   -9.755059856565953E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -64,7 +63,7 @@ Q3         1         9        16  %Q3                    %  # Item 13A: Name Lay
     1
     1
     1
-Q4         1         5         7  %Q4                    %  # Item 13A: Name Lay Row Col dummyQ
+Q4         1         5         7   -7.576246522855063E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1

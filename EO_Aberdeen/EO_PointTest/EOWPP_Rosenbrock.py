@@ -1,5 +1,5 @@
 import numpy as np
-from EO_Aberdeen.EO_PointTest import EOWPP
+from EO_Aberdeen.EO_PointTest import EO
 
 
 def rosenbrock_2d(x, y, a=1, b=100):
@@ -27,7 +27,7 @@ for runs in range(100):
     print("Run: " + str(runs))
     best_fitness = 1000
     list_of_best_fitness = []
-    sol1 = EOWPP.EO(n_rows=n_points, maximize=False, x_min=min*scale, x_max=max*scale, y_min=min*scale, y_max=max*scale,
+    sol1 = EO.EO(n_rows=n_points, maximize=False, x_min=min*scale, x_max=max*scale, y_min=min*scale, y_max=max*scale,
                  min_dist=1)
     sol1.update_fitness(calculate_fitness(sol1, scale))
     sol1.update_best()

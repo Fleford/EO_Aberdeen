@@ -106,7 +106,7 @@ class EO(object):
         self.check_fitness()
 
         # Sort the solution matrix by fitness
-        self.solution = self.solution[np.argsort(self.solution[:, self.solution.shape[1] - 1])]
+        self.solution = self.solution[np.argsort((self.solution[:, self.solution.shape[1] - 1]) * self.maximize)]
 
     def sort_index(self):
         """
@@ -234,7 +234,7 @@ class EO(object):
             self.best_solution = copy.deepcopy(self)
 
         # Update best solution
-        if self.total_fitness() >= self.best_solution.total_fitness():
+        if self.total_fitness() * self.maximize >= self.best_solution.total_fitness() * self.maximize:
             self.best_solution = copy.deepcopy(self)
 
 

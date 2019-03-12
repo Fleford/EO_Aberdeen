@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from EO_Aberdeen.EO_PointTest import EOWPP
+from EO_Aberdeen.EO_PointTest import EO
 
 
 def rastrigin(x, a=10):
@@ -47,7 +47,7 @@ for runs in range(100):
     print("Run: " + str(runs))
     best_fitness = 1000
     list_of_best_fitness = []
-    sol1 = EOWPP.EO(n_rows=n_points, maximize=False, x_min=min*scale, x_max=max*scale, y_min=min*scale, y_max=max*scale,
+    sol1 = EO.EO(n_rows=n_points, maximize=False, x_min=min*scale, x_max=max*scale, y_min=min*scale, y_max=max*scale,
                  min_dist=1)
 
     sol1.update_fitness(calculate_fitness(sol1, scale))
@@ -65,7 +65,7 @@ for runs in range(100):
 
     # Save the list of best fitness to a text file
     # print(len(list_of_best_fitness))
-    with open("list_of_bests_EOWPP_rastrigin.tsv", "a+") as write_f:
+    with open("list_of_bests_EOWPP_rastrigin_clip.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             # Just write without the decimals

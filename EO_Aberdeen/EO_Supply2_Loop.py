@@ -119,7 +119,7 @@ for runs in range(1):
 
     # Start of loop
     # Based on results, generate a new parameter matrix
-    num_of_loops = 10
+    num_of_loops = 100
     for iteration in range(1, num_of_loops + 1):
 
         print("Run: {}, Iteration: {}".format(runs, iteration))
