@@ -16,6 +16,7 @@ def n_nearest_dist(d, x, n):
 
 def objfnc(x):
     global best_fitness
+    global best_solution
     global list_of_best_fitness
 
     # Convert input into index_parameter_matrix
@@ -58,6 +59,7 @@ def objfnc(x):
     # Save best
     if totalfitness < -best_fitness:
         best_fitness = -totalfitness
+        best_solution = parameter_matrix
     print(best_fitness)
     list_of_best_fitness.append(best_fitness)
 
@@ -73,16 +75,18 @@ ub = [23, 29,
       23, 29,
       23, 29]
 
-for runs in range(100):
+for runs in range(1):
+    best_solution = np.zeros(len(lb))
     best_fitness = 0
     list_of_best_fitness = []
     xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)
+    np.savetxt('PSO_Supply2_Best.out', best_solution, delimiter=',')
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
 
-    # Save the list of best fitness to a text file
-    print(len(list_of_best_fitness))
-    with open("list_of_bests_PSO.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the list of best fitness to a text file
+    # print(len(list_of_best_fitness))
+    # with open("list_of_bests_PSO.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")

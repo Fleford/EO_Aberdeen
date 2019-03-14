@@ -16,6 +16,7 @@ def n_nearest_dist(d, x, n):
 
 def objfnc(x):
     global best_fitness
+    global best_solution
     global list_of_best_fitness
 
     # Convert input into index_parameter_matrix
@@ -54,6 +55,7 @@ def objfnc(x):
     # Save best
     if totalfitness < -best_fitness:
         best_fitness = -totalfitness
+        best_solution = parameter_matrix
     print(best_fitness)
     list_of_best_fitness.append(best_fitness)
 
@@ -74,10 +76,12 @@ model_bounds = [(3, 23), (2, 29),
                 (3, 23), (2, 29),
                 (3, 23), (2, 29)]
 
-for runs in range(100):
+for runs in range(1):
+    best_solution = np.zeros(len(model_bounds))
     best_fitness = 0
     list_of_best_fitness = []
-    result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=200, polish=False, popsize=4)
+    result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=10, polish=False, popsize=4)
+    np.savetxt('DE_Supply2_Best.out', best_solution, delimiter=',')
     print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
     # Save the list of best fitness to a text file
