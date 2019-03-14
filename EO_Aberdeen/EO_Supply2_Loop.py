@@ -119,7 +119,7 @@ for runs in range(1):
 
     # Start of loop
     # Based on results, generate a new parameter matrix
-    num_of_loops = 100
+    num_of_loops = 1000
     for iteration in range(1, num_of_loops + 1):
 
         print("Run: {}, Iteration: {}".format(runs, iteration))
@@ -143,8 +143,8 @@ for runs in range(1):
         # print("sol1.fitness = " + str(sol1.total_fitness()))
         # print("Update Best")
         sol1.update_best()
-        print(sol1.best_solution.solution)
         print(sol1.best_solution.total_fitness())
+        print(sol1.best_solution.parameters())
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
         # print()
 
@@ -152,7 +152,6 @@ for runs in range(1):
 
     # Show your hard work
     plot_best_result()
-    print(sol1.best_solution.solution)
     np.savetxt('EO_Supply2_Best.out', sol1.best_solution.solution, delimiter=',')
     plt.show()
 

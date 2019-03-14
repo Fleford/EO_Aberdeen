@@ -4,23 +4,24 @@ import numpy as np
 from GWM_Manipulator import extract_rivercells
 
 # Wells
-wells_DE = np.array([[16, 28],  # Row, Column (Total Fitness = 45059)
-                     [15, 16],
-                     [18, 14],
-                     [8, 25]])
-wells_PSO = np.array([[19, 28],  # Row, Column (Total Fitness = 53011)
-                      [13, 14],
-                      [17.1, 29.1],     # Offset added to points on the same cell
-                      [16, 22]])
 wells_EOWPP = np.array([[15, 19],   # Row, Column (Total Fitness = 53764)
                         [10, 23],
                         [19, 29],
-                        [16.9, 28.9]])  # Offset added to points on the same cell
+                        [17, 29]])
+wells_PSO = np.array([[16, 28],  # Row, Column (Total Fitness = 45059)
+                     [15, 16],
+                     [18, 14],
+                     [8, 25]])
+wells_DE = np.array([[18, 28],  # Row, Column (Total Fitness = 42829)
+                     [4, 24],
+                     [9, 16],
+                     [19, 19]])
+
 # Streamflow Constraint
 strmflw_cnstrnt = np.array([[14, 14],
-                         [14, 21],
-                         [13, 23],
-                         [15, 26]])
+                            [14, 21],
+                            [13, 23],
+                            [15, 26]])
 # Load in HK
 SynthK = np.loadtxt("SynthHeteroK.txt")
 print(SynthK, SynthK.shape)
@@ -36,7 +37,7 @@ print(data)
 print(data.shape)
 
 # make a figure + axes
-fig, ax = plt.subplots(1, 1, tight_layout=True, figsize=(7.5, 5))
+fig, ax = plt.subplots(1, 1, tight_layout=True, figsize=(8, 5.5))
 # make color map
 river_cmap = matplotlib.colors.ListedColormap(['aqua'])
 hk_cmap = matplotlib.colors.ListedColormap(['r', 'b'])
@@ -66,9 +67,9 @@ ax.plot(strmflw_cnstrnt[:, 1] - 0.5, data.shape[0] - strmflw_cnstrnt[:, 0] + 0.5
 ax.plot(wells_EOWPP[:, 1] - 0.5, data.shape[0] - wells_EOWPP[:, 0] + 0.5, "bo",
         label="EOWPP Well field (Total Fitness = 53764)")
 ax.plot(wells_PSO[:, 1] - 0.5, data.shape[0] - wells_PSO[:, 0] + 0.5, "go",
-        label="PSO Well field (Total Fitness = 53011)")
+        label="PSO Well field (Total Fitness = 45059)")
 ax.plot(wells_DE[:, 1] - 0.5, data.shape[0] - wells_DE[:, 0] + 0.5, "ro",
-        label="DE Well field (Total Fitness = 45059)")
+        label="DE Well field (Total Fitness = 42829)")
 # add legend
 ax.legend(loc=2)
 # Prepare x-axis ticks-n-labels
@@ -83,4 +84,4 @@ ax.set_yticks(np.arange(data.shape[0]) + 0.5)
 ax.set_yticklabels(np.arange(1, data.shape[0]+1)[::-1], fontsize=7)
 
 plt.show()
-# fig.savefig("Supply2_Benchmark_wellfields.pdf")
+fig.savefig("Supply2_Benchmark_wellfields.pdf")

@@ -57,6 +57,7 @@ def objfnc(x):
         best_fitness = -totalfitness
         best_solution = parameter_matrix
     print(best_fitness)
+    print(best_solution)
     list_of_best_fitness.append(best_fitness)
 
     return totalfitness
@@ -84,11 +85,11 @@ for runs in range(1):
     np.savetxt('DE_Supply2_Best.out', best_solution, delimiter=',')
     print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
 
-    # Save the list of best fitness to a text file
-    print(len(list_of_best_fitness))
-    with open("list_of_bests_DE.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the list of best fitness to a text file
+    # print(len(list_of_best_fitness))
+    # with open("list_of_bests_DE.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")
 

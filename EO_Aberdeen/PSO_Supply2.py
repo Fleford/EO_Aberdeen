@@ -61,6 +61,7 @@ def objfnc(x):
         best_fitness = -totalfitness
         best_solution = parameter_matrix
     print(best_fitness)
+    print(best_solution)
     list_of_best_fitness.append(best_fitness)
 
     return totalfitness
