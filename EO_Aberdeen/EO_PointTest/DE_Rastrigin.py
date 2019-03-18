@@ -31,7 +31,7 @@ n_points = 10
 model_bounds = [(-5.12, 5.12) for x in range(n_points*2)]
 solution = np.zeros(n_points*2)
 
-for runs in range(100):
+for runs in range(1):
     print("Run: " + str(runs))
 
     best_fitness = 1000
@@ -42,11 +42,11 @@ for runs in range(100):
     # print(list_of_best_fitness)
     # print(len(list_of_best_fitness))
 
-    # Save the list of best fitness to a text file
-    print(len(list_of_best_fitness))
-    with open("list_of_bests_DE_rastrigin.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the list of best fitness to a text file
+    # print(len(list_of_best_fitness))
+    # with open("list_of_bests_DE_rastrigin.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         # Just write without the decimals
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")
