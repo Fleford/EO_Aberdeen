@@ -40,6 +40,7 @@ def update(i):
     # Iterate through EO
     iterate(sol1)
 
+
     # Plot result
     ax.clear()
     ax.plot(sol1.solution[:, 1], sol1.solution[:, 2], 'bo')

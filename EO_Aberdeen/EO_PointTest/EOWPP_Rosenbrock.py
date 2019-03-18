@@ -23,7 +23,7 @@ max = 4
 # Note that coordinates are scaled to increase resolution
 scale = 1000
 
-for runs in range(100):
+for runs in range(1):
     print("Run: " + str(runs))
     best_fitness = 1000
     list_of_best_fitness = []
@@ -42,13 +42,13 @@ for runs in range(100):
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
         # print(sol1.best_solution.total_fitness())
 
-    # Save the list of best fitness to a text file
-    print(list_of_best_fitness)
-    print(list_of_best_fitness[-1])
-    print(len(list_of_best_fitness))
-    with open("list_of_bests_EOWPP_rosenbrock.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the list of best fitness to a text file
+    # print(list_of_best_fitness)
+    # print(list_of_best_fitness[-1])
+    # print(len(list_of_best_fitness))
+    # with open("list_of_bests_EOWPP_rosenbrock.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         # Just write without the decimals
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")
