@@ -56,16 +56,18 @@ final_solution = final_solution.reshape(-1, 2)
 print(final_solution)
 
 # Prepare contour map
-X = np.linspace(-5.12, 5.12, 200)
-Y = np.linspace(-5.12, 5.12, 200)
+X = np.linspace(-5.12, 5.12, 1000)
+Y = np.linspace(-5.12, 5.12, 1000)
 X, Y = np.meshgrid(X, Y)
 Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
 Z = Z.reshape(X.shape)
 
 fig, ax = plt.subplots()
 
-CS = ax.contourf(X, Y, Z, 20)
+# CS = ax.contourf(X, Y, Z, 20, alpha=1, cmap="jet")
+CS = ax.pcolormesh(X, Y, Z, cmap="jet")
 fig.colorbar(CS)
 ax.set_title('PSO Total fitness: {}'.format(int(fopt)))
-ax.plot(final_solution[:, 0], final_solution[:, 1], "r.")
+ax.plot(final_solution[:, 0], final_solution[:, 1], "^", color="red", label="PSO")
+ax.legend(loc=2)
 plt.show()
