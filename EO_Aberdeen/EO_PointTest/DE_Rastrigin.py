@@ -38,7 +38,7 @@ for runs in range(1):
     best_fitness = 1000
     list_of_best_fitness = []
 
-    result = differential_evolution(rastrigin, model_bounds, disp=False, maxiter=20, polish=False, popsize=10)
+    result = differential_evolution(rastrigin, model_bounds, disp=False, maxiter=10, polish=False, popsize=10)
     print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
     # print(list_of_best_fitness)
     # print(len(list_of_best_fitness))
