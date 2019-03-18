@@ -61,3 +61,4 @@ for runs in range(1):
     #         # Just write without the decimals
     #         write_f.write(s[:s.index('.')] + "\t")
     #     write_f.write("\n")
+np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/EOWPP_Rastrigin.txt", sol1.best_solution.parameters()/scale)
