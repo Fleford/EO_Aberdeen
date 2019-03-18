@@ -22,6 +22,7 @@ print(rastrigin(xl))
 X = np.linspace(-5.12, 5.12, 200)
 Y = np.linspace(-5.12, 5.12, 200)
 X, Y = np.meshgrid(X, Y)
+
 Z = rastrigin([X, Y], a=10)
 
 fig, ax = plt.subplots()
@@ -40,5 +41,5 @@ solution = np.array([[0.984, 0.018],
                      [0.998, -0.009],
                      [0.990, -0.002],
                      [0.998,  0.004]])
-ax.plot(solution[:, 0], solution[:, 0], "r.")
+ax.plot(solution[:, 0], solution[:, 1], "r.")
 plt.show()

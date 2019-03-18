@@ -50,6 +50,7 @@ for runs in range(1):
         sol1.update_fitness(calculate_fitness(sol1, scale))
         sol1.update_best()
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
+        print(sol1.best_solution.total_fitness())
         print(sol1.best_solution.parameters()/scale)
 
     # # Save the list of best fitness to a text file

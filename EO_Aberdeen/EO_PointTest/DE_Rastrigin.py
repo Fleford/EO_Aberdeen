@@ -1,12 +1,13 @@
 import math
 import numpy as np
 from scipy.optimize import differential_evolution
+import matplotlib.pyplot as plt
 
 
 def rastrigin(x, a=10):
-    # Prep variables for best
-    global best_fitness
-    global list_of_best_fitness
+    # # Prep variables for best (Don't forget to uncomment)
+    # global best_fitness
+    # global list_of_best_fitness
 
     x = np.asarray(x)
     x = np.clip(x, -5.12, 5.12)
@@ -18,11 +19,11 @@ def rastrigin(x, a=10):
 
     totalfitness = a * n + sum(rastrigin_sum_term(x))
 
-    # Save best
-    if totalfitness < best_fitness:
-        best_fitness = totalfitness
-    # print(best_fitness)
-    list_of_best_fitness.append(best_fitness)
+    # # Save best
+    # if totalfitness.astype(float) < best_fitness:
+    #     best_fitness = totalfitness
+    # # print(best_fitness)
+    # list_of_best_fitness.append(best_fitness)
 
     return totalfitness
 
@@ -37,7 +38,7 @@ for runs in range(1):
     best_fitness = 1000
     list_of_best_fitness = []
 
-    result = differential_evolution(rastrigin, model_bounds, disp=False, maxiter=10, polish=False, popsize=10)
+    result = differential_evolution(rastrigin, model_bounds, disp=False, maxiter=20, polish=False, popsize=10)
     print("DONE! result.x:{} ,result.fun:{}".format(result.x, result.fun))
     # print(list_of_best_fitness)
     # print(len(list_of_best_fitness))
@@ -50,3 +51,23 @@ for runs in range(1):
     #         # Just write without the decimals
     #         write_f.write(s[:s.index('.')] + "\t")
     #     write_f.write("\n")
+
+# Prepare the final result for plotting
+final_solution = result.x
+final_solution = final_solution.reshape(-1, 2)
+print(final_solution)
+
+# Prepare contour map
+X = np.linspace(-5.12, 5.12, 200)
+Y = np.linspace(-5.12, 5.12, 200)
+X, Y = np.meshgrid(X, Y)
+Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
+Z = Z.reshape(X.shape)
+
+fig, ax = plt.subplots()
+
+CS = ax.contourf(X, Y, Z, 20)
+fig.colorbar(CS)
+ax.set_title('DE Total fitness: {}'.format(int(result.fun)))
+ax.plot(final_solution[:, 0], final_solution[:, 1], "r.")
+plt.show()
