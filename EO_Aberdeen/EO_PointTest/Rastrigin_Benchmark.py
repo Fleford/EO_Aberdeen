@@ -18,28 +18,19 @@ def rastrigin(x, a=10):
 xl = [4.03, -0.8]
 print(rastrigin(xl))
 
-# Test plotting contour surface
-X = np.linspace(-5.12, 5.12, 200)
-Y = np.linspace(-5.12, 5.12, 200)
+# Prepare contour map
+X = np.linspace(-5.12, 5.12, 1000)
+Y = np.linspace(-5.12, 5.12, 1000)
 X, Y = np.meshgrid(X, Y)
-
-Z = rastrigin([X, Y], a=10)
+Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
+Z = Z.reshape(X.shape)
 
 fig, ax = plt.subplots()
 
-CS = ax.contourf(X, Y, Z, 20)
+# CS = ax.contourf(X, Y, Z, 20, alpha=1, cmap="jet")
+CS = ax.pcolormesh(X, Y, Z, cmap="bone")
 fig.colorbar(CS)
-ax.set_title('Simplest default with labels')
-
-solution = np.array([[0.984, 0.018],
-                     [0.995, -0.022],
-                     [1.009,  0.016],
-                     [0.977,  0.004],
-                     [0.995,  0.016],
-                     [0.987, -0.006],
-                     [0.985,  0.000],
-                     [0.998, -0.009],
-                     [0.990, -0.002],
-                     [0.998,  0.004]])
-ax.plot(solution[:, 0], solution[:, 1], "r.")
+ax.plot(1, 1, "r^", label="DE", markeredgecolor="white", markersize=8)
+ax.plot(1, -1, "b^", label="EOWPP", markeredgecolor="white", markersize=8)
+ax.legend(loc=2)
 plt.show()
