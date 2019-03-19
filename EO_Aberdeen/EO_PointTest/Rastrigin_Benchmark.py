@@ -19,11 +19,13 @@ def rastrigin(x, a=10):
 # print(rastrigin(xl))
 
 # Prepare solutions
-PSO_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rastrigin_119.txt")
+PSO_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rastrigin.txt")
 PSO_fitness = rastrigin(PSO_solution.reshape(-1))
-PSO_string = str(int(PSO_fitness))
-PSO_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rastrigin_119.txt")
-PSO_fitness = rastrigin(PSO_solution.reshape(-1))
+PSO_string = f"PSO (Total fitness = {PSO_fitness:.0f})"
+
+DE_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/DE_Rastrigin.txt")
+DE_fitness = rastrigin(DE_solution.reshape(-1))
+DE_string = f"DE (Total fitness = {DE_fitness:.0f})"
 print(PSO_fitness)
 print(PSO_solution)
 
@@ -39,8 +41,8 @@ fig, ax = plt.subplots()
 # CS = ax.contourf(X, Y, Z, 20, alpha=1, cmap="jet")
 CS = ax.pcolormesh(X, Y, Z, cmap="bone")
 fig.colorbar(CS)
-ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label="PSO", markeredgecolor="white", markersize=8)
-ax.plot(1, 1, "r^", label="DE", markeredgecolor="white", markersize=8)
+ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markeredgecolor="white", markersize=8)
+ax.plot(DE_solution[:, 0], DE_solution[:, 1], "r^", label=DE_string, markeredgecolor="white", markersize=8)
 ax.plot(1, -1, "b^", label="EOWPP", markeredgecolor="white", markersize=8)
 ax.legend(loc=2)
 plt.show()
