@@ -27,6 +27,9 @@ PSO_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rosenb
 PSO_fitness = rosensbrock_multi_2d(PSO_solution.reshape(-1))
 PSO_string = f"PSO (Total fitness = {PSO_fitness:.0f})"
 
+EOWPP_solution = np.loadtxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/EOWPP_Rosenbrock.txt")
+EOWPP_fitness = rosensbrock_multi_2d(EOWPP_solution.reshape(-1))
+EOWPP_string = f"EOWPP (Total fitness = {EOWPP_fitness:.2f})"
 
 # Prepare contour map
 X = np.linspace(-2, 4, 1000)
@@ -45,6 +48,6 @@ fig.colorbar(CS)
 # ax.set_title('PSO Total fitness: {}'.format(int(fopt)))
 ax.plot(DE_solution[:, 0], DE_solution[:, 1], "r^", label=DE_string, markeredgecolor="white", markersize=8)
 ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markeredgecolor="white", markersize=8)
-ax.plot(1, -1, "b^", label="EOWPP", markeredgecolor="white", markersize=8)
-ax.legend(loc=2)
+ax.plot(EOWPP_solution[:, 0], EOWPP_solution[:, 1], "b^", label=EOWPP_string, markeredgecolor="white", markersize=8)
+ax.legend(loc=4)
 plt.show()
