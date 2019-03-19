@@ -29,7 +29,7 @@ fig, ax = plt.subplots(1, 1, tight_layout=True, figsize=(8, 5.5))
 # make color map
 river_cmap = matplotlib.colors.ListedColormap(['aqua'])
 hk_cmap = matplotlib.colors.ListedColormap(['r', 'b'])
-surf_cmap = plt.get_cmap('hsv', 20)
+surf_cmap = plt.get_cmap('hsv', 14)
 # set the 'bad' values (nan) to be white and transparent
 river_cmap.set_bad(color='w', alpha=0)
 # draw the grid
