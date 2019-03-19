@@ -29,7 +29,7 @@ n_points = 10
 model_bounds = [(-2, 4) for x in range(n_points*2)]
 solution = np.ones(n_points*2)
 
-for runs in range(100):
+for runs in range(1):
     print("Run: " + str(runs))
 
     best_fitness = 10000000.0
@@ -41,9 +41,15 @@ for runs in range(100):
     print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
-    with open("list_of_bests_DE_rosenbrock.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # with open("list_of_bests_DE_rosenbrock.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         # Just write without the decimals
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")
+
+# Prepare the final result for plotting
+final_solution = result.x
+final_solution = final_solution.reshape(-1, 2)
+np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/DE_Rosenbrock.txt", final_solution)
+print(final_solution)

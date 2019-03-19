@@ -30,7 +30,7 @@ lb = -2*np.ones(n_points*2)
 ub = 4*np.ones(n_points*2)
 solution = np.ones(n_points*2)
 
-for runs in range(100):
+for runs in range(1):
     best_fitness = 10000000.0
     list_of_best_fitness = []
     xopt, fopt = pso(rosenbrock_multi_2d, lb, ub, maxiter=200, swarmsize=10)
@@ -38,10 +38,16 @@ for runs in range(100):
     print(list_of_best_fitness)
     print(len(list_of_best_fitness))
 
-    # Save the list of best fitness to a text file
-    with open("list_of_bests_PSO_rosenbrock.tsv", "a+") as write_f:
-        for value in list_of_best_fitness:
-            s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    # # Save the list of best fitness to a text file
+    # with open("list_of_bests_PSO_rosenbrock.tsv", "a+") as write_f:
+    #     for value in list_of_best_fitness:
+    #         s = str(value)
+    #         # Just write without the decimals
+    #         write_f.write(s[:s.index('.')] + "\t")
+    #     write_f.write("\n")
+
+# Prepare the final result for plotting
+final_solution = xopt
+final_solution = final_solution.reshape(-1, 2)
+np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rosenbrock.txt", final_solution)
+print(final_solution)
