@@ -32,7 +32,7 @@ Z = Z.reshape(X.shape)
 fig, ax = plt.subplots()
 
 # CS = ax.contourf(X, Y, Z, 20, alpha=1, cmap="jet")
-CS = ax.pcolormesh(X, Y, Z, norm=colors.LogNorm(vmin=Z.min(), vmax=Z.max()), cmap="bone")
+CS = ax.pcolormesh(X, Y, Z, norm=colors.LogNorm(vmin=Z.min(), vmax=Z.max()), cmap="gnuplot2")
 fig.colorbar(CS)
 # ax.set_title('PSO Total fitness: {}'.format(int(fopt)))
 ax.plot(-1, 1, "g^", label="PSO", markeredgecolor="white", markersize=8)
