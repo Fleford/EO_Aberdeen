@@ -32,8 +32,8 @@ EOWPP_fitness = rosensbrock_multi_2d(EOWPP_solution.reshape(-1))
 EOWPP_string = f"EOWPP (Total fitness = {EOWPP_fitness:.2f})"
 
 # Prepare contour map
-X = np.linspace(-2, 4, 1000)
-Y = np.linspace(-2, 4, 1000)
+X = np.linspace(-2, 4, 400)
+Y = np.linspace(-2, 4, 400)
 X, Y = np.meshgrid(X, Y)
 pairs = np.stack([X.reshape(-1), Y.reshape(-1)]).T
 Z = rosensbrock_multi_2d(np.stack([X.reshape(-1), Y.reshape(-1)]).T)

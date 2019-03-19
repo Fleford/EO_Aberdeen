@@ -49,5 +49,5 @@ for runs in range(1):
 # Prepare the final result for plotting
 final_solution = xopt
 final_solution = final_solution.reshape(-1, 2)
-np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rosenbrock.txt", final_solution)
+np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/PSO_Rosenbrock1.txt", final_solution)
 print(final_solution)

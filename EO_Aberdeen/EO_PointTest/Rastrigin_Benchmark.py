@@ -32,8 +32,8 @@ EOWPP_fitness = rastrigin(EOWPP_solution.reshape(-1))
 EOWPP_string = f"EOWPP (Total fitness = {EOWPP_fitness:.0f})"
 
 # Prepare background map
-X = np.linspace(-5.12, 5.12, 1000)
-Y = np.linspace(-5.12, 5.12, 1000)
+X = np.linspace(-5.12, 5.12, 700)
+Y = np.linspace(-5.12, 5.12, 700)
 X, Y = np.meshgrid(X, Y)
 Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
 Z = Z.reshape(X.shape)
