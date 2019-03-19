@@ -41,13 +41,12 @@ for col in range(data.shape[1]):
 # plot the river cells and surf
 # surf_im = ax.imshow(surf, extent=[0, surf.shape[1], 0, surf.shape[0]], cmap=surf_cmap)
 # ax.imshow(data, interpolation='none', cmap=river_cmap, extent=[0, data.shape[1], 0, data.shape[0]], zorder=0)
-print(np.arange(20,60,6))
-print(np.arange(60,100,6))
-print(np.concatenate((np.arange(20,60,6), np.arange(60,100,6))))
-levels = np.concatenate((np.arange(20, 60, 4.5), np.arange(60,110,4.5)))
-surf_fill = ax.contourf(np.flipud(surf),levels, cmap="hsv", extent=[0, data.shape[1], 0, data.shape[0]])
+levels = np.concatenate((np.arange(29, 60, 4.5), np.arange(60,110,4.5)))
+print(levels)
+print(levels[::2])
+surf_fill = ax.contourf(np.flipud(surf),levels, cmap="jet_r", extent=[0, data.shape[1], 0, data.shape[0]])
 surf_lines = ax.contour(np.flipud(surf),levels, colors="k", extent=[0, data.shape[1], 0, data.shape[0]])
-# ax.clabel(surf_lines, inline=1, fontsize=10)
+ax.clabel(surf_lines, inline=1, fontsize=10, fmt="%1.1f", inline_spacing=5)
 cbar = plt.colorbar(surf_fill)
 cbar.ax.get_yaxis().labelpad = 10
 cbar.ax.set_ylabel('Hydraulic Head [feet]', rotation=270)
