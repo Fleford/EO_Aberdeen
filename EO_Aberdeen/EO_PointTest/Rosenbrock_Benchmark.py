@@ -1,6 +1,6 @@
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.colors as colors
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def rosensbrock_multi_2d(x_array):
@@ -48,6 +48,7 @@ cbar = fig.colorbar(CS)
 cbar.ax.get_yaxis().labelpad = 10
 cbar.ax.set_ylabel('2D Rosenbrock Local Fitness', rotation=270)
 # ax.set_title('PSO Total fitness: {}'.format(int(fopt)))
+ax.plot(1, 1, "co", label="Global minimum", markeredgecolor="white", markersize=8)
 ax.plot(DE_solution[:, 0], DE_solution[:, 1], "r^", label=DE_string, markeredgecolor="white", markersize=8)
 ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markeredgecolor="white", markersize=8)
 ax.plot(EOWPP_solution[:, 0], EOWPP_solution[:, 1], "b^", label=EOWPP_string, markeredgecolor="white", markersize=8)

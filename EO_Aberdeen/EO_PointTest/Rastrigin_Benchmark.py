@@ -1,6 +1,7 @@
 import math
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def rastrigin(x, a=10):
@@ -45,6 +46,7 @@ CS = ax.pcolormesh(X, Y, Z, cmap="plasma")
 cbar = fig.colorbar(CS)
 cbar.ax.get_yaxis().labelpad = 15
 cbar.ax.set_ylabel('2D Rastrigin Local Fitness', rotation=270)
+ax.plot(0, 0, "co", label="Global minimum", markeredgecolor="white", markersize=8)
 ax.plot(DE_solution[:, 0], DE_solution[:, 1], "r^", label=DE_string, markeredgecolor="white", markersize=8)
 ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markeredgecolor="white", markersize=8)
 ax.plot(EOWPP_solution[:, 0], EOWPP_solution[:, 1], "b^", label=EOWPP_string, markeredgecolor="white", markersize=8)
