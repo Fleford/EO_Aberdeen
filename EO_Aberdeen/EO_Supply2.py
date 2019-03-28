@@ -57,11 +57,11 @@ sol1.solution[3, 0] = 4
 #                              [2, 16, 17, 0],
 #                              [3, 11, 22, 0],
 #                              [4, 14, 25, 0]])
-initial_solution = np.array([[1, 15, 4, 0],  # Index, Row, Column
-                             [2, 11, 22, 0],
-                             [3, 18, 29, 0],
-                             [4, 5, 18, 0]])
-sol1.solution = initial_solution
+# initial_solution = np.array([[1, 15, 4, 0],  # Index, Row, Column
+#                              [2, 11, 22, 0],
+#                              [3, 18, 29, 0],
+#                              [4, 5, 18, 0]])
+# sol1.solution = initial_solution
 
 
 def update_fitness_matrix(self):
