@@ -112,8 +112,9 @@ def plot_result(x=0):
     # Annotate well names
     for i, txt in enumerate(sol1.solution[:, 0]):
         ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    ax.set_title("Iteration = {}, Fitness = {}".format(x, sol1.total_fitness()))
+    ax.set_title("Iteration = {}, Fitness = {:.0f}".format(x, sol1.total_fitness()))
     plt.axis([1, 30, 25, 1])
+    fig.savefig(str(x) + ".pdf", bbox_inches='tight')
     plt.pause(0.1)
 
 
@@ -190,7 +191,7 @@ plot_result()
 
 ax.set_title("Iteration = {}, Fitness = {}".format("Best", sol1.total_fitness()))
 plt.axis([1, 30, 25, 1])
-plt.pause(1000)
+# plt.pause(1000)
 
 # Show your hard work
 # plt.show()
