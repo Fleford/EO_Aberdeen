@@ -84,4 +84,4 @@ ax.set_yticks(np.arange(data.shape[0]) + 0.5)
 ax.set_yticklabels(np.arange(1, data.shape[0]+1)[::-1], fontsize=7)
 
 plt.show()
-fig.savefig("Supply2_Benchmark_wellfields.pdf")
+# fig.savefig("Supply2_Benchmark_wellfields.pdf")
