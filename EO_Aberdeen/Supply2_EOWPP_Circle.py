@@ -94,8 +94,7 @@ ax.imshow(data, interpolation='none', cmap=river_cmap, extent=[0, data.shape[1],
 
 # plot points
 ax.plot([], [], color="aqua", marker="s", label="River cell", markersize=8, linestyle="None", markeredgecolor="k")
-# ax.plot(strmflw_cnstrnt[:, 1] - 0.5, data.shape[0] - strmflw_cnstrnt[:, 0] + 0.5, color="black", marker="*",
-#         label="Streamflow Depletion Constraint", markersize=8, linestyle="None")
+
 # plot line
 best_index = 0
 max_col = wells_EOWPP[2:4, 1] - 0.5
@@ -108,6 +107,8 @@ del_row = (data.shape[0] - wells_EOWPP[best_index, 0] + 0.5) - max_row[0]
 plt.plot(max_col + del_col, max_row + del_row, color='orange')  # shifted line
 
 # plot intermediate wells
+# ax.plot(wells_EOWPP[0, 1] - 0.5, data.shape[0] - wells_EOWPP[0, 0] + 0.5, "go")
+# ax.plot(wells_EOWPP[1, 1] - 0.5, data.shape[0] - wells_EOWPP[1, 0] + 0.5, "go")
 ax.plot(wells_EOWPP[2, 1] - 0.5, data.shape[0] - wells_EOWPP[2, 0] + 0.5, "go")
 ax.plot(wells_EOWPP[3, 1] - 0.5, data.shape[0] - wells_EOWPP[3, 0] + 0.5, "go")
 
@@ -134,6 +135,7 @@ circleEdge.set_linestyle('dashed')
 circleFill = plt.Circle((circle_col - 0.5, data.shape[0] - circle_row + 0.5), circle_radius, color="orange", alpha=0.2)
 ax.add_artist(circleFill)
 ax.add_artist(circleEdge)
+
 # ax.plot(wells_PSO[:, 1] - 0.5, data.shape[0] - wells_PSO[:, 0] + 0.5, "go",
 #         label="PSO Well field (Total Fitness = 45059)")
 # ax.plot(wells_DE[:, 1] - 0.5, data.shape[0] - wells_DE[:, 0] + 0.5, "ro",
@@ -152,4 +154,4 @@ ax.set_yticks(np.arange(data.shape[0]) + 0.5)
 ax.set_yticklabels(np.arange(1, data.shape[0]+1)[::-1], fontsize=7)
 
 plt.show()
-# fig.savefig("Supply2_Benchmark_wellfields.pdf")
+# fig.savefig("EOWPP_Supply2_Step9.pdf")
