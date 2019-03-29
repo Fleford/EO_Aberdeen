@@ -11,7 +11,7 @@ from EO_Aberdeen.EO_PointTest import EO
 
 # Prepare EO instance
 # sol1 = EO.EO(4, False, min_dist=2, avoid_list=avoided_points)
-sol1 = EO.EO(n_rows=5, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
+sol1 = EO.EO(n_rows=6, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
@@ -47,13 +47,13 @@ def update(i):
     # ax.plot(sol1.avoid_list[:, 0], sol1.avoid_list[:, 1], 'ro')
     # Plot center target point
     ax.plot(0, 0, 'ro')
-    ax.set_title("Iteration = {}, AverageFitness = {}".format(i, round(-1*sol1.total_fitness()/sol1.n_rows, 2)))
+    ax.set_title("Iteration = {}, AverageFitness = {}".format(i, round(sol1.total_fitness()/sol1.n_rows, 2)))
     ax.set_xlabel("X Axis")
     ax.set_ylabel("Y Axis")
     plt.axis([sol1.x_min, sol1.x_max, sol1.y_min, sol1.y_max])
 
     # # Uncomment to save figures
-    # fig.savefig(str(i) + ".pdf", bbox_inches='tight')
+    fig.savefig(str(i) + ".pdf", bbox_inches='tight')
 
     print(round(-1*sol1.total_fitness()/sol1.n_rows, 2))
 
