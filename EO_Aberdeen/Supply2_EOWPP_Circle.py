@@ -131,7 +131,7 @@ circle_col = wells_EOWPP[best_index, 1]
 circle_radius = maximal_dist(wells_EOWPP)
 circleEdge = plt.Circle((circle_col - 0.5, data.shape[0] - circle_row + 0.5), circle_radius, edgecolor="darkorange", fill=None)
 circleEdge.set_linestyle('dashed')
-circleFill = plt.Circle((circle_col - 0.5, data.shape[0] - circle_row + 0.5), circle_radius, color="orange", alpha=0.1)
+circleFill = plt.Circle((circle_col - 0.5, data.shape[0] - circle_row + 0.5), circle_radius, color="orange", alpha=0.2)
 ax.add_artist(circleFill)
 ax.add_artist(circleEdge)
 # ax.plot(wells_PSO[:, 1] - 0.5, data.shape[0] - wells_PSO[:, 0] + 0.5, "go",
