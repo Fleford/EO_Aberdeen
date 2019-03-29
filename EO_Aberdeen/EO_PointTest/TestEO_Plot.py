@@ -23,7 +23,7 @@ def calculate_fitness(self):
 
     # Generate new fitness vector
     center_point = np.array([0, 0])
-    fitness = np.linalg.norm(parameters - center_point, axis=1) * self.maximize
+    fitness = np.linalg.norm(parameters - center_point, axis=1)
 
     return fitness
 

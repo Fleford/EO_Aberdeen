@@ -114,7 +114,9 @@ def plot_result(x=0):
         ax.annotate(txt, (sol1.solution[i, 2], sol1.solution[i, 1]))
     ax.set_title("Iteration = {}, Fitness = {:.0f}".format(x, sol1.total_fitness()))
     plt.axis([1, 30, 25, 1])
+    # Save pdf
     fig.savefig(str(x) + ".pdf", bbox_inches='tight')
+    # Show image
     plt.pause(0.1)
 
 
@@ -151,7 +153,7 @@ plot_result()
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 2
+num_of_loops = 100
 for iteration in range(1, num_of_loops + 1):
     print("Remove weakest")
     sol1.remove_weakest()
