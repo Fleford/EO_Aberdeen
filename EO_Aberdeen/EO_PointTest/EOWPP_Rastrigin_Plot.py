@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import matplotlib.pyplot as plt
 from EO_Aberdeen.EO_PointTest import EO
 
 
@@ -27,11 +28,53 @@ def calculate_fitness(self, sf):
     return fitness
 
 
+def plot_result(points, itr):
+    # global point_plot
+
+    # Clear image
+    plt.cla()
+
+    # Prepare background map
+    # X = np.linspace(-5.12, 5.12, 700)
+    # Y = np.linspace(-5.12, 5.12, 700)
+    # X, Y = np.meshgrid(X, Y)
+    # Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
+    # Z = Z.reshape(X.shape)
+    CS = ax.pcolormesh(X, Y, Z, cmap="plasma")
+    # cbar = fig.colorbar(CS)
+    cbar.ax.get_yaxis().labelpad = 15
+    cbar.ax.set_ylabel('2D Rastrigin Local Fitness', rotation=270)
+
+    # Plot global min and points
+    ax.plot(0, 0, "co", label="Global minimum", markeredgecolor="white", markersize=8)
+    ax.plot(points[:, 0], points[:, 1], "b^", label="Current solution", markeredgecolor="white", markersize=8)
+    ax.set_title("Iteration = {}, Total Fitness = {}".format(itr, round(sol1.total_fitness())))
+    ax.legend(loc=2)
+
+    fig.savefig(str(itr) + ".png", bbox_inches='tight', dpi=600)
+
+    # plt.pause(0.1)
+
+
+# Prepare figure instance
+fig, ax = plt.subplots()
+
+# Prepare background map math
+X = np.linspace(-5.12, 5.12, 700)
+Y = np.linspace(-5.12, 5.12, 700)
+X, Y = np.meshgrid(X, Y)
+Z = rastrigin([X.reshape(-1), Y.reshape(-1)], a=10)
+Z = Z.reshape(X.shape)
+CS = ax.pcolormesh(X, Y, Z, cmap="plasma")
+cbar = fig.colorbar(CS)
+cbar.ax.get_yaxis().labelpad = 15
+cbar.ax.set_ylabel('2D Rastrigin Local Fitness', rotation=270)
+
 n_points = 10
 min = -5.12
 max = 5.12
 # Note that coordinates are scaled to increase resolution
-scale = 100000000
+scale = 1000
 
 for runs in range(1):
     print("Run: " + str(runs))
@@ -44,14 +87,33 @@ for runs in range(1):
     list_of_best_fitness.append(sol1.best_solution.total_fitness())
     # print(sol1.best_solution.total_fitness())
 
+    # points = sol1.parameters()/scale
+    # ax.plot(0, 0, "co", label="Global minimum", markeredgecolor="white", markersize=8)
+    # point_plot = ax.plot(points[:, 0], points[:, 1], "b^", label="Current solution", markeredgecolor="white",
+    #                      markersize=8)
+    # ax.legend(loc=2)
+
     for iteration in range(100):
         sol1.remove_weakest()
         sol1.append_row(sol1.generate_row())
         sol1.update_fitness(calculate_fitness(sol1, scale))
         sol1.update_best()
         list_of_best_fitness.append(sol1.best_solution.total_fitness())
+        print(iteration)
         print(sol1.best_solution.total_fitness())
         print(sol1.best_solution.parameters()/scale)
+
+        # plt.clf()
+        plot_result(sol1.parameters()/scale, iteration)
+        # points = sol1.parameters() / scale
+        # plt.cla()
+        # CS = ax.pcolormesh(X, Y, Z, cmap="plasma")
+        # point_plot = ax.plot(points[:, 0], points[:, 1], "b^", label="Current solution", markeredgecolor="white",
+        #                      markersize=8)
+        # ax.set_title("Iteration = {}, Total Fitness = {}".format(iteration, round(sol1.total_fitness())))
+        # plt.pause(1)
+
+
 
     # # Save the list of best fitness to a text file
     # # print(len(list_of_best_fitness))
