@@ -76,7 +76,7 @@ max = 5.12
 # Note that coordinates are scaled to increase resolution
 scale = 1000
 
-for runs in range(1):
+for runs in range(100):
     print("Run: " + str(runs))
     list_of_best_fitness = []
     sol1 = EO.EO(n_rows=n_points, maximize=False, x_min=min*scale, x_max=max*scale, y_min=min*scale, y_max=max*scale,
@@ -112,6 +112,11 @@ for runs in range(1):
         #                      markersize=8)
         # ax.set_title("Iteration = {}, Total Fitness = {}".format(iteration, round(sol1.total_fitness())))
         # plt.pause(1)
+
+    if sol1.best_solution.total_fitness() < 17:
+        print("NEW RECORD")
+        print(sol1.best_solution.total_fitness())
+        break
 
 
 
