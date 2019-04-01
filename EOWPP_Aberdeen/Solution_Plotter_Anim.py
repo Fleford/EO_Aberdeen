@@ -77,26 +77,31 @@ def plot_result_with_k(array, new_filename, itr=0):
     plt.show()
 
 
-def plot_result():
+def plot_result(itr):
     print("Plotting the result")
     print()
-    ax.clear()
-    ax.plot(river_cells[:, 1], river_cells[:, 0], "b,")  # Col, row
+    # ax.clear()
+    plt.cla()
+    ax.plot(river_cells[:, 1], river_cells[:, 0], "b.", markersize=0.5)  # Col, row
     ax.plot(sol1.solution[:, 2], sol1.solution[:, 1], "g.")
     # Label weakest and pivot well
     sol1.sort_fitness()
     ax.plot(sol1.solution[0, 2], sol1.solution[0, 1], "r.")     # weakest well
     ax.plot(sol1.solution[-1, 2], sol1.solution[-1, 1], "b.")   # pivot well
-    # Annotate well ranks (1 is the most fit
-    for i, txt in enumerate(sol1.solution[:, 0]):
-        rank = str(6 - i)
-        ax.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
-    ax.set_title("Fitness = {}".format(sol1.total_fitness()))
+    # # Annotate well ranks (1 is the most fit
+    # for i, txt in enumerate(sol1.solution[:, 0]):
+    #     rank = str(6 - i)
+    #     ax.annotate(rank, (sol1.solution[i, 2], sol1.solution[i, 1]))
+    ax.set_title("Iteration = {}, Fitness = {}".format(itr, sol1.total_fitness()))
     plt.axis([1, 410, 368, 1])  # [y_min - 1, y_max + 1, x_max + 1, x_min - 1]
     #  Label axes
     ax.set_xlabel("Model Columns")
     ax.set_ylabel("Model Rows")
-    plt.show()
+    # ax.axis('equal')
+    ax.set_aspect('equal', 'box')
+    # plt.show()
+    # plt.pause(1)
+    fig.savefig(str(itr) + ".png", bbox_inches='tight', dpi=300)
 
 
 # Main Program
@@ -118,7 +123,7 @@ sol1.solution = load_ith_solution(best_solution_file_path, 66)
 sol1.fitness_ready = True
 
 # Uncomment when using plot_result()
-# fig, ax = plt.subplots()
+fig, ax = plt.subplots()
 
 print(sol1.solution)
 print(sol1.total_fitness())
@@ -127,16 +132,16 @@ print(sol1.total_fitness())
 hkx = txt_to_array("abr2_kx.txt")
 mask = txt_to_array("ib2_ref.dat")
 hkx_masked = np.ma.masked_where(mask == 0, hkx)
-plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
+# plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
 
-# # Loop through all solutions and print total fitness 102
-# for i in range(1, 3):
-#     sol1.solution = load_ith_solution(solution_file_path, i)
-#     sol1.fitness_ready = True
-#     index_filename = str(i) + ".pdf"
-#     print(index_filename)
-#     print(sol1.total_fitness())
-#     plot_result()
+# Loop through all solutions and print total fitness 102
+for i in range(1, 102):
+    sol1.solution = load_ith_solution(solution_file_path, i)
+    sol1.fitness_ready = True
+    index_filename = str(i) + ".pdf"
+    print(index_filename)
+    print(sol1.total_fitness())
+    plot_result(i)
