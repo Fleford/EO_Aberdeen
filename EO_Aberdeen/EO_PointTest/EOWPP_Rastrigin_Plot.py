@@ -51,7 +51,7 @@ def plot_result(points, itr):
     ax.set_title("Iteration = {}, Total Fitness = {}".format(itr, round(sol1.total_fitness())))
     ax.legend(loc=2)
 
-    fig.savefig(str(itr) + ".png", bbox_inches='tight', dpi=600)
+    fig.savefig(str(itr) + ".png", bbox_inches='tight', dpi=300)
 
     # plt.pause(0.1)
 
@@ -114,7 +114,7 @@ for runs in range(100):
         # plt.pause(1)
 
     # Stop running when a better solution is found
-    if sol1.best_solution.total_fitness() < 17:
+    if sol1.best_solution.total_fitness() < 55:
         print("NEW RECORD")
         print(sol1.best_solution.total_fitness())
         break
