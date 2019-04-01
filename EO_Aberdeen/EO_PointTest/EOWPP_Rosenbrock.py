@@ -53,4 +53,4 @@ for runs in range(1):
     #         write_f.write(s[:s.index('.')] + "\t")
     #     write_f.write("\n")
 
-np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/EOWPP_Rosenbrock1.txt", sol1.best_solution.parameters()/scale)
+# np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/EOWPP_Rosenbrock1.txt", sol1.best_solution.parameters()/scale)

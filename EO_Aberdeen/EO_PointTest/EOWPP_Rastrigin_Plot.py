@@ -113,12 +113,11 @@ for runs in range(100):
         # ax.set_title("Iteration = {}, Total Fitness = {}".format(iteration, round(sol1.total_fitness())))
         # plt.pause(1)
 
+    # Stop running when a better solution is found
     if sol1.best_solution.total_fitness() < 17:
         print("NEW RECORD")
         print(sol1.best_solution.total_fitness())
         break
-
-
 
     # # Save the list of best fitness to a text file
     # # print(len(list_of_best_fitness))
