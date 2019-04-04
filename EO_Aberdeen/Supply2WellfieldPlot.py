@@ -45,12 +45,12 @@ hk_cmap = matplotlib.colors.ListedColormap(['r', 'b'])
 river_cmap.set_bad(color='w', alpha=0)
 # draw the grid
 for row in range(data.shape[0]):
-    ax.axhline(row, lw=1.1, color='k', zorder=5)
+    ax.axhline(row, lw=0.9, color='k', zorder=5)
 for col in range(data.shape[1]):
-    ax.axvline(col, lw=1.1, color='k', zorder=5)
+    ax.axvline(col, lw=0.9, color='k', zorder=5)
 
 # plot the river cells and hk
-hk_im = ax.imshow(SynthK, cmap=hk_cmap, extent=[0, SynthK.shape[1], 0, SynthK.shape[0]], alpha=0.3)
+hk_im = ax.imshow(SynthK, cmap=hk_cmap, extent=[0, SynthK.shape[1], 0, SynthK.shape[0]], alpha=0.2)
 ax.imshow(data, interpolation='none', cmap=river_cmap, extent=[0, data.shape[1], 0, data.shape[0]], zorder=0)
 # add colorbar for hk
 cbar = plt.colorbar(hk_im)
@@ -84,4 +84,4 @@ ax.set_yticks(np.arange(data.shape[0]) + 0.5)
 ax.set_yticklabels(np.arange(1, data.shape[0]+1)[::-1], fontsize=7)
 
 plt.show()
-# fig.savefig("Supply2_Benchmark_wellfields.pdf")
+fig.savefig("Supply2_Benchmark_wellfields.pdf")
