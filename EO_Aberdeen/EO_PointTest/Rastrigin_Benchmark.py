@@ -52,4 +52,5 @@ ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markered
 ax.plot(EOWPP_solution[:, 0], EOWPP_solution[:, 1], "b^", label=EOWPP_string, markeredgecolor="white", markersize=8)
 ax.legend(loc=2)
 fig.savefig("Rastrigin_Benchmark_Solutions.pdf")
+# fig.savefig("Rastrigin_Benchmark_Solutions.png", bbox_inches='tight', dpi=300)
 plt.show()
