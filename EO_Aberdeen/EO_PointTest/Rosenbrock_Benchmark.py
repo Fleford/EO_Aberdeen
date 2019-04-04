@@ -54,4 +54,5 @@ ax.plot(PSO_solution[:, 0], PSO_solution[:, 1], "g^", label=PSO_string, markered
 ax.plot(EOWPP_solution[:, 0], EOWPP_solution[:, 1], "b^", label=EOWPP_string, markeredgecolor="white", markersize=8)
 ax.legend(loc=4)
 fig.savefig("Rosenbrock_Benchmark_Solutions.pdf")
+# fig.savefig("Rosenbrock_Benchmark_Solutions_DE_PSO.png", bbox_inches='tight', dpi=300)
 plt.show()
