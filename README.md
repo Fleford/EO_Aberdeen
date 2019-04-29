@@ -11,11 +11,11 @@ numpy
 math
 copy
 
-EO_Aberdeen/GWMVI_1_0_2 contains the code for GWM: Groundwater Management Process for MODFLOW Using Optimization
-EO_Aberdeen/EO_PointTest contains the code for testing and benchmarking EOWPP
-EO_Aberdeen/EO_PointTest/EO.py contains the class for the EO-WPP algorithm (so does EO_Aberdeen/EO_PointTest/EOWPP.py)
-EO_Aberdeen/GWM_Manipulator.py contains code for Python to manipulate the GWM terminal program
-EO_Aberdeen/Batch_Files contains batch files EO_Aberdeen/GWM_Manipulator.py uses to control GWM
+EO_Aberdeen\EO_PointTest\EO.py contains the class for the EO-WPP algorithm (so does EO_Aberdeen\EO_PointTest/EOWPP.py)
+EO_Aberdeen\EO_PointTest contains the code for testing and benchmarking EOWPP
+EO_Aberdeen\GWMVI_1_0_2 contains the code for GWM: Groundwater Management Process for MODFLOW Using Optimization
+EO_Aberdeen\GWM_Manipulator.py contains code for Python to manipulate the GWM terminal program
+EO_Aberdeen\Batch_Files contains batch files EO_Aberdeen\GWM_Manipulator.py uses to control GWM
 
 EOWPP_Aberdeen contains all the code for applying EOWPP to the Aberdeen groundwater model
 EOWPP_Aberdeen\AberdeenModel contains the Aberdeen model that Python works on
