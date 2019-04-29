@@ -18,3 +18,7 @@ EO_Aberdeen/GWM_Manipulator.py contains code for Python to manipulate the GWM te
 EO_Aberdeen/Batch_Files contains batch files EO_Aberdeen/GWM_Manipulator.py uses to control GWM
 
 EOWPP_Aberdeen contains all the code for applying EOWPP to the Aberdeen groundwater model
+EOWPP_Aberdeen\AberdeenModel contains the Aberdeen model that Python works on
+EOWPP_Aberdeen\AberdeenModel_Clean contains a clean copy of the Aberdeen model in case the working copy is corrupted
+EOWPP_Aberdeen\EOWPP_FILES contains results from tests
+EOWPP_Aberdeen\Solution_Reader.py contains code to convert files in EOWPP_FILES into numpy arrays
