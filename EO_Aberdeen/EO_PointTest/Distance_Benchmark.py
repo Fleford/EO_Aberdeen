@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def distance_2d(x, y, a=1, b=100):
+def distance_2d(x, y):
     return np.sqrt(x ** 2 + y ** 2)
 
 
