@@ -2,7 +2,7 @@ import matplotlib.animation as animation
 import matplotlib.pyplot as plt
 import numpy as np
 
-from EO_Aberdeen.EO_PointTest import EO
+from EO_Aberdeen.EO_PointTest import EOWPP
 
 # Prepare avoided points
 # avoided_points = np.array([[50, 60],
@@ -11,7 +11,7 @@ from EO_Aberdeen.EO_PointTest import EO
 
 # Prepare EO instance
 # sol1 = EO.EO(4, False, min_dist=2, avoid_list=avoided_points)
-sol1 = EO.EO(n_rows=6, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
+sol1 = EOWPP.EO(n_rows=10, maximize=False, x_min=-100, x_max=100, y_min=-100, y_max=100, min_dist=2)
 
 # Prepare plot instance
 fig, ax = plt.subplots()
@@ -40,7 +40,6 @@ def update(i):
     # Iterate through EO
     iterate(sol1)
 
-
     # Plot result
     ax.clear()
     ax.plot(sol1.solution[:, 1], sol1.solution[:, 2], 'bo')
@@ -52,8 +51,8 @@ def update(i):
     ax.set_ylabel("Y Axis")
     plt.axis([sol1.x_min, sol1.x_max, sol1.y_min, sol1.y_max])
 
-    # # Uncomment to save figures
-    fig.savefig(str(i) + ".pdf", bbox_inches='tight')
+    # # # Uncomment to save figures
+    # fig.savefig(str(i) + ".pdf", bbox_inches='tight')
 
     print(round(-1*sol1.total_fitness()/sol1.n_rows, 2))
 
