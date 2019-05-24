@@ -26,29 +26,6 @@ def cone_multi_2d_total(x_array):
     return result
 
 
-def rosenbrock_multi_2d(x_array):
-    # Prep variables for best
-    global best_fitness
-    global list_of_best_fitness
-
-    x_array = np.asarray(x_array)
-    x_array = x_array.reshape(-1, 2)
-
-    def rosenbrock_2d(x, y, a=1, b=100):
-        # Minimum at
-        return (a - x) ** 2 + b * (y - x ** 2) ** 2
-
-    result = sum(rosenbrock_2d(x_array[:, 0], x_array[:, 1]))
-
-    # Save best
-    if result < best_fitness:
-        best_fitness = result
-    # print(best_fitness)
-    list_of_best_fitness.append(best_fitness)
-
-    return result
-
-
 n_points = 10
 model_bounds = [(-100, 100) for x in range(n_points*2)]
 solution = np.ones(n_points*2)
@@ -59,7 +36,7 @@ for runs in range(1):
     best_fitness = np.inf
     list_of_best_fitness = []
 
-    result = differential_evolution(rosenbrock_multi_2d, model_bounds, disp=False, maxiter=100,
+    result = differential_evolution(cone_multi_2d_total, model_bounds, disp=False, maxiter=10,
                                     polish=False, popsize=10)
     print("DONE! result.x: {} ,result.fun: {}".format(result.x, result.fun))
     print(list_of_best_fitness)
