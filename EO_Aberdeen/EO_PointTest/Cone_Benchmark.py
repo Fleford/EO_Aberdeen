@@ -2,7 +2,8 @@ import numpy as np
 
 
 def cone_2d(x, y):
-    return x ** 2 + y ** 2
+    # It's basically the Euclidean distance from the origin
+    return np.sqrt(x ** 2 + y ** 2)
 
 
 def cone_multi_2d_total(x_array):
