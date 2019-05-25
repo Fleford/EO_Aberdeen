@@ -30,7 +30,7 @@ n_points = 10
 model_bounds = [(-100, 100) for x in range(n_points*2)]
 solution = np.ones(n_points*2)
 
-for runs in range(1):
+for runs in range(2):
     print("Run: " + str(runs))
 
     best_fitness = np.inf
