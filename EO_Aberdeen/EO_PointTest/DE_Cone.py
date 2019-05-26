@@ -27,10 +27,10 @@ def cone_multi_2d_total(x_array):
 
 
 n_points = 10
-model_bounds = [(-100, 100) for x in range(n_points*2)]
+model_bounds = [(-1000, 1000) for x in range(n_points*2)]
 solution = np.ones(n_points*2)
 
-for runs in range(2):
+for runs in range(100):
     print("Run: " + str(runs))
 
     best_fitness = np.inf
@@ -43,7 +43,7 @@ for runs in range(2):
     print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
-    with open("list_of_bests_DE_Cone.tsv", "a+") as write_f:
+    with open("list_of_bests_DE_cone.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             # Just write without the decimals

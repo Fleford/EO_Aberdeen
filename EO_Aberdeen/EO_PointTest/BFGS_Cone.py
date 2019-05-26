@@ -53,8 +53,9 @@ for runs in range(100):
     with open("list_of_bests_BFGS_cone.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
+            # # Just write without the decimals
+            # write_f.write(s[:s.index('.')] + "\t")
+            write_f.write(s + "\t")
         write_f.write("\n")
 
 # # Prepare the final result for plotting

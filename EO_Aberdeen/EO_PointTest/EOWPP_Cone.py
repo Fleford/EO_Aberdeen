@@ -61,7 +61,8 @@ for runs in range(100):
     with open("list_of_bests_EOWPP_cone.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
-            # Just write without the decimals
-            write_f.write(s[:s.index('.')] + "\t")
+            # # Just write without the decimals
+            # write_f.write(s[:s.index('.')] + "\t")
+            write_f.write(s + "\t")
         write_f.write("\n")
 # np.savetxt("EO_Aberdeen/EO_PointTest/Benchmark_samples/EOWPP_Rastrigin1.txt", sol1.best_solution.parameters()/scale)
