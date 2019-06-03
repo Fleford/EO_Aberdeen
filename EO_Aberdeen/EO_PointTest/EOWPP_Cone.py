@@ -23,8 +23,8 @@ def calculate_fitness(self, sf):
 
 
 n_points = 10
-min = -1000
-max = 1000
+min = -100
+max = 100
 # Note that coordinates are scaled to increase resolution
 scale = 10000
 
@@ -42,6 +42,7 @@ for runs in range(100):
     sol1.update_best()
     list_of_best_fitness.append(sol1.best_solution.total_fitness())
     # print(sol1.best_solution.total_fitness())
+    # print(sol1.best_solution.parameters() / scale)
 
     for iteration in range(500):
         sol1.remove_weakest()

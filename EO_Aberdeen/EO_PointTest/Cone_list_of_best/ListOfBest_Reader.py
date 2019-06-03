@@ -1,6 +1,6 @@
 import numpy as np
 
-rootname = "BFGS_cone"
+rootname = "PSO_cone"
 
 filepath = "list_of_bests_" + rootname + ".tsv"
 

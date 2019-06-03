@@ -27,9 +27,9 @@ def cone_multi_2d_total(x_array):
     return result
 
 
-n_points = 10
-min_val = -1000
-max_val = 1000
+n_points = 20
+min_val = -100
+max_val = 100
 # model_bounds = [(-100, 100) for x in range(n_points*2)]
 # solution = np.ones(n_points*2)
 
