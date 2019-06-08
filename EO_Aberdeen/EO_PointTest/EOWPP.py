@@ -162,6 +162,12 @@ class EO(object):
         # Scale random unit vector by the placement_radius
         u = placement_radius * u
 
+        # # Randomly generate a point within bounds
+        # scale = 100 # Sets decimals of precision
+        # new_point = generate_possible_point(self.x_min*scale, self.x_max*scale,
+        #                                     self.y_min*scale, self.y_max*scale)
+        # new_point = new_point / scale
+
         # Return a new point using lowest fit row, [0], most fit = [-1]
         new_point = parameters[-1] + np.random.rand() * u * 1
         # new_point = parameters[np.random.randint(parameters_rows)] + np.random.rand() * u

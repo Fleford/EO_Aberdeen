@@ -22,6 +22,6 @@ END Parallel_Control
 BEGIN Parallel_Runners table
   nrow=2 ncol=3 columnlabels
   RunnerName  RunnerDir   RunTime
-  Runner1     ..\runner1\  0.5
-  Runner2     ..\runner2\  0.5
+  Runner1     ..\Runner1\  0.5
+  Runner2     ..\Runner2\  0.5
 END Parallel_Runners

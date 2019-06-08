@@ -27,7 +27,7 @@ def cone_multi_2d_total(x_array):
     return result
 
 
-n_points = 20
+n_points = 6
 min_val = -100
 max_val = 100
 # model_bounds = [(-100, 100) for x in range(n_points*2)]
@@ -41,7 +41,7 @@ for runs in range(100):
     list_of_best_fitness = []
 
     # Generate random initial guess that's within the domain
-    initial_guess = np.random.rand(n_points) * (max_val - min_val) + min_val
+    initial_guess = np.random.rand(n_points * 2) * (max_val - min_val) + min_val
     print("Initial guess: " + str(initial_guess))
     result = minimize(cone_multi_2d_total, initial_guess, method='BFGS', options={'disp': True, 'maxiter': 25})
 
@@ -50,7 +50,7 @@ for runs in range(100):
     print(len(list_of_best_fitness))
 
     # Save the list of best fitness to a text file
-    with open("list_of_bests_BFGS_cone.tsv", "a+") as write_f:
+    with open("list_of_bests_BFGS_cone_6pts.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             # # Just write without the decimals

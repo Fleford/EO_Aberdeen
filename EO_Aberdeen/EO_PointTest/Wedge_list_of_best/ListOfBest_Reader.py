@@ -1,6 +1,6 @@
 import numpy as np
 
-rootname = "PSO_cone_6pts"
+rootname = "EOWPP_wedge_rand_place"
 
 filepath = "list_of_bests_" + rootname + ".tsv"
 

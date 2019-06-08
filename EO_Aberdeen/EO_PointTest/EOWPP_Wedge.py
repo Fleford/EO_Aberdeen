@@ -4,9 +4,15 @@ from EO_Aberdeen.EO_PointTest import EOWPP
 import sys
 
 
-def cone_2d(x, y):
-    # It's basically the Euclidean distance from the origin
-    return np.sqrt(x ** 2 + y ** 2)
+def wedge_2d(x, y):
+    point = np.array([x, y]).T
+    center_point1 = np.array([-50, -50])
+    center_point2 = np.array([50, 50])
+    fitness_1 = np.linalg.norm(point - center_point1, axis=1)
+    fitness_2 = np.linalg.norm(point - center_point2, axis=1)
+    fitness = (fitness_1 + fitness_2)
+
+    return fitness
 
 
 def calculate_fitness(self, sf):
@@ -14,7 +20,7 @@ def calculate_fitness(self, sf):
     parameters = self.parameters()/sf
 
     # Generate new fitness vector
-    fitness = cone_2d(parameters[:, 0], parameters[:, 1])
+    fitness = wedge_2d(parameters[:, 0], parameters[:, 1])
     # print()
     # print("fitness")
     # print(fitness)
@@ -22,17 +28,17 @@ def calculate_fitness(self, sf):
     return fitness
 
 
-n_points = 6
+n_points = 10
 min = -100
 max = 100
 # Note that coordinates are scaled to increase resolution
 # scale = 10000
-scale = 10000
+scale = 1000
 
 # To prevent recursion depth problem
 sys.setrecursionlimit(2500)
 
-for runs in range(25):
+for runs in range(100):
     print()
     print("Run: " + str(runs))
     list_of_best_fitness = []
@@ -60,7 +66,7 @@ for runs in range(25):
 
     # Save the list of best fitness to a text file
     # print(len(list_of_best_fitness))
-    with open("list_of_bests_EOWPP_cone_6pts.tsv", "a+") as write_f:
+    with open("list_of_bests_EOWPP_wedge.tsv", "a+") as write_f:
         for value in list_of_best_fitness:
             s = str(value)
             # # Just write without the decimals

@@ -26,7 +26,7 @@ def calculate_fitness(self):
     center_point_2 = np.array([-50, -50])
     fitness_1 = np.linalg.norm(parameters - center_point_1, axis=1)
     fitness_2 = np.linalg.norm(parameters - center_point_2, axis=1)
-    fitness = (fitness_1 + fitness_2) * self.maximize
+    fitness = (fitness_1 + fitness_2)
 
     return fitness
 
