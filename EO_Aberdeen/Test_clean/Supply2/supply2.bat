@@ -7,7 +7,7 @@ if "%1"=="SERIAL" goto serial
 
 echo Running GWM-VI.exe with supply2_pll.gwm
 cd ..
-call StartRunners 2
+call StartRunners 4
 cd supply2
 ..\..\Bin\GWM-VI.exe ..\data\supply2_pll.gwm
 goto end

@@ -21,6 +21,18 @@ Start "Runner 2" /min ..\..\Bin\JRunnerM
 
 if %N%==2 goto GoHome
 
+cd ..\Runner3
+Echo Starting Runner 3
+Start "Runner 3" /min ..\..\Bin\JRunnerM
+
+if %N%==3 goto GoHome
+
+cd ..\Runner4
+Echo Starting Runner 4
+Start "Runner 4" /min ..\..\Bin\JRunnerM
+
+if %N%==3 goto GoHome
+
 :GoHome
 cd ..\
 goto End

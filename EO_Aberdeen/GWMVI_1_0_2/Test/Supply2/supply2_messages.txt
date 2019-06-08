@@ -71,7 +71,7 @@
 
  PARALLEL PROCESSING option is enabled.
  Operating system under which dispatcher program runs: WINDOWS
- Number of runners =    2
+ Number of runners =    4
 
  Runner number    1:  Name = Runner1
  Directory = ..\Runner1\
@@ -79,6 +79,14 @@
 
  Runner number    2:  Name = Runner2
  Directory = ..\Runner2\
+ Estimated runtime =  0.5000     seconds
+
+ Runner number    3:  Name = Runner3
+ Directory = ..\Runner3\
+ Estimated runtime =  0.5000     seconds
+
+ Runner number    4:  Name = Runner4
+ Directory = ..\Runner4\
  Estimated runtime =  0.5000     seconds
  
 
@@ -110,36 +118,16 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -7277.8         -12278.         -5000.5          FORWARD 
+ Q1             -9735.4         -14736.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2             -9143.8         -14144.         -5000.5          FORWARD 
+ Q2             -8047.9         -13048.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q3             -5031.5         -10032.         -5000.5          FORWARD 
+ Q3             -9398.0         -14399.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4             -8028.2         -13029.         -5000.5          FORWARD 
-
- Job of current iteration of Control Loop is: SOLVE_GWM
-
- Job of current iteration of Control Loop is: REPEAT
-
- Job of current iteration of Control Loop is: FORWARD
-
- Job of current iteration of Control Loop is: SENSITIVITY
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -7277.8         -9778.5         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2             -9143.8         -11645.         -2500.7          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q3             -5031.8         -7532.6         -2500.8          FORWARD 
-
- PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4             -8028.1         -10529.         -2500.8          FORWARD 
+ Q4             -9037.0         -14038.         -5000.5          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 
