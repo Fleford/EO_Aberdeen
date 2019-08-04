@@ -1,7 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from EOWPP_GWModel.EOWPP_GWModel import EO, generate_possible_point, generate_initial_array
+# Working directory set to C:\Users\Fleford\PycharmProjects\EO_Aberdeen\EOWPP_Aberdeen
+from EOWPP_GWModel import EO, generate_possible_point, generate_initial_array
 from GWM_Manipulator_abr import read_fitness_array, write_abr_decvar, write_abr_hedcon, run_gwm
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 
