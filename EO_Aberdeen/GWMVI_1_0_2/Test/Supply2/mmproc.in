@@ -24,7 +24,7 @@ none     # ITEM 8: BINARY FILE FOR FLOW
 SFR-FLOW  supply2sf.cbc     # ITEM 10: BINARY FILE FOR SFR-FLOW
            4      # ITEM 11: NMQWEL -- Number of managed WEL cells
 supply2.wel     # ITEM 12: WELL FILE NAME
-Q1         1         9        21   -9.430360418563065E+003  # Item 13A: Name Lay Row Col dummyQ
+Q1         1        20        17   -6.946425603811789E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -37,7 +37,7 @@ Q1         1         9        21   -9.430360418563065E+003  # Item 13A: Name Lay
     1
     1
     1
-Q2         1         5        25   -7.884959167879154E+003  # Item 13A: Name Lay Row Col dummyQ
+Q2         1        18        14   -7.709003723377366E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -50,7 +50,7 @@ Q2         1         5        25   -7.884959167879154E+003  # Item 13A: Name Lay
     1
     1
     1
-Q3         1        22        18   -7.019332152153757E+003  # Item 13A: Name Lay Row Col dummyQ
+Q3         1         9         3   -2.374795501384961E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -63,7 +63,7 @@ Q3         1        22        18   -7.019332152153757E+003  # Item 13A: Name Lay
     1
     1
     1
-Q4         1        19         6   -9.881636435209926E+003  # Item 13A: Name Lay Row Col dummyQ
+Q4         1        21        12   -6.597744056431996E+003  # Item 13A: Name Lay Row Col dummyQ
     1
     1
     1
@@ -79,13 +79,13 @@ Q4         1        19         6   -9.881636435209926E+003  # Item 13A: Name Lay
            0      # ITEM 14: NMQMNW -- Number of managed MNW wells
                   16                                # ITEM 17: NSV - number of simulated values
 Q1c         HEAD
-         1         9        21         1         # Item 18B: LAY,ROW,COL,SP
+         1        20        17         1         # Item 18B: LAY,ROW,COL,SP
 Q2c         HEAD
-         1         5        25         1         # Item 18B: LAY,ROW,COL,SP
+         1        18        14         1         # Item 18B: LAY,ROW,COL,SP
 Q3c         HEAD
-         1        22        18         1         # Item 18B: LAY,ROW,COL,SP
+         1         9         3         1         # Item 18B: LAY,ROW,COL,SP
 Q4c         HEAD
-         1        19         6         1         # Item 18B: LAY,ROW,COL,SP
+         1        21        12         1         # Item 18B: LAY,ROW,COL,SP
 S01_9       SFR-FLOW
          1        14         9
 S01_10      SFR-FLOW

@@ -1,8 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 from EO_PointTest.EO import EO
 from GWM_Manipulator import read_fitness_array, write_supply2decvar, write_supply2hedcon, run_gwm, extract_rivercells
+
+# Code to time runtime
+start_time = time.time()
 
 # # Test GWM_Manipulator functions
 # test_parameters = np.array([[1, 12, 11], # Index, Row, Column
@@ -206,6 +210,10 @@ print(str(list_of_best_fitness))
 #         s = str(value)
 #         write_f.write(s[:s.index('.')] + "\t")
 #     write_f.write("\n")
+
+# Report runtime
+elapsed_time = time.time() - start_time
+print("Runtime (seconds): {}".format(elapsed_time))
 
 # Implement a write-to-textfile option
 # Implement annotated wells
