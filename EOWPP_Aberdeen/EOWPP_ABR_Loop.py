@@ -1,4 +1,5 @@
 import os
+import time
 import numpy as np
 from EOWPP_GWModel import EO
 from GWM_Manipulator_abr import read_fitness_array, write_abr_decvar, write_abr_hedcon, run_gwm
@@ -78,9 +79,12 @@ if not os.path.isfile("EOWPP_FILES\EOWPP.solutions"):
 
 # Start of loop
 # Based on results, generate a new parameter matrix
-num_of_loops = 100
+num_of_loops = 1
 for run in range(1, num_of_loops + 1):
-    print("Load in previously saved solution")
+    print("Starting timer...")
+    start_time = time.time()
+
+    print("Loading previously saved solution...")
     sol1.solution, sol1.eval_count = load_recent_solution()
     sol1.fitness_ready = True
     print("sol1.solution")
@@ -118,3 +122,5 @@ for run in range(1, num_of_loops + 1):
     print("Saving Best Solution")
     save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()
+    end_time = time.time()
+    print("Seconds elapsed: " + str(end_time - start_time))

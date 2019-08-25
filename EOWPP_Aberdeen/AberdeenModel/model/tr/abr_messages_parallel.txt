@@ -98,3 +98,9 @@
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
  Q6              0.0000         -800.00         -800.00          FORWARD 
+
+ Job of current iteration of Control Loop is: SOLVE_GWM
+
+ Job of current iteration of Control Loop is: FORWARD
+
+ Job of current iteration of Control Loop is: STOP

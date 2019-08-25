@@ -118,16 +118,16 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -9961.4         -14962.         -5000.5          FORWARD 
+ Q1             -8201.2         -13202.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2             -7657.6         -12658.         -5000.5          FORWARD 
+ Q2             -11031.         -16032.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q3             -433.77         -5434.3         -5000.5          FORWARD 
+ Q3             -7262.5         -12263.         -5000.5          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4             -9596.1         -14597.         -5000.5          FORWARD 
+ Q4             -1928.6         -6929.1         -5000.5          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 
@@ -138,16 +138,16 @@
  Job of current iteration of Control Loop is: SENSITIVITY
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q1             -9961.3         -12462.         -2500.7          FORWARD 
+ Q1             -8201.2         -10702.         -2500.8          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q2             -7657.6         -10158.         -2500.7          FORWARD 
+ Q2             -11031.         -13532.         -2500.8          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q3             -434.00         -2934.7         -2500.8          FORWARD 
+ Q3             -7262.5         -9763.2         -2500.8          FORWARD 
 
  PARAMETER         VALUE      PERTURBED VALUE   DIFFERENCE   PERTURB DIRECTION
- Q4             -9596.1         -12097.         -2500.7          FORWARD 
+ Q4             -1928.6         -4429.4         -2500.8          FORWARD 
 
  Job of current iteration of Control Loop is: SOLVE_GWM
 

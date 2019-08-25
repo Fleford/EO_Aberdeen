@@ -24,22 +24,22 @@
                                                    FRACTION
   NUMBER     NAME       TYPE      LAY   ROW   COL   OF FLOW
  ----------------------------------------------------------
-    1      Q1         WITHDRAWAL     2  141  263    1.0000
+    1      Q1         WITHDRAWAL     2  223  200    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    2      Q2         WITHDRAWAL     2  130  203    1.0000
+    2      Q2         WITHDRAWAL     2  107  269    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    3      Q3         WITHDRAWAL     2  100  298    1.0000
+    3      Q3         WITHDRAWAL     2  138  140    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    4      Q4         WITHDRAWAL     2  117  176    1.0000
+    4      Q4         WITHDRAWAL     2  217  162    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    5      Q5         WITHDRAWAL     2  101  202    1.0000
+    5      Q5         WITHDRAWAL     2  152  170    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    6      Q6         WITHDRAWAL     2  106  206    1.0000
+    6      Q6         WITHDRAWAL     2  101  197    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
 
@@ -100,12 +100,12 @@
                                            RIGHT-HAND    STRESS
  NUMBER  NAME        LAY  ROW  COL  TYPE      SIDE       PERIOD
  ---------------------------------------------------------------
-     1   Q1c           2  141  263   <    1.0000E+01         2
-     2   Q2c           2  130  203   <    1.0000E+01         2
-     3   Q3c           2  100  298   <    1.0000E+01         2
-     4   Q4c           2  117  176   <    1.0000E+01         2
-     5   Q5c           2  101  202   <    1.0000E+01         2
-     6   Q6c           2  106  206   <    1.0000E+01         2
+     1   Q1c           2  223  200   <    1.0000E+01         2
+     2   Q2c           2  107  269   <    1.0000E+01         2
+     3   Q3c           2  138  140   <    1.0000E+01         2
+     4   Q4c           2  217  162   <    1.0000E+01         2
+     5   Q5c           2  152  170   <    1.0000E+01         2
+     6   Q6c           2  101  197   <    1.0000E+01         2
 
       420 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR HEAD CONSTRAINTS
 
@@ -176,3 +176,147 @@
        By Perturbation Value: -8.000000E+02
       Perturb Flow Variable    2
        By Perturbation Value: -8.000000E+02
+      Perturb Flow Variable    3
+       By Perturbation Value: -8.000000E+02
+      Perturb Flow Variable    4
+       By Perturbation Value: -8.000000E+02
+      Perturb Flow Variable    5
+       By Perturbation Value: -8.000000E+02
+      Perturb Flow Variable    6
+       By Perturbation Value: -8.000000E+02
+ 
+      Average Number of Significant Digits in Matrix  1.138889E+00
+    
+    Solving Linear Program
+    Feasible Solution Found
+  Optimal Solution Found
+
+----------------------------------------------------------------------
+               Groundwater Management Solution
+----------------------------------------------------------------------
+
+       OPTIMAL SOLUTION FOUND 
+
+       OPTIMAL RATES FOR EACH FLOW VARIABLE 
+       ---------------------------------------
+Variable           Withdrawal          Injection           Contribution
+Name               Rate                Rate                To Objective
+----------         --------------      ------------        ------------
+ Q1                6.649248E+04                            2.433625E+07
+ Q2                2.931699E+04                            1.073002E+07
+ Q3                1.425418E+03                            5.217030E+05
+ Q4                1.618696E+04                            5.924426E+06
+ Q5                5.134137E+04                            1.879094E+07
+ Q6                1.187231E+05                            4.345264E+07
+                   ------------        ------------        ------------
+TOTALS             2.834863E+05        0.000000E+00        1.037560E+08
+
+
+       OBJECTIVE FUNCTION VALUE                            1.037560E+08
+
+       BINDING CONSTRAINTS 
+Constraint Type        Name     Status      Shadow Price
+---------------        ----     ------      ------------
+Head Drawdown          Q1c      Binding     -2.5767E+06
+Head Drawdown          Q2c      Binding     -1.0718E+06
+Head Drawdown          Q3c      Binding     -4.3787E+04
+Head Drawdown          Q4c      Binding     -5.0102E+05
+Head Drawdown          Q5c      Binding     -1.8865E+06
+Head Drawdown          Q6c      Binding     -4.2958E+06
+
+  Binding constraint and range analysis values are determined from the linear
+    program and based on the response matrix approximation of the flow-process.
+ 
+       RANGE ANALYSIS 
+
+
+       Constraint Ranges
+
+  Lower/Upper Bound are the values of the RHS beyond which basis will change.
+    Leaving is the variable which will leave the basis. 
+    Entering is the variable which will enter the basis.
+    If the entering or leaving variable is a constraint name,
+      then the constraint slack variable is active
+
+Constraint                Original      Lower/Upper
+Name        Slack         RHS           Bound            Entering    Leaving
+----------  ----------    ----------    ----------       ----------  ----------
+Q1c         0.0000E+00    1.0000E+01    1.0000E+01       Q4c         Q1        
+                                        1.0000E+01       Q1c         Q1        
+
+Q2c         0.0000E+00    1.0000E+01    1.0000E+01       Q6c         Q2        
+                                        1.0000E+01       Q2c         Q2        
+
+Q3c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q3        
+                                        1.0000E+01       Q3c         Q5        
+
+Q4c         0.0000E+00    1.0000E+01    1.0000E+01       Q1c         Q4        
+                                        1.0000E+01       Q4c         Q1        
+
+Q5c         0.0000E+00    1.0000E+01    1.0000E+01       Q3c         Q5        
+                                        1.0000E+01       Q5c         Q3        
+
+Q6c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q6        
+                                        1.0000E+01       Q3c         Q5        
+
+
+
+       Objective-Function Coefficient Ranges 
+
+  Lower/Upper Bound are the values of the coefficients beyond which basis will change.
+    Leaving is the variable which will leave the basis. 
+    Entering is the variable which will enter the basis.
+    If the entering or leaving variable is a constraint name,
+      then the constraint slack variable is active
+    Basic variables are shown with zero reduced cost
+
+Variable    Reduced       Original      Lower/Upper
+Name        Cost          Coefficient   Bound            Entering    Leaving
+----------  ----------    ----------    ----------       ----------  ----------
+Q1          0.0000E+00    3.6600E+02    1.2446E+01       Q1c         Q1        
+                                        1.6828E+03       Q4c         Q4        
+
+Q2          0.0000E+00    3.6600E+02    5.7064E+01       Q2c         Q2        
+                                        1.0234E+04       Q6c         Q6        
+
+Q3          0.0000E+00    3.6600E+02    1.4112E+02       Q3c         Q3        
+                                        5.3666E+04       Q5c         Q5        
+
+Q4          0.0000E+00    3.6600E+02    8.1876E+01       Q4c         Q4        
+                                        2.0080E+04       Q1c         Q1        
+
+Q5          0.0000E+00    3.6600E+02    1.0170E+02       Q5c         Q5        
+                                        1.2190E+03       Q3c         Q3        
+
+Q6          0.0000E+00    3.6600E+02    6.0294E+01       Q6c         Q6        
+                                        1.4794E+03       Q5c         Q5        
+
+---------------------------------------------------------------
+         Final Flow Process Simulation
+---------------------------------------------------------------
+  Running Final Flow Process Simulation
+    using Optimal Flow Variable Rates 
+    
+      Status of Simulation-Based Constraints 
+        Using Optimal Flow Rate Variable Values
+
+                                           Simulated    Specified
+                                            By Flow        in
+      Constraint Type        Name           Process    Constraints   Difference
+      ---------------        ----          ----------   ----------   ----------
+      Head Drawdown          Q1c           1.2829E+03 > 1.2910E+03  -8.1566E+00
+      Head Drawdown          Q2c           1.2882E+03 > 1.2941E+03  -5.9148E+00
+      Head Drawdown          Q3c           1.3099E+03 > 1.3112E+03  -1.2468E+00
+      Head Drawdown          Q4c           1.2941E+03 > 1.2985E+03  -4.3806E+00
+      Head Drawdown          Q5c           1.2959E+03 > 1.2982E+03  -2.2804E+00
+      Head Drawdown          Q6c           1.3071E+03 > 1.3077E+03  -5.8801E-01
+
+  Difference is computed by subtracting right hand side of the constraint 
+    from the left side of the constraint.
+  Precision limitations and nonlinear response may cause the 
+    values of the binding constraints computed directly by the flow process 
+    to differ from those computed using the linear program.  
+
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2019/08/25 14:28:09
+ Elapsed run time: 13 Minutes, 35.079 Seconds
+
