@@ -24,22 +24,22 @@
                                                    FRACTION
   NUMBER     NAME       TYPE      LAY   ROW   COL   OF FLOW
  ----------------------------------------------------------
-    1      Q1         WITHDRAWAL     2  223  200    1.0000
+    1      Q1         WITHDRAWAL     2  182  266    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    2      Q2         WITHDRAWAL     2  107  269    1.0000
+    2      Q2         WITHDRAWAL     2  226  152    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    3      Q3         WITHDRAWAL     2  138  140    1.0000
+    3      Q3         WITHDRAWAL     2  231  197    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    4      Q4         WITHDRAWAL     2  217  162    1.0000
+    4      Q4         WITHDRAWAL     2  224  216    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    5      Q5         WITHDRAWAL     2  152  170    1.0000
+    5      Q5         WITHDRAWAL     2  159  265    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
-    6      Q6         WITHDRAWAL     2  101  197    1.0000
+    6      Q6         WITHDRAWAL     2  133  233    1.0000
    AVAILABLE IN STRESS PERIODS: 1-2
 
 
@@ -100,12 +100,12 @@
                                            RIGHT-HAND    STRESS
  NUMBER  NAME        LAY  ROW  COL  TYPE      SIDE       PERIOD
  ---------------------------------------------------------------
-     1   Q1c           2  223  200   <    1.0000E+01         2
-     2   Q2c           2  107  269   <    1.0000E+01         2
-     3   Q3c           2  138  140   <    1.0000E+01         2
-     4   Q4c           2  217  162   <    1.0000E+01         2
-     5   Q5c           2  152  170   <    1.0000E+01         2
-     6   Q6c           2  101  197   <    1.0000E+01         2
+     1   Q1c           2  182  266   <    1.0000E+01         2
+     2   Q2c           2  226  152   <    1.0000E+01         2
+     3   Q3c           2  231  197   <    1.0000E+01         2
+     4   Q4c           2  224  216   <    1.0000E+01         2
+     5   Q5c           2  159  265   <    1.0000E+01         2
+     6   Q6c           2  133  233   <    1.0000E+01         2
 
       420 BYTES OF MEMORY ALLOCATED TO STORE DATA FOR HEAD CONSTRAINTS
 
@@ -202,27 +202,27 @@
 Variable           Withdrawal          Injection           Contribution
 Name               Rate                Rate                To Objective
 ----------         --------------      ------------        ------------
- Q1                6.649248E+04                            2.433625E+07
- Q2                2.931699E+04                            1.073002E+07
- Q3                1.425418E+03                            5.217030E+05
- Q4                1.618696E+04                            5.924426E+06
- Q5                5.134137E+04                            1.879094E+07
- Q6                1.187231E+05                            4.345264E+07
+ Q1                4.018777E+03                            1.470872E+06
+ Q2                1.450637E+04                            5.309331E+06
+ Q3                3.687848E+04                            1.349752E+07
+ Q4                2.024613E+04                            7.410084E+06
+ Q5                2.057710E+04                            7.531217E+06
+ Q6                5.666707E+04                            2.074015E+07
                    ------------        ------------        ------------
-TOTALS             2.834863E+05        0.000000E+00        1.037560E+08
+TOTALS             1.528939E+05        0.000000E+00        5.595918E+07
 
 
-       OBJECTIVE FUNCTION VALUE                            1.037560E+08
+       OBJECTIVE FUNCTION VALUE                            5.595918E+07
 
        BINDING CONSTRAINTS 
 Constraint Type        Name     Status      Shadow Price
 ---------------        ----     ------      ------------
-Head Drawdown          Q1c      Binding     -2.5767E+06
-Head Drawdown          Q2c      Binding     -1.0718E+06
-Head Drawdown          Q3c      Binding     -4.3787E+04
-Head Drawdown          Q4c      Binding     -5.0102E+05
-Head Drawdown          Q5c      Binding     -1.8865E+06
-Head Drawdown          Q6c      Binding     -4.2958E+06
+Head Drawdown          Q1c      Binding     -1.5003E+05
+Head Drawdown          Q2c      Binding     -4.5950E+05
+Head Drawdown          Q3c      Binding     -1.5200E+06
+Head Drawdown          Q4c      Binding     -6.6543E+05
+Head Drawdown          Q5c      Binding     -7.4813E+05
+Head Drawdown          Q6c      Binding     -2.0529E+06
 
   Binding constraint and range analysis values are determined from the linear
     program and based on the response matrix approximation of the flow-process.
@@ -241,23 +241,23 @@ Head Drawdown          Q6c      Binding     -4.2958E+06
 Constraint                Original      Lower/Upper
 Name        Slack         RHS           Bound            Entering    Leaving
 ----------  ----------    ----------    ----------       ----------  ----------
-Q1c         0.0000E+00    1.0000E+01    1.0000E+01       Q4c         Q1        
-                                        1.0000E+01       Q1c         Q1        
+Q1c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q1        
+                                        1.0000E+01       Q1c         Q5        
 
-Q2c         0.0000E+00    1.0000E+01    1.0000E+01       Q6c         Q2        
-                                        1.0000E+01       Q2c         Q2        
+Q2c         0.0000E+00    1.0000E+01    1.0000E+01       Q3c         Q2        
+                                        1.0000E+01       Q4c         Q3        
 
-Q3c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q3        
-                                        1.0000E+01       Q3c         Q5        
+Q3c         0.0000E+00    1.0000E+01    1.0000E+01       Q4c         Q3        
+                                        1.0000E+01       Q3c         Q4        
 
-Q4c         0.0000E+00    1.0000E+01    1.0000E+01       Q1c         Q4        
-                                        1.0000E+01       Q4c         Q1        
+Q4c         0.0000E+00    1.0000E+01    1.0000E+01       Q3c         Q4        
+                                        1.0000E+01       Q4c         Q3        
 
-Q5c         0.0000E+00    1.0000E+01    1.0000E+01       Q3c         Q5        
-                                        1.0000E+01       Q5c         Q3        
+Q5c         0.0000E+00    1.0000E+01    1.0000E+01       Q1c         Q5        
+                                        1.0000E+01       Q5c         Q1        
 
 Q6c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q6        
-                                        1.0000E+01       Q3c         Q5        
+                                        1.0000E+01       Q1c         Q5        
 
 
 
@@ -273,23 +273,23 @@ Q6c         0.0000E+00    1.0000E+01    1.0000E+01       Q5c         Q6
 Variable    Reduced       Original      Lower/Upper
 Name        Cost          Coefficient   Bound            Entering    Leaving
 ----------  ----------    ----------    ----------       ----------  ----------
-Q1          0.0000E+00    3.6600E+02    1.2446E+01       Q1c         Q1        
-                                        1.6828E+03       Q4c         Q4        
+Q1          0.0000E+00    3.6600E+02    3.3396E+01       Q1c         Q1        
+                                        2.7319E+04       Q5c         Q5        
 
-Q2          0.0000E+00    3.6600E+02    5.7064E+01       Q2c         Q2        
-                                        1.0234E+04       Q6c         Q6        
+Q2          0.0000E+00    3.6600E+02    6.3511E+01       Q2c         Q2        
+                                        2.8630E+04       Q3c         Q3        
 
-Q3          0.0000E+00    3.6600E+02    1.4112E+02       Q3c         Q3        
-                                        5.3666E+04       Q5c         Q5        
+Q3          0.0000E+00    3.6600E+02    7.0372E+01       Q3c         Q3        
+                                        9.4461E+02       Q4c         Q4        
 
-Q4          0.0000E+00    3.6600E+02    8.1876E+01       Q4c         Q4        
-                                        2.0080E+04       Q1c         Q1        
+Q4          0.0000E+00    3.6600E+02    1.4401E+02       Q4c         Q4        
+                                        2.0234E+03       Q3c         Q3        
 
-Q5          0.0000E+00    3.6600E+02    1.0170E+02       Q5c         Q5        
-                                        1.2190E+03       Q3c         Q3        
+Q5          0.0000E+00    3.6600E+02    4.3986E+01       Q5c         Q5        
+                                        6.9361E+03       Q1c         Q1        
 
-Q6          0.0000E+00    3.6600E+02    6.0294E+01       Q6c         Q6        
-                                        1.4794E+03       Q5c         Q5        
+Q6          0.0000E+00    3.6600E+02    2.0377E+01       Q6c         Q6        
+                                        3.5663E+03       Q5c         Q5        
 
 ---------------------------------------------------------------
          Final Flow Process Simulation
@@ -304,12 +304,12 @@ Q6          0.0000E+00    3.6600E+02    6.0294E+01       Q6c         Q6
                                             By Flow        in
       Constraint Type        Name           Process    Constraints   Difference
       ---------------        ----          ----------   ----------   ----------
-      Head Drawdown          Q1c           1.2829E+03 > 1.2910E+03  -8.1566E+00
-      Head Drawdown          Q2c           1.2882E+03 > 1.2941E+03  -5.9148E+00
-      Head Drawdown          Q3c           1.3099E+03 > 1.3112E+03  -1.2468E+00
-      Head Drawdown          Q4c           1.2941E+03 > 1.2985E+03  -4.3806E+00
-      Head Drawdown          Q5c           1.2959E+03 > 1.2982E+03  -2.2804E+00
-      Head Drawdown          Q6c           1.3071E+03 > 1.3077E+03  -5.8801E-01
+      Head Drawdown          Q1c           1.2836E+03 > 1.2854E+03  -1.8176E+00
+      Head Drawdown          Q2c           1.2992E+03 > 1.3015E+03  -2.3501E+00
+      Head Drawdown          Q3c           1.2885E+03 > 1.2907E+03  -2.2153E+00
+      Head Drawdown          Q4c           1.2861E+03 > 1.2901E+03  -4.0253E+00
+      Head Drawdown          Q5c           1.2904E+03 > 1.2910E+03  -6.7249E-01
+      Head Drawdown          Q6c           1.2977E+03 > 1.2979E+03  -2.3291E-01
 
   Difference is computed by subtracting right hand side of the constraint 
     from the left side of the constraint.
@@ -317,6 +317,6 @@ Q6          0.0000E+00    3.6600E+02    6.0294E+01       Q6c         Q6
     values of the binding constraints computed directly by the flow process 
     to differ from those computed using the linear program.  
 
- Run end date and time (yyyy/mm/dd hh:mm:ss): 2019/08/25 14:28:09
- Elapsed run time: 13 Minutes, 35.079 Seconds
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2019/08/25 22:59:48
+ Elapsed run time: 11 Minutes, 21.403 Seconds
 

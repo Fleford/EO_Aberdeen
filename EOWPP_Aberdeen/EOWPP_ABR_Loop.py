@@ -79,11 +79,11 @@ if not os.path.isfile("EOWPP_FILES\EOWPP.solutions"):
 
 # Start of loop
 # Based on results, generate a new parameter matrix
+print("Starting timer...")
+start_time = time.time()
+
 num_of_loops = 1
 for run in range(1, num_of_loops + 1):
-    print("Starting timer...")
-    start_time = time.time()
-
     print("Loading previously saved solution...")
     sol1.solution, sol1.eval_count = load_recent_solution()
     sol1.fitness_ready = True
@@ -122,5 +122,6 @@ for run in range(1, num_of_loops + 1):
     print("Saving Best Solution")
     save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()
-    end_time = time.time()
-    print("Seconds elapsed: " + str(end_time - start_time))
+
+end_time = time.time()
+print("Seconds elapsed: " + str(end_time - start_time))

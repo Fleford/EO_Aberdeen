@@ -31,7 +31,7 @@ cd ..\Runner4
 Echo Starting Runner 4
 Start "Runner 4" /min ..\..\Bin\JRunnerM
 
-if %N%==3 goto GoHome
+if %N%==4 goto GoHome
 
 :GoHome
 cd ..\

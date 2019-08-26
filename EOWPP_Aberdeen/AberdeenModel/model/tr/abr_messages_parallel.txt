@@ -63,7 +63,7 @@
 
  PARALLEL PROCESSING option is enabled.
  Operating system under which dispatcher program runs: WINDOWS
- Number of runners =    2
+ Number of runners =    6
 
  Runner number    1:  Name = Runner1
  Directory = ..\..\Runner1\tr\
@@ -71,6 +71,22 @@
 
  Runner number    2:  Name = Runner2
  Directory = ..\..\Runner2\tr\
+ Estimated runtime =   300.0     seconds
+
+ Runner number    3:  Name = Runner3
+ Directory = ..\..\Runner3\tr\
+ Estimated runtime =   300.0     seconds
+
+ Runner number    4:  Name = Runner4
+ Directory = ..\..\Runner4\tr\
+ Estimated runtime =   300.0     seconds
+
+ Runner number    5:  Name = Runner5
+ Directory = ..\..\Runner5\tr\
+ Estimated runtime =   300.0     seconds
+
+ Runner number    6:  Name = Runner6
+ Directory = ..\..\Runner6\tr\
  Estimated runtime =   300.0     seconds
  
 
