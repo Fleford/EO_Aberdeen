@@ -84,7 +84,9 @@ def objfnc(x):
     # Save solutions to text
     save_new_solution(make_solution_matrix(index_parameter_matrix, fitness_array), objfnc_eval_count)
 
+    print("best_totalfitness")
     print(best_totalfitness)
+    print("best_index_parameter_matrix")
     print(best_index_parameter_matrix)
     list_of_best_totalfitness.append(best_totalfitness)
 
@@ -114,6 +116,7 @@ for runs in range(1):
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
 
     # Save the list of best fitness to a text file
+    print("len(list_of_best_totalfitness)")
     print(len(list_of_best_totalfitness))
     with open("list_of_bests_PSO_abr.tsv", "a+") as write_f:
         for value in list_of_best_totalfitness:
