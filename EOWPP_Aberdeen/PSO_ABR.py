@@ -4,6 +4,10 @@ from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 from GWM_Manipulator_abr import save_new_solution, save_best_solution, load_recent_solution
 from pyswarm import pso
 
+# Initial variables and parameters
+objfnc_eval_count = 0
+list_of_bests_save_file = "list_of_bests_PSO_abr.tsv"
+
 
 def n_nearest_dist(d, x, n):
     # Determines 2nd shortest distance to point of interest
@@ -22,13 +26,9 @@ def make_solution_matrix(input_index_parameter_matrix, input_fitness):
     return np.append(input_index_parameter_matrix, input_fitness, axis=1)
 
 
-objfnc_eval_count = 0
-
-
 def objfnc(x):
     global best_totalfitness
     global best_index_parameter_matrix
-    global list_of_best_fitness
     global objfnc_eval_count
 
     # Convert input into index_parameter_matrix
@@ -88,7 +88,10 @@ def objfnc(x):
     print(best_totalfitness)
     print("best_index_parameter_matrix")
     print(best_index_parameter_matrix)
-    list_of_best_totalfitness.append(best_totalfitness)
+
+    # Save fitness to text
+    with open(list_of_bests_save_file, "a+") as write_best_totalfitness:
+        write_best_totalfitness.write(str(best_totalfitness) + "\t")
 
     return totalfitness
 
@@ -110,16 +113,10 @@ ub = [300, 300,
 for runs in range(1):
     best_index_parameter_matrix = np.zeros(len(lb))
     best_totalfitness = 0
-    list_of_best_totalfitness = []
     xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)
     # np.savetxt('PSO_ABR_Best.out', best_index_parameter_matrix, delimiter=',')
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
 
     # Save the list of best fitness to a text file
-    print("len(list_of_best_totalfitness)")
-    print(len(list_of_best_totalfitness))
-    with open("list_of_bests_PSO_abr.tsv", "a+") as write_f:
-        for value in list_of_best_totalfitness:
-            s = str(value)
-            write_f.write(s[:s.index('.')] + "\t")
-        write_f.write("\n")
+    with open(list_of_bests_save_file, "a+") as write_newline:
+        write_newline.write("\n")
