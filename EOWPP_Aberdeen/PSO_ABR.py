@@ -3,10 +3,12 @@ from GWM_Manipulator_abr import read_fitness_array, write_abr_decvar, write_abr_
 from GWM_Manipulator_abr import extract_rivercells, extract_wellcells
 from GWM_Manipulator_abr import save_new_solution, save_best_solution, load_recent_solution
 from pyswarm import pso
+import time
 
 # Initial variables and parameters
 objfnc_eval_count = 0
 list_of_bests_save_file = "list_of_bests_PSO_abr.tsv"
+start_time = time.time()
 
 
 def n_nearest_dist(d, x, n):
@@ -93,6 +95,9 @@ def objfnc(x):
     with open(list_of_bests_save_file, "a+") as write_best_totalfitness:
         write_best_totalfitness.write(str(best_totalfitness) + "\t")
 
+    # Report time
+    print("Time since start in seconds: " + str(time.time() - start_time))
+
     return totalfitness
 
 
@@ -116,6 +121,7 @@ for runs in range(1):
     xopt, fopt = pso(objfnc, lb, ub, maxiter=20, swarmsize=10)
     # np.savetxt('PSO_ABR_Best.out', best_index_parameter_matrix, delimiter=',')
     print("DONE! xopt:{} ,fopt:{}".format(xopt, fopt))
+    print("Final runtime in seconds: " + str(time.time() - start_time))
 
     # Save the list of best fitness to a text file
     with open(list_of_bests_save_file, "a+") as write_newline:
