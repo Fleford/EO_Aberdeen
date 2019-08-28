@@ -1,0 +1,176 @@
+ Message output for MMProc
+
+COMMAND: ..\..\bin\MODFLOW-NWT_64 abr.nam
+NAME FILE: abr.nam
+LIST FILE: .\abr.lst
+NLAY:   7
+NROW:    368
+NCOL:    410
+NPER:      2
+NSTP values have been read
+HNOFLO:  -999.0000    
+IFREFM: 1
+HDRY: -0.1000000E+31
+HCLOSE:  0.3000000E-02
+HEADFILE: .\abr_heads.hds
+FLOWBUDFILE: none
+NABF: 0
+NMQWEL:     6
+WELFILE: .\abr.wel
+ # MODFLOW2000 Well Package
+ #PARAMETER  0  0
+ #OPTIONS
+ #SPECIFY 0.2 501
+ #END
+ No named parameters
+ AUXILIARY WELL VARIABLE: IFACE           
+
+
+     0 Well parameters
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         IFACE           
+ ------------------------------------------------------------------
+      1      2    169    180     -0.4838E+05       0.000    
+      2      2    163    181       0.000           0.000    
+      3      2    137    160     -0.1854E+05       0.000    
+      4      2    296    230      -1263.           0.000    
+      5      2    297    230      -1263.           0.000    
+      6      2    299    231      -1263.           0.000    
+      7      2    300    232      -1263.           0.000    
+      8      2    301    235      -1263.           0.000    
+      9      2    301    236      -1263.           0.000    
+     10      2    301    237      -1263.           0.000    
+     11      2    302    235      -1263.           0.000    
+     12      2    303    228      -1263.           0.000    
+     13      2    303    230      -1263.           0.000    
+     14      2    303    231      -1263.           0.000    
+     15      2    303    232      -1263.           0.000    
+     16      2    304    230      -1263.           0.000    
+     17      2    304    231      -1263.           0.000    
+     18      2    305    228      -1263.           0.000    
+     19      2    292    234      -1263.           0.000    
+     20      2    293    234      -1263.           0.000    
+     21      2    293    235      -1263.           0.000    
+     22      2    294    234      -1263.           0.000    
+     23      2    296    234      -1263.           0.000    
+     24      2    297    234      -1263.           0.000    
+     25      2    301    233      -1263.           0.000    
+     26      2    302    230      -1263.           0.000    
+     27      2    302    231      -1263.           0.000    
+     28      2    302    232      -1263.           0.000    
+     29      2    304    228      -1263.           0.000    
+     30      2    314     82      -2316.           0.000    
+     31      2    314     84      -2316.           0.000    
+     32      2    315     82      -2316.           0.000    
+     33      2    315     83      -2316.           0.000    
+     34      2    163     90       0.000           0.000    
+     35      2     10    128      -1884.           0.000    
+
+ WELL NO.  LAYER   ROW   COL   STRESS RATE         IFACE           
+ ------------------------------------------------------------------
+      1      2    169    180     -0.6048E+05       0.000    
+      2      2    163    181       0.000           0.000    
+      3      2    137    160     -0.1948E+05       0.000    
+      4      2    296    230       0.000           0.000    
+      5      2    297    230       0.000           0.000    
+      6      2    299    231       0.000           0.000    
+      7      2    300    232       0.000           0.000    
+      8      2    301    235       0.000           0.000    
+      9      2    301    236       0.000           0.000    
+     10      2    301    237       0.000           0.000    
+     11      2    302    235       0.000           0.000    
+     12      2    303    228       0.000           0.000    
+     13      2    303    230       0.000           0.000    
+     14      2    303    231       0.000           0.000    
+     15      2    303    232       0.000           0.000    
+     16      2    304    230       0.000           0.000    
+     17      2    304    231       0.000           0.000    
+     18      2    305    228       0.000           0.000    
+     19      2    292    234       0.000           0.000    
+     20      2    293    234       0.000           0.000    
+     21      2    293    235       0.000           0.000    
+     22      2    294    234       0.000           0.000    
+     23      2    296    234       0.000           0.000    
+     24      2    297    234       0.000           0.000    
+     25      2    301    233       0.000           0.000    
+     26      2    302    230       0.000           0.000    
+     27      2    302    231       0.000           0.000    
+     28      2    302    232       0.000           0.000    
+     29      2    304    228       0.000           0.000    
+     30      2    314     82      -2316.           0.000    
+     31      2    314     84      -2316.           0.000    
+     32      2    315     82      -2316.           0.000    
+     33      2    315     83      -2316.           0.000    
+     34      2     10    128       0.000           0.000    
+NMQMNW:     0
+
+ # MODFLOW2000 Discretization File
+
+                     DELR =   200.000    
+
+                     DELC =   200.000    
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\top1.dat                                                                                                                                                                        
+
+
+
+           TOP ELEVATION OF LAYER 1
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot1.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   1
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot2.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   2
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot3.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   3
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot4.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   4
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot5.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   5
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot6.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   6
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\surfs\bot7.dat                                                                                                                                                                        
+
+
+
+             MODEL LAYER BOTTOM EL. FOR LAYER   7
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+NSV:      6

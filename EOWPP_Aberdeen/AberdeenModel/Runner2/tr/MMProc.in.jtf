@@ -14,19 +14,19 @@ none     # ITEM 8: BINARY FILE FOR FLOW
                    0                                  # ITEM 9: NABF - Number of other binary files
            6      # ITEM 11: NMQWEL -- Number of managed WEL cells
 .\abr.wel     # ITEM 12: WELL FILE NAME
-Q1         2       182       266  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
+Q1         2       107       231  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
-Q2         2       226       152  %Q2                    %  # Item 13A: Name Lay Row Col dummyQ
+Q2         2       100       258  %Q2                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
 Q3         2       231       197  %Q3                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
-Q4         2       224       216  %Q4                    %  # Item 13A: Name Lay Row Col dummyQ
+Q4         2       112       199  %Q4                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
-Q5         2       159       265  %Q5                    %  # Item 13A: Name Lay Row Col dummyQ
+Q5         2       111       238  %Q5                    %  # Item 13A: Name Lay Row Col dummyQ
     1
     1
 Q6         2       133       233  %Q6                    %  # Item 13A: Name Lay Row Col dummyQ
@@ -35,15 +35,15 @@ Q6         2       133       233  %Q6                    %  # Item 13A: Name Lay
            0      # ITEM 14: NMQMNW -- Number of managed MNW wells
                    6                                # ITEM 17: NSV - number of simulated values
 Q1c         HEAD
-         2       182       266         2         # Item 18B: LAY,ROW,COL,SP
+         2       107       231         2         # Item 18B: LAY,ROW,COL,SP
 Q2c         HEAD
-         2       226       152         2         # Item 18B: LAY,ROW,COL,SP
+         2       100       258         2         # Item 18B: LAY,ROW,COL,SP
 Q3c         HEAD
          2       231       197         2         # Item 18B: LAY,ROW,COL,SP
 Q4c         HEAD
-         2       224       216         2         # Item 18B: LAY,ROW,COL,SP
+         2       112       199         2         # Item 18B: LAY,ROW,COL,SP
 Q5c         HEAD
-         2       159       265         2         # Item 18B: LAY,ROW,COL,SP
+         2       111       238         2         # Item 18B: LAY,ROW,COL,SP
 Q6c         HEAD
          2       133       233         2         # Item 18B: LAY,ROW,COL,SP
  0.1000E-04             # ITEM 21: EPSQNET

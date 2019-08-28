@@ -1,0 +1,48 @@
+"..\..\bin\MODFLOW-NWT_64 abr.nam"                    # Item 1: Command
+abr.nam     # ITEM 2: NAMEFILE NAME
+.\abr.lst     # ITEM 2A: LISTFILE NAME
+           7         368         410           2
+           1
+          12
+  -999.0000000000000                                  # ITEM 3: HNOFLO
+                   1                                  # ITEM 4: IFREFM
+ -0.1000000000000000E+31                              # ITEM 5:  HDRY
+  0.3000000000000000E-02                              # ITEM 6: HCLOSE
+.\abr_heads.hds     # ITEM 7: BINARY FILE FOR HEADS
+none     # ITEM 8: BINARY FILE FOR FLOW
+                   0                                  # ITEM 9: NABF - Number of other binary files
+           6      # ITEM 11: NMQWEL -- Number of managed WEL cells
+.\abr.wel     # ITEM 12: WELL FILE NAME
+Q1         2       107       231    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+Q2         2       100       258    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+Q3         2       231       197    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+Q4         2       112       199   -8.000000000000000E+002  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+Q5         2       111       238    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+Q6         2       133       233    0.000000000000000E+000  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+           0      # ITEM 14: NMQMNW -- Number of managed MNW wells
+                   6                                # ITEM 17: NSV - number of simulated values
+Q1c         HEAD
+         2       107       231         2         # Item 18B: LAY,ROW,COL,SP
+Q2c         HEAD
+         2       100       258         2         # Item 18B: LAY,ROW,COL,SP
+Q3c         HEAD
+         2       231       197         2         # Item 18B: LAY,ROW,COL,SP
+Q4c         HEAD
+         2       112       199         2         # Item 18B: LAY,ROW,COL,SP
+Q5c         HEAD
+         2       111       238         2         # Item 18B: LAY,ROW,COL,SP
+Q6c         HEAD
+         2       133       233         2         # Item 18B: LAY,ROW,COL,SP
+ 0.1000E-04             # ITEM 21: EPSQNET

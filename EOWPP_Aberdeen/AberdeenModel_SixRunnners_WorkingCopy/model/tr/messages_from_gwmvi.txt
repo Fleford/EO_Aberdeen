@@ -1,0 +1,66 @@
+ # MODFLOW-NWT Basic Package
+ # Aberdeen Groundwater Flow Model 2018
+ #
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib1.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   1
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib2.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   2
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib3.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   3
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib4.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   4
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib5.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   5
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib6.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   6
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+
+ OPENING FILE ON UNIT   99:
+ ..\external_files\ibound\ib7.dat                                                                                                                                                                        
+
+
+
+                     BOUNDARY ARRAY FOR LAYER   7
+ READING ON UNIT   99 WITH FORMAT: (FREE)              
+ # MODFLOW-NWT UPW Package
+ # HEADTOL  FLUXTOL   MAXITEROUT THICKFACT LINMETH IPRNWT IBOTAV OPTIONS   [CONTINUE] [DBDTHETA] [DBDKAPPA] [DBDGAMMA] [MOMFACT] [BACKFLAG] [MAXBACKITER] [BACKTOL] [BACKREDUCE]
+ # SFR Package for MODFLOW2000
+ #OPTIONS
+ #TABFILES 2 493
+ #END
+ # MODFLOW2000 Drain Package				
