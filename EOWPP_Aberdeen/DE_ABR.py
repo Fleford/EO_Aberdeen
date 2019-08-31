@@ -119,7 +119,7 @@ model_bounds = [(100, 300), (100, 300),
 
 for runs in range(1):
     best_solution = np.zeros(len(model_bounds))
-    best_fitness = 0
+    best_totalfitness = 0
     list_of_best_fitness = []
     result = differential_evolution(objfnc, model_bounds, disp=True, maxiter=10, polish=False, popsize=4)
     # np.savetxt('DE_Supply2_Best.out', best_solution, delimiter=',')
