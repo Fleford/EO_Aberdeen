@@ -1,0 +1,115 @@
+jtf %
+"..\..\bin\mf2005dbl ..\data\supply2.nam"             # Item 1: Command
+..\data\supply2.nam     # ITEM 2: NAMEFILE NAME
+supply2.lst     # ITEM 2A: LISTFILE NAME
+           1          25          30          12
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+           1
+   0.000000000000000                                  # ITEM 3: HNOFLO
+                   1                                  # ITEM 4: IFREFM
+   0.000000000000000                                  # ITEM 5:  HDRY
+  0.1000000000000000E-05                              # ITEM 6: HCLOSE
+supply2hd.bhd     # ITEM 7: BINARY FILE FOR HEADS
+none     # ITEM 8: BINARY FILE FOR FLOW
+                   1                                  # ITEM 9: NABF - Number of other binary files
+SFR-FLOW  supply2sf.cbc     # ITEM 10: BINARY FILE FOR SFR-FLOW
+           4      # ITEM 11: NMQWEL -- Number of managed WEL cells
+supply2.wel     # ITEM 12: WELL FILE NAME
+Q1         1        20        21  %Q1                    %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+Q2         1        18        16  %Q2                    %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+Q3         1        20        18  %Q3                    %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+Q4         1         4         9  %Q4                    %  # Item 13A: Name Lay Row Col dummyQ
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+    1
+           0      # ITEM 14: NMQMNW -- Number of managed MNW wells
+                  16                                # ITEM 17: NSV - number of simulated values
+Q1c         HEAD
+         1        20        21         1         # Item 18B: LAY,ROW,COL,SP
+Q2c         HEAD
+         1        18        16         1         # Item 18B: LAY,ROW,COL,SP
+Q3c         HEAD
+         1        20        18         1         # Item 18B: LAY,ROW,COL,SP
+Q4c         HEAD
+         1         4         9         1         # Item 18B: LAY,ROW,COL,SP
+S01_9       SFR-FLOW
+         1        14         9
+S01_10      SFR-FLOW
+         1        14        10
+S01_11      SFR-FLOW
+         1        14        11
+S01_12      SFR-FLOW
+         1        14        12
+S02_11      SFR-FLOW
+         1        21        11
+S02_12      SFR-FLOW
+         1        21        12
+S03_9       SFR-FLOW
+         2         8         9
+S03_10      SFR-FLOW
+         2         8        10
+S03_11      SFR-FLOW
+         2         8        11
+S03_12      SFR-FLOW
+         2         8        12
+S04_11      SFR-FLOW
+         3         5        11
+S04_12      SFR-FLOW
+         3         5        12
+..\data\supply2.sfr     # ITEM 19: SFR INPUT FILE
+ 0.1000E-04             # ITEM 21: EPSQNET
