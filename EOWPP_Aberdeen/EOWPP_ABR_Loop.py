@@ -76,6 +76,9 @@ if not os.path.isfile("EOWPP_FILES\EOWPP.solutions"):
     print("Saving Best Solution")
     save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()
+    print("Saving best fitness to tsv file")
+    with open("list_of_best_EOWPP_ABR.tsv", "a+") as write_best_totalfitness:
+        write_best_totalfitness.write(str(sol1.best_solution.total_fitness()) + "\t")
 
 # Start of loop
 # Based on results, generate a new parameter matrix

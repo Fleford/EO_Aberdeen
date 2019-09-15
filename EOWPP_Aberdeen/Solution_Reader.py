@@ -114,7 +114,7 @@ well_cells = extract_wellcells()
 river_cells = extract_rivercells()
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 sol1 = EO(n_rows=6, x_min=100, x_max=300, y_min=100, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
-sol1.solution = load_ith_solution(best_solution_file_path, 66)
+sol1.solution = load_ith_solution(best_solution_file_path, 151)
 sol1.fitness_ready = True
 
 # Uncomment when using plot_result()
@@ -123,11 +123,11 @@ fig, ax = plt.subplots()
 print(sol1.solution)
 print(sol1.total_fitness())
 
-# # plot_result()
-# hkx = txt_to_array("abr2_kx.txt")
-# mask = txt_to_array("ib2_ref.dat")
-# hkx_masked = np.ma.masked_where(mask == 0, hkx)
-# plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
+# plot_result()
+hkx = txt_to_array("abr2_kx.txt")
+mask = txt_to_array("ib2_ref.dat")
+hkx_masked = np.ma.masked_where(mask == 0, hkx)
+plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
 
 # # Save Pictures, Uncomment when using plot_result()
 # fig.savefig("_12_2_2018_1023_EOWPP_best.pdf")
@@ -141,10 +141,10 @@ print(sol1.total_fitness())
 #     print(sol1.total_fitness())
 #     plot_result()
 
-# Generate list_of_bests.tsv file
-# Save fitness to text
-for i in range(1, 300):
-    sol1.solution = load_ith_solution(best_solution_file_path, i)
-    with open("list_of_bests_EOWPP_best.tsv", "a+") as write_best_totalfitness:
-        write_best_totalfitness.write(str(sol1.total_fitness()) + "\t")
+# # Generate list_of_bests.tsv file
+# # Save fitness to text
+# for i in range(1, 300):
+#     sol1.solution = load_ith_solution(best_solution_file_path, i)
+#     with open("list_of_bests_EOWPP_best.tsv", "a+") as write_best_totalfitness:
+#         write_best_totalfitness.write(str(sol1.total_fitness()) + "\t")
 
