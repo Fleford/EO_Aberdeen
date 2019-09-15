@@ -125,6 +125,9 @@ for run in range(1, num_of_loops + 1):
     print("Saving Best Solution")
     save_best_solution(sol1.best_solution.solution, sol1.eval_count)
     print()
+    print("Saving best fitness to tsv file")
+    with open("list_of_best_EOWPP_ABR.tsv", "a+") as write_best_totalfitness:
+        write_best_totalfitness.write(str(sol1.best_solution.total_fitness()) + "\t")
 
 end_time = time.time()
 print("Seconds elapsed: " + str(end_time - start_time))
