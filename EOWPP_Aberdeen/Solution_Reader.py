@@ -109,14 +109,15 @@ solution_file_path = "EOWPP_FILES\_12_2_2018_921_EOWPP.solutions"
 # best_solution_file_path = "EOWPP_FILES\_12_2_2018_1023_EOWPP_best.solutions"
 
 # best_solution_file_path = "EOWPP_ABR_results/Run6/EOWPP_best.solutions"
-best_solution_file_path = "DE_ABR_results/Run5/EOWPP_best.solutions"
+# best_solution_file_path = "DE_ABR_results/Run5/EOWPP_best.solutions"
+best_solution_file_path = "PSO_ABR_results/Run5/EOWPP_best.solutions"
 
 # Prepare avoided points
 well_cells = extract_wellcells()
 river_cells = extract_rivercells()
 wells_and_river_cells = np.concatenate((well_cells, river_cells), axis=0)
 sol1 = EO(n_rows=6, x_min=100, x_max=300, y_min=100, y_max=300, avoid_list=wells_and_river_cells, min_dist=3)
-sol1.solution = load_ith_solution(best_solution_file_path, 203)
+sol1.solution = load_ith_solution(best_solution_file_path, 119)
 sol1.fitness_ready = True
 
 # Uncomment when using plot_result()
@@ -132,7 +133,7 @@ hkx_masked = np.ma.masked_where(mask == 0, hkx)
 plot_result_with_k(hkx_masked, "_12_2_2018_1023_EOWPP_best_kx.pdf")
 
 # Save Pictures, Uncomment when using plot_result()
-fig.savefig("Run5_DE_ABR_best_203.pdf")
+fig.savefig("Run5_PSO_ABR_best_119.pdf")
 
 # # Loop through all solutions and print total fitness 102
 # for i in range(1, 3):
