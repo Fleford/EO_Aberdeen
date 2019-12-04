@@ -4,6 +4,8 @@ Code and Documentation by Fleford Redoloza
 This project folder contains all the code and data for the masters thesis paper:
 "A Novel Approach for Well Placement Design in Groundwater Management: Extremal Optimization"
 
+For any questions, please email fleford@gmail.com
+
 All code is written for Python 3.6
 Necessary Libraries include:
 matplotlib
